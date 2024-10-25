@@ -1211,22 +1211,58 @@
     /*
     // .block-slideshow
     */
-    $(function () {
-        $('.block-slideshow__carousel').each(function() {
-            const owlCarousel = $(this).find('.owl-carousel');
+$(function () {
+    var videoSlider = $('.owl-carousel');
 
-            owlCarousel.owlCarousel({
-                items: 1,
-                dots: false,
-                autoplay: true,
-                nav: true,
-                navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
-                loop: true,
-                rtl: isRTL()
-            });
+    // Initialize Owl Carousel
+    videoSlider.owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: true,
+        dots: false,
+        autoplay: false, // Start with autoplay off
+        items: 1,
+        navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"], // Chevrons
+        rtl: isRTL() // Check for RTL support
+    });
+
+    // Pause video on slide change
+    videoSlider.on('translate.owl.carousel', function(e) {
+        // Pause any playing video
+        $('.owl-item .item video').each(function() {
+            $(this).get(0).pause();
         });
     });
 
+    // Play video when the slide is active
+    videoSlider.on('translated.owl.carousel', function(e) {
+        // Check if the active slide has a video
+        if ($('.owl-item.active').find('video').length !== 0) {
+            // Play the active video
+            $('.owl-item.active video').get(0).play();
+            // Disable autoplay when video is active
+            videoSlider.trigger('stop.owl.autoplay');
+        } else {
+            // Enable autoplay when the video slide is not active
+            videoSlider.trigger('play.owl.autoplay');
+        }
+    });
+
+    // Handle the video end event for all videos
+    videoSlider.find('video').each(function() {
+        $(this).on('ended', function() {
+            // Trigger the next slide
+            videoSlider.trigger('next.owl.carousel');
+            // Enable autoplay after the video ends
+            videoSlider.trigger('play.owl.autoplay');
+        });
+    });
+});
+
+
+    
+    
+    
     /*
     // .block-finder
     */

@@ -1674,6 +1674,7 @@
 
 .main-menu .main-menu__link {
   font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .main-menu .main-menu__item--has-submenu .main-menu__link svg {
@@ -1681,8 +1682,8 @@
 }
 
 .main-menu .main-menu__item:hover .main-menu__link {
-  background-color: #f2f2f2;
-    color: orange;
+  background-color: #333;
+    color: orange !important;
 }
 
 /*
@@ -1917,9 +1918,7 @@
   margin-left: 5px;
 }
 
-.phone__body:hover {
-  background: #f2f2f2;
-}
+
 
 .phone__title {
   color: #999;
@@ -1927,7 +1926,7 @@
 
 .phone__number {
   font-weight: 500;
-    color: orange;
+    color: black;
 }
 
 /*
@@ -2155,7 +2154,8 @@
 }
 
 [dir=ltr] .search__button--end {
-  right: 22%;
+          right: 0%;
+        width: 10%;
 }
 
 [dir=rtl] .search__button--end {
@@ -2407,7 +2407,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 10px;
+  padding: 0 10px 0px 0px;
 }
 
 .topbar__link {

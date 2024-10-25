@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fr" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -15,14 +15,16 @@
     <link rel="stylesheet" href="vendor/photoswipe/photoswipe.css">
     <link rel="stylesheet" href="vendor/photoswipe/default-skin/default-skin.css">
     <link rel="stylesheet" href="vendor/select2/css/select2.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" class="dayMode">
+     <link rel="stylesheet" href="css/midday.css" class="midday" disabled>
+    <link rel="stylesheet" href="css/night.css" class="nightMode" disabled>
     <link rel="stylesheet" href="css/style.header-classic-variant-one.css" media="(min-width: 1200px)">
     <link rel="stylesheet" href="css/style.mobile-header-variant-one.css" media="(max-width: 1199px)">
     <!-- font - fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="slideTheFirst">
+<body>
     <!-- site -->
     <div class="site">
         <!-- site__mobile-header -->
@@ -151,14 +153,25 @@
                 <div class="header__topbar-classic-bg"></div>
                 <div class="header__topbar-classic">
                     <div class="topbar topbar--classic">
-                        <div class="topbar__item-text">Bienvenue M. Admin</div>
+                        <div class="topbar__item-text">Bienvenue Admin</div>
+                           <a href="" class="phone__body">
+                            <div class="phone__number">+212 522 31 93 54</div>
+                        </a>
                         <div class="topbar__item-spring"></div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="tdnn">
+                            <div class="moon">
+                            </div>
+                        </div>
                         <div class="topbar__item-button">
                                        <span class="settingsName">Paramètres&nbsp;&nbsp;<i class="fa-solid fa-chevron-down"></i></span>
                                         <!-- Header Top Menu's Dropdown -->
                                         <ul class="user-sub-menu">
-                                            <li><a href="compte.html">Mon Compte</a></li>
-                                            <li><a href="panier.html">Panier</a></li>
+                                            <li><a href="account-dashboard.html">Mon Compte</a></li>
+                                            <li><a href="cart.html">Panier</a></li>
                                             <li><a href="wishlist.html#scroll-target">Wishlist</a></li>
                                             <li><a href="#">Déconnexion</a></li>
                                         </ul>
@@ -182,13 +195,13 @@
                                     <a href="promotion.html" class="main-menu__link"><i class="fa-solid fa-fire"></i>&nbsp;&nbsp;PROMOTIONS</a>
                                  </li>
                                  <li class="main-menu__item">
-                                    <a href="categorie.html#lubrifiantTab" class="main-menu__link"><i class="fa-solid fa-oil-can"></i>&nbsp;&nbsp;LUBRIFIANTS</a>
+                                   <a href="categorie.html#filtrationTab" class="main-menu__link"><i class="fa-solid fa-filter"></i>&nbsp;&nbsp;FILTRATION</a>
                                  </li>
                                  <li class="main-menu__item">
-                                    <a href="categorie.html#filtrationTab" class="main-menu__link"><i class="fa-solid fa-filter"></i>&nbsp;&nbsp;FILTRATION</a>
+                                   <a href="categorie.html#lubrifiantTab" class="main-menu__link"><i class="fa-solid fa-oil-can"></i>&nbsp;&nbsp;CAPSERVICE</a>
                                  </li>
                                  <li class="main-menu__item">
-                                    <a href="famille.html#capcarrosserieTab" class="main-menu__link"><i class="fa-solid fa-car-side"></i>&nbsp;&nbsp;CAPCARROSSERIE</a>
+                                    <a href="categorie.html#carrosserieTab" class="main-menu__link"><i class="fa-solid fa-car-side"></i>&nbsp;&nbsp;CAPCARROSSERIE</a>
                                  </li>
                                  <li class="main-menu__item">
                                     <a href="accueil.html" class="main-menu__link"><i class="fa-solid fa-spray-can-sparkles"></i>&nbsp;&nbsp;AROMA</a>
@@ -200,10 +213,11 @@
                         </div>
                     </div>
                     <div class="header__navbar-phone phone">
-                        <a href="" class="phone__body">
+                       <!-- <a href="" class="phone__body">
                             <div class="phone__title"><i class="fa-solid fa-square-phone"></i></div>
                             <div class="phone__number">+212 522 31 93 54</div>
-                        </a>
+                        </a>-->
+                         <a href="assistance.html" class="main-menu__link helpDesk"><i class="fa-solid fa-circle-info"></i>&nbsp;&nbsp;Assistance</a>
                     </div>
                 </div>
                 <div class="header__logo">
@@ -228,223 +242,14 @@
                                     </svg>
                                 </span>
                             </button>
-                               <div class="select-custom">
-                                        <select id="type" name="type" required="">
-                                            <option value="1">&nbsp;Référence&nbsp;</option>
-                                            <option value="2">&nbsp;Désignation&nbsp;</option>
-                                            <option value="3">&nbsp;Famille&nbsp;</option>
-                                        </select>
-                            </div>
+                               
                             <div class="search__box"></div>
                             <div class="search__decor">
                                 <div class="search__decor-start"></div>
                                 <div class="search__decor-end"></div>
                             </div>
-                            <div class="search__dropdown search__dropdown--suggestions suggestions">
-                                <div class="suggestions__group">
-                                    <div class="suggestions__group-title">Products</div>
-                                    <div class="suggestions__group-content">
-                                        <a class="suggestions__item suggestions__product" href="">
-                                            <div class="suggestions__product-image image image--type--product">
-                                                <div class="image__body">
-                                                    <img class="image__tag" src="images/products/product-2-40x40.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="suggestions__product-info">
-                                                <div class="suggestions__product-name">Brandix Brake Kit BDX-750Z370-S</div>
-                                                <div class="suggestions__product-rating">
-                                                    <div class="suggestions__product-rating-stars">
-                                                        <div class="rating">
-                                                            <div class="rating__body">
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="suggestions__product-rating-label">5 on 22 Avis</div>
-                                                </div>
-                                            </div>
-                                            <div class="suggestions__product-price">$224.00</div>
-                                        </a>
-                                        <a class="suggestions__item suggestions__product" href="">
-                                            <div class="suggestions__product-image image image--type--product">
-                                                <div class="image__body">
-                                                    <img class="image__tag" src="images/products/product-3-40x40.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="suggestions__product-info">
-                                                <div class="suggestions__product-name">Left Headlight Of Brandix Z54</div>
-                                                <div class="suggestions__product-rating">
-                                                    <div class="suggestions__product-rating-stars">
-                                                        <div class="rating">
-                                                            <div class="rating__body">
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star"></div>
-                                                                <div class="rating__star"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="suggestions__product-rating-label">3 on 14 Avis</div>
-                                                </div>
-                                            </div>
-                                            <div class="suggestions__product-price">$349.00</div>
-                                        </a>
-                                        <a class="suggestions__item suggestions__product" href="">
-                                            <div class="suggestions__product-image image image--type--product">
-                                                <div class="image__body">
-                                                    <img class="image__tag" src="images/products/product-4-40x40.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="suggestions__product-info">
-                                                <div class="suggestions__product-name">Glossy Gray 19" Aluminium Wheel AR-19</div>
-                                                <div class="suggestions__product-rating">
-                                                    <div class="suggestions__product-rating-stars">
-                                                        <div class="rating">
-                                                            <div class="rating__body">
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="suggestions__product-rating-label">4 on 26 Avis</div>
-                                                </div>
-                                            </div>
-                                            <div class="suggestions__product-price">$589.00</div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="suggestions__group">
-                                    <div class="suggestions__group-title">Categories</div>
-                                    <div class="suggestions__group-content">
-                                        <a class="suggestions__item suggestions__category" href="">Headlights & Lighting</a>
-                                        <a class="suggestions__item suggestions__category" href="">Fuel System & Filters</a>
-                                        <a class="suggestions__item suggestions__category" href="">Body Parts & Mirrors</a>
-                                        <a class="suggestions__item suggestions__category" href="">Interior Accessories</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="search__dropdown search__dropdown--vehicle-picker vehicle-picker">
-                                <div class="search__dropdown-arrow"></div>
-                                <div class="vehicle-picker__panel vehicle-picker__panel--list vehicle-picker__panel--active" data-panel="list">
-                                    <div class="vehicle-picker__panel-body">
-                                        <div class="vehicle-picker__text">
-                                            Select a vehicle to find exact fit parts
-                                        </div>
-                                        <div class="vehicles-list">
-                                            <div class="vehicles-list__body">
-                                                <label class="vehicles-list__item">
-                                                    <span class="vehicles-list__item-radio input-radio">
-                                                        <span class="input-radio__body">
-                                                            <input class="input-radio__input" name="header-vehicle" type="radio">
-                                                            <span class="input-radio__circle"></span>
-                                                        </span>
-                                                    </span>
-                                                    <span class="vehicles-list__item-info">
-                                                        <span class="vehicles-list__item-name">2011 Ford Focus S</span>
-                                                        <span class="vehicles-list__item-details">Engine 2.0L 1742DA L4 FI Turbo</span>
-                                                    </span>
-                                                    <button type="button" class="vehicles-list__item-remove">
-                                                        <svg width="16" height="16">
-                                                            <path d="M2,4V2h3V1h6v1h3v2H2z M13,13c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V5h10V13z" />
-                                                        </svg>
-                                                    </button>
-                                                </label>
-                                                <label class="vehicles-list__item">
-                                                    <span class="vehicles-list__item-radio input-radio">
-                                                        <span class="input-radio__body">
-                                                            <input class="input-radio__input" name="header-vehicle" type="radio">
-                                                            <span class="input-radio__circle"></span>
-                                                        </span>
-                                                    </span>
-                                                    <span class="vehicles-list__item-info">
-                                                        <span class="vehicles-list__item-name">2019 Audi Q7 Premium</span>
-                                                        <span class="vehicles-list__item-details">Engine 3.0L 5626CC L6 QK</span>
-                                                    </span>
-                                                    <button type="button" class="vehicles-list__item-remove">
-                                                        <svg width="16" height="16">
-                                                            <path d="M2,4V2h3V1h6v1h3v2H2z M13,13c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V5h10V13z" />
-                                                        </svg>
-                                                    </button>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="vehicle-picker__actions">
-                                            <button type="button" class="btn btn-primary btn-sm" data-to-panel="form">Add A Vehicle</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="vehicle-picker__panel vehicle-picker__panel--form" data-panel="form">
-                                    <div class="vehicle-picker__panel-body">
-                                        <div class="vehicle-form vehicle-form--layout--search">
-                                            <div class="vehicle-form__item vehicle-form__item--select">
-                                                <select class="form-control form-control-select2" aria-label="Year">
-                                                    <option value="none">Select Year</option>
-                                                    <option>2010</option>
-                                                    <option>2011</option>
-                                                    <option>2012</option>
-                                                    <option>2013</option>
-                                                    <option>2014</option>
-                                                    <option>2015</option>
-                                                    <option>2016</option>
-                                                    <option>2017</option>
-                                                    <option>2018</option>
-                                                    <option>2019</option>
-                                                    <option>2020</option>
-                                                </select>
-                                            </div>
-                                            <div class="vehicle-form__item vehicle-form__item--select">
-                                                <select class="form-control form-control-select2" aria-label="Brand" disabled>
-                                                    <option value="none">Select Brand</option>
-                                                    <option>Audi</option>
-                                                    <option>BMW</option>
-                                                    <option>Ferrari</option>
-                                                    <option>Ford</option>
-                                                    <option>KIA</option>
-                                                    <option>Nissan</option>
-                                                    <option>Tesla</option>
-                                                    <option>Toyota</option>
-                                                </select>
-                                            </div>
-                                            <div class="vehicle-form__item vehicle-form__item--select">
-                                                <select class="form-control form-control-select2" aria-label="Model" disabled>
-                                                    <option value="none">Select Model</option>
-                                                    <option>Explorer</option>
-                                                    <option>Focus S</option>
-                                                    <option>Fusion SE</option>
-                                                    <option>Mustang</option>
-                                                </select>
-                                            </div>
-                                            <div class="vehicle-form__item vehicle-form__item--select">
-                                                <select class="form-control form-control-select2" aria-label="Engine" disabled>
-                                                    <option value="none">Select Engine</option>
-                                                    <option>Gas 1.6L 125 hp AT/L4</option>
-                                                    <option>Diesel 2.5L 200 hp AT/L5</option>
-                                                    <option>Diesel 3.0L 250 hp MT/L5</option>
-                                                </select>
-                                            </div>
-                                            <div class="vehicle-form__divider">Or</div>
-                                            <div class="vehicle-form__item">
-                                                <input type="text" class="form-control" placeholder="Enter VIN number" aria-label="VIN number">
-                                            </div>
-                                        </div>
-                                        <div class="vehicle-picker__actions">
-                                            <div class="search__car-selector-link">
-                                                <a href="" data-to-panel="list">Back to vehicles list</a>
-                                            </div>
-                                            <button type="button" class="btn btn-primary btn-sm" disabled>Add A Vehicle</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                            
+                              </form>
                     </div>
                 </div>
                 <div class="header__indicators">
@@ -595,12 +400,12 @@
                                     <a href="" class="breadcrumb__item-link">Pages</a>
                                 </li>
                                 <li class="breadcrumb__item breadcrumb__item--current breadcrumb__item--last" aria-current="page">
-                                    <span class="breadcrumb__item-link">Catégorie</span>
+                                    <span class="breadcrumb__item-link">Catégories</span>
                                 </li>
                                 <li class="breadcrumb__title-safe-area" role="presentation"></li>
                             </ol>
                         </nav>
-                        <h1 class="block-header__title">Catégorie</h1>
+                        <h1 class="block-header__title">CATÉGORIES</h1>
                     </div>
                 </div>
             </div>
@@ -658,128 +463,290 @@
 
             <!-- Subcategory for Category 1 -->
             <div class="subcategory" id="subcategory-1">
-
                 <div class="row">
-                <div class="col-md-12">
-<div class="subcategory-items">         
-                   <div class="itemsName">
-                       <i class="fa-regular fa-lightbulb"></i>
-                       <h4>Éclairage</h4>
-                       <div class="itemsLine"></div>
-                   </div>
-                
-                   <div class="row">
                     <div class="col-md-2">
-                        <a class="subcategory-item" id="subCatego_1_1" data-category="1" data-subcategory="1_1">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_1" data-category="1" data-subcategory="1_1">
                             <div class="subcategoryImg">
-                                <img src="images/categories/carrosserie/20.jpg" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/alguerra.jpg" alt="Subcategory-1">
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
-                       <a class="subcategory-item" id="subCatego_1_2" data-category="1" data-subcategory="1_2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_2" data-category="1" data-subcategory="1_2">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-2">
-                            </div>
-                            <p>Tapis de sol</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-3">
-                            </div>
-                            <p>Couvre-volants</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item" id="subCatego_1_4" data-category="1" data-subcategory="1_4">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-4">
-                            </div>
-                            <p>Accoudoirs</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item" id="subCatego_1_5" data-category="1" data-subcategory="1_5">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-5">
-                            </div>
-                            <p>Pommeaux de levier</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                       <a class="subcategory-item" id="subCatego_1_6" data-category="1" data-subcategory="1_6">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-6">
-                            </div>
-                            <p>Rétroviseurs intérieurs</p>
-                        </a>
-          </div>          </div>
-    </div>
-                   </div>
-                 <div class="col-md-12">
-<div class="subcategory-items">         
-                   <div class="itemsName">
-                       <i class="fa-regular fa-lightbulb"></i>
-                       <h4>Éclairage</h4>
-                       <div class="itemsLine"></div>
-                   </div>
-                
-                   <div class="row">
-                    <div class="col-md-2">
-                        <a class="subcategory-item" id="subCatego_1_1" data-category="1" data-subcategory="1_1">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/carrosserie/20.jpg" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/alkar.jpg" alt="Subcategory-2">
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
-                       <a class="subcategory-item" id="subCatego_1_2" data-category="1" data-subcategory="1_2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/ayfar.jpg" alt="Subcategory-3">
                             </div>
-                            <p>Tapis de sol</p>
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/depo.jpg" alt="Subcategory-3">
                             </div>
-                            <p>Couvre-volants</p>
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item" id="subCatego_1_4" data-category="1" data-subcategory="1_4">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-4">
+                                <img src="images/categories/sub-category/despa.jpg" alt="Subcategory-3">
                             </div>
-                            <p>Accoudoirs</p>
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item" id="subCatego_1_5" data-category="1" data-subcategory="1_5">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-5">
+                                <img src="images/categories/sub-category/eurobump.jpg" alt="Subcategory-3">
                             </div>
-                            <p>Pommeaux de levier</p>
                         </a>
                     </div>
                     <div class="col-md-2">
-                       <a class="subcategory-item" id="subCatego_1_6" data-category="1" data-subcategory="1_6">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-6">
+                                <img src="images/categories/sub-category/feituo.jpg" alt="Subcategory-3">
                             </div>
-                            <p>Rétroviseurs intérieurs</p>
                         </a>
-          </div>          </div>
-    </div>
-                   </div>
-             
-              
+                    </div>
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/flosser.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/divers.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/fristom.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/haituo.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/hushan.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/depo.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/isam.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/itsa.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/juncheng.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/kayaplastik.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/liaoning.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/mad.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/mars.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/maxem.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/narva.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/phira.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/meyle.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/pleksan.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/prasco.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/pulo.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/r2a.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/reshine.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/sertplas.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/sevgili.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/smp.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/tursan.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/tyc.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/vanpres.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/yih-sheng.jpg" alt="Subcategory-3">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    
+                    
                 </div>
-
             </div>
             <!-- Subcategory for Category 2 -->
             <div class="subcategory" id="subcategory-2">
@@ -787,76 +754,43 @@
                 <div class="row">
 
                     <div class="col-md-2">
-                        <a class="subcategory-item" id="subCatego_2_1" data-category="2" data-subcategory="2_1">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_2_1" data-category="2" data-subcategory="2_1">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/alco.jpg" alt="Subcategory-1">
                             </div>
-                            <p>Barres de toit 2</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                         <a class="subcategory-item" id="subCatego_2_2" data-category="2" data-subcategory="2_2">
+                         <a href="boutique.html" class="subcategory-item" id="subCatego_2_2" data-category="2" data-subcategory="2_2">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/capfilter.jpg" alt="Subcategory-2">
                             </div>
-                            <p>Protections de carrosserie</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                         <a class="subcategory-item" id="subCatego_2_3" data-category="2" data-subcategory="2_3">
+                         <a href="boutique.html" class="subcategory-item" id="subCatego_2_3" data-category="2" data-subcategory="2_3">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/divers.jpg" alt="Subcategory-3">
                             </div>
-                            <p>Rétroviseurs extérieurs</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                         <a class="subcategory-item" id="subCatego_2_4" data-category="2" data-subcategory="2_4">
+                         <a href="boutique.html" class="subcategory-item" id="subCatego_2_4" data-category="2" data-subcategory="2_4">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-4">
+                                <img src="images/categories/sub-category/mis-filter.jpg" alt="Subcategory-4">
                             </div>
-                            <p>Déflecteurs d'air</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                         <a class="subcategory-item" id="subCatego_2_5" data-category="2" data-subcategory="2_5">
+                         <a href="boutique.html" class="subcategory-item" id="subCatego_2_5" data-category="2" data-subcategory="2_5">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-5">
+                                <img src="images/categories/sub-category/onfil.jpg" alt="Subcategory-5">
                             </div>
-                            <p>Enjoliveurs de roue</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                         <a class="subcategory-item" id="subCatego_2_6" data-category="2" data-subcategory="2_6">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-6">
-                            </div>
-                            <p>Phares à LED</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item" id="subCatego_2_7" data-category="2" data-subcategory="2_7">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-7">
-                            </div>
-                            <p>Autocollants décoratifs</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item" id="subCatego_2_8" data-category="2" data-subcategory="2_8">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-8">
-                            </div>
-                            <p>Pare-chocs et accessoires</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-
-                       <a class="subcategory-item" id="subCatego_2_9" data-category="2" data-subcategory="2_9">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-9">
-                            </div>
-                            <p>Lave-glaces</p>
+                            
                         </a>
                     </div>
                 </div>
@@ -868,78 +802,136 @@
                 <div class="row">
 
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/alco.jpg" alt="Subcategory-1">
                             </div>
-                            <p>Lorem Ipsum 3</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/ate.jpg" alt="Subcategory-2">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/atlantic.jpg" alt="Subcategory-3">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-4">
+                                <img src="images/categories/sub-category/bardahl.jpg" alt="Subcategory-4">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-5">
+                                <img src="images/categories/sub-category/bendix.jpeg" alt="Subcategory-5">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-6">
+                                <img src="images/categories/sub-category/bruxol.jpeg" alt="Subcategory-6">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-7">
+                                <img src="images/categories/sub-category/burtech.jpeg" alt="Subcategory-7">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-8">
+                                <img src="images/categories/sub-category/concorde.jpg" alt="Subcategory-8">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
 
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/hepu.jpg" alt="Subcategory-9">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
+                    
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/jurid.jpeg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/lion.jpeg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/prof.jpeg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/professional.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/skf.jpeg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/trw.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
+                  
                 </div>
 
             </div>
@@ -949,76 +941,85 @@
                 <div class="row">
 
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/autotec.jpg" alt="Subcategory-1">
                             </div>
-                            <p>Lorem Ipsum 4</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/dolz.jpg" alt="Subcategory-2">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/fare.jpg" alt="Subcategory-3">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-4">
+                                <img src="images/categories/sub-category/divers.jpg" alt="Subcategory-4">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-5">
+                                <img src="images/categories/sub-category/dana.jpg" alt="Subcategory-5">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-6">
+                                <img src="images/categories/sub-category/quinton.jpg" alt="Subcategory-6">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-7">
+                                <img src="images/categories/sub-category/soikon.jpg" alt="Subcategory-7">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-8">
+                                <img src="images/categories/sub-category/scan.jpg" alt="Subcategory-8">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
 
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-9">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
+                        </a>
+                    </div>
+                     <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/wrakynson.jpg" alt="Subcategory-9">
+                            </div>
+                            
                         </a>
                     </div>
                 </div>
@@ -1078,76 +1079,120 @@
                 <div class="row">
 
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/autotec.jpg" alt="Subcategory-1">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/continental.jpg" alt="Subcategory-2">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/dolz.jpg" alt="Subcategory-3">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-4">
+                                <img src="images/categories/sub-category/fae.jpg" alt="Subcategory-4">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-5">
+                                <img src="images/categories/sub-category/fare.jpg" alt="Subcategory-5">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-6">
+                                <img src="images/categories/sub-category/feituo.jpg" alt="Subcategory-6">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-7">
+                                <img src="images/categories/sub-category/divers.jpg" alt="Subcategory-7">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-8">
+                                <img src="images/categories/sub-category/impergom.jpg" alt="Subcategory-8">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
 
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/soikon.jpg" alt="Subcategory-9">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/serck.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/smp.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/vernet.jpg" alt="Subcategory-9">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/automotive.jpg" alt="Subcategory-9">
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -1159,78 +1204,93 @@
                 <div class="row">
 
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/ate.jpg" alt="Subcategory-1">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/capflex.jpg" alt="Subcategory-2">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/fare.jpg" alt="Subcategory-3">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-4">
+                                <img src="images/categories/sub-category/divers.jpg" alt="Subcategory-4">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-5">
+                                <img src="images/categories/sub-category/hardex.jpg" alt="Subcategory-5">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-6">
+                                <img src="images/categories/sub-category/lpr.jpg" alt="Subcategory-6">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-7">
+                                <img src="images/categories/sub-category/plastex.jpg" alt="Subcategory-7">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-8">
+                                <img src="images/categories/sub-category/quinton.jpg" alt="Subcategory-8">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/soikon.jpg" alt="Subcategory-9">
                             </div>
-                            <p>Lorem Ipsum</p>
                         </a>
                     </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-9">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/afle.jpg" alt="Subcategory-9">
+                            </div>
+                        </a>
+                    </div>
+                 
                 </div>
 
             </div>
@@ -1240,76 +1300,67 @@
                 <div class="row">
 
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/capflex.jpg" alt="Subcategory-1">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/coram.jpg" alt="Subcategory-2">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/fare.jpg" alt="Subcategory-3">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-4">
+                                <img src="images/categories/sub-category/formpart.jpg" alt="Subcategory-4">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-5">
+                                <img src="images/categories/sub-category/soikon.jpg" alt="Subcategory-5">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-6">
+                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-6">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-7">
+                                <img src="images/categories/sub-category/afle.jpg" alt="Subcategory-7">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-8">
+                                <img src="images/categories/sub-category/wrakynson.jpg" alt="Subcategory-8">
                             </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-9">
-                            </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                 </div>
@@ -1321,80 +1372,126 @@
                 <div class="row">
 
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/autotec.jpg" alt="Subcategory-1">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/coram.jpg" alt="Subcategory-2">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/fare.jpg" alt="Subcategory-3">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-4">
+                                <img src="images/categories/sub-category/formpart.jpg" alt="Subcategory-4">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-5">
+                                <img src="images/categories/sub-category/divers.jpg" alt="Subcategory-5">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-6">
+                                <img src="images/categories/sub-category/gr.jpg" alt="Subcategory-6">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-7">
+                                <img src="images/categories/sub-category/jurid.jpeg" alt="Subcategory-7">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-8">
+                                <img src="images/categories/sub-category/lpr.jpg" alt="Subcategory-8">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/ltm.jpg" alt="Subcategory-9">
                             </div>
-                            <p>Lorem Ipsum</p>
                         </a>
                     </div>
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/otohakan.jpg" alt="Subcategory-9">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/soikon.jpg" alt="Subcategory-9">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/record.jpg" alt="Subcategory-9">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/smp.jpg" alt="Subcategory-9">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-9">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/windsor.jpg" alt="Subcategory-9">
+                            </div>
+                        </a>
+                    </div>
+                
+                
                 </div>
-
             </div>
 
             <div class="row">
@@ -1448,76 +1545,18 @@
                 <div class="row">
 
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/soikon.jpg" alt="Subcategory-1">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-2">
                             </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-3">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-4">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-5">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-6">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-7">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-8">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-9">
-                            </div>
-                            <p>Lorem Ipsum</p>
                         </a>
                     </div>
                 </div>
@@ -1529,76 +1568,50 @@
                 <div class="row">
 
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/fare.jpg" alt="Subcategory-1">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/divers.jpg" alt="Subcategory-2">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/gomet.jpg" alt="Subcategory-3">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-4">
+                                <img src="images/categories/sub-category/gr.jpg" alt="Subcategory-4">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-5">
+                                <img src="images/categories/sub-category/impergom.jpg" alt="Subcategory-5">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-6">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-7">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-8">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-9">
-                            </div>
-                            <p>Lorem Ipsum</p>
+                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-6">
+                            </div> 
                         </a>
                     </div>
                 </div>
@@ -1610,76 +1623,10 @@
                 <div class="row">
 
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/fare.jpg" alt="Subcategory-1">
                             </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-2">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-3">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-4">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-5">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-6">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-7">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-8">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-9">
-                            </div>
-                            <p>Lorem Ipsum</p>
                         </a>
                     </div>
                 </div>
@@ -1691,78 +1638,165 @@
                 <div class="row">
 
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/a-n.jpg" alt="Subcategory-1">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/autotec.jpg" alt="Subcategory-2">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/borg.jpg" alt="Subcategory-3">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-4">
+                                <img src="images/categories/sub-category/diesel.jpg" alt="Subcategory-4">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-5">
+                                <img src="images/categories/sub-category/eyquem.jpg" alt="Subcategory-5">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-6">
+                                <img src="images/categories/sub-category/fae.jpg" alt="Subcategory-6">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-7">
+                                <img src="images/categories/sub-category/divers.jpg" alt="Subcategory-7">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-8">
+                                <img src="images/categories/sub-category/gebe.jpg" alt="Subcategory-8">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
 
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/huco.jpg" alt="Subcategory-9">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/imp.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/mta.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/otohakan.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/meyle.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/sertplas.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/smp.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/vernet.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/zen.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
                 </div>
 
             </div>
@@ -1819,76 +1853,27 @@
                 <div class="row">
 
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/aroma.jpg" alt="Subcategory-1">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/burtech.jpeg" alt="Subcategory-2">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/fiamm.jpg" alt="Subcategory-3">
                             </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-4">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-5">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-6">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-7">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-8">
-                            </div>
-                            <p>Lorem Ipsum</p>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-
-                        <a class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-9">
-                            </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                 </div>
@@ -1900,78 +1885,107 @@
                 <div class="row">
 
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/a&s.jpg" alt="Subcategory-1">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/continental.jpg" alt="Subcategory-2">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/coram.jpg" alt="Subcategory-3">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-4">
+                                <img src="images/categories/sub-category/dayco.jpg" alt="Subcategory-4">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-5">
+                                <img src="images/categories/sub-category/eyquem.jpg" alt="Subcategory-5">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-6">
+                                <img src="images/categories/sub-category/fare.jpg" alt="Subcategory-6">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-7">
+                                <img src="images/categories/sub-category/hepu.jpg" alt="Subcategory-7">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-8">
+                                <img src="images/categories/sub-category/ntn-snr.jpg" alt="Subcategory-8">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
 
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/otohakan.jpg" alt="Subcategory-9">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/soikon.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/smp.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+              
                 </div>
 
             </div>
@@ -1981,78 +1995,131 @@
                 <div class="row">
 
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/autotec.jpg" alt="Subcategory-1">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/capflex.jpg" alt="Subcategory-2">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/coram.jpg" alt="Subcategory-3">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-4">
+                                <img src="images/categories/sub-category/fare.jpg" alt="Subcategory-4">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-5">
+                                <img src="images/categories/sub-category/flosser.jpg" alt="Subcategory-5">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-6">
+                                <img src="images/categories/sub-category/divers.jpg" alt="Subcategory-6">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-7">
+                                <img src="images/categories/sub-category/dana.jpg" alt="Subcategory-7">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-8">
+                                <img src="images/categories/sub-category/haug.jpg" alt="Subcategory-8">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
 
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/impergom.jpg" alt="Subcategory-9">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/sertplas.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
+                    
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/smp.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/afle.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/vernet.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
+                
+                    
                 </div>
 
             </div>
@@ -2062,78 +2129,157 @@
                 <div class="row">
 
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/3rg.jpg" alt="Subcategory-1">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/a&s.jpg" alt="Subcategory-2">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/autotec.jpg" alt="Subcategory-3">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-4">
+                                <img src="images/categories/sub-category/diesel.jpg" alt="Subcategory-4">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-5">
+                                <img src="images/categories/sub-category/divers.jpg" alt="Subcategory-5">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-6">
+                                <img src="images/categories/sub-category/haituo.jpg" alt="Subcategory-6">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-7">
+                                <img src="images/categories/sub-category/huco.jpg" alt="Subcategory-7">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-8">
+                                <img src="images/categories/sub-category/impergom.jpg" alt="Subcategory-8">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
                     <div class="col-md-2">
 
-                        <a class="subcategory-item">
+                        <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="https://via.placeholder.com/130" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/otohakan.jpg" alt="Subcategory-9">
                             </div>
-                            <p>Lorem Ipsum</p>
+                            
                         </a>
                     </div>
+                     <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/meyle.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
+                     <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/quinton.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
+                     <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/soikon.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                     <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/scan.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
+                     <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/smp.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                     <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                     <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/afle.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
+                     <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/vipiemme.jpg" alt="Subcategory-9">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    
+                    
+                    
                 </div>
 
             </div>
@@ -2252,8 +2398,7 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
                             <p class="copyright-area-text">Copyright © <span id="copyright-year">2024</span> <a class="copyright-link" href="accueil.html">Capram</a></p>
                             <!-- copyright / end -->
                         </div>
-                        <div class="site-footer__payments">
-                            <img src="images/logo_white.png" alt="">
+                        <div class="site-footer__payments">     <img src="images/logo_white.png" alt="">
                         </div>
                     </div>
                 </div>

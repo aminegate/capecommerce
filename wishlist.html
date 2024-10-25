@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fr" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
-    <title>Wishlist — Red Parts</title>
+    <title>Home Two — Red ts</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <!-- fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i">
@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="vendor/photoswipe/photoswipe.css">
     <link rel="stylesheet" href="vendor/photoswipe/default-skin/default-skin.css">
     <link rel="stylesheet" href="vendor/select2/css/select2.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" class="dayMode">
+     <link rel="stylesheet" href="css/midday.css" class="midday" disabled>
+    <link rel="stylesheet" href="css/night.css" class="nightMode" disabled>
     <link rel="stylesheet" href="css/style.header-classic-variant-one.css" media="(min-width: 1200px)">
     <link rel="stylesheet" href="css/style.mobile-header-variant-one.css" media="(max-width: 1199px)">
     <!-- font - fontawesome -->
@@ -65,7 +67,7 @@
                         </a>
                         <div class="mobile-header__search mobile-search">
                             <form class="mobile-search__body">
-                                <input type="text" class="mobile-search__input" placeholder="Enter keyword or part number">
+                                <input type="text" class="mobile-search__input" placeholder="Enter keyword or t number">
                                 <button type="button" class="mobile-search__vehicle-picker" aria-label="Select Vehicle">
                                     <svg width="20" height="20">
                                         <path d="M6.6,2c2,0,4.8,0,6.8,0c1,0,2.9,0.8,3.6,2.2C17.7,5.7,17.9,7,18.4,7C20,7,20,8,20,8v1h-1v7.5c0,0.8-0.7,1.5-1.5,1.5h-1
@@ -144,21 +146,32 @@
             </div>
         </header>
         <!-- site__mobile-header / end -->
-         <!-- site__header -->
+        <!-- site__header -->
         <header class="site__header">
             <div class="header">
                 <div class="header__megamenu-area megamenu-area"></div>
                 <div class="header__topbar-classic-bg"></div>
                 <div class="header__topbar-classic">
                     <div class="topbar topbar--classic">
-                        <div class="topbar__item-text">Bienvenue M. Admin</div>
+                        <div class="topbar__item-text">Bienvenue Admin</div>
+                           <a href="" class="phone__body">
+                            <div class="phone__number">+212 522 31 93 54</div>
+                        </a>
                         <div class="topbar__item-spring"></div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="tdnn">
+                            <div class="moon">
+                            </div>
+                        </div>
                         <div class="topbar__item-button">
                                        <span class="settingsName">Paramètres&nbsp;&nbsp;<i class="fa-solid fa-chevron-down"></i></span>
                                         <!-- Header Top Menu's Dropdown -->
                                         <ul class="user-sub-menu">
-                                            <li><a href="compte.html">Mon Compte</a></li>
-                                            <li><a href="panier.html">Panier</a></li>
+                                            <li><a href="account-dashboard.html">Mon Compte</a></li>
+                                            <li><a href="cart.html">Panier</a></li>
                                             <li><a href="wishlist.html#scroll-target">Wishlist</a></li>
                                             <li><a href="#">Déconnexion</a></li>
                                         </ul>
@@ -182,13 +195,13 @@
                                     <a href="promotion.html" class="main-menu__link"><i class="fa-solid fa-fire"></i>&nbsp;&nbsp;PROMOTIONS</a>
                                  </li>
                                  <li class="main-menu__item">
-                                    <a href="categorie.html#lubrifiantTab" class="main-menu__link"><i class="fa-solid fa-oil-can"></i>&nbsp;&nbsp;LUBRIFIANTS</a>
+                                   <a href="categorie.html#filtrationTab" class="main-menu__link"><i class="fa-solid fa-filter"></i>&nbsp;&nbsp;FILTRATION</a>
                                  </li>
                                  <li class="main-menu__item">
-                                    <a href="categorie.html#filtrationTab" class="main-menu__link"><i class="fa-solid fa-filter"></i>&nbsp;&nbsp;FILTRATION</a>
+                                   <a href="categorie.html#lubrifiantTab" class="main-menu__link"><i class="fa-solid fa-oil-can"></i>&nbsp;&nbsp;CAPSERVICE</a>
                                  </li>
                                  <li class="main-menu__item">
-                                    <a href="famille.html#capcarrosserieTab" class="main-menu__link"><i class="fa-solid fa-car-side"></i>&nbsp;&nbsp;CAPCARROSSERIE</a>
+                                    <a href="categorie.html#carrosserieTab" class="main-menu__link"><i class="fa-solid fa-car-side"></i>&nbsp;&nbsp;CAPCARROSSERIE</a>
                                  </li>
                                  <li class="main-menu__item">
                                     <a href="accueil.html" class="main-menu__link"><i class="fa-solid fa-spray-can-sparkles"></i>&nbsp;&nbsp;AROMA</a>
@@ -200,10 +213,11 @@
                         </div>
                     </div>
                     <div class="header__navbar-phone phone">
-                        <a href="" class="phone__body">
+                       <!-- <a href="" class="phone__body">
                             <div class="phone__title"><i class="fa-solid fa-square-phone"></i></div>
                             <div class="phone__number">+212 522 31 93 54</div>
-                        </a>
+                        </a>-->
+                         <a href="assistance.html" class="main-menu__link helpDesk"><i class="fa-solid fa-circle-info"></i>&nbsp;&nbsp;Assistance</a>
                     </div>
                 </div>
                 <div class="header__logo">
@@ -228,223 +242,13 @@
                                     </svg>
                                 </span>
                             </button>
-                               <div class="select-custom">
-                                        <select id="type" name="type" required="">
-                                            <option value="1">&nbsp;Référence&nbsp;</option>
-                                            <option value="2">&nbsp;Désignation&nbsp;</option>
-                                            <option value="3">&nbsp;Famille&nbsp;</option>
-                                        </select>
-                            </div>
+                               
                             <div class="search__box"></div>
                             <div class="search__decor">
                                 <div class="search__decor-start"></div>
                                 <div class="search__decor-end"></div>
                             </div>
-                            <div class="search__dropdown search__dropdown--suggestions suggestions">
-                                <div class="suggestions__group">
-                                    <div class="suggestions__group-title">Products</div>
-                                    <div class="suggestions__group-content">
-                                        <a class="suggestions__item suggestions__product" href="">
-                                            <div class="suggestions__product-image image image--type--product">
-                                                <div class="image__body">
-                                                    <img class="image__tag" src="images/products/product-2-40x40.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="suggestions__product-info">
-                                                <div class="suggestions__product-name">Brandix Brake Kit BDX-750Z370-S</div>
-                                                <div class="suggestions__product-rating">
-                                                    <div class="suggestions__product-rating-stars">
-                                                        <div class="rating">
-                                                            <div class="rating__body">
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="suggestions__product-rating-label">5 on 22 Avis</div>
-                                                </div>
-                                            </div>
-                                            <div class="suggestions__product-price">$224.00</div>
-                                        </a>
-                                        <a class="suggestions__item suggestions__product" href="">
-                                            <div class="suggestions__product-image image image--type--product">
-                                                <div class="image__body">
-                                                    <img class="image__tag" src="images/products/product-3-40x40.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="suggestions__product-info">
-                                                <div class="suggestions__product-name">Left Headlight Of Brandix Z54</div>
-                                                <div class="suggestions__product-rating">
-                                                    <div class="suggestions__product-rating-stars">
-                                                        <div class="rating">
-                                                            <div class="rating__body">
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star"></div>
-                                                                <div class="rating__star"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="suggestions__product-rating-label">3 on 14 Avis</div>
-                                                </div>
-                                            </div>
-                                            <div class="suggestions__product-price">$349.00</div>
-                                        </a>
-                                        <a class="suggestions__item suggestions__product" href="">
-                                            <div class="suggestions__product-image image image--type--product">
-                                                <div class="image__body">
-                                                    <img class="image__tag" src="images/products/product-4-40x40.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="suggestions__product-info">
-                                                <div class="suggestions__product-name">Glossy Gray 19" Aluminium Wheel AR-19</div>
-                                                <div class="suggestions__product-rating">
-                                                    <div class="suggestions__product-rating-stars">
-                                                        <div class="rating">
-                                                            <div class="rating__body">
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="suggestions__product-rating-label">4 on 26 Avis</div>
-                                                </div>
-                                            </div>
-                                            <div class="suggestions__product-price">$589.00</div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="suggestions__group">
-                                    <div class="suggestions__group-title">Categories</div>
-                                    <div class="suggestions__group-content">
-                                        <a class="suggestions__item suggestions__category" href="">Headlights & Lighting</a>
-                                        <a class="suggestions__item suggestions__category" href="">Fuel System & Filters</a>
-                                        <a class="suggestions__item suggestions__category" href="">Body Parts & Mirrors</a>
-                                        <a class="suggestions__item suggestions__category" href="">Interior Accessories</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="search__dropdown search__dropdown--vehicle-picker vehicle-picker">
-                                <div class="search__dropdown-arrow"></div>
-                                <div class="vehicle-picker__panel vehicle-picker__panel--list vehicle-picker__panel--active" data-panel="list">
-                                    <div class="vehicle-picker__panel-body">
-                                        <div class="vehicle-picker__text">
-                                            Select a vehicle to find exact fit parts
-                                        </div>
-                                        <div class="vehicles-list">
-                                            <div class="vehicles-list__body">
-                                                <label class="vehicles-list__item">
-                                                    <span class="vehicles-list__item-radio input-radio">
-                                                        <span class="input-radio__body">
-                                                            <input class="input-radio__input" name="header-vehicle" type="radio">
-                                                            <span class="input-radio__circle"></span>
-                                                        </span>
-                                                    </span>
-                                                    <span class="vehicles-list__item-info">
-                                                        <span class="vehicles-list__item-name">2011 Ford Focus S</span>
-                                                        <span class="vehicles-list__item-details">Engine 2.0L 1742DA L4 FI Turbo</span>
-                                                    </span>
-                                                    <button type="button" class="vehicles-list__item-remove">
-                                                        <svg width="16" height="16">
-                                                            <path d="M2,4V2h3V1h6v1h3v2H2z M13,13c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V5h10V13z" />
-                                                        </svg>
-                                                    </button>
-                                                </label>
-                                                <label class="vehicles-list__item">
-                                                    <span class="vehicles-list__item-radio input-radio">
-                                                        <span class="input-radio__body">
-                                                            <input class="input-radio__input" name="header-vehicle" type="radio">
-                                                            <span class="input-radio__circle"></span>
-                                                        </span>
-                                                    </span>
-                                                    <span class="vehicles-list__item-info">
-                                                        <span class="vehicles-list__item-name">2019 Audi Q7 Premium</span>
-                                                        <span class="vehicles-list__item-details">Engine 3.0L 5626CC L6 QK</span>
-                                                    </span>
-                                                    <button type="button" class="vehicles-list__item-remove">
-                                                        <svg width="16" height="16">
-                                                            <path d="M2,4V2h3V1h6v1h3v2H2z M13,13c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V5h10V13z" />
-                                                        </svg>
-                                                    </button>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="vehicle-picker__actions">
-                                            <button type="button" class="btn btn-primary btn-sm" data-to-panel="form">Add A Vehicle</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="vehicle-picker__panel vehicle-picker__panel--form" data-panel="form">
-                                    <div class="vehicle-picker__panel-body">
-                                        <div class="vehicle-form vehicle-form--layout--search">
-                                            <div class="vehicle-form__item vehicle-form__item--select">
-                                                <select class="form-control form-control-select2" aria-label="Year">
-                                                    <option value="none">Select Year</option>
-                                                    <option>2010</option>
-                                                    <option>2011</option>
-                                                    <option>2012</option>
-                                                    <option>2013</option>
-                                                    <option>2014</option>
-                                                    <option>2015</option>
-                                                    <option>2016</option>
-                                                    <option>2017</option>
-                                                    <option>2018</option>
-                                                    <option>2019</option>
-                                                    <option>2020</option>
-                                                </select>
-                                            </div>
-                                            <div class="vehicle-form__item vehicle-form__item--select">
-                                                <select class="form-control form-control-select2" aria-label="Brand" disabled>
-                                                    <option value="none">Select Brand</option>
-                                                    <option>Audi</option>
-                                                    <option>BMW</option>
-                                                    <option>Ferrari</option>
-                                                    <option>Ford</option>
-                                                    <option>KIA</option>
-                                                    <option>Nissan</option>
-                                                    <option>Tesla</option>
-                                                    <option>Toyota</option>
-                                                </select>
-                                            </div>
-                                            <div class="vehicle-form__item vehicle-form__item--select">
-                                                <select class="form-control form-control-select2" aria-label="Model" disabled>
-                                                    <option value="none">Select Model</option>
-                                                    <option>Explorer</option>
-                                                    <option>Focus S</option>
-                                                    <option>Fusion SE</option>
-                                                    <option>Mustang</option>
-                                                </select>
-                                            </div>
-                                            <div class="vehicle-form__item vehicle-form__item--select">
-                                                <select class="form-control form-control-select2" aria-label="Engine" disabled>
-                                                    <option value="none">Select Engine</option>
-                                                    <option>Gas 1.6L 125 hp AT/L4</option>
-                                                    <option>Diesel 2.5L 200 hp AT/L5</option>
-                                                    <option>Diesel 3.0L 250 hp MT/L5</option>
-                                                </select>
-                                            </div>
-                                            <div class="vehicle-form__divider">Or</div>
-                                            <div class="vehicle-form__item">
-                                                <input type="text" class="form-control" placeholder="Enter VIN number" aria-label="VIN number">
-                                            </div>
-                                        </div>
-                                        <div class="vehicle-picker__actions">
-                                            <div class="search__car-selector-link">
-                                                <a href="" data-to-panel="list">Back to vehicles list</a>
-                                            </div>
-                                            <button type="button" class="btn btn-primary btn-sm" disabled>Add A Vehicle</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                         </form>
                     </div>
                 </div>
                 <div class="header__indicators">
@@ -603,6 +407,351 @@
                         <h1 class="block-header__title">Liste des souhaits</h1>
                     </div>
                 </div>
+            </div>
+            <div class="container">
+               <div class="sidebar sidebar--offcanvas--always">
+                    <div class="sidebar__backdrop"></div>
+                    <div class="sidebar__body">
+                        <div class="sidebar__header">
+                            <div class="sidebar__title">Filters</div>
+                            <button class="sidebar__close" type="button"><svg width="12" height="12">
+                                    <path d="M10.8,10.8L10.8,10.8c-0.4,0.4-1,0.4-1.4,0L6,7.4l-3.4,3.4c-0.4,0.4-1,0.4-1.4,0l0,0c-0.4-0.4-0.4-1,0-1.4L4.6,6L1.2,2.6
+	c-0.4-0.4-0.4-1,0-1.4l0,0c0.4-0.4,1-0.4,1.4,0L6,4.6l3.4-3.4c0.4-0.4,1-0.4,1.4,0l0,0c0.4,0.4,0.4,1,0,1.4L7.4,6l3.4,3.4
+	C11.2,9.8,11.2,10.4,10.8,10.8z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="sidebar__content">
+                            <div class="widget widget-filters widget-filters--offcanvas--always" data-collapse="" data-collapse-opened-class="filter--opened">
+                                <div class="widget__header widget-filters__header">
+                                    <h4>Filtres</h4>
+                                </div>
+                                <div class="widget-filters__list">
+                                   <!--
+                                    <div class="widget-filters__item">
+                                        <div class="filter filter--opened" data-collapse-item>
+                                            <button type="button" class="filter__title" data-collapse-trigger>
+                                                FILTRER PAR CATÉGORIE
+                                                <span class="filter__arrow"><svg width="12px" height="7px">
+                                                        <path d="M0.286,0.273 L0.286,0.273 C-0.070,0.629 -0.075,1.204 0.276,1.565 L5.516,6.993 L10.757,1.565 C11.108,1.204 11.103,0.629 10.747,0.273 L10.747,0.273 C10.385,-0.089 9.796,-0.086 9.437,0.279 L5.516,4.296 L1.596,0.279 C1.237,-0.086 0.648,-0.089 0.286,0.273 Z" />
+                                                    </svg></span>
+                                            </button>
+                                            <div class="sidebar-single-widget">
+                            <div class="sidebar-content">
+                                <div class="filter-type-select">
+                                    <ul class="fixPadd">
+                                        <li>
+                                            <label class="checkbox-default" for="catagory_1">
+                                                <input type="checkbox" id="catagory_1" class="category-checkbox">
+                                                <span class="catego__name">Carrosserie <i class="fa-solid fa-sort-down"></i><i class="fa-solid fa-sort-up"></i></span>
+                                                <ul class="subcatego">
+                                                   <li><input type="checkbox" id="subCatego_1_1" class="subCategory-checkbox"> <span class="subCategory-name">Housses de sièges</span></li>
+                                                   <li><input type="checkbox" id="subCatego_1_2" class="subCategory-checkbox"> <span class="subCategory-name">Tapis de sol</span></li>
+                                                   <li><input type="checkbox" id="subCatego_1_3" class="subCategory-checkbox"> <span class="subCategory-name">Couvre-volants</span></li>
+                                                   <li><input type="checkbox" id="subCatego_1_4" class="subCategory-checkbox"> <span class="subCategory-name">Accoudoir</span></li>
+                                                   <li><input type="checkbox" id="subCatego_1_5" class="subCategory-checkbox"> <span class="subCategory-name">Pommeaux de levier</span></li>
+                                                   <li><input type="checkbox" id="subCatego_1_6" class="subCategory-checkbox"> <span class="subCategory-name">Rétroviseurs intérieurs</span></li>
+                                                   <li><input type="checkbox" id="subCatego_1_7" class="subCategory-checkbox"> <span class="subCategory-name">Accroches-ceinture</span></li>
+                                                   <li><input type="checkbox" id="subCatego_1_8" class="subCategory-checkbox"> <span class="subCategory-name">Coussins lombaires</span></li>
+                                                   <li><input type="checkbox" id="subCatego_1_8" class="subCategory-checkbox"> <span class="subCategory-name">Pare-soleils</span></li>
+                                                </ul>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="checkbox-default" for="catagory_2">
+                                                <input type="checkbox" id="catagory_2" class="category-checkbox">
+                                                 <span class="catego__name">Filtration <i class="fa-solid fa-sort-down"></i><i class="fa-solid fa-sort-up"></i></span>
+                                                <ul class="subcatego">
+                                                <li><input type="checkbox" id="subCatego_2_1" class="subCategory-checkbox"> <span class="subCategory-name">Barres de toit</span></li>
+                                                <li><input type="checkbox" id="subCatego_2_2" class="subCategory-checkbox"> <span class="subCategory-name">Protections de carrosserie</span></li>
+                                                    <li><input type="checkbox" id="subCatego_2_3" class="subCategory-checkbox"> <span class="subCategory-name">Rétroviseurs extérieurs</span></li>
+                                                    <li><input type="checkbox" id="subCatego_2_4" class="subCategory-checkbox"> <span class="subCategory-name">Déflecteurs d'air</span></li>
+                                                    <li><input type="checkbox" id="subCatego_2_5" class="subCategory-checkbox"> <span class="subCategory-name">Enjoliveurs de roue</span></li>
+                                                    <li><input type="checkbox" id="subCatego_2_6" class="subCategory-checkbox"> <span class="subCategory-name">Phares à LED</span></li>
+                                                    <li><input type="checkbox" id="subCatego_2_7" class="subCategory-checkbox"> <span class="subCategory-name">Autocollants décoratifs</span></li>
+                                                    <li><input type="checkbox" id="subCatego_2_8" class="subCategory-checkbox"> <span class="subCategory-name">Pare-chocs et accessoires</span></li>
+                                                    <li><input type="checkbox" id="subCatego_2_9" class="subCategory-checkbox"> <span class="subCategory-name">Lave-glaces</span></li>
+                                                </ul>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="checkbox-default" for="catagory_3">
+                                                <input type="checkbox" id="catagory_3" class="category-checkbox">
+                                                 <span class="catego__name">Lubrifiant <i class="fa-solid fa-sort-down"></i><i class="fa-solid fa-sort-up"></i></span>
+                                                <ul class="subcatego">
+                                                    <li>Sub-category (1)</li>
+                                                    <li>Sub-category (2)</li>
+                                                    <li>Sub-category (3)</li>
+                                                    <li>Sub-category (4)</li>
+                                                </ul>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="checkbox-default" for="catagory_4">
+                                                <input type="checkbox" id="catagory_4" class="category-checkbox">
+                                                 <span class="catego__name">Moteur <i class="fa-solid fa-sort-down"></i><i class="fa-solid fa-sort-up"></i></span>
+                                                <ul class="subcatego">
+                                                    <li>Sub-category (1)</li>
+                                                    <li>Sub-category (2)</li>
+                                                    <li>Sub-category (3)</li>
+                                                    <li>Sub-category (4)</li>
+                                                </ul>
+                                            </label>
+                                        </li>
+                                         <li>
+                                            <label class="checkbox-default" for="catagory_5">
+                                                <input type="checkbox" id="catagory_5" class="category-checkbox">
+                                                 <span class="catego__name">Refroidissement <i class="fa-solid fa-sort-down"></i><i class="fa-solid fa-sort-up"></i></span>
+                                                <ul class="subcatego">
+                                                    <li>Sub-category (1)</li>
+                                                    <li>Sub-category (2)</li>
+                                                    <li>Sub-category (3)</li>
+                                                    <li>Sub-category (4)</li>
+                                                </ul>
+                                            </label>
+                                        </li>
+                                        
+                                         <li>
+                                            <label class="checkbox-default" for="catagory_6">
+                                                <input type="checkbox" id="catagory_6" class="category-checkbox">
+                                                 <span class="catego__name">Freinage <i class="fa-solid fa-sort-down"></i><i class="fa-solid fa-sort-up"></i></span>
+                                                <ul class="subcatego">
+                                                    <li>Sub-category (1)</li>
+                                                    <li>Sub-category (2)</li>
+                                                    <li>Sub-category (3)</li>
+                                                    <li>Sub-category (4)</li>
+                                                </ul>
+                                            </label>
+                                        </li>
+                                        
+                                         <li>
+                                            <label class="checkbox-default" for="catagory_7">
+                                                <input type="checkbox" id="catagory_7" class="category-checkbox">
+                                                 <span class="catego__name">Embrayage <i class="fa-solid fa-sort-down"></i><i class="fa-solid fa-sort-up"></i></span>
+                                                <ul class="subcatego">
+                                                    <li>Sub-category (1)</li>
+                                                    <li>Sub-category (2)</li>
+                                                    <li>Sub-category (3)</li>
+                                                    <li>Sub-category (4)</li>
+                                                </ul>
+                                            </label>
+                                        </li>
+                                        
+                                         <li>
+                                            <label class="checkbox-default" for="catagory_8">
+                                                <input type="checkbox" id="catagory_8" class="category-checkbox">
+                                                 <span class="catego__name">Suspension <i class="fa-solid fa-sort-down"></i><i class="fa-solid fa-sort-up"></i></span>
+                                                <ul class="subcatego">
+                                                    <li>Sub-category (1)</li>
+                                                    <li>Sub-category (2)</li>
+                                                    <li>Sub-category (3)</li>
+                                                    <li>Sub-category (4)</li>
+                                                </ul>
+                                            </label>
+                                        </li>
+                                        
+                                         <li>
+                                            <label class="checkbox-default" for="catagory_9">
+                                                <input type="checkbox" id="catagory_9" class="category-checkbox">
+                                                 <span class="catego__name">Goujon <i class="fa-solid fa-sort-down"></i><i class="fa-solid fa-sort-up"></i></span>
+                                                <ul class="subcatego">
+                                                    <li>Sub-category (1)</li>
+                                                    <li>Sub-category (2)</li>
+                                                    <li>Sub-category (3)</li>
+                                                    <li>Sub-category (4)</li>
+                                                </ul>
+                                            </label>
+                                        </li>
+                                        
+                                         <li>
+                                            <label class="checkbox-default" for="catagory_10">
+                                                <input type="checkbox" id="catagory_10" class="category-checkbox">
+                                                 <span class="catego__name">Entretien et Nettoyage <i class="fa-solid fa-sort-down"></i><i class="fa-solid fa-sort-up"></i></span>
+                                                <ul class="subcatego">
+                                                    <li>Sub-category (1)</li>
+                                                    <li>Sub-category (2)</li>
+                                                    <li>Sub-category (3)</li>
+                                                    <li>Sub-category (4)</li>
+                                                </ul>
+                                            </label>
+                                        </li>
+                                        
+                                         <li>
+                                            <label class="checkbox-default" for="catagory_11">
+                                                <input type="checkbox" id="catagory_11" class="category-checkbox">
+                                                 <span class="catego__name">Accessoires de coffre <i class="fa-solid fa-sort-down"></i><i class="fa-solid fa-sort-up"></i></span>
+                                                <ul class="subcatego">
+                                                    <li>Sub-category (1)</li>
+                                                    <li>Sub-category (2)</li>
+                                                    <li>Sub-category (3)</li>
+                                                    <li>Sub-category (4)</li>
+                                                </ul>
+                                            </label>
+                                        </li>
+                                        
+                                         <li>
+                                            <label class="checkbox-default" for="catagory_12">
+                                                <input type="checkbox" id="catagory_12" class="category-checkbox">
+                                                 <span class="catego__name">Autres accessoires <i class="fa-solid fa-sort-down"></i><i class="fa-solid fa-sort-up"></i></span>
+                                                <ul class="subcatego">
+                                                    <li>Sub-category (1)</li>
+                                                    <li>Sub-category (2)</li>
+                                                    <li>Sub-category (3)</li>
+                                                    <li>Sub-category (4)</li>
+                                                </ul>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                            </div>
+                                    </div>-->
+                                    <div class="widget-filters__item">
+                                        <div class="filter filter--opened" data-collapse-item="">
+                                            <button type="button" class="filter__title" data-collapse-trigger="">
+                                                 FILTRER PAR CARTES
+                                                <span class="filter__arrow"><svg width="12px" height="7px">
+                                                        <path d="M0.286,0.273 L0.286,0.273 C-0.070,0.629 -0.075,1.204 0.276,1.565 L5.516,6.993 L10.757,1.565 C11.108,1.204 11.103,0.629 10.747,0.273 L10.747,0.273 C10.385,-0.089 9.796,-0.086 9.437,0.279 L5.516,4.296 L1.596,0.279 C1.237,-0.086 0.648,-0.089 0.286,0.273 Z"></path>
+                                                    </svg></span>
+                                            </button>
+                                            <div class="filter__body" data-collapse-content="">
+                                                <div class="filter__container">
+                                                    <div class="filter-list">
+                                                        <div class="filter-list__list">
+                                                            <label class="filter-list__item ">
+                                                                <span class="filter-list__input input-radio">
+                                                                    <span class="input-radio__body">
+                                                                        <input class="input-radio__input" name="filter_radio" type="radio">
+                                                                        <span class="input-radio__circle"></span>
+                                                                    </span>
+                                                                </span>
+                                                                <span class="filter-list__title">
+                                                                    Aroma
+                                                                </span>
+                                                                
+                                                            </label>
+                                                            <label class="filter-list__item ">
+                                                                <span class="filter-list__input input-radio">
+                                                                    <span class="input-radio__body">
+                                                                        <input class="input-radio__input" name="filter_radio" type="radio">
+                                                                        <span class="input-radio__circle"></span>
+                                                                    </span>
+                                                                </span>
+                                                                <span class="filter-list__title">
+                                                                    Narva
+                                                                </span>
+                                                                
+                                                            </label>
+                                                            <label class="filter-list__item  filter-list__item--disabled ">
+                                                                <span class="filter-list__input input-radio">
+                                                                    <span class="input-radio__body">
+                                                                        <input class="input-radio__input" name="filter_radio" type="radio" checked="" disabled="">
+                                                                        <span class="input-radio__circle"></span>
+                                                                    </span>
+                                                                </span>
+                                                                <span class="filter-list__title">
+                                                                    MFK
+                                                                </span>
+                                                            </label>
+                                                            <label class="filter-list__item  filter-list__item--disabled ">
+                                                                <span class="filter-list__input input-radio">
+                                                                    <span class="input-radio__body">
+                                                                        <input class="input-radio__input" name="filter_radio" type="radio" disabled="">
+                                                                        <span class="input-radio__circle"></span>
+                                                                    </span>
+                                                                </span>
+                                                                <span class="filter-list__title">
+                                                                    STEELMATE
+                                                                </span>
+                                                            </label>
+                                                            <label class="filter-list__item ">
+                                                                <span class="filter-list__input input-radio">
+                                                                    <span class="input-radio__body">
+                                                                        <input class="input-radio__input" name="filter_radio" type="radio">
+                                                                        <span class="input-radio__circle"></span>
+                                                                    </span>
+                                                                </span>
+                                                                <span class="filter-list__title">
+                                                                    PILOT
+                                                                </span>
+                                                                
+                                                            </label>
+                                                            <label class="filter-list__item ">
+                                                                <span class="filter-list__input input-radio">
+                                                                    <span class="input-radio__body">
+                                                                        <input class="input-radio__input" name="filter_radio" type="radio">
+                                                                        <span class="input-radio__circle"></span>
+                                                                    </span>
+                                                                </span>
+                                                                <span class="filter-list__title">
+                                                                    ETON
+                                                                </span>
+                                                                
+                                                            </label>
+                                                            <label class="filter-list__item ">
+                                                                <span class="filter-list__input input-radio">
+                                                                    <span class="input-radio__body">
+                                                                        <input class="input-radio__input" name="filter_radio" type="radio">
+                                                                        <span class="input-radio__circle"></span>
+                                                                    </span>
+                                                                </span>
+                                                                <span class="filter-list__title">
+                                                                    BOSTON
+                                                                </span>
+                                                                
+                                                            </label>
+                                                            <label class="filter-list__item ">
+                                                                <span class="filter-list__input input-radio">
+                                                                    <span class="input-radio__body">
+                                                                        <input class="input-radio__input" name="filter_radio" type="radio">
+                                                                        <span class="input-radio__circle"></span>
+                                                                    </span>
+                                                                </span>
+                                                                <span class="filter-list__title">
+                                                                    TOP ONE
+                                                                </span>
+                                                                
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="widget-filters__actions d-flex">
+                                    <button class="btn btn-primary btn-sm">Filtrer</button>
+                                    <button class="btn btn-secondary btn-sm">Réinitialiser</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="products-view__options view-options view-options--offcanvas--always">
+                                        <div class="view-options__body">
+                                            <button type="button" class="view-options__filters-button filters-button">
+                                                <span class="filters-button__icon"><svg width="16" height="16">
+                                                        <path d="M7,14v-2h9v2H7z M14,7h2v2h-2V7z M12.5,6C12.8,6,13,6.2,13,6.5v3c0,0.3-0.2,0.5-0.5,0.5h-2
+	C10.2,10,10,9.8,10,9.5v-3C10,6.2,10.2,6,10.5,6H12.5z M7,2h9v2H7V2z M5.5,5h-2C3.2,5,3,4.8,3,4.5v-3C3,1.2,3.2,1,3.5,1h2
+	C5.8,1,6,1.2,6,1.5v3C6,4.8,5.8,5,5.5,5z M0,2h2v2H0V2z M9,9H0V7h9V9z M2,14H0v-2h2V14z M3.5,11h2C5.8,11,6,11.2,6,11.5v3
+	C6,14.8,5.8,15,5.5,15h-2C3.2,15,3,14.8,3,14.5v-3C3,11.2,3.2,11,3.5,11z"></path>
+                                                    </svg>
+                                                </span>
+                                                <span class="filters-button__title">Filters</span>
+                                                <span class="filters-button__counter">3</span>
+                                            </button>
+                                            <div class="view-options__spring"></div>
+                                            <div class="view-options__select fixWidth">
+                                                <label for="view-option-limit" class="displayInline">Articles par page : </label>
+                                                <select id="view-option-limit" class="displayInline form-control form-control-sm" name="">
+                                                    <option value="">12</option>
+                                                     <option value="">24</option>
+                                                      <option value="">36</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
             </div>
             <div class="block">
                 <div class="container container--max--xl">
@@ -882,8 +1031,7 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
                             <p class="copyright-area-text">Copyright © <span id="copyright-year">2024</span> <a class="copyright-link" href="accueil.html">Capram</a></p>
                             <!-- copyright / end -->
                         </div>
-                        <div class="site-footer__payments">
-                            <img src="images/logo_white.png" alt="">
+                        <div class="site-footer__payments">     <img src="images/logo_white.png" alt="">
                         </div>
                     </div>
                 </div>

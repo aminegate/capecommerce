@@ -267,29 +267,30 @@ window.onload = function() {
         var firstCategoryId = $firstCategory.data('category');
 
         // Add the 'activey' class to the first category's title
-        $firstCategory.find('.categoBoxTitle').addClass('activey');
+      /*  $firstCategory.find('.categoBoxTitle').addClass('activey');*/
 
         // Slide down the first subcategory
-        $('#subcategory-' + firstCategoryId).slideDown(300);
+      /*  $('#subcategory-' + firstCategoryId).slideDown(300);*/
     }
 
-    // Function to open subcategory based on the given category ID
-    function openSubcategory(categoryId) {
-        var $subcategory = $('#subcategory-' + categoryId);
+ function openSubcategory(categoryId) {
+    var $subcategory = $('#subcategory-' + categoryId);
 
-        // Hide all other subcategories and remove 'activey' class from other titles
-        $('.subcategory').slideUp(300);
-        $('.categoBoxTitle').removeClass('activey');
+    // Hide all other subcategories and remove 'activey' class from other titles
+    $('.subcategory').slideUp(300);
+    $('.categoBoxTitle').removeClass('activey');
 
-        // Show the subcategory for the clicked category with 300ms duration
-        $subcategory.slideDown(300);
-        $('.goToCategoTarget[data-category="' + categoryId + '"] .categoBoxTitle').addClass('activey'); // Add 'activey' class to the clicked category
-
-        // Scroll to the category element, offset by 30px
+    // Show the subcategory for the clicked category with 300ms duration
+    $subcategory.slideDown(300, function() {
+        // Once the sliding down is complete, scroll to the category element, offset by 30px
         $('html, body').animate({
             scrollTop: $('.goToCategoTarget[data-category="' + categoryId + '"]').offset().top - 30
         }, 300); // Adjust the duration of the scroll animation as needed
-    }
+    });
+
+    $('.goToCategoTarget[data-category="' + categoryId + '"] .categoBoxTitle').addClass('activey'); // Add 'activey' class to the clicked category
+}
+
 
     // When a category is clicked
     $('.goToCategoTarget').click(function(event) {
@@ -346,17 +347,176 @@ window.onload = function() {
                 openSubcategory(categoryId); // Open the corresponding subcategory
             }
         } else {
-            activateFirstCategory(); // If there's no hash, activate the first category
+          activateFirstCategory();  // If there's no hash, activate the first category
         }
     });
 
     // Call the function to activate the first category when the page loads
-    activateFirstCategory();
+   activateFirstCategory();
 
 })(jQuery);
 
+    /*
+    
+    (function($) {
+    // Function to activate the first category on page load
+    function activateFirstCategory() {
+        // Find the first category element
+        var $firstCategory = $('.goToCategoTarget').first();
+        var firstCategoryId = $firstCategory.data('category');
+
+        // Add the 'activey' class to the first category's title
+        $firstCategory.find('.categoBoxTitle').addClass('activey');
+
+        // Rotate the chevron down for the active category
+        $firstCategory.find('.fa-chevron-down').addClass('rotate');
+
+        // Slide down the first subcategory
+        $('#subcategory-' + firstCategoryId).slideDown(300);
+    }
+
+    // Function to add chevron to all categoBoxTitle elements
+    function addChevronIcons() {
+        $('.categoBoxTitle').each(function() {
+            // Append a chevron span element to each categoBoxTitle
+            $(this).append('<i class="fa-solid fa-chevron-down"></i>'); // Unicode chevron-down
+        });
+    }
+
+    function openSubcategory(categoryId) {
+        var $subcategory = $('#subcategory-' + categoryId);
+
+        // Hide all other subcategories and remove 'activey' class and rotate chevron
+        $('.subcategory').slideUp(300);
+        $('.categoBoxTitle').removeClass('activey');
+        $('.fa-chevron-down').removeClass('rotate');
+
+        // Show the subcategory for the clicked category with 300ms duration
+        $subcategory.slideDown(300, function() {
+            // Once the sliding down is complete, scroll to the category element, offset by 30px
+            $('html, body').animate({
+                scrollTop: $('.goToCategoTarget[data-category="' + categoryId + '"]').offset().top - 30
+            }, 300); // Adjust the duration of the scroll animation as needed
+        });
+
+        // Add 'activey' class and rotate chevron for the clicked category
+        $('.goToCategoTarget[data-category="' + categoryId + '"] .categoBoxTitle').addClass('activey');
+        $('.goToCategoTarget[data-category="' + categoryId + '"] .fa-chevron-down').addClass('rotate');
+    }
+
+    // When a category is clicked
+    $('.goToCategoTarget').click(function(event) {
+        event.preventDefault(); // Prevent default anchor click behavior
+        var categoryId = $(this).data('category'); // Get the category ID
+
+        // Check if the clicked subcategory is currently visible
+        var $subcategory = $('#subcategory-' + categoryId);
+
+        if ($subcategory.is(':visible')) {
+            // If it is visible, slide it up (hide) with 300ms duration
+            $subcategory.slideUp(300);
+            $(this).find('.categoBoxTitle').removeClass('activey'); // Remove 'activey' class
+            $(this).find('.fa-chevron-down').removeClass('rotate'); // Rotate the chevron back
+        } else {
+            // Call the function to open the subcategory
+            openSubcategory(categoryId);
+        }
+    });
+
+    // Handle clicks on main menu links
+    $('.main-menu__link').click(function(event) {
+        var targetId = $(this).attr('href').split('#')[1]; // Get the target ID from the link
+        var categoryId = null;
+
+        // Find the corresponding category based on the target ID
+        $('.goToCategoTarget').each(function() {
+            if ($(this).find('.categoBoxTitle').attr('id') === targetId) {
+                categoryId = $(this).data('category'); // Get the corresponding category ID
+            }
+        });
+
+        if (categoryId) {
+            // Allow the link to navigate normally to the new page
+            openSubcategory(categoryId); // Open the corresponding subcategory
+        }
+    });
+
+    // Check if there's a hash in the URL and open the corresponding subcategory on page load
+    $(window).on('load', function() {
+        var hash = window.location.hash; // Get the hash from the URL
+        if (hash) {
+            var targetId = hash.substring(1); // Remove the '#' from the hash
+            var categoryId = null;
+
+            // Find the corresponding category based on the target ID
+            $('.goToCategoTarget').each(function() {
+                if ($(this).find('.categoBoxTitle').attr('id') === targetId) {
+                    categoryId = $(this).data('category'); // Get the corresponding category ID
+                }
+            });
+
+            if (categoryId) {
+                openSubcategory(categoryId); // Open the corresponding subcategory
+            }
+        } else {
+         /*   activateFirstCategory();  // If there's no hash, activate the first category
+        }
+    });
+
+    // Call the function to add chevron icons
+    addChevronIcons();
+
+    // Call the function to activate the first category when the page loads
+  /*  activateFirstCategory();
+
+})(jQuery);*/
+    
+    
+(function($) {
+  $('.tdnn').click(function() {
+    $("body").toggleClass('light');
+    $(".moon").toggleClass('sun');
+    $(".tdnn").toggleClass('day');
+
+    // Change the logo based on the current mode
+    if ($("body").hasClass('light')) {
+      $(".logo__image img").attr('src', 'images/logo.png'); // Change to white logo
+      $(".nightMode").prop('disabled', true); // Disable night mode CSS
+      $(".dayMode").prop('disabled', false);  // Ensure day mode CSS is enabled
+    } else {
+      $(".logo__image img").attr('src', 'images/logo_white.png'); // Revert to original logo
+      $(".nightMode").prop('disabled', false); // Enable night mode CSS if not in day mode
+    }
+  });
+})(jQuery);
 
 
+$(function () {
+    // Function to update the title based on the button clicked
+    $('.section-header__groups-button').on('click', function () {
+        // Get the text of the clicked button
+        var buttonText = $(this).text();
+
+        // Find the title element and update its text based on the button clicked
+        if (buttonText === 'Nouveautés') {
+            $('.section-header__title').text('Nouveautés');
+        } else if (buttonText === 'Promotions') {
+            $('.section-header__title').text('Promotions');
+        } else if (buttonText === 'Aroma') {
+            $('.section-header__title').text('Aroma');
+        }
+
+        // Optional: Remove active class from all buttons and add it to the clicked button
+        $('.section-header__groups-button').removeClass('section-header__groups-button--active');
+        $(this).addClass('section-header__groups-button--active');
+    });
+});
+
+(function($) {
+    $('#whatsapp-chat').on('click', function() {
+        window.open('https://wa.me/yourwhatsappnumber', '_blank');
+    });
+})(jQuery);
 
 
 

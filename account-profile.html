@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fr" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
-    <title>Account Profile — Red Parts</title>
+    <title>Home Two — Red ts</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <!-- fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i">
@@ -15,11 +15,13 @@
     <link rel="stylesheet" href="vendor/photoswipe/photoswipe.css">
     <link rel="stylesheet" href="vendor/photoswipe/default-skin/default-skin.css">
     <link rel="stylesheet" href="vendor/select2/css/select2.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" class="dayMode">
+     <link rel="stylesheet" href="css/midday.css" class="midday" disabled>
+    <link rel="stylesheet" href="css/night.css" class="nightMode" disabled>
     <link rel="stylesheet" href="css/style.header-classic-variant-one.css" media="(min-width: 1200px)">
     <link rel="stylesheet" href="css/style.mobile-header-variant-one.css" media="(max-width: 1199px)">
     <!-- font - fontawesome -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -65,7 +67,7 @@
                         </a>
                         <div class="mobile-header__search mobile-search">
                             <form class="mobile-search__body">
-                                <input type="text" class="mobile-search__input" placeholder="Enter keyword or part number">
+                                <input type="text" class="mobile-search__input" placeholder="Enter keyword or t number">
                                 <button type="button" class="mobile-search__vehicle-picker" aria-label="Select Vehicle">
                                     <svg width="20" height="20">
                                         <path d="M6.6,2c2,0,4.8,0,6.8,0c1,0,2.9,0.8,3.6,2.2C17.7,5.7,17.9,7,18.4,7C20,7,20,8,20,8v1h-1v7.5c0,0.8-0.7,1.5-1.5,1.5h-1
@@ -144,21 +146,32 @@
             </div>
         </header>
         <!-- site__mobile-header / end -->
-         <!-- site__header -->
+        <!-- site__header -->
         <header class="site__header">
             <div class="header">
                 <div class="header__megamenu-area megamenu-area"></div>
                 <div class="header__topbar-classic-bg"></div>
                 <div class="header__topbar-classic">
                     <div class="topbar topbar--classic">
-                        <div class="topbar__item-text">Bienvenue M. Admin</div>
+                        <div class="topbar__item-text">Bienvenue Admin</div>
+                           <a href="" class="phone__body">
+                            <div class="phone__number">+212 522 31 93 54</div>
+                        </a>
                         <div class="topbar__item-spring"></div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="tdnn">
+                            <div class="moon">
+                            </div>
+                        </div>
                         <div class="topbar__item-button">
                                        <span class="settingsName">Paramètres&nbsp;&nbsp;<i class="fa-solid fa-chevron-down"></i></span>
                                         <!-- Header Top Menu's Dropdown -->
                                         <ul class="user-sub-menu">
-                                            <li><a href="compte.html">Mon Compte</a></li>
-                                            <li><a href="panier.html">Panier</a></li>
+                                            <li><a href="account-dashboard.html">Mon Compte</a></li>
+                                            <li><a href="cart.html">Panier</a></li>
                                             <li><a href="wishlist.html#scroll-target">Wishlist</a></li>
                                             <li><a href="#">Déconnexion</a></li>
                                         </ul>
@@ -182,13 +195,13 @@
                                     <a href="promotion.html" class="main-menu__link"><i class="fa-solid fa-fire"></i>&nbsp;&nbsp;PROMOTIONS</a>
                                  </li>
                                  <li class="main-menu__item">
-                                    <a href="categorie.html#lubrifiantTab" class="main-menu__link"><i class="fa-solid fa-oil-can"></i>&nbsp;&nbsp;LUBRIFIANTS</a>
+                                   <a href="categorie.html#filtrationTab" class="main-menu__link"><i class="fa-solid fa-filter"></i>&nbsp;&nbsp;FILTRATION</a>
                                  </li>
                                  <li class="main-menu__item">
-                                    <a href="categorie.html#filtrationTab" class="main-menu__link"><i class="fa-solid fa-filter"></i>&nbsp;&nbsp;FILTRATION</a>
+                                   <a href="categorie.html#lubrifiantTab" class="main-menu__link"><i class="fa-solid fa-oil-can"></i>&nbsp;&nbsp;CAPSERVICE</a>
                                  </li>
                                  <li class="main-menu__item">
-                                    <a href="famille.html#capcarrosserieTab" class="main-menu__link"><i class="fa-solid fa-car-side"></i>&nbsp;&nbsp;CAPCARROSSERIE</a>
+                                    <a href="categorie.html#carrosserieTab" class="main-menu__link"><i class="fa-solid fa-car-side"></i>&nbsp;&nbsp;CAPCARROSSERIE</a>
                                  </li>
                                  <li class="main-menu__item">
                                     <a href="accueil.html" class="main-menu__link"><i class="fa-solid fa-spray-can-sparkles"></i>&nbsp;&nbsp;AROMA</a>
@@ -200,10 +213,11 @@
                         </div>
                     </div>
                     <div class="header__navbar-phone phone">
-                        <a href="" class="phone__body">
+                       <!-- <a href="" class="phone__body">
                             <div class="phone__title"><i class="fa-solid fa-square-phone"></i></div>
                             <div class="phone__number">+212 522 31 93 54</div>
-                        </a>
+                        </a>-->
+                         <a href="assistance.html" class="main-menu__link helpDesk"><i class="fa-solid fa-circle-info"></i>&nbsp;&nbsp;Assistance</a>
                     </div>
                 </div>
                 <div class="header__logo">
@@ -228,13 +242,7 @@
                                     </svg>
                                 </span>
                             </button>
-                               <div class="select-custom">
-                                        <select id="type" name="type" required="">
-                                            <option value="1">&nbsp;Référence&nbsp;</option>
-                                            <option value="2">&nbsp;Désignation&nbsp;</option>
-                                            <option value="3">&nbsp;Famille&nbsp;</option>
-                                        </select>
-                            </div>
+                               
                             <div class="search__box"></div>
                             <div class="search__decor">
                                 <div class="search__decor-start"></div>
@@ -582,6 +590,7 @@
         <!-- site__header end -->
         <!-- site__body -->
         <div class="site__body account-profile">
+            <a href="https://wa.me/yourwhatsappnumber" id="whatsapp-chat" target="_blank"><i class="fa-brands fa-whatsapp"></i>&nbsp;&nbsp;Discutez avec nous</a>
             <div class="block-space block-space--layout--after-header"></div>
             <div class="block">
                 <div class="container container--max--xl">
@@ -603,7 +612,7 @@
         <a href="account-addresses.html">Adresses</a>
     </li>
     <li class="account-nav__item ">
-        <a href="account-edit-address.html">Modifier l'adresse</a>
+         <a href="account-edit-address.html">Modifier l'adresse</a>
     </li>
     <li class="account-nav__item ">
         <a href="account-password.html">Mot de passe</a>
@@ -763,8 +772,7 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
                             <p class="copyright-area-text">Copyright © <span id="copyright-year">2024</span> <a class="copyright-link" href="accueil.html">Capram</a></p>
                             <!-- copyright / end -->
                         </div>
-                        <div class="site-footer__payments">
-                            <img src="images/logo_white.png" alt="">
+                        <div class="site-footer__payments">     <img src="images/logo_white.png" alt="">
                         </div>
                     </div>
                 </div>
