@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fr" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="vendor/photoswipe/photoswipe.css">
     <link rel="stylesheet" href="vendor/photoswipe/default-skin/default-skin.css">
     <link rel="stylesheet" href="vendor/select2/css/select2.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" class="dayMode">
+     <link rel="stylesheet" href="css/midday.css" class="midday" disabled>
+    <link rel="stylesheet" href="css/night.css" class="nightMode">
     <link rel="stylesheet" href="css/style.header-classic-variant-one.css" media="(min-width: 1200px)">
     <link rel="stylesheet" href="css/style.mobile-header-variant-one.css" media="(max-width: 1199px)">
     <!-- font - fontawesome -->
@@ -151,14 +153,25 @@
                 <div class="header__topbar-classic-bg"></div>
                 <div class="header__topbar-classic">
                     <div class="topbar topbar--classic">
-                        <div class="topbar__item-text">Bienvenue M. Admin</div>
+                        <div class="topbar__item-text">Bienvenue Admin</div>
+                           <a href="" class="phone__body">
+                            <div class="phone__number">+212 522 31 93 54</div>
+                        </a>
                         <div class="topbar__item-spring"></div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="tdnn">
+                            <div class="moon">
+                            </div>
+                        </div>
                         <div class="topbar__item-button">
                                        <span class="settingsName">Paramètres&nbsp;&nbsp;<i class="fa-solid fa-chevron-down"></i></span>
                                         <!-- Header Top Menu's Dropdown -->
                                         <ul class="user-sub-menu">
-                                            <li><a href="compte.html">Mon Compte</a></li>
-                                            <li><a href="panier.html">Panier</a></li>
+                                            <li><a href="account-dashboard.html">Mon Compte</a></li>
+                                            <li><a href="cart.html">Panier</a></li>
                                             <li><a href="wishlist.html#scroll-target">Wishlist</a></li>
                                             <li><a href="#">Déconnexion</a></li>
                                         </ul>
@@ -182,13 +195,13 @@
                                     <a href="promotion.html" class="main-menu__link"><i class="fa-solid fa-fire"></i>&nbsp;&nbsp;PROMOTIONS</a>
                                  </li>
                                  <li class="main-menu__item">
-                                    <a href="categorie.html#lubrifiantTab" class="main-menu__link"><i class="fa-solid fa-oil-can"></i>&nbsp;&nbsp;LUBRIFIANTS</a>
+                                   <a href="categorie.html#filtrationTab" class="main-menu__link"><i class="fa-solid fa-filter"></i>&nbsp;&nbsp;FILTRATION</a>
                                  </li>
                                  <li class="main-menu__item">
-                                    <a href="categorie.html#filtrationTab" class="main-menu__link"><i class="fa-solid fa-filter"></i>&nbsp;&nbsp;FILTRATION</a>
+                                   <a href="categorie.html#lubrifiantTab" class="main-menu__link"><i class="fa-solid fa-oil-can"></i>&nbsp;&nbsp;CAPSERVICE</a>
                                  </li>
                                  <li class="main-menu__item">
-                                    <a href="famille.html#capcarrosserieTab" class="main-menu__link"><i class="fa-solid fa-car-side"></i>&nbsp;&nbsp;CAPCARROSSERIE</a>
+                                    <a href="categorie.html#carrosserieTab" class="main-menu__link"><i class="fa-solid fa-car-side"></i>&nbsp;&nbsp;CAPCARROSSERIE</a>
                                  </li>
                                  <li class="main-menu__item">
                                     <a href="accueil.html" class="main-menu__link"><i class="fa-solid fa-spray-can-sparkles"></i>&nbsp;&nbsp;AROMA</a>
@@ -200,17 +213,18 @@
                         </div>
                     </div>
                     <div class="header__navbar-phone phone">
-                        <a href="" class="phone__body">
+                       <!-- <a href="" class="phone__body">
                             <div class="phone__title"><i class="fa-solid fa-square-phone"></i></div>
                             <div class="phone__number">+212 522 31 93 54</div>
-                        </a>
+                        </a>-->
+                         <a href="assistance.html" class="main-menu__link helpDesk"><i class="fa-solid fa-circle-info"></i>&nbsp;&nbsp;Assistance</a>
                     </div>
                 </div>
                 <div class="header__logo">
                     <a href="accueil.html" class="logo">
                         <div class="logo__image">
                             <!-- logo -->
-                            <a href="accueil.html"><img src="images/logo.png" alt=""></a>
+                            <a href="accueil.html"><img src="images/logo_white.png" alt=""></a>
                             <!-- logo / end -->
                         </div>
                     </a>
@@ -228,223 +242,13 @@
                                     </svg>
                                 </span>
                             </button>
-                               <div class="select-custom">
-                                        <select id="type" name="type" required="">
-                                            <option value="1">&nbsp;Référence&nbsp;</option>
-                                            <option value="2">&nbsp;Désignation&nbsp;</option>
-                                            <option value="3">&nbsp;Famille&nbsp;</option>
-                                        </select>
-                            </div>
+                               
                             <div class="search__box"></div>
                             <div class="search__decor">
                                 <div class="search__decor-start"></div>
                                 <div class="search__decor-end"></div>
                             </div>
-                            <div class="search__dropdown search__dropdown--suggestions suggestions">
-                                <div class="suggestions__group">
-                                    <div class="suggestions__group-title">Products</div>
-                                    <div class="suggestions__group-content">
-                                        <a class="suggestions__item suggestions__product" href="">
-                                            <div class="suggestions__product-image image image--type--product">
-                                                <div class="image__body">
-                                                    <img class="image__tag" src="images/products/product-2-40x40.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="suggestions__product-info">
-                                                <div class="suggestions__product-name">Brandix Brake Kit BDX-750Z370-S</div>
-                                                <div class="suggestions__product-rating">
-                                                    <div class="suggestions__product-rating-stars">
-                                                        <div class="rating">
-                                                            <div class="rating__body">
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="suggestions__product-rating-label">5 on 22 Avis</div>
-                                                </div>
-                                            </div>
-                                            <div class="suggestions__product-price">$224.00</div>
-                                        </a>
-                                        <a class="suggestions__item suggestions__product" href="">
-                                            <div class="suggestions__product-image image image--type--product">
-                                                <div class="image__body">
-                                                    <img class="image__tag" src="images/products/product-3-40x40.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="suggestions__product-info">
-                                                <div class="suggestions__product-name">Left Headlight Of Brandix Z54</div>
-                                                <div class="suggestions__product-rating">
-                                                    <div class="suggestions__product-rating-stars">
-                                                        <div class="rating">
-                                                            <div class="rating__body">
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star"></div>
-                                                                <div class="rating__star"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="suggestions__product-rating-label">3 on 14 Avis</div>
-                                                </div>
-                                            </div>
-                                            <div class="suggestions__product-price">$349.00</div>
-                                        </a>
-                                        <a class="suggestions__item suggestions__product" href="">
-                                            <div class="suggestions__product-image image image--type--product">
-                                                <div class="image__body">
-                                                    <img class="image__tag" src="images/products/product-4-40x40.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="suggestions__product-info">
-                                                <div class="suggestions__product-name">Glossy Gray 19" Aluminium Wheel AR-19</div>
-                                                <div class="suggestions__product-rating">
-                                                    <div class="suggestions__product-rating-stars">
-                                                        <div class="rating">
-                                                            <div class="rating__body">
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star rating__star--active"></div>
-                                                                <div class="rating__star"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="suggestions__product-rating-label">4 on 26 Avis</div>
-                                                </div>
-                                            </div>
-                                            <div class="suggestions__product-price">$589.00</div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="suggestions__group">
-                                    <div class="suggestions__group-title">Categories</div>
-                                    <div class="suggestions__group-content">
-                                        <a class="suggestions__item suggestions__category" href="">Headlights & Lighting</a>
-                                        <a class="suggestions__item suggestions__category" href="">Fuel System & Filters</a>
-                                        <a class="suggestions__item suggestions__category" href="">Body Parts & Mirrors</a>
-                                        <a class="suggestions__item suggestions__category" href="">Interior Accessories</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="search__dropdown search__dropdown--vehicle-picker vehicle-picker">
-                                <div class="search__dropdown-arrow"></div>
-                                <div class="vehicle-picker__panel vehicle-picker__panel--list vehicle-picker__panel--active" data-panel="list">
-                                    <div class="vehicle-picker__panel-body">
-                                        <div class="vehicle-picker__text">
-                                            Select a vehicle to find exact fit parts
-                                        </div>
-                                        <div class="vehicles-list">
-                                            <div class="vehicles-list__body">
-                                                <label class="vehicles-list__item">
-                                                    <span class="vehicles-list__item-radio input-radio">
-                                                        <span class="input-radio__body">
-                                                            <input class="input-radio__input" name="header-vehicle" type="radio">
-                                                            <span class="input-radio__circle"></span>
-                                                        </span>
-                                                    </span>
-                                                    <span class="vehicles-list__item-info">
-                                                        <span class="vehicles-list__item-name">2011 Ford Focus S</span>
-                                                        <span class="vehicles-list__item-details">Engine 2.0L 1742DA L4 FI Turbo</span>
-                                                    </span>
-                                                    <button type="button" class="vehicles-list__item-remove">
-                                                        <svg width="16" height="16">
-                                                            <path d="M2,4V2h3V1h6v1h3v2H2z M13,13c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V5h10V13z" />
-                                                        </svg>
-                                                    </button>
-                                                </label>
-                                                <label class="vehicles-list__item">
-                                                    <span class="vehicles-list__item-radio input-radio">
-                                                        <span class="input-radio__body">
-                                                            <input class="input-radio__input" name="header-vehicle" type="radio">
-                                                            <span class="input-radio__circle"></span>
-                                                        </span>
-                                                    </span>
-                                                    <span class="vehicles-list__item-info">
-                                                        <span class="vehicles-list__item-name">2019 Audi Q7 Premium</span>
-                                                        <span class="vehicles-list__item-details">Engine 3.0L 5626CC L6 QK</span>
-                                                    </span>
-                                                    <button type="button" class="vehicles-list__item-remove">
-                                                        <svg width="16" height="16">
-                                                            <path d="M2,4V2h3V1h6v1h3v2H2z M13,13c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V5h10V13z" />
-                                                        </svg>
-                                                    </button>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="vehicle-picker__actions">
-                                            <button type="button" class="btn btn-primary btn-sm" data-to-panel="form">Add A Vehicle</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="vehicle-picker__panel vehicle-picker__panel--form" data-panel="form">
-                                    <div class="vehicle-picker__panel-body">
-                                        <div class="vehicle-form vehicle-form--layout--search">
-                                            <div class="vehicle-form__item vehicle-form__item--select">
-                                                <select class="form-control form-control-select2" aria-label="Year">
-                                                    <option value="none">Select Year</option>
-                                                    <option>2010</option>
-                                                    <option>2011</option>
-                                                    <option>2012</option>
-                                                    <option>2013</option>
-                                                    <option>2014</option>
-                                                    <option>2015</option>
-                                                    <option>2016</option>
-                                                    <option>2017</option>
-                                                    <option>2018</option>
-                                                    <option>2019</option>
-                                                    <option>2020</option>
-                                                </select>
-                                            </div>
-                                            <div class="vehicle-form__item vehicle-form__item--select">
-                                                <select class="form-control form-control-select2" aria-label="Brand" disabled>
-                                                    <option value="none">Select Brand</option>
-                                                    <option>Audi</option>
-                                                    <option>BMW</option>
-                                                    <option>Ferrari</option>
-                                                    <option>Ford</option>
-                                                    <option>KIA</option>
-                                                    <option>Nissan</option>
-                                                    <option>Tesla</option>
-                                                    <option>Toyota</option>
-                                                </select>
-                                            </div>
-                                            <div class="vehicle-form__item vehicle-form__item--select">
-                                                <select class="form-control form-control-select2" aria-label="Model" disabled>
-                                                    <option value="none">Select Model</option>
-                                                    <option>Explorer</option>
-                                                    <option>Focus S</option>
-                                                    <option>Fusion SE</option>
-                                                    <option>Mustang</option>
-                                                </select>
-                                            </div>
-                                            <div class="vehicle-form__item vehicle-form__item--select">
-                                                <select class="form-control form-control-select2" aria-label="Engine" disabled>
-                                                    <option value="none">Select Engine</option>
-                                                    <option>Gas 1.6L 125 hp AT/L4</option>
-                                                    <option>Diesel 2.5L 200 hp AT/L5</option>
-                                                    <option>Diesel 3.0L 250 hp MT/L5</option>
-                                                </select>
-                                            </div>
-                                            <div class="vehicle-form__divider">Or</div>
-                                            <div class="vehicle-form__item">
-                                                <input type="text" class="form-control" placeholder="Enter VIN number" aria-label="VIN number">
-                                            </div>
-                                        </div>
-                                        <div class="vehicle-picker__actions">
-                                            <div class="search__car-selector-link">
-                                                <a href="" data-to-panel="list">Back to vehicles list</a>
-                                            </div>
-                                            <button type="button" class="btn btn-primary btn-sm" disabled>Add A Vehicle</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
                     </div>
                 </div>
                 <div class="header__indicators">
@@ -587,13 +391,18 @@
                 <div class="container">
                     <div class="block-slideshow__carousel">
                         <div class="owl-carousel">
-                            <a class="block-slideshow__item" href="">
-                                <span class="block-slideshow__item-image block-slideshow__item-image--desktop" style="background-image: url('images/slides/slide-3.jpg')"></span>
-                                <span class="block-slideshow__item-image block-slideshow__item-image--mobile" style="background-image: url('images/slides/slide-3-mobile.jpg')"></span>
-                                <span class="block-slideshow__item-button">
-                                    Achetez maintenant
-                                </span>
-                            </a>
+                       <a class="block-slideshow__item" href="">
+    <span class="block-slideshow__item-image block-slideshow__item-image--desktop">
+         <video src="video/vid.mp4" type="video/mp4" style="width: 100%; height: 100%; object-fit: cover;" autoplay muted>
+            <source src="video/vid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </span>
+    <span class="block-slideshow__item-button">
+        Achetez maintenant
+    </span>
+</a>
+
                             <a class="block-slideshow__item" href="">
                                 <span class="block-slideshow__item-image block-slideshow__item-image--desktop" style="background-image: url('images/slides/slide-2.jpg')"></span>
                                 <span class="block-slideshow__item-image block-slideshow__item-image--mobile" style="background-image: url('images/slides/slide-2-mobile.jpg')"></span>
@@ -669,6 +478,101 @@
                 <div class="container">
                     <ul class="block-brands__list">
                         <li class="block-brands__item">
+                            <a href="" class="block-brands__item-link">
+                                <img src="images/main-brands/0.png" alt="">
+                            </a>
+                        </li>
+                        <li class="block-brands__divider" role="presentation"></li>
+                        <li class="block-brands__item">
+                            <a href="" class="block-brands__item-link">
+                                <img src="images/main-brands/1.png" alt="">
+                            </a>
+                        </li>
+                        <li class="block-brands__divider" role="presentation"></li>
+                        <li class="block-brands__item">
+                            <a href="" class="block-brands__item-link">
+                                <img src="images/main-brands/3.png" alt="">
+                            </a>
+                        </li>
+                        <li class="block-brands__divider" role="presentation"></li>
+                        <li class="block-brands__item">
+                            <a href="" class="block-brands__item-link">
+                                <img src="images/main-brands/4.png" alt="">
+                            </a>
+                        </li>
+                        <li class="block-brands__divider" role="presentation"></li>
+                        <li class="block-brands__item">
+                            <a href="" class="block-brands__item-link">
+                                <img src="images/main-brands/5.png" alt="">
+                            </a>
+                        </li>
+                        <li class="block-brands__divider" role="presentation"></li>
+                        <li class="block-brands__item">
+                            <a href="" class="block-brands__item-link">
+                                <img src="images/main-brands/6.png" alt="">
+                            </a>
+                        </li>
+                        <li class="block-brands__divider" role="presentation"></li>
+                        <li class="block-brands__item">
+                            <a href="" class="block-brands__item-link">
+                                <img src="images/main-brands/7.png" alt="">
+                            </a>
+                        </li>
+                        <li class="block-brands__divider" role="presentation"></li>
+                        <li class="block-brands__item">
+                            <a href="" class="block-brands__item-link">
+                                <img src="images/main-brands/8.png" alt="">
+                            </a>
+                        </li>
+                        <li class="block-brands__divider" role="presentation"></li>
+                        <li class="block-brands__item">
+                            <a href="" class="block-brands__item-link">
+                                <img src="images/main-brands/9.png" alt="">
+                            </a>
+                        </li>
+                        <li class="block-brands__divider" role="presentation"></li>
+                        <li class="block-brands__item">
+                            <a href="" class="block-brands__item-link">
+                                <img src="images/main-brands/10.png" alt="">
+                            </a>
+                        </li>
+                        <li class="block-brands__divider" role="presentation"></li>
+                        <li class="block-brands__item">
+                            <a href="" class="block-brands__item-link">
+                                <img src="images/main-brands/11.png" alt="">
+                            </a>
+                        </li>
+                        <li class="block-brands__divider" role="presentation"></li>
+                        <li class="block-brands__item">
+                            <a href="" class="block-brands__item-link">
+                                <img src="images/main-brands/12.png" alt="">
+                            </a>
+                        </li>
+                        <li class="block-brands__divider" role="presentation"></li>
+                        <li class="block-brands__item">
+                            <a href="" class="block-brands__item-link">
+                                <img src="images/main-brands/13.png" alt="">
+                            </a>
+                        </li>
+                        <li class="block-brands__divider" role="presentation"></li>
+                        <li class="block-brands__item">
+                            <a href="" class="block-brands__item-link">
+                                <img src="images/main-brands/14.png" alt="">
+                            </a>
+                        </li>
+                        <li class="block-brands__divider" role="presentation"></li>
+                        <li class="block-brands__item">
+                            <a href="" class="block-brands__item-link">
+                                <img src="images/main-brands/15.png" alt="">
+                            </a>
+                        </li>
+                        <li class="block-brands__divider" role="presentation"></li>
+                        <li class="block-brands__item">
+                            <a href="" class="block-brands__item-link">
+                                <img src="images/main-brands/16.png" alt="">
+                            </a>
+                        </li>
+                                  <li class="block-brands__item">
                             <a href="" class="block-brands__item-link">
                                 <img src="images/main-brands/0.png" alt="">
                             </a>
@@ -965,7 +869,7 @@
                             <div class="section-header__spring"></div>
                             <ul class="section-header__groups">
                                 <li class="section-header__groups-item">
-                                    <button type="button" class="section-header__groups-button section-header__groups-button--active">Toutes</button>
+                                    <button type="button" class="section-header__groups-button section-header__groups-button--active">Nouveautés</button>
                                 </li>
                                 <li class="section-header__groups-item">
                                     <button type="button" class="section-header__groups-button">Promotions</button>
@@ -995,7 +899,7 @@
                         <div class="block-products-carousel__carousel-loader"></div>
                         <div class="owl-carousel">
                             <!-- product 1 -->
-                            <div class="block-products-carousel__column">
+                             <div class="block-products-carousel__column">
                                 <div class="block-products-carousel__cell">
                                     <div class="product-card product-card--layout--grid">
                                         <div class="product-card__image">
@@ -1006,6 +910,7 @@
                                             </div>
                                         </div>
                                         <div class="product-card__info">
+
                                             <div class="product-card__name">
                                                 <div>
                                                     <a href="product-full.html">Brandix Sk Plug Kit ASR-400</a>
@@ -1018,26 +923,35 @@
                                                         <div class="rating__star rating__star--active"></div>
                                                         <div class="rating__star rating__star--active"></div>
                                                         <div class="rating__star rating__star--active"></div>
-                                                        <div class="rating__star"></div>
+                                                        <div class="rating__star rating__star--active"></div>
                                                     </div>
                                                 </div>
-                                                <div class="product-card__rating-label">4 on 3 Avis</div>
+                                                <div class="product-card__rating-label">9 on 18 Avis</div>
                                             </div>
                                         </div>
-                                        <div class="product-card__footer">
-                                            <div class="product-card__prices">
-                                                <div class="product-card__price product-card__price--current">190.00 DH</div>
-                                            </div>
-                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
-                                                <svg width="20" height="20">
-                                                    <circle cx="7" cy="17" r="2" />
-                                                    <circle cx="15" cy="17" r="2" />
-                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
+                                        <div class="product-card__footer ">
+                                                        <div class="product-card__prices">
+                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="bottomFooterWrapper fixBg-a">
+                                                            <div class="input-number">
+                                                                <input class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
+                                                                <div class="input-number__add"></div>
+                                                                <div class="input-number__sub"></div>
+                                                            </div>
+
+                                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+                                                                <svg width="20" height="20">
+                                                                    <circle cx="7" cy="17" r="2"></circle>
+                                                                    <circle cx="15" cy="17" r="2"></circle>
+                                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
 	V1.4C0,1.2,0.2,1,0.4,1h2.5c1,0,1.8,0.6,2.1,1.6L5.1,3l2.3,6.8c0,0.1,0.2,0.2,0.3,0.2h8.6c0.1,0,0.3-0.1,0.3-0.2l1.3-4.4
-	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z" />
-                                                </svg>
-                                            </button>
-                                        </div>
+	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -1072,20 +986,29 @@
                                                 <div class="product-card__rating-label">5 on 22 Avis</div>
                                             </div>
                                         </div>
-                                        <div class="product-card__footer">
-                                            <div class="product-card__prices">
-                                                <div class="product-card__price product-card__price--current">224.00 DH</div>
-                                            </div>
-                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
-                                                <svg width="20" height="20">
-                                                    <circle cx="7" cy="17" r="2" />
-                                                    <circle cx="15" cy="17" r="2" />
-                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
+                                        <div class="product-card__footer ">
+                                                        <div class="product-card__prices">
+                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="bottomFooterWrapper">
+                                                            <div class="input-number">
+                                                                <input class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
+                                                                <div class="input-number__add"></div>
+                                                                <div class="input-number__sub"></div>
+                                                            </div>
+
+                                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+                                                                <svg width="20" height="20">
+                                                                    <circle cx="7" cy="17" r="2"></circle>
+                                                                    <circle cx="15" cy="17" r="2"></circle>
+                                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
 	V1.4C0,1.2,0.2,1,0.4,1h2.5c1,0,1.8,0.6,2.1,1.6L5.1,3l2.3,6.8c0,0.1,0.2,0.2,0.3,0.2h8.6c0.1,0,0.3-0.1,0.3-0.2l1.3-4.4
-	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z" />
-                                                </svg>
-                                            </button>
-                                        </div>
+	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -1121,20 +1044,29 @@
                                                 <div class="product-card__rating-label">3 on 14 Avis</div>
                                             </div>
                                         </div>
-                                        <div class="product-card__footer">
-                                            <div class="product-card__prices">
-                                                <div class="product-card__price product-card__price--current">224.00 DH</div>
-                                            </div>
-                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
-                                                <svg width="20" height="20">
-                                                    <circle cx="7" cy="17" r="2" />
-                                                    <circle cx="15" cy="17" r="2" />
-                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
+                                       <div class="product-card__footer ">
+                                                        <div class="product-card__prices">
+                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="bottomFooterWrapper">
+                                                            <div class="input-number">
+                                                                <input class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
+                                                                <div class="input-number__add"></div>
+                                                                <div class="input-number__sub"></div>
+                                                            </div>
+
+                                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+                                                                <svg width="20" height="20">
+                                                                    <circle cx="7" cy="17" r="2"></circle>
+                                                                    <circle cx="15" cy="17" r="2"></circle>
+                                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
 	V1.4C0,1.2,0.2,1,0.4,1h2.5c1,0,1.8,0.6,2.1,1.6L5.1,3l2.3,6.8c0,0.1,0.2,0.2,0.3,0.2h8.6c0.1,0,0.3-0.1,0.3-0.2l1.3-4.4
-	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z" />
-                                                </svg>
-                                            </button>
-                                        </div>
+	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -1171,20 +1103,29 @@
                                                 <div class="product-card__rating-label">4 on 26 Avis</div>
                                             </div>
                                         </div>
-                                        <div class="product-card__footer">
-                                            <div class="product-card__prices">
-                                                <div class="product-card__price product-card__price--current">589.00 DH</div>
-                                            </div>
-                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
-                                                <svg width="20" height="20">
-                                                    <circle cx="7" cy="17" r="2" />
-                                                    <circle cx="15" cy="17" r="2" />
-                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
+                                       <div class="product-card__footer ">
+                                                        <div class="product-card__prices">
+                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="bottomFooterWrapper">
+                                                            <div class="input-number">
+                                                                <input class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
+                                                                <div class="input-number__add"></div>
+                                                                <div class="input-number__sub"></div>
+                                                            </div>
+
+                                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+                                                                <svg width="20" height="20">
+                                                                    <circle cx="7" cy="17" r="2"></circle>
+                                                                    <circle cx="15" cy="17" r="2"></circle>
+                                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
 	V1.4C0,1.2,0.2,1,0.4,1h2.5c1,0,1.8,0.6,2.1,1.6L5.1,3l2.3,6.8c0,0.1,0.2,0.2,0.3,0.2h8.6c0.1,0,0.3-0.1,0.3-0.2l1.3-4.4
-	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z" />
-                                                </svg>
-                                            </button>
-                                        </div>
+	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -1220,20 +1161,29 @@
                                                 <div class="product-card__rating-label">4 on 9 Avis</div>
                                             </div>
                                         </div>
-                                        <div class="product-card__footer">
-                                            <div class="product-card__prices">
-                                                <div class="product-card__price product-card__price--current">149.00 DH</div>
-                                            </div>
-                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
-                                                <svg width="20" height="20">
-                                                    <circle cx="7" cy="17" r="2" />
-                                                    <circle cx="15" cy="17" r="2" />
-                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
+                                       <div class="product-card__footer ">
+                                                        <div class="product-card__prices">
+                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="bottomFooterWrapper">
+                                                            <div class="input-number">
+                                                                <input class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
+                                                                <div class="input-number__add"></div>
+                                                                <div class="input-number__sub"></div>
+                                                            </div>
+
+                                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+                                                                <svg width="20" height="20">
+                                                                    <circle cx="7" cy="17" r="2"></circle>
+                                                                    <circle cx="15" cy="17" r="2"></circle>
+                                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
 	V1.4C0,1.2,0.2,1,0.4,1h2.5c1,0,1.8,0.6,2.1,1.6L5.1,3l2.3,6.8c0,0.1,0.2,0.2,0.3,0.2h8.6c0.1,0,0.3-0.1,0.3-0.2l1.3-4.4
-	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z" />
-                                                </svg>
-                                            </button>
-                                        </div>
+	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -1269,20 +1219,29 @@
                                                 <div class="product-card__rating-label">5 on 2 Avis</div>
                                             </div>
                                         </div>
-                                        <div class="product-card__footer">
-                                            <div class="product-card__prices">
-                                                <div class="product-card__price product-card__price--current">230.00 DH</div>
-                                            </div>
-                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
-                                                <svg width="20" height="20">
-                                                    <circle cx="7" cy="17" r="2" />
-                                                    <circle cx="15" cy="17" r="2" />
-                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
+                                      <div class="product-card__footer ">
+                                                        <div class="product-card__prices">
+                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="bottomFooterWrapper">
+                                                            <div class="input-number">
+                                                                <input class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
+                                                                <div class="input-number__add"></div>
+                                                                <div class="input-number__sub"></div>
+                                                            </div>
+
+                                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+                                                                <svg width="20" height="20">
+                                                                    <circle cx="7" cy="17" r="2"></circle>
+                                                                    <circle cx="15" cy="17" r="2"></circle>
+                                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
 	V1.4C0,1.2,0.2,1,0.4,1h2.5c1,0,1.8,0.6,2.1,1.6L5.1,3l2.3,6.8c0,0.1,0.2,0.2,0.3,0.2h8.6c0.1,0,0.3-0.1,0.3-0.2l1.3-4.4
-	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z" />
-                                                </svg>
-                                            </button>
-                                        </div>
+	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -1318,25 +1277,34 @@
                                                 <div class="product-card__rating-label">0 on 0 Avis</div>
                                             </div>
                                         </div>
-                                        <div class="product-card__footer">
-                                            <div class="product-card__prices">
-                                                <div class="product-card__price product-card__price--current">452.00 DH</div>
-                                            </div>
-                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
-                                                <svg width="20" height="20">
-                                                    <circle cx="7" cy="17" r="2" />
-                                                    <circle cx="15" cy="17" r="2" />
-                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
+                                      <div class="product-card__footer ">
+                                                        <div class="product-card__prices">
+                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="bottomFooterWrapper">
+                                                            <div class="input-number">
+                                                                <input class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
+                                                                <div class="input-number__add"></div>
+                                                                <div class="input-number__sub"></div>
+                                                            </div>
+
+                                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+                                                                <svg width="20" height="20">
+                                                                    <circle cx="7" cy="17" r="2"></circle>
+                                                                    <circle cx="15" cy="17" r="2"></circle>
+                                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
 	V1.4C0,1.2,0.2,1,0.4,1h2.5c1,0,1.8,0.6,2.1,1.6L5.1,3l2.3,6.8c0,0.1,0.2,0.2,0.3,0.2h8.6c0.1,0,0.3-0.1,0.3-0.2l1.3-4.4
-	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z" />
-                                                </svg>
-                                            </button>
-                                        </div>
+	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- product 8 -->
-                            <div class="block-products-carousel__column">
+                           <div class="block-products-carousel__column">
                                 <div class="block-products-carousel__cell">
                                     <div class="product-card product-card--layout--grid">
 
@@ -1357,34 +1325,42 @@
                                             <div class="product-card__rating">
                                                 <div class="rating product-card__rating-stars">
                                                     <div class="rating__body">
-                                                        <div class="rating__star rating__star--active"></div>
-                                                        <div class="rating__star rating__star--active"></div>
-                                                        <div class="rating__star rating__star--active"></div>
+                                                        <div class="rating__star"></div>
+                                                        <div class="rating__star"></div>
+                                                        <div class="rating__star"></div>
                                                         <div class="rating__star"></div>
                                                         <div class="rating__star"></div>
                                                     </div>
                                                 </div>
-                                                <div class="product-card__rating-label">3 on 7 Avis</div>
+                                                <div class="product-card__rating-label">0 on 0 Avis</div>
                                             </div>
                                         </div>
-                                        <div class="product-card__footer">
-                                            <div class="product-card__prices">
-                                                <div class="product-card__price product-card__price--current">345.00 DH</div>
-                                            </div>
-                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
-                                                <svg width="20" height="20">
-                                                    <circle cx="7" cy="17" r="2" />
-                                                    <circle cx="15" cy="17" r="2" />
-                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
+                                      <div class="product-card__footer ">
+                                                        <div class="product-card__prices">
+                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="bottomFooterWrapper">
+                                                            <div class="input-number">
+                                                                <input class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
+                                                                <div class="input-number__add"></div>
+                                                                <div class="input-number__sub"></div>
+                                                            </div>
+
+                                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+                                                                <svg width="20" height="20">
+                                                                    <circle cx="7" cy="17" r="2"></circle>
+                                                                    <circle cx="15" cy="17" r="2"></circle>
+                                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
 	V1.4C0,1.2,0.2,1,0.4,1h2.5c1,0,1.8,0.6,2.1,1.6L5.1,3l2.3,6.8c0,0.1,0.2,0.2,0.3,0.2h8.6c0.1,0,0.3-0.1,0.3-0.2l1.3-4.4
-	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z" />
-                                                </svg>
-                                            </button>
-                                        </div>
+	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- product 9 -->
+                            </div><!-- product 9 -->
                             <div class="block-products-carousel__column">
                                 <div class="block-products-carousel__cell">
                                     <div class="product-card product-card--layout--grid">
@@ -1416,20 +1392,29 @@
                                                 <div class="product-card__rating-label">4 on 6 Avis</div>
                                             </div>
                                         </div>
-                                        <div class="product-card__footer">
-                                            <div class="product-card__prices">
-                                                <div class="product-card__price product-card__price--current">879.00 DH</div>
-                                            </div>
-                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
-                                                <svg width="20" height="20">
-                                                    <circle cx="7" cy="17" r="2" />
-                                                    <circle cx="15" cy="17" r="2" />
-                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
+                                       <div class="product-card__footer ">
+                                                        <div class="product-card__prices">
+                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="bottomFooterWrapper">
+                                                            <div class="input-number">
+                                                                <input class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
+                                                                <div class="input-number__add"></div>
+                                                                <div class="input-number__sub"></div>
+                                                            </div>
+
+                                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+                                                                <svg width="20" height="20">
+                                                                    <circle cx="7" cy="17" r="2"></circle>
+                                                                    <circle cx="15" cy="17" r="2"></circle>
+                                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
 	V1.4C0,1.2,0.2,1,0.4,1h2.5c1,0,1.8,0.6,2.1,1.6L5.1,3l2.3,6.8c0,0.1,0.2,0.2,0.3,0.2h8.6c0.1,0,0.3-0.1,0.3-0.2l1.3-4.4
-	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z" />
-                                                </svg>
-                                            </button>
-                                        </div>
+	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -1465,20 +1450,29 @@
                                                 <div class="product-card__rating-label">4 on 16 Avis</div>
                                             </div>
                                         </div>
-                                        <div class="product-card__footer">
-                                            <div class="product-card__prices">
-                                                <div class="product-card__price product-card__price--current">278.00 DH</div>
-                                            </div>
-                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
-                                                <svg width="20" height="20">
-                                                    <circle cx="7" cy="17" r="2" />
-                                                    <circle cx="15" cy="17" r="2" />
-                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
+                                        <div class="product-card__footer ">
+                                                        <div class="product-card__prices">
+                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="bottomFooterWrapper">
+                                                            <div class="input-number">
+                                                                <input class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
+                                                                <div class="input-number__add"></div>
+                                                                <div class="input-number__sub"></div>
+                                                            </div>
+
+                                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+                                                                <svg width="20" height="20">
+                                                                    <circle cx="7" cy="17" r="2"></circle>
+                                                                    <circle cx="15" cy="17" r="2"></circle>
+                                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
 	V1.4C0,1.2,0.2,1,0.4,1h2.5c1,0,1.8,0.6,2.1,1.6L5.1,3l2.3,6.8c0,0.1,0.2,0.2,0.3,0.2h8.6c0.1,0,0.3-0.1,0.3-0.2l1.3-4.4
-	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z" />
-                                                </svg>
-                                            </button>
-                                        </div>
+	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -1614,21 +1608,34 @@
                                                     <div class="product-card__rating-label">4 on 3 Avis</div>
                                                 </div>
                                             </div>
-                                            <div class="product-card__footer">
-                                                <div class="product-card__prices">
-                                                    <div class="product-card__price product-card__price--new">220.00 DH</div>
-                                                    <div class="product-card__price product-card__price--old">315.00 DH</div>
+                                           
+
+
+
+ <div class="product-card__footer ">
+                                                        <div class="product-card__prices">
+                                                     <div class="product-card__price product-card__price--new">349.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">415.00 DH</div>
                                                 </div>
-                                                <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
-                                                    <svg width="20" height="20">
-                                                        <circle cx="7" cy="17" r="2" />
-                                                        <circle cx="15" cy="17" r="2" />
-                                                        <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
+                                                        <br>
+                                                        <div class="bottomFooterWrapper">
+                                                            <div class="input-number">
+                                                                <input class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
+                                                                <div class="input-number__add"></div>
+                                                                <div class="input-number__sub"></div>
+                                                            </div>
+
+                                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+                                                                <svg width="20" height="20">
+                                                                    <circle cx="7" cy="17" r="2"></circle>
+                                                                    <circle cx="15" cy="17" r="2"></circle>
+                                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
 	V1.4C0,1.2,0.2,1,0.4,1h2.5c1,0,1.8,0.6,2.1,1.6L5.1,3l2.3,6.8c0,0.1,0.2,0.2,0.3,0.2h8.6c0.1,0,0.3-0.1,0.3-0.2l1.3-4.4
-	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z" />
-                                                    </svg>
-                                                </button>
-                                            </div>
+	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                         </div>
                                     </div>
                                     <div class="block-sale__item">
@@ -1661,21 +1668,34 @@
                                                     <div class="product-card__rating-label">5 on 22 Avis</div>
                                                 </div>
                                             </div>
-                                            <div class="product-card__footer">
-                                                <div class="product-card__prices">
+                                          
+
+
+
+ <div class="product-card__footer ">
+                                                        <div class="product-card__prices">
                                                      <div class="product-card__price product-card__price--new">349.00 DH</div>
                                                     <div class="product-card__price product-card__price--old">415.00 DH</div>
                                                 </div>
-                                                <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
-                                                    <svg width="20" height="20">
-                                                        <circle cx="7" cy="17" r="2" />
-                                                        <circle cx="15" cy="17" r="2" />
-                                                        <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
+                                                        <br>
+                                                        <div class="bottomFooterWrapper">
+                                                            <div class="input-number">
+                                                                <input class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
+                                                                <div class="input-number__add"></div>
+                                                                <div class="input-number__sub"></div>
+                                                            </div>
+
+                                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+                                                                <svg width="20" height="20">
+                                                                    <circle cx="7" cy="17" r="2"></circle>
+                                                                    <circle cx="15" cy="17" r="2"></circle>
+                                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
 	V1.4C0,1.2,0.2,1,0.4,1h2.5c1,0,1.8,0.6,2.1,1.6L5.1,3l2.3,6.8c0,0.1,0.2,0.2,0.3,0.2h8.6c0.1,0,0.3-0.1,0.3-0.2l1.3-4.4
-	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z" />
-                                                    </svg>
-                                                </button>
-                                            </div>
+	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                         </div>
                                     </div>
                                     <div class="block-sale__item">
@@ -1709,21 +1729,34 @@
                                                     <div class="product-card__rating-label">3 on 14 Avis</div>
                                                 </div>
                                             </div>
-                                            <div class="product-card__footer">
-                                                <div class="product-card__prices">
-                                                    <div class="product-card__price product-card__price--new">349.00 DH</div>
+                                         
+
+
+
+ <div class="product-card__footer ">
+                                                        <div class="product-card__prices">
+                                                     <div class="product-card__price product-card__price--new">349.00 DH</div>
                                                     <div class="product-card__price product-card__price--old">415.00 DH</div>
                                                 </div>
-                                                <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
-                                                    <svg width="20" height="20">
-                                                        <circle cx="7" cy="17" r="2" />
-                                                        <circle cx="15" cy="17" r="2" />
-                                                        <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
+                                                        <br>
+                                                        <div class="bottomFooterWrapper">
+                                                            <div class="input-number">
+                                                                <input class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
+                                                                <div class="input-number__add"></div>
+                                                                <div class="input-number__sub"></div>
+                                                            </div>
+
+                                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+                                                                <svg width="20" height="20">
+                                                                    <circle cx="7" cy="17" r="2"></circle>
+                                                                    <circle cx="15" cy="17" r="2"></circle>
+                                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
 	V1.4C0,1.2,0.2,1,0.4,1h2.5c1,0,1.8,0.6,2.1,1.6L5.1,3l2.3,6.8c0,0.1,0.2,0.2,0.3,0.2h8.6c0.1,0,0.3-0.1,0.3-0.2l1.3-4.4
-	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z" />
-                                                    </svg>
-                                                </button>
-                                            </div>
+	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                         </div>
                                     </div>
                                     <div class="block-sale__item">
@@ -1757,21 +1790,34 @@
                                                     <div class="product-card__rating-label">4 on 26 Avis</div>
                                                 </div>
                                             </div>
-                                            <div class="product-card__footer">
-                                                <div class="product-card__prices">
-                                                   <div class="product-card__price product-card__price--new">250.00 DH</div>
-                                                    <div class="product-card__price product-card__price--old">290.00 DH</div>
+
+
+
+
+ <div class="product-card__footer ">
+                                                        <div class="product-card__prices">
+                                                     <div class="product-card__price product-card__price--new">349.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">415.00 DH</div>
                                                 </div>
-                                                <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
-                                                    <svg width="20" height="20">
-                                                        <circle cx="7" cy="17" r="2" />
-                                                        <circle cx="15" cy="17" r="2" />
-                                                        <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
+                                                        <br>
+                                                        <div class="bottomFooterWrapper">
+                                                            <div class="input-number">
+                                                                <input class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
+                                                                <div class="input-number__add"></div>
+                                                                <div class="input-number__sub"></div>
+                                                            </div>
+
+                                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+                                                                <svg width="20" height="20">
+                                                                    <circle cx="7" cy="17" r="2"></circle>
+                                                                    <circle cx="15" cy="17" r="2"></circle>
+                                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
 	V1.4C0,1.2,0.2,1,0.4,1h2.5c1,0,1.8,0.6,2.1,1.6L5.1,3l2.3,6.8c0,0.1,0.2,0.2,0.3,0.2h8.6c0.1,0,0.3-0.1,0.3-0.2l1.3-4.4
-	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z" />
-                                                    </svg>
-                                                </button>
-                                            </div>
+	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                         </div>
                                     </div>
                                     <div class="block-sale__item">
@@ -1804,21 +1850,34 @@
                                                     <div class="product-card__rating-label">4 on 9 Avis</div>
                                                 </div>
                                             </div>
-                                            <div class="product-card__footer">
-                                                <div class="product-card__prices">
-                                                    <div class="product-card__price product-card__price--new">300.00 DH</div>
-                                                    <div class="product-card__price product-card__price--old">400.00 DH</div>
+                                            
+
+
+
+ <div class="product-card__footer ">
+                                                        <div class="product-card__prices">
+                                                     <div class="product-card__price product-card__price--new">349.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">415.00 DH</div>
                                                 </div>
-                                                <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
-                                                    <svg width="20" height="20">
-                                                        <circle cx="7" cy="17" r="2" />
-                                                        <circle cx="15" cy="17" r="2" />
-                                                        <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
+                                                        <br>
+                                                        <div class="bottomFooterWrapper">
+                                                            <div class="input-number">
+                                                                <input class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
+                                                                <div class="input-number__add"></div>
+                                                                <div class="input-number__sub"></div>
+                                                            </div>
+
+                                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+                                                                <svg width="20" height="20">
+                                                                    <circle cx="7" cy="17" r="2"></circle>
+                                                                    <circle cx="15" cy="17" r="2"></circle>
+                                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
 	V1.4C0,1.2,0.2,1,0.4,1h2.5c1,0,1.8,0.6,2.1,1.6L5.1,3l2.3,6.8c0,0.1,0.2,0.2,0.3,0.2h8.6c0.1,0,0.3-0.1,0.3-0.2l1.3-4.4
-	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z" />
-                                                    </svg>
-                                                </button>
-                                            </div>
+	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                         </div>
                                     </div>
                                     <div class="block-sale__item">
@@ -1898,21 +1957,34 @@
                                                     <div class="product-card__rating-label">0 on 0 Avis</div>
                                                 </div>
                                             </div>
-                                            <div class="product-card__footer">
-                                                <div class="product-card__prices">
-                                                   <div class="product-card__price product-card__price--new">340.00 DH</div>
-                                                    <div class="product-card__price product-card__price--old">400.00 DH</div>
+                                         
+
+
+
+ <div class="product-card__footer ">
+                                                        <div class="product-card__prices">
+                                                     <div class="product-card__price product-card__price--new">349.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">415.00 DH</div>
                                                 </div>
-                                                <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
-                                                    <svg width="20" height="20">
-                                                        <circle cx="7" cy="17" r="2" />
-                                                        <circle cx="15" cy="17" r="2" />
-                                                        <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
+                                                        <br>
+                                                        <div class="bottomFooterWrapper">
+                                                            <div class="input-number">
+                                                                <input class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
+                                                                <div class="input-number__add"></div>
+                                                                <div class="input-number__sub"></div>
+                                                            </div>
+
+                                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+                                                                <svg width="20" height="20">
+                                                                    <circle cx="7" cy="17" r="2"></circle>
+                                                                    <circle cx="15" cy="17" r="2"></circle>
+                                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
 	V1.4C0,1.2,0.2,1,0.4,1h2.5c1,0,1.8,0.6,2.1,1.6L5.1,3l2.3,6.8c0,0.1,0.2,0.2,0.3,0.2h8.6c0.1,0,0.3-0.1,0.3-0.2l1.3-4.4
-	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z" />
-                                                    </svg>
-                                                </button>
-                                            </div>
+	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                         </div>
                                     </div>
                               
@@ -1952,21 +2024,34 @@
                                                     <div class="product-card__rating-label">3 on 14 Avis</div>
                                                 </div>
                                             </div>
-                                            <div class="product-card__footer">
-                                                <div class="product-card__prices">
-                                                   <div class="product-card__price product-card__price--new">220.00 DH</div>
-                                                    <div class="product-card__price product-card__price--old">270.00 DH</div>
+                                          
+
+
+
+ <div class="product-card__footer ">
+                                                        <div class="product-card__prices">
+                                                     <div class="product-card__price product-card__price--new">349.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">415.00 DH</div>
                                                 </div>
-                                                <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
-                                                    <svg width="20" height="20">
-                                                        <circle cx="7" cy="17" r="2"></circle>
-                                                        <circle cx="15" cy="17" r="2"></circle>
-                                                        <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
+                                                        <br>
+                                                        <div class="bottomFooterWrapper">
+                                                            <div class="input-number">
+                                                                <input class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
+                                                                <div class="input-number__add"></div>
+                                                                <div class="input-number__sub"></div>
+                                                            </div>
+
+                                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+                                                                <svg width="20" height="20">
+                                                                    <circle cx="7" cy="17" r="2"></circle>
+                                                                    <circle cx="15" cy="17" r="2"></circle>
+                                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
 	V1.4C0,1.2,0.2,1,0.4,1h2.5c1,0,1.8,0.6,2.1,1.6L5.1,3l2.3,6.8c0,0.1,0.2,0.2,0.3,0.2h8.6c0.1,0,0.3-0.1,0.3-0.2l1.3-4.4
 	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z"></path>
-                                                    </svg>
-                                                </button>
-                                            </div>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                         </div>
                                     </div>
                               
@@ -1986,217 +2071,7 @@
             </div>
 
         <div class="block-space block-space--layout--divider-nl d-none"></div>
-        <div class="block block-posts-carousel block-posts-carousel--layout--list d-none" data-layout="list">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-header__body">
-                        <h2 class="section-header__title">Actualités & Articles</h2>
-                        <div class="section-header__spring"></div>
-                        <div class="section-header__arrows">
-                            <div class="arrow section-header__arrow section-header__arrow--prev arrow--prev">
-                                <button class="arrow__button" type="button"><svg width="7" height="11">
-                                        <path d="M6.7,0.3L6.7,0.3c-0.4-0.4-0.9-0.4-1.3,0L0,5.5l5.4,5.2c0.4,0.4,0.9,0.3,1.3,0l0,0c0.4-0.4,0.4-1,0-1.3l-4-3.9l4-3.9C7.1,1.2,7.1,0.6,6.7,0.3z" />
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="arrow section-header__arrow section-header__arrow--next arrow--next">
-                                <button class="arrow__button" type="button"><svg width="7" height="11">
-                                        <path d="M0.3,10.7L0.3,10.7c0.4,0.4,0.9,0.4,1.3,0L7,5.5L1.6,0.3C1.2-0.1,0.7,0,0.3,0.3l0,0c-0.4,0.4-0.4,1,0,1.3l4,3.9l-4,3.9
-	C-0.1,9.8-0.1,10.4,0.3,10.7z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="section-header__divider"></div>
-                    </div>
-                </div>
-                <div class="block-posts-carousel__carousel">
-                    <div class="owl-carousel">
-                        <div class="block-posts-carousel__item">
-                            <div class="post-card">
-                                <div class="post-card__image">
-                                    <a href="https://aujourdhui.ma/automobile/pieces-de-rechange-automobiles-un-marche-de-quelque-20-milliards-dh">
-                                        <img src="images/posts/new1.jpeg" alt="">
-                                    </a>
-                                </div>
-                                <div class="post-card__content">
-                                    <div class="post-card__category">
-                                        <a href="blog-classic-right-sidebar.html">Dernières nouvelles</a>
-                                    </div>
-                                    <div class="post-card__title">
-                                        <h2><a href="https://aujourdhui.ma/automobile/pieces-de-rechange-automobiles-un-marche-de-quelque-20-milliards-dh">Pièces de rechange automobiles, un marché de quelque 20 milliards DH – Aujourd'hui le Maroc</a></h2>
-                                    </div>
-                                    <div class="post-card__date">
-                                           Octobre 10, 2024
-                                    </div>
-                                    <div class="post-card__excerpt">
-                                        <div class="typography">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec facilisis neque ut purus fermentum, ac pretium
-                                            nibh facilisis. Vivamus venenatis viverra iaculis. Suspendisse tempor orci non sapien ullamcorper dapibus.
-                                            Suspendisse at velit diam. Donec pharetra nec enim blandit vulputate.
-                                        </div>
-                                    </div>
-                                    <div class="post-card__more">
-                                        <a href="https://aujourdhui.ma/automobile/pieces-de-rechange-automobiles-un-marche-de-quelque-20-milliards-dh" class="btn btn-secondary btn-sm">Lire la suite</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="block-posts-carousel__item">
-                            <div class="post-card">
-                                <div class="post-card__image">
-                                    <a href="post-full-width.html">
-                                        <img src="images/posts/new2.png" alt="">
-                                    </a>
-                                </div>
-                                <div class="post-card__content">
-                                    <div class="post-card__category">
-                                        <a href="blog-classic-right-sidebar.html">Dernières nouvelles</a>
-                                    </div>
-                                    <div class="post-card__title">
-                                        <h2><a href="https://www.rechange-maroc.com/aziz-dich-tresorier-du-gipam-commissaire-du-salon-mat-et-responsable-du-developpement-de-capram/">Aziz Dich, Trésorier du GIPAM, Commissaire du salon MAT, et responsable du développement de Capram </a></h2>
-                                    </div>
-                                    <div class="post-card__date">
-                                           Septembre 5, 2024
-                                    </div>
-                                    <div class="post-card__excerpt">
-                                        <div class="typography">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec facilisis neque ut purus fermentum, ac pretium
-                                            nibh facilisis. Vivamus venenatis viverra iaculis. Suspendisse tempor orci non sapien ullamcorper dapibus.
-                                            Suspendisse at velit diam. Donec pharetra nec enim blandit vulputate.
-                                        </div>
-                                    </div>
-                                    <div class="post-card__more">
-                                        <a href="https://www.rechange-maroc.com/aziz-dich-tresorier-du-gipam-commissaire-du-salon-mat-et-responsable-du-developpement-de-capram/" class="btn btn-secondary btn-sm">Lire la suite</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="block-posts-carousel__item">
-                            <div class="post-card">
-                                <div class="post-card__image">
-                                    <a href="https://ahdathsa3a24.com/2018/12/13/piece-de-rechange-automobile-et-plast-pack-sous-le-meme-toit/">
-                                        <img src="images/posts/new3.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="post-card__content">
-                                    <div class="post-card__category">
-                                        <a href="blog-classic-right-sidebar.html">Dernières nouvelles</a>
-                                    </div>
-                                    <div class="post-card__title">
-                                        <h2><a href="https://ahdathsa3a24.com/2018/12/13/piece-de-rechange-automobile-et-plast-pack-sous-le-meme-toit/">Pièce de rechange automobile et Plast Pack sous le même toit</a></h2>
-                                    </div>
-                                    <div class="post-card__date">
-                                           Août 12, 2024
-                                    </div>
-                                    <div class="post-card__excerpt">
-                                        <div class="typography">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec facilisis neque ut purus fermentum, ac pretium
-                                            nibh facilisis. Vivamus venenatis viverra iaculis. Suspendisse tempor orci non sapien ullamcorper dapibus.
-                                            Suspendisse at velit diam. Donec pharetra nec enim blandit vulputate.
-                                        </div>
-                                    </div>
-                                    <div class="post-card__more">
-                                        <a href="https://ahdathsa3a24.com/2018/12/13/piece-de-rechange-automobile-et-plast-pack-sous-le-meme-toit/" class="btn btn-secondary btn-sm">Lire la suite</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="block-posts-carousel__item">
-                            <div class="post-card">
-                                <div class="post-card__image">
-                                    <a href="https://www.rechange-maroc.com/capram-vers-une-classification-de-ses-metiers/">
-                                        <img src="images/posts/new4.png" alt="">
-                                    </a>
-                                </div>
-                                <div class="post-card__content">
-                                    <div class="post-card__category">
-                                        <a href="blog-classic-right-sidebar.html">Dernières nouvelles</a>
-                                    </div>
-                                    <div class="post-card__title">
-                                        <h2><a href="https://www.rechange-maroc.com/capram-vers-une-classification-de-ses-metiers/">CAPRAM vers une classification de ses métiers</a></h2>
-                                    </div>
-                                    <div class="post-card__date">
-                                           Juillet 30, 2024
-                                    </div>
-                                    <div class="post-card__excerpt">
-                                        <div class="typography">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec facilisis neque ut purus fermentum, ac pretium
-                                            nibh facilisis. Vivamus venenatis viverra iaculis. Suspendisse tempor orci non sapien ullamcorper dapibus.
-                                            Suspendisse at velit diam. Donec pharetra nec enim blandit vulputate.
-                                        </div>
-                                    </div>
-                                    <div class="post-card__more">
-                                        <a href="https://www.rechange-maroc.com/capram-vers-une-classification-de-ses-metiers/" class="btn btn-secondary btn-sm">Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="block-posts-carousel__item">
-                            <div class="post-card">
-                                <div class="post-card__image">
-                                    <a href="https://lematin.ma/automobile/annonce-de-la-3e-edition-du-moroccan-automotive-technologies--le-gipam/227779">
-                                        <img src="images/posts/new5.png" alt="">
-                                    </a>
-                                </div>
-                                <div class="post-card__content">
-                                    <div class="post-card__category">
-                                        <a href="blog-classic-right-sidebar.html">Dernières nouvelles</a>
-                                    </div>
-                                    <div class="post-card__title">
-                                        <h2><a href="https://lematin.ma/automobile/annonce-de-la-3e-edition-du-moroccan-automotive-technologies--le-gipam/227779">Annonce de la troisième édition du Moroccan Automotive Technologies  le GIPAM </a></h2>
-                                    </div>
-                                    <div class="post-card__date">
-                                           Juin 12, 2024
-                                    </div>
-                                    <div class="post-card__excerpt">
-                                        <div class="typography">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec facilisis neque ut purus fermentum, ac pretium
-                                            nibh facilisis. Vivamus venenatis viverra iaculis. Suspendisse tempor orci non sapien ullamcorper dapibus.
-                                            Suspendisse at velit diam. Donec pharetra nec enim blandit vulputate.
-                                        </div>
-                                    </div>
-                                    <div class="post-card__more">
-                                        <a href="https://lematin.ma/automobile/annonce-de-la-3e-edition-du-moroccan-automotive-technologies--le-gipam/227779" class="btn btn-secondary btn-sm">Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="block-posts-carousel__item">
-                            <div class="post-card">
-                                <div class="post-card__image">
-                                    <a href="https://fr.expresstv.ma/2024/05/m-a-t-2024-la-rencontre-incontournable-de-lindustrie-automobile-au-maroc/">
-                                        <img src="images/posts/new6.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="post-card__content">
-                                    <div class="post-card__category">
-                                        <a href="blog-classic-right-sidebar.html">Dernières nouvelles</a>
-                                    </div>
-                                    <div class="post-card__title">
-                                        <h2><a href="https://fr.expresstv.ma/2024/05/m-a-t-2024-la-rencontre-incontournable-de-lindustrie-automobile-au-maroc/">M.A.T. 2024 : La Rencontre Incontournable de l’Industrie Automobile au Maroc !</a></h2>
-                                    </div>
-                                    <div class="post-card__date">
-                                           Mai 21, 2024
-                                    </div>
-                                    <div class="post-card__excerpt">
-                                        <div class="typography">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec facilisis neque ut purus fermentum, ac pretium
-                                            nibh facilisis. Vivamus venenatis viverra iaculis. Suspendisse tempor orci non sapien ullamcorper dapibus.
-                                            Suspendisse at velit diam. Donec pharetra nec enim blandit vulputate.
-                                        </div>
-                                    </div>
-                                    <div class="post-card__more">
-                                        <a href="https://fr.expresstv.ma/2024/05/m-a-t-2024-la-rencontre-incontournable-de-lindustrie-automobile-au-maroc/" class="btn btn-secondary btn-sm">Read more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="block-space block-space--layout--divider-nl d-xl-block d-none"></div>
+       <div class="block-space block-space--layout--divider-nl d-xl-block d-none box-Shadow"></div>
         <div class="block block-products-columns">
             <div class="container">
                 <div class="row">
@@ -2696,8 +2571,7 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
                             <p class="copyright-area-text">Copyright © <span id="copyright-year">2024</span> <a class="copyright-link" href="accueil.html">Capram</a></p>
                             <!-- copyright / end -->
                         </div>
-                        <div class="site-footer__payments">
-                            <img src="images/logo_white.png" alt="">
+                        <div class="site-footer__payments">     <img src="images/logo_white.png" alt="">
                         </div>
                     </div>
                 </div>
