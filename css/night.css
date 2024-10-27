@@ -43,7 +43,7 @@
     .block-categories__body,
     .block.block-sale,
     .block-features.block.block-features--layout--bottom-strip {
-        background: #474747 !important;
+        background: #252525 !important;
     }
     .timer__dots:before,
     .timer__dots:after {
@@ -54,8 +54,9 @@
     }
 
     .block-brands__list {
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         background: #403f3f;
+        border: 1px solid #353535;
     }
     .search-wrapper span {
         color: white;
@@ -69,19 +70,13 @@
     border: 1px solid #353535;
     background: #1E1E1E;
     }
-    .block-brands__list {
 
-        background: #403f3f;
-    }
 
 .block-brands__divider {
     background: transparent;
 }
 
-.block-brands__list {
 
-    border: none;
-}
 
  .block-brands--layout--columns-8-full .block-brands__divider {
      
@@ -108,7 +103,7 @@ a.allCartes {
 .block-categories__body-decor .decor__start,
 .block-categories__body-decor .decor__end,
 .block-categories__body-decor .decor__center {
-    background: #333;
+    background: #191919;
 }
 
 .section-header__title {
