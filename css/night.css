@@ -126,17 +126,13 @@ a.allCartes {
     box-shadow: none;
 }
 
-.block-sale__body-decor .decor__start, 
-.block-sale__body-decor .decor__end, 
-.block-sale__body-decor .decor__center {
-    background: #333;
-}
+
 
 
 .block-sale__body-decor .decor__start, 
 .block-sale__body-decor .decor__end, 
 .block-sale__body-decor .decor__center {
- background: #333;
+ background: #191919;
 }
 
 .block-products-columns__title {
