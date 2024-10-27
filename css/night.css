@@ -5,7 +5,7 @@
     .header__navbar,
     .site__body,
     .block-categories__body {
-        background: #333333 !important;
+        background: #191919 !important;
     }
 
     .topbar--classic .topbar__item-text,
@@ -65,8 +65,9 @@
 
     }
     .search-wrapper {
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        border: none;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    border: 1px solid #353535;
+    background: #1E1E1E;
     }
     .block-brands__list {
 
