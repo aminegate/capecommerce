@@ -55,8 +55,8 @@
 
     .block-brands__list {
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-        background: #403f3f;
-        border: 1px solid #353535;
+    border: 1px solid #353535;
+    background: #1E1E1E;
     }
     .search-wrapper span {
         color: white;
