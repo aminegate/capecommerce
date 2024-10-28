@@ -844,6 +844,8 @@
                 dots: false,
                 margin: 20,
                 loop: true,
+                autoplay:true,
+                autoplayTimeout: 3000,
                 rtl: isRTL()
             }, carouselOptions[layout]));
 
@@ -1145,6 +1147,9 @@
                 dots: true,
                 margin: 24,
                 loop: true,
+                autoplay:true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true, // Pause autoplay on hover
                 rtl: isRTL(),
                 responsive: {
                     1400: {items: 5},
@@ -1212,7 +1217,7 @@
     // .block-slideshow
     */
 $(function () {
-    var videoSlider = $('.owl-carousel');
+    var videoSlider = $('.block-slideshow__carousel .owl-carousel');
 
     // Initialize Owl Carousel
     videoSlider.owlCarousel({
@@ -1221,6 +1226,7 @@ $(function () {
         nav: true,
         dots: false,
         autoplay: false, // Start with autoplay off
+        autoplayTimeout: 4000,
         items: 1,
         navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"], // Chevrons
         rtl: isRTL() // Check for RTL support

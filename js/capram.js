@@ -31,7 +31,7 @@ $(document).ready(function() {
       $('#copyright-year').text(currentYear);
     })();
     
-    
+ 
     
   $('.category-checkbox').change(function() {
         var $this = $(this); // Reference to the current checkbox
