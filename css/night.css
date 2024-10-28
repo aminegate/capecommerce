@@ -23,7 +23,7 @@
     .header__topbar-classic,
     .header__navbar,
     .header__topbar-classic-bg {
-        border-bottom: 1px solid #6d6d6d !important;
+        border-bottom: 1px solid #353535 !important;
     }
 
 .block-categories__body {
@@ -37,7 +37,7 @@
     }
 
     .header__navbar {
-        border-top: 1px solid #6d6d6d !important;
+        border-top: 1px solid #353535 !important;
     }
 
     .block-categories__body,
