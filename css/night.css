@@ -54,7 +54,7 @@
     }
 
     .block-brands__list {
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     border: 1px solid #353535;
     background: #1E1E1E;
     }
@@ -70,7 +70,8 @@
     border: 1px solid #353535;
     background: #1E1E1E;
     }
-
+   
+   
 
 .block-brands__divider {
     background: transparent;
@@ -97,7 +98,7 @@ a.allCartes {
 .block-categories__title-decor .decor__start,
 .block-categories__title-decor .decor__end,
 .block-categories__title-decor .decor__center {
-    background: #333;
+    background: #191919;
 }
 
 .block-categories__body-decor .decor__start,
@@ -126,14 +127,14 @@ a.allCartes {
     box-shadow: none;
 }
 
-
-
-
 .block-sale__body-decor .decor__start, 
 .block-sale__body-decor .decor__end, 
 .block-sale__body-decor .decor__center {
- background: #191919;
+    background: #191919;
 }
+
+
+
 
 .block-products-columns__title {
  
@@ -142,16 +143,14 @@ a.allCartes {
 
 }
 
-.block-products-columns .product-card__infog {
-    background: #403f3f;
-}
+
 
 .block-products-carousel__column .product-card__price.product-card__price--current .block-products-columns .product-card__info {
     color: white;
 }
 
 .block-products-columns .product-card__info {
-    background:  #403f3f;
+    background:  #1e1e1e;
 }
 
 .product-card .product-card__name a {
@@ -170,27 +169,27 @@ a.allCartes {
 }
 
 .block-products-columns .product-card__rating {
-    background: #403f3f;
+    background: #1e1e1e;
 }
 
 .block-products-carousel__column .product-card__info {
-    background: #403f3f;
+    background: #1E1E1E;
 }
 
 .block-products-carousel__column .product-card__footer
 {
-    background: #403f3f;
+    background: #1E1E1E;
     padding: 15px;
 }
 
 .product-card__info {
-    background: #403f3f;
+    background: #1E1E1E;
 }
 
 .block-sale__item .product-card .product-card__footer,
 .block-sale__item .product-card:after{
 
-    background: #403f3f;
+    background: #1E1E1E;
 }
 
 .product-card .product-card__price--new {
@@ -239,7 +238,7 @@ a.main-menu__link.helpDesk:hover{
 
     color: white ;
     background-color: transparent ;
-    border-color: #737373 ;
+    border-color: #353535 ;
 
 }
 
@@ -263,7 +262,7 @@ color: white !important;
    
     background: transparent !important;
     color: #6b6b6b !important;
-    border: 1px solid #6b6b6b !important;
+    border: 1px solid #353535 !important;
 
 }
 
@@ -326,3 +325,41 @@ h1.block-header__title {
 
 }
 
+.block-products-carousel__column {
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    border: 1px solid #353535;
+    border-radius: 5px;
+}
+
+.block-sale__item {
+    
+      border: 1px solid #353535;
+    border-radius: 5px;
+}
+
+.product-card__footer {
+   border-radius: 0px 0px 5px 5px;
+}
+
+.block-products-columns__list-item {
+    
+        border: 1px solid #353535;
+    border-radius: 0px 5px 5px 0px;
+
+}
+
+.site-footer,
+.site-footer__decor .decor__start,
+.site-footer__decor .decor__end{
+
+    background-color: #191919;
+
+}
+
+.search-left, .search-right {
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    border: 1px solid #353535;
+    background: #1E1E1E;
+}

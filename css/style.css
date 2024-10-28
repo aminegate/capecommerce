@@ -325,7 +325,7 @@ a.phone__body {
 }
 
 li.main-menu__item:nth-child(2) {
-    margin-left: 47px;
+    margin-left: 147px;
 }
 .site-footer__payments {
     width: 130px;
@@ -1256,7 +1256,8 @@ tfoot.checkout__totals-footer td {
     position: relative;
     padding: 15px;
     border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    border: 1px solid #eaeaea;
+
 }
 
 .search-wrapper label {
@@ -10989,7 +10990,7 @@ select.form-control::-ms-expand {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
 .block-sale__item .product-card .product-card__addtocart-full,
