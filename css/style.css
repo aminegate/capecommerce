@@ -319,6 +319,11 @@ a.product-reference {
     right: 1.8% !important;
 }
 
+.fixTop {
+    top: 41.7% !important;
+    right: 1.8% !important;
+}
+
 .stockNumber {
     position: absolute;
     right: 1.5%;
