@@ -319,8 +319,13 @@ a.product-reference {
     right: 1.8% !important;
 }
 
+.fixTop-1 {
+    top: 42% !important;
+    right: 1.8% !important;
+}
+
 .fixTop {
-    top: 41.7% !important;
+    top: 45% !important;
     right: 1.8% !important;
 }
 
