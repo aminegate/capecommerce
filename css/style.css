@@ -314,8 +314,8 @@ a.product-reference {
     top: 1% !important;
     right: 2% !important;
 }
-.fixTop {
-    top: 41.7% !important;
+.fixTop-0 {
+    top: 46.7% !important;
     right: 1.8% !important;
 }
 
@@ -10968,6 +10968,8 @@ select.form-control::-ms-expand {
     -webkit-transition: color .12s;
     transition: color .12s;
     line-height: 26px;
+        width: 100%;
+    display: block;
 }
 
 .block-sale__link a:hover {

@@ -450,7 +450,8 @@ dialog.dialog-wrapper {
 .product__features li,
 .product__price,
 .related-product h2.section-header__title,
-.shop-features__item-subtitle{
+.shop-features__item-subtitle,
+.section-header__title{
   
     color: white !important;
 
