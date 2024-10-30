@@ -60,6 +60,11 @@ $(document).ready(function() {
             upIcon.hide(); // Hide the up icon for the current category
         }
     }); 
+    
+    
+    
+    
+    
 
 
     $('.subcategory-item').on('click', function(e) {
@@ -544,12 +549,16 @@ $(function () {
         
         if (dialogElement.length) {
             dialogElement[0].showModal();
+            // Add no-scroll class to body to prevent scrolling
+            $('body').addClass('no-scroll');
         }
     });
 
     // Close the dialog when the close button is clicked
     $('.dialog-close').click(function () {
         $(this).closest('dialog')[0].close();
+        // Remove no-scroll class from body to restore scrolling
+        $('body').removeClass('no-scroll');
     });
 })(jQuery);
 
@@ -670,7 +679,8 @@ $(function () {
 })(jQuery);
 
 
-    
+
+
     
     
 });
