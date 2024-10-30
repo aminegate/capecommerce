@@ -803,6 +803,18 @@
                     0: {items: 1},
                 }
             },
+            'grid-1': {
+                items: 1,
+                responsive: {
+                    1400: {items: 1},
+                    1200: {items: 1},
+                    992: {items: 1, margin: 16},
+                    768: {items: 1, margin: 16},
+                    576: {items: 1, margin: 16},
+                    460: {items: 1, margin: 16},
+                    0: {items: 1},
+                }
+            },
             'grid-6': {
                 items: 6,
                 margin: 16,

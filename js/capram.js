@@ -472,23 +472,38 @@ window.onload = function() {
 })(jQuery);*/
     
     
-(function($) {
-  $('.tdnn').click(function() {
+(function ($) {
+  // Check if a mode is saved in localStorage on page load
+  const savedMode = localStorage.getItem('mode');
+  if (savedMode === 'light') {
+    $("body").addClass('light');
+    $(".moon").addClass('sun');
+    $(".tdnn").addClass('day');
+    $(".logo__image img").attr('src', 'images/logo.png'); // Change to white logo
+    $(".nightMode").prop('disabled', true); // Disable night mode CSS
+  } else {
+    $(".logo__image img").attr('src', 'images/logo_white.png'); // Set to original logo
+    $(".nightMode").prop('disabled', false); // Enable night mode CSS if not in day mode
+  }
+
+  $('.tdnn').click(function () {
     $("body").toggleClass('light');
     $(".moon").toggleClass('sun');
     $(".tdnn").toggleClass('day');
 
-    // Change the logo based on the current mode
+    // Update the logo based on the current mode
     if ($("body").hasClass('light')) {
       $(".logo__image img").attr('src', 'images/logo.png'); // Change to white logo
       $(".nightMode").prop('disabled', true); // Disable night mode CSS
-      $(".dayMode").prop('disabled', false);  // Ensure day mode CSS is enabled
+      localStorage.setItem('mode', 'light'); // Save mode to localStorage
     } else {
       $(".logo__image img").attr('src', 'images/logo_white.png'); // Revert to original logo
-      $(".nightMode").prop('disabled', false); // Enable night mode CSS if not in day mode
+      $(".nightMode").prop('disabled', false); // Enable night mode CSS
+      localStorage.setItem('mode', 'dark'); // Save mode to localStorage
     }
   });
 })(jQuery);
+
 
 
 $(function () {
@@ -518,7 +533,144 @@ $(function () {
     });
 })(jQuery);
 
+    
+(function ($) {
+    $('.associated').click(function () {
+        // Retrieve the dialog ID from the data-dialog attribute
+        let productDialogId = $(this).data('dialog');
+        
+        // Find the dialog element using the ID and open it
+        let dialogElement = $('#' + productDialogId);
+        
+        if (dialogElement.length) {
+            dialogElement[0].showModal();
+        }
+    });
+
+    // Close the dialog when the close button is clicked
+    $('.dialog-close').click(function () {
+        $(this).closest('dialog')[0].close();
+    });
+})(jQuery);
 
 
+
+    
+(function() {
+    // Check the current page
+    const pathname = window.location.pathname;
+
+    // Define the expected page names
+    const subcategoryPage = 'categorie.html'; // Adjust if needed
+    const boutiquePage = 'boutique.html'; // Adjust if needed
+
+    // Subcategory page logic
+    if (pathname.endsWith(subcategoryPage)) {
+        // Set up click event on each subcategory item
+        $('.subcategory-item img').on('click', function(event) {
+            event.preventDefault(); // Prevent the default anchor action
+
+            // Get the image source of the clicked item
+            const imgSrc = $(this).attr('src');
+
+            // Log the image source to debug
+            console.log('Image source:', imgSrc);
+
+            // Check if imgSrc is defined
+            if (imgSrc) {
+                // Use a regex to extract the filename without the extension
+                const match = imgSrc.match(/\/([^\/]+)\.(jpg|jpeg|png)$/i);
+                if (match) {
+                    const shopName = match[1]; // Get the filename without the extension
+
+                    // Store the shop name in localStorage
+                    localStorage.setItem('shopName', shopName);
+
+                    // Redirect to boutique page
+                    window.location.href = 'boutique.html'; // Redirect to boutique page
+                } else {
+                    console.error('Filename could not be extracted.'); // Log error if match fails
+                }
+            } else {
+                console.error('Image source is undefined.'); // Log error if imgSrc is undefined
+            }
+        });
+
+    // Boutique page logic
+    } else if (pathname.endsWith(boutiquePage)) {
+        const shopName = localStorage.getItem('shopName');
+
+        // Check if shop name is found and set it in the span
+        if (shopName) {
+            $('.famille-shop-name').text(`${shopName} `); // Append "Boutique" to the shop name
+        } else {
+            console.warn('No shop name found in localStorage.'); // Debugging
+        }
+    }
+})();
+
+    
+(function($) {
+    $(function() {
+        // Select the input, search button, and search term display span for both existing and new forms
+        const $searchInput = $('.search__input');
+        const $searchButton = $('.search__button');
+        const $searchTermDisplay = $('.block-header__title .search-term');
+
+        // Selectors for the new form elements
+        const $notFoundSearchInput = $('.not-found__search-input');
+        const $notFoundSearchButton = $('.not-found__search-button');
+
+        // Function to handle the redirection to the results page
+        function redirectToResults(searchTerm) {
+            if (searchTerm) {
+                // Redirect to the results page with the search term as a query parameter
+                window.location.href = `resultats.html?search=${encodeURIComponent(searchTerm)}`;
+            }
+        }
+
+        // Event listener for keypress (Enter key) on the existing search input
+        $searchInput.on('keypress', function(event) {
+            if (event.which === 13) { // 13 is the Enter key
+                event.preventDefault(); // Prevent default form submission
+                redirectToResults($searchInput.val().trim());
+            }
+        });
+
+        // Event listener for the existing search button click
+        $searchButton.on('click', function(event) {
+            event.preventDefault(); // Prevent default button action
+            redirectToResults($searchInput.val().trim());
+        });
+
+        // Event listener for keypress (Enter key) on the new not-found search input
+        $notFoundSearchInput.on('keypress', function(event) {
+            if (event.which === 13) { // 13 is the Enter key
+                event.preventDefault(); // Prevent default form submission
+                redirectToResults($notFoundSearchInput.val().trim());
+            }
+        });
+
+        // Event listener for the new not-found search button click
+        $notFoundSearchButton.on('click', function(event) {
+            event.preventDefault(); // Prevent default button action
+            redirectToResults($notFoundSearchInput.val().trim());
+        });
+
+        // Check for a search term in the URL, update input and display span
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchTermFromURL = urlParams.get('search');
+        if (searchTermFromURL) {
+            const decodedTerm = decodeURIComponent(searchTermFromURL);
+            $searchInput.val(decodedTerm); // Set search term in existing input
+            $notFoundSearchInput.val(decodedTerm); // Set search term in new input
+            $searchTermDisplay.text(decodedTerm); // Set search term in <span>
+        }
+    });
+})(jQuery);
+
+
+    
+    
     
 });
