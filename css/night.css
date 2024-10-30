@@ -372,7 +372,8 @@ h1.block-header__title {
 .account-profile,
 .block-space--layout--before-footer,
 .account-dashboard,
-.whislist-page{
+.whislist-page,
+.family-page{
     background: #252525 !important;
 }
 
