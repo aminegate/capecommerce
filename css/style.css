@@ -150,7 +150,9 @@
 // animations
 */
 
-
+.no-scroll {
+    overflow-y: hidden;
+}
 
 .section-header__divider {
     width: 91% !important;
