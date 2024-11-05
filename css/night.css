@@ -70,6 +70,11 @@
     border: 1px solid #353535;
     background: #1E1E1E;
     }
+
+.search-wrapper:after,
+.block-brands__list:after{
+    background: #1E1E1E;
+}
    
    
 
@@ -373,7 +378,9 @@ h1.block-header__title {
 .block-space--layout--before-footer,
 .account-dashboard,
 .whislist-page,
-.family-page{
+.family-page,
+.capcarrosserie,
+.capservice{
     background: #252525 !important;
 }
 
@@ -391,13 +398,18 @@ a.addresses-list__item.addresses-list__item--new,
 .card,
 .cart__table,
 .product--layout--full .product__card,
-.product--layout--full .product__tabs,
+.product__tabs.product-tabs.product-tabs--layout--full,
 .product__info-card,
 .product__shop-features,
 .wishlist,
 .subcategory,
 .categoBox,
-.category-card__body{
+.category-card__body,
+.product-vid,
+.product__info__wrapper,
+.product_all_info,
+.product__all_price,
+.product__video{
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
     border: 1px solid #353535 !important;
     background: #1E1E1E !important;
@@ -448,7 +460,6 @@ dialog.dialog-wrapper {
 .dialog-header h4,
 .product__title,
 .product__features,
-.product__features li,
 .product__price,
 .related-product h2.section-header__title,
 .shop-features__item-subtitle,
@@ -495,5 +506,40 @@ select.form-control {
 
     fill: black !important;
     color: black !important;
+}
+
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.reference-block-title {
+    color: white !important;
+}
+
+.remise-2,
+.disponibilité,
+.reference,
+.designation,
+.famille {
+    color: white !important;
+}
+
+
+.footer-contacts__title,
+.footer-links__title,
+.footer-newsletter__title {
+   
+     color:white !important;
+}
+
+.footer-contacts__contacts dt {
+
+    color: #dddddd !important;
+}
+
+.site-footer__bottom {
+    background-color: #2b2b2b !important;
+
 }
 
