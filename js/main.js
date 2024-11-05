@@ -1,5 +1,211 @@
 (function ($) {
     "use strict";
+ (function($) {
+    function adjustLayoutBasedOnItems() {
+        let $carouselItems = $(".owl-carousel-products .block-products-carousel__column"); // Select carousel items
+        let itemCount = $carouselItems.length; // Count items
+        let $carousel = $(".block-products-carousel");
+        let currentLayout = $carousel.attr("data-layout");
+
+        console.log("Item Count:", itemCount); // Debugging: Check the item count
+        console.log("Current Layout:", currentLayout); // Debugging: Check the current layout
+
+        // If there's only one item
+        if (itemCount === 1) {
+            if (currentLayout !== "grid-1") {
+                // Change to grid-1 layout
+                $carousel.attr("data-layout", "grid-1");
+                $(".change-left-lg").removeClass("col-lg-7 col-lg-8").addClass("col-lg-9");
+                $(".change-right-lg").removeClass("col-lg-5 col-lg-4").addClass("col-lg-3");
+                $(".section-header__arrows").attr("style", "display: none !important;");
+
+                // Update styles
+                $(".product-card__name").css("font-size", "18px");
+                $(".fixPos-slider").css("top", "57.4%");
+                $(".carousel-right-side .product-card__price.product-card__price--current").css("font-size", "20px");
+                 $(".video-one").attr("style", "display: none !important;");
+            $(".video-two-hidden").attr("style", "display: block !important;");
+            }
+        } 
+        // If there are two items
+        else if (itemCount === 2) {
+            if (currentLayout !== "grid-2") {
+                $carousel.attr("data-layout", "grid-2");
+                $(".change-left-lg").removeClass("col-lg-7 col-lg-9").addClass("col-lg-8");
+                $(".change-right-lg").removeClass("col-lg-5 col-lg-3").addClass("col-lg-4");
+                 $(".video-one").attr("style", "display: none !important;");
+            $(".video-two-hidden").attr("style", "display: block !important;");
+
+                // Update styles
+                $(".fixPos-slider").css("top", "46%");
+            }
+        } 
+        // If there are three or more items
+        else {
+            if (currentLayout !== "grid-3") {
+                $carousel.attr("data-layout", "grid-3");
+                $(".change-left-lg").removeClass("col-lg-9 col-lg-8").addClass("col-lg-7");
+                $(".change-right-lg").removeClass("col-lg-3 col-lg-4").addClass("col-lg-5");
+
+                // Reset styles
+                $(".product-card__name").css("font-size", "");
+                $(".fixPos-slider").css("top", "");
+                $(".carousel-right-side .product-card__price.product-card__price--current").css("font-size", "");
+            }
+        }
+
+        // Debugging: Log the final classes after changes
+        console.log("Left Class:", $(".change-left-lg").attr("class"));
+        console.log("Right Class:", $(".change-right-lg").attr("class"));
+    }
+
+    // Initialize Owl Carousel with items based on item count
+    let $carouselItems = $(".owl-carousel-products .block-products-carousel__column");
+    let itemCount = $carouselItems.length;
+
+    $(".owl-carousel-products").owlCarousel({
+        items: Math.min(itemCount, 3), // Set items based on the count, max of 3
+        margin: 10, // Margin between items
+        responsive: {
+            0: {
+                items: 1 // For small screens
+            },
+            576: {
+                items: 2 // For medium screens (≥576px)
+            },
+            768: {
+                items: Math.min(itemCount, 3) // For larger screens, set items based on count
+            }
+        },
+        onInitialized: adjustLayoutBasedOnItems, // Call the function when initialized
+        onChanged: adjustLayoutBasedOnItems // Call the function when items are changed
+    });
+
+    // Call the function on window resize to handle dynamic changes
+    $(window).on("resize", adjustLayoutBasedOnItems);
+})(jQuery);
+
+    
+    
+    
+    
+(function($) {
+    function adjustLayoutBasedOnItemsV2() {
+        let $carouselItems = $(".owl-carousel-products-5 .block-products-carousel__column");
+        let itemCount = $carouselItems.length;
+        let $carousel = $(".block-products-carousel");
+        let currentLayout = $carousel.attr("data-layout");
+
+        console.log("Item Count:", itemCount);
+        console.log("Current Layout:", currentLayout);
+
+        // Update the layout based on item count
+        if (itemCount === 1 && currentLayout !== "grid-1") {
+            $carousel.attr("data-layout", "grid-1");
+            $(".change-left-lg").removeClass("col-lg-7 col-lg-8").addClass("col-lg-9");
+            $(".change-right-lg").removeClass("col-lg-5 col-lg-4").addClass("col-lg-3");
+            $(".product-card__name").attr("style", "font-size: 18px !important;");
+            $(".carousel-right-side .product-card__price.product-card__price--current").css("font-size", "20px");
+             $(".product-card__rating").attr("style", "display: block !important;");
+            $(".designation-hide").attr("style", "display: block !important;");
+            $(".bottomFooterWrapper").attr("style", "display: block !important;");
+            $(".margin-bottom-5").attr("style", "height: 95px !important;");
+            $(".break-line").remove();
+            $(".css-fix-5 .brut").attr("style", "display: inline-block !important; font-size: 16px !important;");
+            $(".carousel-right-side .product-card__price.product-card__price--current").attr("style", "font-size: 16px !important;");
+            $(".stockNumber").attr("style", "top: 53.8% !important;");
+            $(".section-header__arrows").attr("style", "display: none !important;");
+             $(".video-one").attr("style", "display: none !important;");
+            $(".video-two-hidden").attr("style", "display: block !important;");
+            
+        } else if (itemCount === 2 && currentLayout !== "grid-2") {
+            $carousel.attr("data-layout", "grid-2");
+            $(".change-left-lg").removeClass("col-lg-7 col-lg-9").addClass("col-lg-8");
+            $(".change-right-lg").removeClass("col-lg-5 col-lg-3").addClass("col-lg-4");
+            $(".fixPos-slider-2").css("top", "46%");
+            $(".product-card__rating").attr("style", "display: block !important;");
+            $(".designation-hide").attr("style", "display: block !important;");
+            $(".bottomFooterWrapper").attr("style", "display: block !important;");
+            $(".margin-bottom-5").attr("style", "height: 95px !important;");
+            $(".break-line").remove();
+            $(".css-fix-5 .brut").attr("style", "display: inline-block !important; font-size: 16px !important;");
+            $(".carousel-right-side .product-card__price.product-card__price--current").attr("style", "font-size: 16px !important;");
+            $(".stockNumber").attr("style", "top: 41.8% !important;");
+            $(".video-one").attr("style", "display: none !important;");
+            $(".video-two-hidden").attr("style", "display: block !important;");
+            
+        } else if (itemCount === 3 && currentLayout !== "grid-3") {
+            $carousel.attr("data-layout", "grid-3");
+            $(".change-left-lg").removeClass("col-lg-8 col-lg-9").addClass("col-lg-7");
+            $(".change-right-lg").removeClass("col-lg-4 col-lg-3").addClass("col-lg-5");
+            $("a.product-reference.slider-2-fontSize").attr("style", "font-size: 18px !important;");
+            $(".stockNumber").attr("style", "top: 40.4% !important;");
+            $(".carousel-right-side .product-card__price.product-card__price--current").attr("style", "font-size: 16px !important;");
+            $(".css-fix-5 .brut").attr("style", "display: inline-block !important; font-size: 16px !important;");
+            $(".designation-hide").attr("style", "display: block !important;");
+            $(".bottomFooterWrapper").attr("style", "display: block !important;");
+            $(".product-card__rating").attr("style", "display: none !important;");
+            $(".margin-bottom-5").attr("style", "height: 90px !important;");
+            $(".break-line").remove();
+            
+            
+        } else if (itemCount === 4 && currentLayout !== "grid-4") {
+            $carousel.attr("data-layout", "grid-4");
+            $(".change-left-lg").removeClass("col-lg-9 col-lg-8").addClass("col-lg-7");
+            $(".change-right-lg").removeClass("col-lg-3 col-lg-4").addClass("col-lg-5");
+            $("a.product-reference.slider-2-fontSize").attr("style", "font-size: 18px !important;");
+            $(".stockNumber").attr("style", "top: 39.4% !important;");
+            $(".carousel-right-side .product-card__price.product-card__price--current").attr("style", "font-size: 16px !important;");
+            $(".product-card__rating").attr("style", "display: none !important;");
+            $(".designation-hide").attr("style", "display: none !important;");
+            $(".bottomFooterWrapper").attr("style", "display: none !important;");
+            
+        } 
+
+    else if( itemCount === 5 && currentLayout === "grid-5" ) {
+          $(".product-card__rating").attr("style", "display: none !important;");
+          $(".designation-hide").attr("style", "display: none !important;");
+        $(".bottomFooterWrapper").attr("style", "display: none !important;");
+        $(".css-fix-5, .css-fix-5 .brut").attr("style", "font-size: 13px  !important;");
+    }
+
+        console.log("Left Class:", $(".change-left-lg").attr("class"));
+        console.log("Right Class:", $(".change-right-lg").attr("class"));
+    }
+
+    // Initialize Owl Carousel
+    let $carouselItems = $(".owl-carousel-products-5 .block-products-carousel__column");
+    let itemCount = $carouselItems.length;
+
+    $(".owl-carousel-products-5").owlCarousel({
+        items: Math.min(itemCount, 5),
+        margin: 13,
+        autoplay: true,
+        loop: true,
+        autoplayTimeout: 2000,
+        responsive: {
+            0: { items: 1 },
+            576: { items: 2 },
+            768: { items: Math.min(itemCount, 5) }
+        },
+        onInitialized: adjustLayoutBasedOnItemsV2,
+        onChanged: adjustLayoutBasedOnItemsV2
+    });
+
+    $(window).on("resize", adjustLayoutBasedOnItemsV2);
+})(jQuery);
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     let DIRECTION = null;
 
@@ -809,6 +1015,30 @@
                     1400: {items: 1},
                     1200: {items: 1},
                     992: {items: 1, margin: 16},
+                    768: {items: 1, margin: 16},
+                    576: {items: 1, margin: 16},
+                    460: {items: 1, margin: 16},
+                    0: {items: 1},
+                }
+            },
+            'grid-2': {
+                items: 2,
+                responsive: {
+                    1400: {items: 2},
+                    1200: {items: 2},
+                    992: {items: 2, margin: 16},
+                    768: {items: 2, margin: 16},
+                    576: {items: 1, margin: 16},
+                    460: {items: 1, margin: 16},
+                    0: {items: 1},
+                }
+            },
+            'grid-3': {
+                items: 1,
+                responsive: {
+                    1400: {items: 3},
+                    1200: {items: 3},
+                    992: {items: 2, margin: 16},
                     768: {items: 1, margin: 16},
                     576: {items: 1, margin: 16},
                     460: {items: 1, margin: 16},

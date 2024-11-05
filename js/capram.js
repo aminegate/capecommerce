@@ -1,4 +1,9 @@
 $(document).ready(function() {
+    
+   
+       
+    
+    
     // Show the user-sub-menu when hovering over the span
     $(".settingsName").on("mouseenter", function() {
         $(".user-sub-menu").stop(true, true).slideDown(250); // Slide down the user sub-menu
@@ -484,10 +489,15 @@ window.onload = function() {
     $("body").addClass('light');
     $(".moon").addClass('sun');
     $(".tdnn").addClass('day');
-    $(".logo__image img").attr('src', 'images/logo.png'); // Change to white logo
+    $(".logo__image img").attr('src', 'images/logo.png'); 
+    $(".site-footer__payments img").attr('src', 'images/logo.png'); 
+    $(".carrosserie-img img").attr('src', 'images/carrosserie-white.jpg'); 
+    
     $(".nightMode").prop('disabled', true); // Disable night mode CSS
   } else {
     $(".logo__image img").attr('src', 'images/logo_white.png'); // Set to original logo
+      $(".site-footer__payments img").attr('src', 'images/logo_white.png'); 
+       $(".carrosserie-img img").attr('src', 'images/carrosserie.jpg'); // Change to white logo
     $(".nightMode").prop('disabled', false); // Enable night mode CSS if not in day mode
   }
 
@@ -499,9 +509,11 @@ window.onload = function() {
     // Update the logo based on the current mode
     if ($("body").hasClass('light')) {
       $(".logo__image img").attr('src', 'images/logo.png'); // Change to white logo
+        $(".carrosserie-img img").attr('src', 'images/carrosserie-white.jpg'); 
       $(".nightMode").prop('disabled', true); // Disable night mode CSS
       localStorage.setItem('mode', 'light'); // Save mode to localStorage
     } else {
+         $(".carrosserie-img img").attr('src', 'images/carrosserie.jpg'); // Change to white logo
       $(".logo__image img").attr('src', 'images/logo_white.png'); // Revert to original logo
       $(".nightMode").prop('disabled', false); // Enable night mode CSS
       localStorage.setItem('mode', 'dark'); // Save mode to localStorage
@@ -563,60 +575,89 @@ $(function () {
 })(jQuery);
 
 
-
-    
 (function() {
-    // Check the current page
     const pathname = window.location.pathname;
 
-    // Define the expected page names
-    const subcategoryPage = 'categorie.html'; // Adjust if needed
-    const boutiquePage = 'boutique.html'; // Adjust if needed
+    // Define the expected subcategory pages
+    const subcategoryPages = ['categorie.html', 'accueil.html', 'capcarrosserie.html', 'capservice.html'];
+    const boutiquePage = 'boutique.html';
 
-    // Subcategory page logic
-    if (pathname.endsWith(subcategoryPage)) {
-        // Set up click event on each subcategory item
-        $('.subcategory-item img').on('click', function(event) {
-            event.preventDefault(); // Prevent the default anchor action
-
-            // Get the image source of the clicked item
-            const imgSrc = $(this).attr('src');
-
-            // Log the image source to debug
-            console.log('Image source:', imgSrc);
-
-            // Check if imgSrc is defined
-            if (imgSrc) {
-                // Use a regex to extract the filename without the extension
-                const match = imgSrc.match(/\/([^\/]+)\.(jpg|jpeg|png)$/i);
-                if (match) {
-                    const shopName = match[1]; // Get the filename without the extension
-
-                    // Store the shop name in localStorage
-                    localStorage.setItem('shopName', shopName);
-
-                    // Redirect to boutique page
-                    window.location.href = 'boutique.html'; // Redirect to boutique page
-                } else {
-                    console.error('Filename could not be extracted.'); // Log error if match fails
-                }
-            } else {
-                console.error('Image source is undefined.'); // Log error if imgSrc is undefined
-            }
+    // Function to highlight the selected filter item
+    const highlightSelected = function() {
+        // Remove existing borders from all filter items
+        $('.filter-list__item').css({
+            'border': 'none' // Reset border for all items
         });
 
-    // Boutique page logic
-    } else if (pathname.endsWith(boutiquePage)) {
-        const shopName = localStorage.getItem('shopName');
+        // Add orange border to the selected item
+        $(this).closest('.filter-list__item').css({
+            'border': '4px solid orange',  // Change border color to orange
+            'border-radius': '6px'
+        });
+    };
 
-        // Check if shop name is found and set it in the span
+    // Subcategory page logic
+    if (subcategoryPages.some(page => pathname.endsWith(page))) {
+        // Set up click event for both selectors
+        $('.subcategory-item img, .block-brands__item-link img, .capramCartesImg').on('click', function(event) {
+            event.preventDefault();
+
+            // Get the alt attribute of the clicked item
+            const altText = $(this).attr('alt');
+            console.log('Alt text:', altText);
+
+            if (altText) {
+                // Store the alt text as the shop name
+                localStorage.setItem('shopName', altText);
+                window.location.href = 'boutique.html';
+            } else {
+                console.error('Alt text is undefined.');
+            }
+        });
+    } 
+
+    // Highlight filter images on any page when clicked
+    $('.filter-list__item img').on('click', function() {
+        const $filterItem = $(this).closest('.filter-list__item');
+        const $radioButton = $filterItem.find('input[type="radio"]'); // Find the corresponding radio button
+        const newShopName = $radioButton.val(); // Get the value of the radio button
+
+        if (newShopName) {
+            localStorage.setItem('shopName', newShopName); // Update shop name with the radio value
+
+            // Update the displayed shop name instantly on boutique page
+            if (pathname.endsWith(boutiquePage)) {
+                $('.famille-shop-name').text(`${newShopName} `); // Update the displayed shop name
+            }
+
+            highlightSelected.call(this); // Highlight the corresponding radio item
+        }
+    });
+
+    // Logic for boutique page to initially highlight the stored shop name
+    if (pathname.endsWith(boutiquePage)) {
+        const shopName = localStorage.getItem('shopName');
         if (shopName) {
-            $('.famille-shop-name').text(`${shopName} `); // Append "Boutique" to the shop name
+            $('.famille-shop-name').text(`${shopName} `);
+
+            // Highlight the corresponding radio button's parent item based on stored shop name
+            $(`input[type="radio"][value="${shopName}"]`).closest('.filter-list__item').css({
+                'border': '4px solid orange', // Change border color to orange
+                'border-radius': '6px'
+            });
         } else {
-            console.warn('No shop name found in localStorage.'); // Debugging
+            console.warn('No shop name found in localStorage.');
         }
     }
+
+    // Function to add border to the radio button's filter item when clicked
+    $('input[type="radio"]').on('click', function() {
+        const $filterItem = $(this).closest('.filter-list__item'); // Get the corresponding filter item
+        highlightSelected.call($filterItem.find('img')); // Highlight the item
+    });
+
 })();
+
 
     
 (function($) {
@@ -677,6 +718,11 @@ $(function () {
         }
     });
 })(jQuery);
+
+    
+
+    
+
 
 
 
