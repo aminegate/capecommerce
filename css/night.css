@@ -543,3 +543,13 @@ body.modal-open {
 
 }
 
+.form-control + .select2-container .select2-selection--single {
+    background-color: #484747;
+    border: none;
+    color: white;
+}
+
+.form-control + .select2-container .select2-selection__rendered {
+    color: white;
+}
+
