@@ -152,7 +152,7 @@
                 <div class="header__topbar-classic-bg"></div>
                 <div class="header__topbar-classic">
                     <div class="topbar topbar--classic">
-                        <div class="topbar__item-text">Bienvenue Admin</div>
+                        <div class="topbar__item-text">Bienvenue&nbsp;<span class="account-name">Admin</span></div>
                            <a href="" class="phone__body">
                             <div class="phone__number">+212 522 31 93 54</div>
                         </a>
@@ -165,10 +165,11 @@
                         <div class="topbar__item-button">
                                        <span class="settingsName">Paramètres&nbsp;&nbsp;<i class="fa-solid fa-chevron-down"></i></span>
                                         <!-- Header Top Menu's Dropdown -->
-                                        <ul class="user-sub-menu">
+                                          <ul class="user-sub-menu">
                                             <li><a href="tableau-de-bord-du-compte.html">Mon Compte</a></li>
                                             <li><a href="panier.html">Panier</a></li>
-                                            <li><a href="wishlist.html#scroll-target">Wishlist</a></li>
+                                            <li><a href="wishlist.html">Wishlist</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
                                             <li><a href="#">Déconnexion</a></li>
                                         </ul>
                         </div>
@@ -194,11 +195,44 @@
                                    <a href="categorie.html#filtrationTab" class="main-menu__link"><i class="fa-solid fa-filter"></i>&nbsp;&nbsp;FILTRATION</a>
                                  </li>
                                  <li class="main-menu__item">
-                                   <a href="categorie.html#lubrifiantTab" class="main-menu__link"><i class="fa-solid fa-oil-can"></i>&nbsp;&nbsp;CAPSERVICE</a>
+                                   <a href="capservice.html" class="main-menu__link"><i class="fa-solid fa-oil-can"></i>&nbsp;&nbsp;CAPSERVICE</a>
                                  </li>
                                  <li class="main-menu__item">
-                                    <a href="categorie.html#carrosserieTab" class="main-menu__link"><i class="fa-solid fa-car-side"></i>&nbsp;&nbsp;CAPCARROSSERIE</a>
+                                    <a href="capcarrosserie.html" class="main-menu__link"><i class="fa-solid fa-car-side"></i>&nbsp;&nbsp;CAPCARROSSERIE</a>
                                  </li>
+                                 <li class="main-menu__item main-menu__item--submenu--menu main-menu__item--has-submenu">
+                                    <a href="#" class="main-menu__link">
+                                        <i class="fa-solid fa-cart-arrow-down"></i>&nbsp;&nbsp;Produit
+                                        <svg width="7px" height="5px">
+                                            <path d="M0.280,0.282 C0.645,-0.084 1.238,-0.077 1.596,0.297 L3.504,2.310 L5.413,0.297 C5.770,-0.077 6.363,-0.084 6.728,0.282 C7.080,0.634 7.088,1.203 6.746,1.565 L3.504,5.007 L0.262,1.565 C-0.080,1.203 -0.072,0.634 0.280,0.282 Z"></path>
+                                        </svg>
+                                    </a>
+                                    <div class="main-menu__submenu">
+                                        <ul class="menu">
+                                            <li class="menu__item">
+                                                <a href="product-full.html" class="menu__link">
+                                                    produit-full
+                                                </a>
+                                            </li>
+                                            <li class="menu__item">
+                                                <a href="product-full-1.html" class="menu__link">
+                                                    produit-slider-1
+                                                </a>
+                                            </li>
+                                            <li class="menu__item">
+                                                <a href="product-full-2.html" class="menu__link">
+                                                     produit-slider-2
+                                                </a>
+                                            </li>
+                                            <li class="menu__item">
+                                                <a href="product-full-3.html" class="menu__link">
+                                                    produit-block
+                                                </a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </li>
                                  <!-- <li class="main-menu__item">     <a href="accueil.html" class="main-menu__link"><i class="fa-solid fa-spray-can-sparkles"></i>&nbsp;&nbsp;AROMA</a> </li> <li class="main-menu__item">     <a href="accueil.html" class="main-menu__link"><i class="fa-solid fa-clock"></i>&nbsp;&nbsp;chrono</a> </li> -->
                             </ul>
                         </div>
@@ -381,21 +415,7 @@
             <div class="block-header block-header--has-breadcrumb block-header--has-title">
                 <div class="container">
                     <div class="block-header__body">
-                        <nav class="breadcrumb block-header__breadcrumb" aria-label="breadcrumb">
-                            <ol class="breadcrumb__list">
-                                <li class="breadcrumb__spaceship-safe-area" role="presentation"></li>
-                                <li class="breadcrumb__item breadcrumb__item--parent breadcrumb__item--first">
-                                    <a href="accueil.html" class="breadcrumb__item-link">Accueil</a>
-                                </li>
-                                <li class="breadcrumb__item breadcrumb__item--parent">
-                                    <a href="" class="breadcrumb__item-link">Pages</a>
-                                </li>
-                                <li class="breadcrumb__item breadcrumb__item--current breadcrumb__item--last" aria-current="page">
-                                    <span class="breadcrumb__item-link">Promotions</span>
-                                </li>
-                                <li class="breadcrumb__title-safe-area" role="presentation"></li>
-                            </ol>
-                        </nav>
+                        
                         <h1 class="block-header__title">Promotions</h1>
                     </div>
                 </div>
@@ -1340,6 +1360,16 @@
                                                 <span class="filters-button__counter">3</span>
                                             </button>
                                             <div class="view-options__spring"></div>
+                                            <div class="view-options__select">
+                                                <label for="view-option-sort" class="displayInline">Afficher : </label>
+                                                <select id="view-option-sort" class="displayInline form-control form-control-sm" name="">
+                                                    <option value="">Tri par nouveauté</option>
+                                                    <option value="">Tri par note moyenne</option>
+                                                    <option value="">Tri par prix : du moins cher au plus cher</option>
+                                                    <option value="">Tri par prix : du plus cher au moins cher</option>
+                                                    <option value="">Nom du produit : A - Z</option>
+                                                </select>
+                                            </div>
                                             <div class="view-options__select fixWidth">
                                                 <label for="view-option-limit" class="displayInline">Articles par page : </label>
                                                 <select id="view-option-limit" class="displayInline form-control form-control-sm" name="">
@@ -1468,9 +1498,10 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
-                                                              &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
-                                                        </div>
+                                                    <div class="product-card__price product-card__price--new">180.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">240.00 DH</div>
+                                                    &nbsp;<span class="brut">[ BRUT ]&nbsp;</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                </div>
                                                         <br>
                                                         <div class="bottomFooterWrapper fixBg">
                                                             <div class="input-number">
@@ -1598,9 +1629,10 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
-                                                              &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
-                                                        </div>
+                                                    <div class="product-card__price product-card__price--new">180.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">240.00 DH</div>
+                                                    &nbsp;<span class="brut">[ BRUT ]&nbsp;</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                </div>
                                                         <br>
                                                         <div class="bottomFooterWrapper fixBg">
                                                             <div class="input-number">
@@ -1727,9 +1759,10 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
-                                                              &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
-                                                        </div>
+                                                    <div class="product-card__price product-card__price--new">180.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">240.00 DH</div>
+                                                    &nbsp;<span class="brut">[ BRUT ]&nbsp;</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                </div>
                                                         <br>
                                                         <div class="bottomFooterWrapper fixBg">
                                                             <div class="input-number">
@@ -1856,10 +1889,10 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
-                                                            
-  &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
-                                                        </div>
+                                                    <div class="product-card__price product-card__price--new">180.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">240.00 DH</div>
+                                                    &nbsp;<span class="brut">[ BRUT ]&nbsp;</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                </div>
                                                         <br>
                                                         <div class="bottomFooterWrapper fixBg">
                                                             <div class="input-number">
@@ -1986,10 +2019,10 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
-                                                            
-  &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
-                                                        </div>
+                                                    <div class="product-card__price product-card__price--new">180.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">240.00 DH</div>
+                                                    &nbsp;<span class="brut">[ BRUT ]&nbsp;</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                </div>
                                                         <br>
                                                         <div class="bottomFooterWrapper fixBg">
                                                             <div class="input-number">
@@ -2117,9 +2150,10 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
-                                                            &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
-                                                        </div>
+                                                    <div class="product-card__price product-card__price--new">180.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">240.00 DH</div>
+                                                    &nbsp;<span class="brut">[ BRUT ]&nbsp;</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                </div>
                                                         <br>
                                                         <div class="bottomFooterWrapper fixBg">
                                                             <div class="input-number">
@@ -2178,9 +2212,10 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
-                                                            &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
-                                                        </div>
+                                                    <div class="product-card__price product-card__price--new">180.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">240.00 DH</div>
+                                                    &nbsp;<span class="brut">[ BRUT ]&nbsp;</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                </div>
                                                         <br>
                                                         <div class="bottomFooterWrapper fixBg">
                                                             <div class="input-number">
@@ -2239,9 +2274,10 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
-                                                             &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
-                                                        </div>
+                                                    <div class="product-card__price product-card__price--new">180.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">240.00 DH</div>
+                                                    &nbsp;<span class="brut">[ BRUT ]&nbsp;</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                </div>
                                                         <br>
                                                         <div class="bottomFooterWrapper fixBg">
                                                             <div class="input-number">
@@ -2299,10 +2335,11 @@
                                                         </div>
                                                     </div>
                                                     <div class="product-card__footer">
-                                                        <div class="product-card__prices">
-                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
-                                                             &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
-                                                        </div>
+                                                      <div class="product-card__prices">
+                                                    <div class="product-card__price product-card__price--new">180.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">240.00 DH</div>
+                                                    &nbsp;<span class="brut">[ BRUT ]&nbsp;</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                </div>
                                                         <br>
                                                         <div class="bottomFooterWrapper fixBg">
                                                             <div class="input-number">
@@ -2360,10 +2397,11 @@
                                                         </div>
                                                     </div>
                                                     <div class="product-card__footer">
-                                                        <div class="product-card__prices">
-                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
-                                                            &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
-                                                        </div>
+                                                       <div class="product-card__prices">
+                                                    <div class="product-card__price product-card__price--new">180.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">240.00 DH</div>
+                                                    &nbsp;<span class="brut">[ BRUT ]&nbsp;</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                </div>
                                                         <br>
                                                         <div class="bottomFooterWrapper fixBg">
                                                             <div class="input-number">
@@ -2422,10 +2460,11 @@
                                                         </div>
                                                     </div>
                                                     <div class="product-card__footer">
-                                                        <div class="product-card__prices">
-                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
-                                                            &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
-                                                        </div>
+                                                       <div class="product-card__prices">
+                                                    <div class="product-card__price product-card__price--new">180.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">240.00 DH</div>
+                                                    &nbsp;<span class="brut">[ BRUT ]&nbsp;</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                </div>
                                                         <br>
                                                         <div class="bottomFooterWrapper fixBg">
                                                             <div class="input-number">
@@ -2485,9 +2524,10 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
-                                                            &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
-                                                        </div>
+                                                    <div class="product-card__price product-card__price--new">180.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">240.00 DH</div>
+                                                    &nbsp;<span class="brut">[ BRUT ]&nbsp;</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                </div>
                                                         <br>
                                                         <div class="bottomFooterWrapper fixBg">
                                                             <div class="input-number">
@@ -2546,9 +2586,10 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
-                                                            &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
-                                                        </div>
+                                                    <div class="product-card__price product-card__price--new">180.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">240.00 DH</div>
+                                                    &nbsp;<span class="brut">[ BRUT ]&nbsp;</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                </div>
                                                         <br>
                                                         <div class="bottomFooterWrapper fixBg">
                                                             <div class="input-number">
@@ -2607,9 +2648,10 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
-                                                            &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
-                                                        </div>
+                                                    <div class="product-card__price product-card__price--new">180.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">240.00 DH</div>
+                                                    &nbsp;<span class="brut">[ BRUT ]&nbsp;</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                </div>
                                                         <br>
                                                         <div class="bottomFooterWrapper fixBg">
                                                             <div class="input-number">
@@ -2667,10 +2709,11 @@
                                                         </div>
                                                     </div>
                                                     <div class="product-card__footer">
-                                                        <div class="product-card__prices">
-                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
-                                                            &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
-                                                        </div>
+                                                       <div class="product-card__prices">
+                                                    <div class="product-card__price product-card__price--new">180.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">240.00 DH</div>
+                                                    &nbsp;<span class="brut">[ BRUT ]&nbsp;</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                </div>
                                                         <br>
                                                         <div class="bottomFooterWrapper fixBg">
                                                             <div class="input-number">
@@ -2729,10 +2772,73 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
-                                                            &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
-                                                            
+                                                    <div class="product-card__price product-card__price--new">180.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">240.00 DH</div>
+                                                    &nbsp;<span class="brut">[ BRUT ]&nbsp;</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                </div>
+                                                        <br>
+                                                        <div class="bottomFooterWrapper fixBg">
+                                                            <div class="input-number">
+                                                                <input class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
+                                                                <div class="input-number__add"></div>
+                                                                <div class="input-number__sub"></div>
+                                                            </div>
+
+                                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+                                                                <svg width="20" height="20">
+                                                                    <circle cx="7" cy="17" r="2"></circle>
+                                                                    <circle cx="15" cy="17" r="2"></circle>
+                                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
+	V1.4C0,1.2,0.2,1,0.4,1h2.5c1,0,1.8,0.6,2.1,1.6L5.1,3l2.3,6.8c0,0.1,0.2,0.2,0.3,0.2h8.6c0.1,0,0.3-0.1,0.3-0.2l1.3-4.4
+	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z"></path>
+                                                                </svg>
+                                                            </button>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="products-list__item">
+                                               <div class="stockNumber fixTop">70</div>
+<div class="remise fixPos">-30%</div>
+
+                                                <div class="product-card">
+                                                    <button class="wishlist-button" type="button">
+                                                        <i class="fa-regular fa-heart"></i>
+                                                    </button>
+                                                    <div class="product-card__image">
+                                                        <div class="image image--type--product margin-bottom">
+
+                                                            <a href="product-full.html" class="image__body promotion-img">
+                                                                <img class="image__tag" src="images/products/product-11-245x245.jpg" alt="">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-card__info">
+
+                                                        <div class="product-card__name">
+                                                            <div>
+                                                                <a href="product-full.html">Brandix Spark Plug Kit ASR-400</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-card__rating">
+                                                            <div class="rating product-card__rating-stars">
+                                                                <div class="rating__body">
+                                                                    <div class="rating__star rating__star--active"></div>
+                                                                    <div class="rating__star rating__star--active"></div>
+                                                                    <div class="rating__star rating__star--active"></div>
+                                                                    <div class="rating__star rating__star--active"></div>
+                                                                    <div class="rating__star"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-card__rating-label">4 on 3 Avis</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-card__footer">
+                                                       <div class="product-card__prices">
+                                                    <div class="product-card__price product-card__price--new">180.00 DH</div>
+                                                    <div class="product-card__price product-card__price--old">240.00 DH</div>
+                                                    &nbsp;<span class="brut">[ BRUT ]&nbsp;</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                </div>
                                                         <br>
                                                         <div class="bottomFooterWrapper fixBg">
                                                             <div class="input-number">
@@ -2793,69 +2899,7 @@
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
                                                             <div class="product-card__price product-card__price--current">190.00 DH</div>
-                                                            &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
-                                                        </div>
-                                                        <br>
-                                                        <div class="bottomFooterWrapper fixBg">
-                                                            <div class="input-number">
-                                                                <input class="input-number__input form-control form-control-lg" type="number" min="1" value="1">
-                                                                <div class="input-number__add"></div>
-                                                                <div class="input-number__sub"></div>
-                                                            </div>
-
-                                                            <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
-                                                                <svg width="20" height="20">
-                                                                    <circle cx="7" cy="17" r="2"></circle>
-                                                                    <circle cx="15" cy="17" r="2"></circle>
-                                                                    <path d="M20,4.4V5l-1.8,6.3c-0.1,0.4-0.5,0.7-1,0.7H6.7c-0.4,0-0.8-0.3-1-0.7L3.3,3.9C3.1,3.3,2.6,3,2.1,3H0.4C0.2,3,0,2.8,0,2.6
-	V1.4C0,1.2,0.2,1,0.4,1h2.5c1,0,1.8,0.6,2.1,1.6L5.1,3l2.3,6.8c0,0.1,0.2,0.2,0.3,0.2h8.6c0.1,0,0.3-0.1,0.3-0.2l1.3-4.4
-	C17.9,5.2,17.7,5,17.5,5H9.4C9.2,5,9,4.8,9,4.6V3.4C9,3.2,9.2,3,9.4,3h9.2C19.4,3,20,3.6,20,4.4z"></path>
-                                                                </svg>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="products-list__item">
-                                               <div class="stockNumber fixTop">70</div>
-<div class="remise fixPos">-30%</div>
-
-                                                <div class="product-card">
-                                                    <button class="wishlist-button" type="button">
-                                                        <i class="fa-regular fa-heart"></i>
-                                                    </button>
-                                                    <div class="product-card__image">
-                                                        <div class="image image--type--product margin-bottom">
-
-                                                            <a href="product-full.html" class="image__body promotion-img">
-                                                                <img class="image__tag" src="images/products/product-11-245x245.jpg" alt="">
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-card__info">
-
-                                                        <div class="product-card__name">
-                                                            <div>
-                                                                <a href="product-full.html">Brandix Spark Plug Kit ASR-400</a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-card__rating">
-                                                            <div class="rating product-card__rating-stars">
-                                                                <div class="rating__body">
-                                                                    <div class="rating__star rating__star--active"></div>
-                                                                    <div class="rating__star rating__star--active"></div>
-                                                                    <div class="rating__star rating__star--active"></div>
-                                                                    <div class="rating__star rating__star--active"></div>
-                                                                    <div class="rating__star"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-card__rating-label">4 on 3 Avis</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-card__footer">
-                                                        <div class="product-card__prices">
-                                                            <div class="product-card__price product-card__price--current">190.00 DH</div>
-                                                            &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                            &nbsp;<span class="brut">[ BRUT ]&nbsp;</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                         </div>
                                                         <br>
                                                         <div class="bottomFooterWrapper fixBg">
@@ -3275,31 +3319,7 @@
         </div>
         <!-- site__body / end -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-         </div>
+   
 
     <!-- site__body / end -->
     <!-- site__footer -->
@@ -3318,10 +3338,7 @@
                         <div class="col-12 col-xl-4">
                             <div class="site-footer__widget footer-contacts">
                                 <h5 class="footer-contacts__title">Contactez-nous</h5>
-                                <div class="footer-contacts__text">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing
-                                    elit. Integer in feugiat lorem.
-                                </div>
+                                <div class="footer-contacts__text">     Notre équipe est là pour vous répondre ! Pour toute question sur nos produits, vos commandes ou pour toute autre demande, n'hésitez pas à nous contacter. </div>
                                 <address class="footer-contacts__contacts">
                                     <dl>
                                         <dt>Numéro de téléphone</dt>

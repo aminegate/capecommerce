@@ -152,7 +152,7 @@
                 <div class="header__topbar-classic-bg"></div>
                 <div class="header__topbar-classic">
                     <div class="topbar topbar--classic">
-                        <div class="topbar__item-text">Bienvenue Admin</div>
+                        <div class="topbar__item-text">Bienvenue&nbsp;<span class="account-name">Admin</span></div>
                            <a href="" class="phone__body">
                             <div class="phone__number">+212 522 31 93 54</div>
                         </a>
@@ -165,10 +165,11 @@
                         <div class="topbar__item-button">
                                        <span class="settingsName">Paramètres&nbsp;&nbsp;<i class="fa-solid fa-chevron-down"></i></span>
                                         <!-- Header Top Menu's Dropdown -->
-                                        <ul class="user-sub-menu">
+                                          <ul class="user-sub-menu">
                                             <li><a href="tableau-de-bord-du-compte.html">Mon Compte</a></li>
                                             <li><a href="panier.html">Panier</a></li>
-                                            <li><a href="wishlist.html#scroll-target">Wishlist</a></li>
+                                            <li><a href="wishlist.html">Wishlist</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
                                             <li><a href="#">Déconnexion</a></li>
                                         </ul>
                         </div>
@@ -194,11 +195,44 @@
                                    <a href="categorie.html#filtrationTab" class="main-menu__link"><i class="fa-solid fa-filter"></i>&nbsp;&nbsp;FILTRATION</a>
                                  </li>
                                  <li class="main-menu__item">
-                                   <a href="categorie.html#lubrifiantTab" class="main-menu__link"><i class="fa-solid fa-oil-can"></i>&nbsp;&nbsp;CAPSERVICE</a>
+                                   <a href="capservice.html" class="main-menu__link"><i class="fa-solid fa-oil-can"></i>&nbsp;&nbsp;CAPSERVICE</a>
                                  </li>
                                  <li class="main-menu__item">
-                                    <a href="categorie.html#carrosserieTab" class="main-menu__link"><i class="fa-solid fa-car-side"></i>&nbsp;&nbsp;CAPCARROSSERIE</a>
+                                    <a href="capcarrosserie.html" class="main-menu__link"><i class="fa-solid fa-car-side"></i>&nbsp;&nbsp;CAPCARROSSERIE</a>
                                  </li>
+                                 <li class="main-menu__item main-menu__item--submenu--menu main-menu__item--has-submenu">
+                                    <a href="#" class="main-menu__link">
+                                        <i class="fa-solid fa-cart-arrow-down"></i>&nbsp;&nbsp;Produit
+                                        <svg width="7px" height="5px">
+                                            <path d="M0.280,0.282 C0.645,-0.084 1.238,-0.077 1.596,0.297 L3.504,2.310 L5.413,0.297 C5.770,-0.077 6.363,-0.084 6.728,0.282 C7.080,0.634 7.088,1.203 6.746,1.565 L3.504,5.007 L0.262,1.565 C-0.080,1.203 -0.072,0.634 0.280,0.282 Z"></path>
+                                        </svg>
+                                    </a>
+                                    <div class="main-menu__submenu">
+                                        <ul class="menu">
+                                            <li class="menu__item">
+                                                <a href="product-full.html" class="menu__link">
+                                                    produit-full
+                                                </a>
+                                            </li>
+                                            <li class="menu__item">
+                                                <a href="product-full-1.html" class="menu__link">
+                                                    produit-slider-1
+                                                </a>
+                                            </li>
+                                            <li class="menu__item">
+                                                <a href="product-full-2.html" class="menu__link">
+                                                     produit-slider-2
+                                                </a>
+                                            </li>
+                                            <li class="menu__item">
+                                                <a href="product-full-3.html" class="menu__link">
+                                                    produit-block
+                                                </a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </li>
                                  <!-- <li class="main-menu__item">     <a href="accueil.html" class="main-menu__link"><i class="fa-solid fa-spray-can-sparkles"></i>&nbsp;&nbsp;AROMA</a> </li> <li class="main-menu__item">     <a href="accueil.html" class="main-menu__link"><i class="fa-solid fa-clock"></i>&nbsp;&nbsp;chrono</a> </li> -->
                             </ul>
                         </div>
@@ -381,21 +415,7 @@
             <div class="block-header block-header--has-breadcrumb block-header--has-title">
                 <div class="container">
                     <div class="block-header__body">
-                        <nav class="breadcrumb block-header__breadcrumb" aria-label="breadcrumb">
-                            <ol class="breadcrumb__list">
-                                <li class="breadcrumb__spaceship-safe-area" role="presentation"></li>
-                                <li class="breadcrumb__item breadcrumb__item--parent breadcrumb__item--first">
-                                    <a href="accueil.html" class="breadcrumb__item-link">Accueil</a>
-                                </li>
-                                <li class="breadcrumb__item breadcrumb__item--parent">
-                                    <a href="" class="breadcrumb__item-link">Pages</a>
-                                </li>
-                                <li class="breadcrumb__item breadcrumb__item--current breadcrumb__item--last" aria-current="page">
-                                    <span class="breadcrumb__item-link">Catégories</span>
-                                </li>
-                                <li class="breadcrumb__title-safe-area" role="presentation"></li>
-                            </ol>
-                        </nav>
+                        
                         <h1 class="block-header__title">CATÉGORIES</h1>
                     </div>
                 </div>
@@ -458,236 +478,236 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item" id="subCatego_1_1" data-category="1" data-subcategory="1_1">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/alguerra.jpg" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/alguerra.jpg" alt="alguerra">
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item" id="subCatego_1_2" data-category="1" data-subcategory="1_2">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/alkar.jpg" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/alkar.jpg" alt="alkar">
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/ayfar.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/ayfar.jpg" alt="ayfar">
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_4">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/depo.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/depo.jpg" alt="depo">
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_5">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/despa.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/despa.jpg" alt="despa">
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_6">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/eurobump.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/eurobump.jpg" alt="eurobump">
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_7">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/feituo.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/feituo.jpg" alt="feituo">
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_8">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/flosser.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/flosser.jpg" alt="flosser">
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_9">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/divers.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/divers.jpg" alt="divers">
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_10">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/fristom.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/fristom.jpg" alt="fristom">
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_11">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/haituo.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/haituo.jpg" alt="haituo">
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_12">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/hushan.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/hushan.jpg" alt="hushan">
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_13">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/depo.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/depo.jpg" alt="depo">
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_14">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/isam.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/isam.jpg" alt="isam">
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_15">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/itsa.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/itsa.jpg" alt="itsa">
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_16">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/juncheng.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/juncheng.jpg" alt="juncheng">
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_17">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/kayaplastik.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/kayaplastik.jpg" alt="kayaplastik">
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_18">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/liaoning.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/liaoning.jpg" alt="liaoning">
                             </div>
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_19">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/mad.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/mad.jpg" alt="mad">
                             </div>
                         </a>
                     </div>
                     
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_20">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/mars.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/mars.jpg" alt="mars">
                             </div>
                         </a>
                     </div>
                     
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_21">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/maxem.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/maxem.jpg" alt="maxem">
                             </div>
                         </a>
                     </div>
                     
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_22">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/narva.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/narva.jpg" alt="narva">
                             </div>
                         </a>
                     </div>
                     
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_23">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/phira.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/phira.jpg" alt="phira">
                             </div>
                         </a>
                     </div>
                     
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_24">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/meyle.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/meyle.jpg" alt="meyle">
                             </div>
                         </a>
                     </div>
                     
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_25">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/pleksan.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/pleksan.jpg" alt="pleksan">
                             </div>
                         </a>
                     </div>
                     
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_26">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/prasco.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/prasco.jpg" alt="prasco">
                             </div>
                         </a>
                     </div>
                     
                     
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_27">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/pulo.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/pulo.jpg" alt="pulo">
                             </div>
                         </a>
                     </div>
                     
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_28">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/r2a.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/r2a.jpg" alt="r2a">
                             </div>
                         </a>
                     </div>
                     
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_29">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/reshine.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/reshine.jpg" alt="reshine">
                             </div>
                         </a>
                     </div>
                     
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_30">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/sertplas.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/sertplas.jpg" alt="sertplas">
                             </div>
                         </a>
                     </div>
                     
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_31">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/sevgili.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/sevgili.jpg" alt="sevgili">
                             </div>
                         </a>
                     </div>
                     
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_32">
                             <div class="subcategoryImg">
                                 <img src="images/categories/sub-category/smp.jpg" alt="Subcategory-3">
                             </div>
@@ -695,42 +715,42 @@
                     </div>
                     
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_33">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/suspension.jpg" alt="suspension">
                             </div>
                         </a>
                     </div>
                     
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_34">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/tursan.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/tursan.jpg" alt="tursan">
                             </div>
                         </a>
                     </div>
                     
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_35">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/tyc.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/tyc.jpg" alt="tyc">
                             </div>
                         </a>
                     </div>
                     
                     
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_36">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/vanpres.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/vanpres.jpg" alt="vanpres">
                             </div>
                         </a>
                     </div>
                     
                     <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_3">
+                        <a href="boutique.html" class="subcategory-item" id="subCatego_1_3" data-category="1" data-subcategory="1_37">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/yih-sheng.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/yih-sheng.jpg" alt="yih-sheng">
                             </div>
                         </a>
                     </div>
@@ -747,7 +767,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item" id="subCatego_2_1" data-category="2" data-subcategory="2_1">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/alco.jpg" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/alco.jpg" alt="alco">
                             </div>
                             
                         </a>
@@ -755,7 +775,7 @@
                     <div class="col-md-2">
                          <a href="boutique.html" class="subcategory-item" id="subCatego_2_2" data-category="2" data-subcategory="2_2">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/capfilter.jpg" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/capfilter.jpg" alt="capfilter">
                             </div>
                             
                         </a>
@@ -763,7 +783,7 @@
                     <div class="col-md-2">
                          <a href="boutique.html" class="subcategory-item" id="subCatego_2_3" data-category="2" data-subcategory="2_3">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/divers.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/divers.jpg" alt="divers">
                             </div>
                             
                         </a>
@@ -771,7 +791,7 @@
                     <div class="col-md-2">
                          <a href="boutique.html" class="subcategory-item" id="subCatego_2_4" data-category="2" data-subcategory="2_4">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/mis-filter.jpg" alt="Subcategory-4">
+                                <img src="images/categories/sub-category/mis-filter.jpg" alt="mis-filter">
                             </div>
                             
                         </a>
@@ -779,7 +799,7 @@
                     <div class="col-md-2">
                          <a href="boutique.html" class="subcategory-item" id="subCatego_2_5" data-category="2" data-subcategory="2_5">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/onfil.jpg" alt="Subcategory-5">
+                                <img src="images/categories/sub-category/onfil.jpg" alt="onfil">
                             </div>
                             
                         </a>
@@ -795,7 +815,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/alco.jpg" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/alco.jpg" alt="alco">
                             </div>
                             
                         </a>
@@ -803,7 +823,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/ate.jpg" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/ate.jpg" alt="ate">
                             </div>
                             
                         </a>
@@ -811,7 +831,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/atlantic.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/atlantic.jpg" alt="atlantic">
                             </div>
                             
                         </a>
@@ -819,7 +839,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/bardahl.jpg" alt="Subcategory-4">
+                                <img src="images/categories/sub-category/bardahl.jpg" alt="bardahl">
                             </div>
                             
                         </a>
@@ -827,7 +847,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/bendix.jpeg" alt="Subcategory-5">
+                                <img src="images/categories/sub-category/bendix.jpeg" alt="bendix">
                             </div>
                             
                         </a>
@@ -835,7 +855,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/bruxol.jpeg" alt="Subcategory-6">
+                                <img src="images/categories/sub-category/bruxol.jpeg" alt="bruxol">
                             </div>
                             
                         </a>
@@ -843,7 +863,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/burtech.jpeg" alt="Subcategory-7">
+                                <img src="images/categories/sub-category/burtech.jpeg" alt="burtech">
                             </div>
                             
                         </a>
@@ -851,7 +871,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/concorde.jpg" alt="Subcategory-8">
+                                <img src="images/categories/sub-category/concorde.jpg" alt="concorde">
                             </div>
                             
                         </a>
@@ -860,7 +880,7 @@
 
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/hepu.jpg" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/hepu.jpg" alt="hepu">
                             </div>
                             
                         </a>
@@ -870,7 +890,7 @@
 
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/jurid.jpeg" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/jurid.jpeg" alt="jurid">
                             </div>
                             
                         </a>
@@ -879,7 +899,7 @@
 
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/lion.jpeg" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/lion.jpeg" alt="lion">
                             </div>
                             
                         </a>
@@ -888,7 +908,7 @@
 
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/prof.jpeg" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/prof.jpeg" alt="prof">
                             </div>
                             
                         </a>
@@ -897,7 +917,7 @@
 
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/professional.jpg" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/professional.jpg" alt="professional">
                             </div>
                             
                         </a>
@@ -906,7 +926,7 @@
 
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/skf.jpeg" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/skf.jpeg" alt="skf">
                             </div>
                             
                         </a>
@@ -916,7 +936,7 @@
 
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/trw.jpg" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/trw.jpg" alt="trw">
                             </div>
                             
                         </a>
@@ -934,7 +954,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/autotec.jpg" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/autotec.jpg" alt="autotec">
                             </div>
                             
                         </a>
@@ -942,7 +962,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/dolz.jpg" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/dolz.jpg" alt="dolz">
                             </div>
                             
                         </a>
@@ -950,7 +970,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/fare.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/fare.jpg" alt="fare">
                             </div>
                             
                         </a>
@@ -958,7 +978,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/divers.jpg" alt="Subcategory-4">
+                                <img src="images/categories/sub-category/divers.jpg" alt="divers">
                             </div>
                             
                         </a>
@@ -966,7 +986,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/dana.jpg" alt="Subcategory-5">
+                                <img src="images/categories/sub-category/dana.jpg" alt="dana">
                             </div>
                             
                         </a>
@@ -974,7 +994,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/quinton.jpg" alt="Subcategory-6">
+                                <img src="images/categories/sub-category/quinton.jpg" alt="quinton">
                             </div>
                             
                         </a>
@@ -982,7 +1002,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/soikon.jpg" alt="Subcategory-7">
+                                <img src="images/categories/sub-category/soikon.jpg" alt="soikon">
                             </div>
                             
                         </a>
@@ -990,7 +1010,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/scan.jpg" alt="Subcategory-8">
+                                <img src="images/categories/sub-category/scan.jpg" alt="scan">
                             </div>
                             
                         </a>
@@ -999,7 +1019,7 @@
 
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/suspension.jpg" alt="suspension">
                             </div>
                             
                         </a>
@@ -1008,7 +1028,7 @@
 
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/wrakynson.jpg" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/wrakynson.jpg" alt="wrakynson">
                             </div>
                             
                         </a>
@@ -1072,7 +1092,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/autotec.jpg" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/autotec.jpg" alt="autotec">
                             </div>
                             
                         </a>
@@ -1080,7 +1100,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/continental.jpg" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/continental.jpg" alt="continental">
                             </div>
                             
                         </a>
@@ -1088,7 +1108,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/dolz.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/dolz.jpg" alt="dolz">
                             </div>
                             
                         </a>
@@ -1096,7 +1116,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/fae.jpg" alt="Subcategory-4">
+                                <img src="images/categories/sub-category/fae.jpg" alt="fae">
                             </div>
                             
                         </a>
@@ -1104,7 +1124,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/fare.jpg" alt="Subcategory-5">
+                                <img src="images/categories/sub-category/fare.jpg" alt="fare">
                             </div>
                             
                         </a>
@@ -1112,7 +1132,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/feituo.jpg" alt="Subcategory-6">
+                                <img src="images/categories/sub-category/feituo.jpg" alt="feituo">
                             </div>
                             
                         </a>
@@ -1120,7 +1140,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/divers.jpg" alt="Subcategory-7">
+                                <img src="images/categories/sub-category/divers.jpg" alt="divers">
                             </div>
                             
                         </a>
@@ -1128,16 +1148,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/impergom.jpg" alt="Subcategory-8">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/soikon.jpg" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/impergom.jpg" alt="impergom">
                             </div>
                             
                         </a>
@@ -1146,7 +1157,7 @@
 
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/serck.jpg" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/soikon.jpg" alt="soikon">
                             </div>
                             
                         </a>
@@ -1155,7 +1166,16 @@
 
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/smp.jpg" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/serck.jpg" alt="serck">
+                            </div>
+                            
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+
+                        <a href="boutique.html" class="subcategory-item">
+                            <div class="subcategoryImg">
+                                <img src="images/categories/sub-category/smp.jpg" alt="smp">
                             </div>
                             
                         </a>
@@ -1165,7 +1185,7 @@
 
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/suspension.jpg" alt="suspension">
                             </div>
                             
                         </a>
@@ -1174,7 +1194,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/vernet.jpg" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/vernet.jpg" alt="vernet">
                             </div>
                         </a>
                     </div>
@@ -1182,7 +1202,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/automotive.jpg" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/automotive.jpg" alt="automotive">
                             </div>
                         </a>
                     </div>
@@ -1197,7 +1217,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/ate.jpg" alt="Subcategory-1">
+                                <img src="images/categories/sub-category/ate.jpg" alt="ate">
                             </div>
                             
                         </a>
@@ -1205,7 +1225,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/capflex.jpg" alt="Subcategory-2">
+                                <img src="images/categories/sub-category/capflex.jpg" alt="capflex">
                             </div>
                             
                         </a>
@@ -1213,7 +1233,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/fare.jpg" alt="Subcategory-3">
+                                <img src="images/categories/sub-category/fare.jpg" alt="fare">
                             </div>
                             
                         </a>
@@ -1221,7 +1241,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/divers.jpg" alt="Subcategory-4">
+                                <img src="images/categories/sub-category/divers.jpg" alt="divers">
                             </div>
                             
                         </a>
@@ -1229,7 +1249,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/hardex.jpg" alt="Subcategory-5">
+                                <img src="images/categories/sub-category/hardex.jpg" alt="hardex">
                             </div>
                             
                         </a>
@@ -1237,7 +1257,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/lpr.jpg" alt="Subcategory-6">
+                                <img src="images/categories/sub-category/lpr.jpg" alt="lpr">
                             </div>
                             
                         </a>
@@ -1245,7 +1265,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/plastex.jpg" alt="Subcategory-7">
+                                <img src="images/categories/sub-category/plastex.jpg" alt="plastex">
                             </div>
                             
                         </a>
@@ -1253,7 +1273,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/quinton.jpg" alt="Subcategory-8">
+                                <img src="images/categories/sub-category/quinton.jpg" alt="quinton">
                             </div>
                             
                         </a>
@@ -1261,7 +1281,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/soikon.jpg" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/soikon.jpg" alt="soikon">
                             </div>
                         </a>
                     </div>
@@ -1269,7 +1289,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/suspension.jpg" alt="suspension">
                             </div>
                         </a>
                     </div>
@@ -1277,7 +1297,7 @@
                     <div class="col-md-2">
                         <a href="boutique.html" class="subcategory-item">
                             <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/afle.jpg" alt="Subcategory-9">
+                                <img src="images/categories/sub-category/afle.jpg" alt="afle">
                             </div>
                         </a>
                     </div>
@@ -1290,199 +1310,175 @@
 
                 <div class="row">
 
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/capflex.jpg" alt="Subcategory-1">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/coram.jpg" alt="Subcategory-2">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/fare.jpg" alt="Subcategory-3">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/formpart.jpg" alt="Subcategory-4">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/soikon.jpg" alt="Subcategory-5">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-6">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/afle.jpg" alt="Subcategory-7">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/wrakynson.jpg" alt="Subcategory-8">
-                            </div>
-                            
-                        </a>
-                    </div>
-                </div>
-
+                <div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/capflex.jpg" alt="capflex">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/coram.jpg" alt="coram">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/fare.jpg" alt="fare">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/formpart.jpg" alt="formpart">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/soikon.jpg" alt="soikon">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/suspension.jpg" alt="suspension">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/afle.jpg" alt="afle">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/wrakynson.jpg" alt="wrakynson">
+        </div>
+    </a>
+</div>
+</div>
             </div>
             <!-- Subcategory for Category 8 -->
             <div class="subcategory" id="subcategory-8">
 
                 <div class="row">
 
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/autotec.jpg" alt="Subcategory-1">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/coram.jpg" alt="Subcategory-2">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/fare.jpg" alt="Subcategory-3">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/formpart.jpg" alt="Subcategory-4">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/divers.jpg" alt="Subcategory-5">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/gr.jpg" alt="Subcategory-6">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/jurid.jpeg" alt="Subcategory-7">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/lpr.jpg" alt="Subcategory-8">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/ltm.jpg" alt="Subcategory-9">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/otohakan.jpg" alt="Subcategory-9">
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/soikon.jpg" alt="Subcategory-9">
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/record.jpg" alt="Subcategory-9">
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/smp.jpg" alt="Subcategory-9">
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-9">
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/windsor.jpg" alt="Subcategory-9">
-                            </div>
-                        </a>
-                    </div>
-                
-                
-                </div>
+                 <div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/autotec.jpg" alt="autotec">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/coram.jpg" alt="coram">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/fare.jpg" alt="fare">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/formpart.jpg" alt="formpart">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/divers.jpg" alt="divers">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/gr.jpg" alt="gr">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/jurid.jpeg" alt="jurid">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/lpr.jpg" alt="lpr">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/ltm.jpg" alt="ltm">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/otohakan.jpg" alt="otohakan">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/soikon.jpg" alt="soikon">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/record.jpg" alt="record">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/smp.jpg" alt="smp">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/suspension.jpg" alt="suspension">
+        </div>
+    </a>
+</div>
+<div class="col-md-2">
+    <a href="boutique.html" class="subcategory-item">
+        <div class="subcategoryImg">
+            <img src="images/categories/sub-category/windsor.jpg" alt="windsor">
+        </div>
+    </a>
+</div>
+</div>
             </div>
 
             <div class="row">
@@ -1533,262 +1529,217 @@
              <!-- Subcategory for Category 5 -->
             <div class="subcategory" id="subcategory-9">
 
-                <div class="row">
-
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/soikon.jpg" alt="Subcategory-1">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-2">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
+           <div class="row">
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/soikon.jpg" alt="soikon">
             </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/suspension.jpg" alt="suspension">
+            </div>
+        </a>
+    </div>
+</div>
+</div>
             <!-- Subcategory for Category 6 -->
             <div class="subcategory" id="subcategory-10">
 
-                <div class="row">
-
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/fare.jpg" alt="Subcategory-1">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/divers.jpg" alt="Subcategory-2">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/gomet.jpg" alt="Subcategory-3">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/gr.jpg" alt="Subcategory-4">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/impergom.jpg" alt="Subcategory-5">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-6">
-                            </div> 
-                        </a>
-                    </div>
-                </div>
+              <div class="row">
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/fare.jpg" alt="fare">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/divers.jpg" alt="divers">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/gomet.jpg" alt="gomet">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/gr.jpg" alt="gr">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/impergom.jpg" alt="impergom">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/suspension.jpg" alt="suspension">
+            </div>
+        </a>
+    </div>
+</div>
 
             </div>
             <!-- Subcategory for Category 7 -->
             <div class="subcategory" id="subcategory-11">
 
-                <div class="row">
-
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/fare.jpg" alt="Subcategory-1">
-                            </div>
-                        </a>
-                    </div>
-                </div>
+               <div class="row">
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/fare.jpg" alt="fare">
+            </div>
+        </a>
+    </div>
+</div>
 
             </div>
             <!-- Subcategory for Category 8 -->
             <div class="subcategory" id="subcategory-12">
 
-                <div class="row">
-
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/a-n.jpg" alt="Subcategory-1">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/autotec.jpg" alt="Subcategory-2">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/borg.jpg" alt="Subcategory-3">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/diesel.jpg" alt="Subcategory-4">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/eyquem.jpg" alt="Subcategory-5">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/fae.jpg" alt="Subcategory-6">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/divers.jpg" alt="Subcategory-7">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/gebe.jpg" alt="Subcategory-8">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/huco.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/imp.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/mta.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/otohakan.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/meyle.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/sertplas.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/smp.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/vernet.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/zen.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    
-                </div>
+              <div class="row">
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/a-n.jpg" alt="a-n">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/autotec.jpg" alt="autotec">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/borg.jpg" alt="borg">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/diesel.jpg" alt="diesel">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/eyquem.jpg" alt="eyquem">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/fae.jpg" alt="fae">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/divers.jpg" alt="divers">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/gebe.jpg" alt="gebe">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/huco.jpg" alt="huco">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/imp.jpg" alt="imp">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/mta.jpg" alt="mta">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/otohakan.jpg" alt="otohakan">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/meyle.jpg" alt="meyle">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/sertplas.jpg" alt="sertplas">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/smp.jpg" alt="smp">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/suspension.jpg" alt="suspension">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/vernet.jpg" alt="vernet">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/zen.jpg" alt="zen">
+            </div>
+        </a>
+    </div>
+</div>
 
             </div>
             
@@ -1842,436 +1793,349 @@
             <div class="subcategory" id="subcategory-13">
 
                 <div class="row">
-
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/aroma.jpg" alt="Subcategory-1">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/burtech.jpeg" alt="Subcategory-2">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/fiamm.jpg" alt="Subcategory-3">
-                            </div>
-                            
-                        </a>
-                    </div>
-                </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/aroma.jpg" alt="aroma">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/burtech.jpeg" alt="burtech">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/fiamm.jpg" alt="fiamm">
+            </div>
+        </a>
+    </div>
+</div>
 
             </div>
             <!-- Subcategory for Category 6 -->
             <div class="subcategory" id="subcategory-14">
 
-                <div class="row">
-
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/a&s.jpg" alt="Subcategory-1">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/continental.jpg" alt="Subcategory-2">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/coram.jpg" alt="Subcategory-3">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/dayco.jpg" alt="Subcategory-4">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/eyquem.jpg" alt="Subcategory-5">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/fare.jpg" alt="Subcategory-6">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/hepu.jpg" alt="Subcategory-7">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/ntn-snr.jpg" alt="Subcategory-8">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/otohakan.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/soikon.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/smp.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-              
-                </div>
+             <div class="row">
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/a&s.jpg" alt="a&s">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/continental.jpg" alt="continental">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/coram.jpg" alt="coram">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/dayco.jpg" alt="dayco">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/eyquem.jpg" alt="eyquem">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/fare.jpg" alt="fare">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/hepu.jpg" alt="hepu">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/ntn-snr.jpg" alt="ntn-snr">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/otohakan.jpg" alt="otohakan">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/soikon.jpg" alt="soikon">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/smp.jpg" alt="smp">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/suspension.jpg" alt="suspension">
+            </div>
+        </a>
+    </div>
+</div>
 
             </div>
             <!-- Subcategory for Category 7 -->
             <div class="subcategory" id="subcategory-15">
-
-                <div class="row">
-
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/autotec.jpg" alt="Subcategory-1">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/capflex.jpg" alt="Subcategory-2">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/coram.jpg" alt="Subcategory-3">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/fare.jpg" alt="Subcategory-4">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/flosser.jpg" alt="Subcategory-5">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/divers.jpg" alt="Subcategory-6">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/dana.jpg" alt="Subcategory-7">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/haug.jpg" alt="Subcategory-8">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/impergom.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/sertplas.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    
-                    
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/smp.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/afle.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/vernet.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    
-                
-                    
-                </div>
+<div class="row">
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/autotec.jpg" alt="autotec">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/capflex.jpg" alt="capflex">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/coram.jpg" alt="coram">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/fare.jpg" alt="fare">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/flosser.jpg" alt="flosser">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/divers.jpg" alt="divers">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/dana.jpg" alt="dana">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/haug.jpg" alt="haug">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/impergom.jpg" alt="impergom">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/sertplas.jpg" alt="sertplas">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/smp.jpg" alt="smp">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/suspension.jpg" alt="suspension">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/afle.jpg" alt="afle">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/vernet.jpg" alt="vernet">
+            </div>
+        </a>
+    </div>
+</div>
 
             </div>
             <!-- Subcategory for Category 8 -->
             <div class="subcategory" id="subcategory-16">
 
-                <div class="row">
-
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/3rg.jpg" alt="Subcategory-1">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/a&s.jpg" alt="Subcategory-2">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/autotec.jpg" alt="Subcategory-3">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/diesel.jpg" alt="Subcategory-4">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/divers.jpg" alt="Subcategory-5">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/haituo.jpg" alt="Subcategory-6">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/huco.jpg" alt="Subcategory-7">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/impergom.jpg" alt="Subcategory-8">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/otohakan.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                     <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/meyle.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    
-                     <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/quinton.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    
-                     <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/soikon.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                     <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/scan.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    
-                     <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/smp.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                     <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/suspension.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                     <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/afle.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    
-                     <div class="col-md-2">
-
-                        <a href="boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img src="images/categories/sub-category/vipiemme.jpg" alt="Subcategory-9">
-                            </div>
-                            
-                        </a>
-                    </div>
-                    
-                    
-                    
-                </div>
+              <div class="row">
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/3rg.jpg" alt="3rg">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/a&s.jpg" alt="a&s">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/autotec.jpg" alt="autotec">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/diesel.jpg" alt="diesel">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/divers.jpg" alt="divers">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/haituo.jpg" alt="haituo">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/huco.jpg" alt="huco">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/impergom.jpg" alt="impergom">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/otohakan.jpg" alt="otohakan">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/meyle.jpg" alt="meyle">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/quinton.jpg" alt="quinton">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/soikon.jpg" alt="soikon">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/scan.jpg" alt="scan">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/smp.jpg" alt="smp">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/suspension.jpg" alt="suspension">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/afle.jpg" alt="afle">
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="boutique.html" class="subcategory-item">
+            <div class="subcategoryImg">
+                <img src="images/categories/sub-category/vipiemme.jpg" alt="vipiemme">
+            </div>
+        </a>
+    </div>
+</div>
 
             </div>
             
@@ -2300,10 +2164,7 @@
                         <div class="col-12 col-xl-4">
                             <div class="site-footer__widget footer-contacts">
                                 <h5 class="footer-contacts__title">Contactez-nous</h5>
-                                <div class="footer-contacts__text">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing
-                                    elit. Integer in feugiat lorem.
-                                </div>
+                                <div class="footer-contacts__text">     Notre équipe est là pour vous répondre ! Pour toute question sur nos produits, vos commandes ou pour toute autre demande, n'hésitez pas à nous contacter. </div>
                                 <address class="footer-contacts__contacts">
                                     <dl>
                                         <dt>Numéro de téléphone</dt>
