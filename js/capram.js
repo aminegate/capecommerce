@@ -582,7 +582,7 @@ $(function () {
     const subcategoryPages = ['categorie.html', 'accueil.html', 'capcarrosserie.html', 'capservice.html'];
     const boutiquePage = 'boutique.html';
 
-    // Function to highlight the selected filter item
+    // Function to highlight the selected filter item and scroll into view
     const highlightSelected = function() {
         // Remove existing borders from all filter items
         $('.filter-list__item').css({
@@ -593,7 +593,7 @@ $(function () {
         $(this).closest('.filter-list__item').css({
             'border': '4px solid orange',  // Change border color to orange
             'border-radius': '6px'
-        });
+        })[0].scrollIntoView({ behavior: 'smooth', block: 'center' }); // Scroll the item into view
     };
 
     // Subcategory page logic
@@ -630,7 +630,7 @@ $(function () {
                 $('.famille-shop-name').text(`${newShopName} `); // Update the displayed shop name
             }
 
-            highlightSelected.call(this); // Highlight the corresponding radio item
+            highlightSelected.call(this); // Highlight the corresponding radio item and scroll to it
         }
     });
 
@@ -640,11 +640,11 @@ $(function () {
         if (shopName) {
             $('.famille-shop-name').text(`${shopName} `);
 
-            // Highlight the corresponding radio button's parent item based on stored shop name
+            // Highlight and scroll to the corresponding radio button's parent item based on stored shop name
             $(`input[type="radio"][value="${shopName}"]`).closest('.filter-list__item').css({
                 'border': '4px solid orange', // Change border color to orange
                 'border-radius': '6px'
-            });
+            })[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
             console.warn('No shop name found in localStorage.');
         }
@@ -653,7 +653,7 @@ $(function () {
     // Function to add border to the radio button's filter item when clicked
     $('input[type="radio"]').on('click', function() {
         const $filterItem = $(this).closest('.filter-list__item'); // Get the corresponding filter item
-        highlightSelected.call($filterItem.find('img')); // Highlight the item
+        highlightSelected.call($filterItem.find('img')); // Highlight the item and scroll to it
     });
 
 })();
