@@ -13427,6 +13427,7 @@ select.form-control::-ms-expand {
 
 .widget-filters__actions {
     padding: 20px 1.5rem 1.5rem;
+    margin-right: 30px;
 }
 
 [dir=ltr] .widget-filters__actions > * + * {
