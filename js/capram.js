@@ -492,31 +492,32 @@ window.onload = function() {
     $(".logo__image img").attr('src', 'images/logo.png'); 
     $(".site-footer__payments img").attr('src', 'images/logo.png'); 
     $(".carrosserie-img img").attr('src', 'images/carrosserie-white.jpg'); 
-    
     $(".nightMode").prop('disabled', true); // Disable night mode CSS
   } else {
     $(".logo__image img").attr('src', 'images/logo_white.png'); // Set to original logo
-      $(".site-footer__payments img").attr('src', 'images/logo_white.png'); 
-       $(".carrosserie-img img").attr('src', 'images/carrosserie.jpg'); // Change to white logo
+    $(".site-footer__payments img").attr('src', 'images/logo_white.png'); 
+    $(".carrosserie-img img").attr('src', 'images/carrosserie.jpg'); // Change to white logo
     $(".nightMode").prop('disabled', false); // Enable night mode CSS if not in day mode
   }
 
   $('.tdnn').click(function () {
-    $("body").toggleClass('light');
-    $(".moon").toggleClass('sun');
-    $(".tdnn").toggleClass('day');
+  $("body").toggleClass('light');
+  $(".moon").toggleClass('sun');
+  $(".tdnn").toggleClass('day');
 
     // Update the logo based on the current mode
     if ($("body").hasClass('light')) {
-      $(".logo__image img").attr('src', 'images/logo.png'); // Change to white logo
+        $(".logo__image img").attr('src', 'images/logo.png'); // Change to white logo
+        $(".site-footer__payments img").attr('src', 'images/logo.png'); 
         $(".carrosserie-img img").attr('src', 'images/carrosserie-white.jpg'); 
-      $(".nightMode").prop('disabled', true); // Disable night mode CSS
+        $(".nightMode").prop('disabled', true); // Disable night mode CSS
       localStorage.setItem('mode', 'light'); // Save mode to localStorage
     } else {
-         $(".carrosserie-img img").attr('src', 'images/carrosserie.jpg'); // Change to white logo
-      $(".logo__image img").attr('src', 'images/logo_white.png'); // Revert to original logo
-      $(".nightMode").prop('disabled', false); // Enable night mode CSS
-      localStorage.setItem('mode', 'dark'); // Save mode to localStorage
+        $(".carrosserie-img img").attr('src', 'images/carrosserie.jpg'); // Change to white logo
+        $(".site-footer__payments img").attr('src', 'images/logo_white.png'); 
+        $(".logo__image img").attr('src', 'images/logo_white.png'); // Revert to original logo
+        $(".nightMode").prop('disabled', false); // Enable night mode CSS
+        localStorage.setItem('mode', 'dark'); // Save mode to localStorage
     }
   });
 })(jQuery);
