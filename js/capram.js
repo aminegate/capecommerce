@@ -723,7 +723,37 @@ $(function () {
     
 
     
-
+(function($) {
+    $('.product_all_info_image .image__tag').on('click', function() {
+        const imgSrc = $(this).attr('src');
+        
+        // Create and append the overlay with the image and animation classes
+        const overlay = $(`
+            <div id="imagePopupOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; transition: opacity 0.3s;">
+                <img id="popupImage" src="${imgSrc}" style="max-width: 90%; max-height: 90%; margin: auto; transform: scale(0.8); transition: transform 0.3s;">
+            </div>
+        `);
+        
+        // Append the overlay to the body
+        $('body').append(overlay);
+        
+        // Trigger the fade-in and scale-up effect
+        setTimeout(function() {
+            overlay.css('opacity', '1');
+            $('#popupImage').css('transform', 'scale(1)');
+        }, 10);
+        
+        // Close overlay when clicked and remove it from the DOM
+        overlay.on('click', function() {
+            overlay.css('opacity', '0');
+            $('#popupImage').css('transform', 'scale(0.8)');
+            
+            setTimeout(function() {
+                overlay.remove();
+            }, 300); // match the transition duration
+        });
+    });
+})(jQuery);
 
 
 
