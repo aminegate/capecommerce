@@ -150,6 +150,8 @@
 // animations
 */
 
+
+
 .remise-2,
 .disponibilité,
 .reference,
@@ -350,6 +352,7 @@ video.product__video {
     background: white;
     border-radius: 5px;
     padding: 15px;
+    cursor: pointer;
 }
 
 
