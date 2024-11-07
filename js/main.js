@@ -1460,6 +1460,8 @@
     */
 $(function () {
     var videoSlider = $('.block-slideshow__carousel .owl-carousel');
+    var videoEndDelay = 4000; // 4 seconds delay after the video ends
+    var firstLoop = true; // Flag to track the first loop
 
     // Initialize Owl Carousel
     videoSlider.owlCarousel({
@@ -1488,7 +1490,7 @@ $(function () {
         if ($('.owl-item.active').find('video').length !== 0) {
             // Play the active video
             $('.owl-item.active video').get(0).play();
-            // Disable autoplay when video is active
+            // Pause autoplay when video is playing
             videoSlider.trigger('stop.owl.autoplay');
         } else {
             // Enable autoplay when the video slide is not active
@@ -1499,11 +1501,30 @@ $(function () {
     // Handle the video end event for all videos
     videoSlider.find('video').each(function() {
         $(this).on('ended', function() {
-            // Trigger the next slide
+            // Trigger the next slide immediately after video ends
             videoSlider.trigger('next.owl.carousel');
-            // Enable autoplay after the video ends
-            videoSlider.trigger('play.owl.autoplay');
         });
+    });
+
+    // Pause the loop when video is active, and restart after the video ends or on non-video slides
+    videoSlider.on('changed.owl.carousel', function(e) {
+        var currentSlide = $('.owl-item.active');
+
+        // Pause loop when video is active
+        if (currentSlide.find('video').length !== 0) {
+            videoSlider.trigger('stop.owl.autoplay');
+        } else {
+            // If no video, start autoplay after the 4-second delay
+            if (firstLoop) {
+                // Delay for first loop (for the first transition)
+                setTimeout(function() {
+                    videoSlider.trigger('play.owl.autoplay');
+                }, videoEndDelay);
+                firstLoop = false; // Reset flag after first loop
+            } else {
+                videoSlider.trigger('play.owl.autoplay');
+            }
+        }
     });
 });
 
