@@ -861,39 +861,39 @@ checkInputs();
     
     
     
-          // Function to handle login
-    function handleLogin(event) {
-        event.preventDefault(); // Prevent form submission
+// Function to handle login
+function handleLogin(event) {
+    event.preventDefault(); // Prevent form submission
 
-        var enteredUsername = $('#fname').val();
-        var enteredPassword = $('#pwd').val();
-       
+    var enteredUsername = $('#fname').val();
+    var enteredPassword = $('#pwd').val();
 
-        // Fake credentials for demonstration
-        var correctUsername = 'admin';
-        var correctPassword = 'admin';
+    // Fake credentials for demonstration
+    var correctUsername = 'admin';
+    var correctPassword = 'admin';
 
-        if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
-           
+    if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
+        // Store username in localStorage for auto-login
+        localStorage.setItem('fname', enteredUsername);
 
-            // Redirect to the main page
-            window.location.href = 'accueil.html';
-        } else {
-            // Show error message if credentials are incorrect
-            $('.msgWarning').show();
-        }
+        // Redirect to the main page
+        window.location.href = 'accueil.html';
+    } else {
+        // Show error message if credentials are incorrect
+        $('.msgWarning').show();
     }
+}
 
-    // Auto-fill the username and password if they are stored
-    if (localStorage.getItem('fname') && localStorage.getItem('pwd')) {
-        $('#fname').val(localStorage.getItem('fname'));
-        $('#pwd').val(localStorage.getItem('pwd'));
-    }
+// Auto-fill the username if it is stored
+if (localStorage.getItem('fname')) {
+    $('#fname').val(localStorage.getItem('fname'));
+    // Optionally, auto-submit the form if you want automatic login
+    $('.login-form').submit();
+}
 
-    // Attach the function to the form's submit event
-    $('.login-form').on('submit', handleLogin);
+// Attach the function to the form's submit event
+$('.login-form').on('submit', handleLogin);
 
-    
     
     
     
