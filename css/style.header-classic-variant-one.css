@@ -1979,8 +1979,9 @@
   display: flex;
   z-index: 0;
   position: relative;
-  max-width: 650px;
+  width: 540px;
   height: 38px;
+  margin-left: 8%;
 }
 
 .search__input,

@@ -66,6 +66,9 @@
     $(".owl-carousel-products").owlCarousel({
         items: Math.min(itemCount, 3), // Set items based on the count, max of 3
         margin: 10, // Margin between items
+        autoplay: true,
+        loop: true,
+        autoplayTimeout: 2000,
         responsive: {
             0: {
                 items: 1 // For small screens

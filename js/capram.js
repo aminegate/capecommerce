@@ -230,6 +230,11 @@ $(document).ready(function() {
     $('.promotion-img').append('<img class="promotion-red-icon" src="images/promo.png" alt="" >');
 })();
     
+        (function() {
+    $('.chrono-product-img').append('<img class="chrono-red-icon" src="images/24h.png" alt="" >');
+})();
+    
+    
         
  // Cartes Tabs   
 
@@ -483,41 +488,76 @@ window.onload = function() {
     
     
 (function ($) {
-  // Check if a mode is saved in localStorage on page load
-  const savedMode = localStorage.getItem('mode');
+  // Default mode: dark
+  const savedMode = localStorage.getItem('mode') || 'dark'; // Default to dark if no mode is saved
+
   if (savedMode === 'light') {
     $("body").addClass('light');
     $(".moon").addClass('sun');
     $(".tdnn").addClass('day');
-    $(".logo__image img").attr('src', 'images/logo.png'); 
-    $(".site-footer__payments img").attr('src', 'images/logo.png'); 
-    $(".carrosserie-img img").attr('src', 'images/carrosserie-white.jpg'); 
+    $(".logo__image img").attr('src', 'images/logo.png');
+    $(".site-footer__payments img").attr('src', 'images/logo.png');
+    $(".carrosserie-img img").attr('src', 'images/carrosserie-white.jpg');
     $(".nightMode").prop('disabled', true); // Disable night mode CSS
+    $(".darkModeCheck").last().append('<i class="fa-solid fa-check"></i>'); // Add check icon to "Désactivé"
   } else {
-    $(".logo__image img").attr('src', 'images/logo_white.png'); // Set to original logo
-    $(".site-footer__payments img").attr('src', 'images/logo_white.png'); 
-    $(".carrosserie-img img").attr('src', 'images/carrosserie.jpg'); // Change to white logo
-    $(".nightMode").prop('disabled', false); // Enable night mode CSS if not in day mode
+    $(".logo__image img").attr('src', 'images/logo_white.png');
+    $(".site-footer__payments img").attr('src', 'images/logo_white.png');
+    $(".carrosserie-img img").attr('src', 'images/carrosserie.jpg');
+    $(".nightMode").prop('disabled', false); // Enable night mode CSS
+    $(".darkModeCheck").first().append('<i class="fa-solid fa-check"></i>'); // Add check icon to "Activé"
   }
 
+  // Toggle theme when clicking ".tdnn"
   $('.tdnn').click(function () {
-  $("body").toggleClass('light');
-  $(".moon").toggleClass('sun');
-  $(".tdnn").toggleClass('day');
+    $("body").toggleClass('light');
+    $(".moon").toggleClass('sun');
+    $(".tdnn").toggleClass('day');
 
-    // Update the logo based on the current mode
     if ($("body").hasClass('light')) {
-        $(".logo__image img").attr('src', 'images/logo.png'); // Change to white logo
-        $(".site-footer__payments img").attr('src', 'images/logo.png'); 
-        $(".carrosserie-img img").attr('src', 'images/carrosserie-white.jpg'); 
-        $(".nightMode").prop('disabled', true); // Disable night mode CSS
-      localStorage.setItem('mode', 'light'); // Save mode to localStorage
+      $(".logo__image img").attr('src', 'images/logo.png');
+      $(".site-footer__payments img").attr('src', 'images/logo.png');
+      $(".carrosserie-img img").attr('src', 'images/carrosserie-white.jpg');
+      $(".nightMode").prop('disabled', true);
+      localStorage.setItem('mode', 'light');
+      $(".darkModeCheck i").remove(); // Remove all check icons
+      $(".darkModeCheck").last().append('<i class="fa-solid fa-check"></i>'); // Add check icon to "Désactivé"
     } else {
-        $(".carrosserie-img img").attr('src', 'images/carrosserie.jpg'); // Change to white logo
-        $(".site-footer__payments img").attr('src', 'images/logo_white.png'); 
-        $(".logo__image img").attr('src', 'images/logo_white.png'); // Revert to original logo
-        $(".nightMode").prop('disabled', false); // Enable night mode CSS
-        localStorage.setItem('mode', 'dark'); // Save mode to localStorage
+      $(".logo__image img").attr('src', 'images/logo_white.png');
+      $(".site-footer__payments img").attr('src', 'images/logo_white.png');
+      $(".carrosserie-img img").attr('src', 'images/carrosserie.jpg');
+      $(".nightMode").prop('disabled', false);
+      localStorage.setItem('mode', 'dark');
+      $(".darkModeCheck i").remove(); // Remove all check icons
+      $(".darkModeCheck").first().append('<i class="fa-solid fa-check"></i>'); // Add check icon to "Activé"
+    }
+  });
+
+  // Handle ".darkModeCheck" clicks
+  $(".darkModeCheck").click(function () {
+    const isActivé = $(this).text().trim().startsWith('Activé');
+    if (isActivé) {
+      $("body").removeClass('light');
+      $(".moon").removeClass('sun');
+      $(".tdnn").removeClass('day');
+      $(".logo__image img").attr('src', 'images/logo_white.png');
+      $(".site-footer__payments img").attr('src', 'images/logo_white.png');
+      $(".carrosserie-img img").attr('src', 'images/carrosserie.jpg');
+      $(".nightMode").prop('disabled', false);
+      localStorage.setItem('mode', 'dark');
+      $(".darkModeCheck i").remove(); // Remove all check icons
+      $(this).append('<i class="fa-solid fa-check"></i>'); // Add check icon to "Activé"
+    } else {
+      $("body").addClass('light');
+      $(".moon").addClass('sun');
+      $(".tdnn").addClass('day');
+      $(".logo__image img").attr('src', 'images/logo.png');
+      $(".site-footer__payments img").attr('src', 'images/logo.png');
+      $(".carrosserie-img img").attr('src', 'images/carrosserie-white.jpg');
+      $(".nightMode").prop('disabled', true);
+      localStorage.setItem('mode', 'light');
+      $(".darkModeCheck i").remove(); // Remove all check icons
+      $(this).append('<i class="fa-solid fa-check"></i>'); // Add check icon to "Désactivé"
     }
   });
 })(jQuery);
@@ -756,8 +796,321 @@ $(function () {
 })(jQuery);
 
 
+        // Function to check if both inputs are filled
+function checkInputs() {
+    const isUsernameFilled = $('#fname').val() !== '';
+    const isPasswordFilled = $('#pwd').val() !== '';
+    const submitButton = $('input[type="submit"]'); // Assuming the button is the submit input
+
+    // Add or remove the class and enable/disable the button based on input values
+    if (isUsernameFilled && isPasswordFilled) {
+        submitButton.addClass('btnGradient') // Add gradient class
+                     .removeAttr('disabled') // Enable button
+                     .css('cursor', 'pointer'); // Change cursor to pointer
+    } else {
+        submitButton.removeClass('btnGradient') // Remove gradient class
+                     .attr('disabled', 'disabled') // Disable button
+                     .css('cursor', 'default'); // Change cursor back to default
+    }
+}
+
+// Handle input events for username
+$('#fname').on('focus input', function() {
+    const placeholderText = 'Nom d\'utilisateur';
+    $(this).attr('placeholder', ''); // Hide placeholder on focus
+    checkInputs(); // Check inputs while typing
+});
+
+// Handle input events for password
+$('#pwd').on('focus input', function() {
+    const placeholderText = 'Mot de pass';
+    $(this).attr('placeholder', ''); // Hide placeholder on focus
+    checkInputs(); // Check inputs while typing
+});
+
+// Restore placeholder on blur (when clicking away) if input is empty
+$('.loginWrapper input[type="text"], .loginWrapper input[type="password"]').on('blur', function() {
+    const placeholderText = $(this).is('#fname') ? 'Nom d\'utilisateur' : 'Mot de pass'; // Determine placeholder text
+    if ($(this).val() === '') {
+        $(this).attr('placeholder', placeholderText); // Restore placeholder if input is empty
+    }
+});
+
+// Toggle visibility for both username and password placeholders
+$('.fa-eye').on('click', function() {
+    const input = $(this).siblings('input');
+    const isInputEmpty = input.val() === '';
+    const placeholderText = input.is('#fname') ? 'Nom d\'utilisateur' : 'Mot de pass'; // Check input type
+
+    // Toggle placeholder visibility
+    if (isInputEmpty) {
+        input.attr('placeholder', placeholderText); // Show placeholder if input is empty
+    } else {
+        input.attr('placeholder', ''); // Hide placeholder if input is filled
+    }
+
+    checkInputs(); // Check inputs when toggling visibility
+});
+
+// Check inputs initially to set the button state correctly
+checkInputs();
 
 
+
+
+    
+    
+    
+          // Function to handle login
+    function handleLogin(event) {
+        event.preventDefault(); // Prevent form submission
+
+        var enteredUsername = $('#fname').val();
+        var enteredPassword = $('#pwd').val();
+       
+
+        // Fake credentials for demonstration
+        var correctUsername = 'admin';
+        var correctPassword = 'admin';
+
+        if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
+           
+
+            // Redirect to the main page
+            window.location.href = 'accueil.html';
+        } else {
+            // Show error message if credentials are incorrect
+            $('.msgWarning').show();
+        }
+    }
+
+    // Auto-fill the username and password if they are stored
+    if (localStorage.getItem('fname') && localStorage.getItem('pwd')) {
+        $('#fname').val(localStorage.getItem('fname'));
+        $('#pwd').val(localStorage.getItem('pwd'));
+    }
+
+    // Attach the function to the form's submit event
+    $('.login-form').on('submit', handleLogin);
+
+    
+    
+    
+    
+    
+(function ($) {
+  const lang = 'FR'; // Only French description included
+  const typeCountdown = 'time'; // 'time' for countdown to a specific time, 'date' for countdown to a designated date
+  let EndDate = '2019/07/10, 22:00'; // Expiration Date yyyy/mm/dd, hh:mm (used if typeCountdown = 'date')
+  let days = 1; // Number of days before the end (used if typeCountdown = 'time')
+  let timeOut = '00:00'; // 'hh:mm' (used if typeCountdown = 'time')
+  const ColorDigitEnd = '#bfbfbf';
+
+  let hours, minutes, target_date, ExpirationDate;
+  let formatCountdown = null;
+  let day_lang = 'Jours', hour_lang = 'Heures', minute_lang = 'Minutes', second_lang = 'Secondes';
+
+  function daysLeft(target) {
+    if (target > 24 * 60 * 60 * 1000) {
+      formatCountdown = 'day|hour|minute|second';
+    } else if (target > 60 * 60 * 1000) {
+      formatCountdown = 'hour|minute|second';
+    } else {
+      formatCountdown = 'minute|second';
+    }
+  }
+
+  if (typeCountdown === 'time') {
+    timeOut = timeOut.split(':');
+    hours = timeOut[0];
+    minutes = timeOut[1];
+    target_date = (days * 24 * 60 * 60 + hours * 60 * 60 + minutes * 60) * 1000;
+
+    daysLeft(target_date);
+    target_date += new Date().getTime();
+  } else if (typeCountdown === 'date') {
+    ExpirationDate = new Date(EndDate);
+    target_date = ExpirationDate - new Date();
+    daysLeft(target_date);
+    target_date += new Date().getTime();
+  } else {
+    target_date = 0;
+    formatCountdown = 'day|hour|minute|second';
+  }
+
+  class Countdown {
+    constructor(userOptions) {
+      this.options = $.extend(
+        {
+          cont: null,
+          countdown: true,
+          endDate: { day: 0, hour: 0, minute: 0, second: 0 },
+          endCallback: null,
+          outputFormat: formatCountdown,
+          outputTranslation: {
+            day: day_lang,
+            hour: hour_lang,
+            minute: minute_lang,
+            second: second_lang,
+          },
+        },
+        userOptions
+      );
+
+      this.lastTick = null;
+      this.intervalsBySize = ['day', 'hour', 'minute', 'second'];
+      this.interval = null;
+      this.digitConts = {};
+    }
+
+    start() {
+      let endDate = this._getDate(this.options.endDate);
+      let endDateData = this._prepareTimeByOutputFormat(endDate);
+
+      this._writeData(endDateData);
+      this.lastTick = endDateData;
+
+      if (this.options.countdown && endDate.getTime() <= Date.now()) {
+        if (typeof this.options.endCallback === 'function') {
+          this.stop();
+          this.options.endCallback();
+        }
+      } else {
+        this.interval = setInterval(() => {
+          this._updateView(this._prepareTimeByOutputFormat(endDate));
+        }, 1000);
+      }
+    }
+
+    stop() {
+      if (this.interval !== null) {
+        clearInterval(this.interval);
+      }
+    }
+
+    _getDate(date) {
+      if (typeof date === 'object') {
+        return date instanceof Date ? date : new Date(date.day, date.hour, date.minute, date.second);
+      } else if (typeof date === 'number' || typeof date === 'string') {
+        return new Date(date);
+      } else {
+        return new Date();
+      }
+    }
+
+    _prepareTimeByOutputFormat(dateObj) {
+      let output = {}, timeDiff = this.options.countdown ? dateObj.getTime() - Date.now() : Date.now() - dateObj.getTime();
+
+      this.intervalsBySize.forEach((item) => {
+        if (this.options.outputFormat.includes(item)) {
+          let value;
+          if (timeDiff > 0) {
+            switch (item) {
+              case 'day': value = Math.trunc(timeDiff / (24 * 60 * 60 * 1000)); timeDiff %= 24 * 60 * 60 * 1000; break;
+              case 'hour': value = Math.trunc(timeDiff / (60 * 60 * 1000)); timeDiff %= 60 * 60 * 1000; break;
+              case 'minute': value = Math.trunc(timeDiff / (60 * 1000)); timeDiff %= 60 * 1000; break;
+              case 'second': value = Math.trunc(timeDiff / 1000); timeDiff %= 1000; break;
+            }
+          } else {
+            value = '00';
+            $('.digit_cont').css('color', ColorDigitEnd);
+          }
+          output[item] = value.toString().padStart(2, '0').split('');
+        }
+      });
+
+      return output;
+    }
+
+    _writeData(data) {
+      let code = '';
+
+      for (let intervalName in data) {
+        if (data.hasOwnProperty(intervalName)) {
+          let element = `<div><div class="interval_cont interval_cont_${intervalName}">`;
+          let description = `<div class="description-chrono">${this.options.outputTranslation[intervalName]}</div>`;
+
+          data[intervalName].forEach((digit, index) => {
+            element += `<div class="digit_cont digit_cont_${index}">${this._getDigitElementString(digit, '0')}</div>`;
+          });
+
+          code += element + '</div>' + description + '</div>';
+        }
+      }
+      $(this.options.cont).html(code);
+      this.lastTick = data;
+    }
+
+    _getDigitElementString(newDigit, lastDigit) {
+      return `
+        <div class="last_placeholder"><span>${lastDigit}</span></div>
+        <div class="new_placeholder">${newDigit}</div>
+        <div class="last_rotate">${lastDigit}</div>
+        <div class="new_rotate"><div class="rotated"><span>${newDigit}</span></div></div>`;
+    }
+
+    _updateView(data) {
+      for (let intervalName in data) {
+        if (data.hasOwnProperty(intervalName)) {
+          data[intervalName].forEach((digit, index) => {
+            if (this.lastTick[intervalName][index] !== data[intervalName][index]) {
+              this._getDigitCont(intervalName, index).html(this._getDigitElementString(data[intervalName][index], this.lastTick[intervalName][index]));
+            }
+          });
+        }
+      }
+      this.lastTick = data;
+    }
+
+    _getDigitCont(intervalName, index) {
+      if (!this.digitConts[`${intervalName}_${index}`]) {
+        this.digitConts[`${intervalName}_${index}`] = $(`.interval_cont_${intervalName} .digit_cont_${index}`);
+      }
+      return this.digitConts[`${intervalName}_${index}`];
+    }
+  }
+
+  const cd = new Countdown({
+    cont: $('.flip-countdown'),
+    endDate: target_date,
+    endCallback: function () {
+      const nextTarget = Date.now() + 24 * 60 * 60 * 1000;
+      cd.stop();
+      cd.options.endDate = nextTarget;
+      cd.start();
+    },
+  });
+
+  cd.start();
+})(jQuery);
+
+    
+    
+    
+    
+(function ($) {
+    $(function () {
+        const video = $('#oilVideo')[0]; // Access the video element
+        const playButton = $('.play-button');
+        const playIcon = playButton.find('i');
+
+        playButton.on('click', function () {
+            if (video.paused) {
+                video.play();
+                playIcon.removeClass('fa-play').addClass('fa-pause'); // Change to pause icon
+            } else {
+                video.pause();
+                playIcon.removeClass('fa-pause').addClass('fa-play'); // Change back to play icon
+            }
+        });
+
+        // Reset to play icon when the video ends
+        $(video).on('ended', function () {
+            playIcon.removeClass('fa-pause').addClass('fa-play');
+        });
+    });
+})(jQuery);    
+    
     
     
 });

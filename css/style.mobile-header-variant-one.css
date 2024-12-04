@@ -34,26 +34,27 @@
 }
 
 .mobile-header__menu-button {
-  width: 52px;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 0;
-  margin: 0;
-  border: none;
-  background: #fff;
-  fill: #404040;
+        width: 52px;
+        height: 75%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        padding: 0;
+        margin: auto 0px;
+        border: 2px solid black;
+        background: none;
+        fill: black;
+        border-radius: 5px;
 }
 
 .mobile-header__menu-button:hover {
-  background: #f2f2f2;
+  background: white;
 }
 
 .mobile-header__menu-button:active {
@@ -71,7 +72,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 14px;
+
 }
 
 .mobile-header__logo-part-one {
@@ -95,7 +96,7 @@
       -ms-flex-positive: 1;
           flex-grow: 1;
   padding: 0 12px;
-  margin: 0 auto;
+  margin: 0 auto 0px 10%;
 }
 
 .mobile-header__indicators {
@@ -176,11 +177,14 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 50px;
+  height: 38px;
   width: 44px;
   color: inherit;
-  background: transparent;
+  background: black;
   border: none;
+    border-radius: 5px;
+        margin-top: 6px;
+        margin-right: 5px;
 }
 
 .mobile-indicator__button:focus {
@@ -281,7 +285,7 @@
 }
 
 .mobile-indicator__icon {
-  fill: #262626;
+  fill: white;
 }
 
 .mobile-indicator__title {
@@ -292,9 +296,6 @@
   font-weight: 500;
 }
 
-.mobile-indicator:hover .mobile-indicator__button {
-  background: #f2f2f2;
-}
 
 .mobile-indicator__counter {
   color: #fff;
@@ -394,8 +395,10 @@
   border: none;
   padding: 0;
   fill: currentColor;
-  -webkit-transition: background-color .15s, color .15s;
-  transition: background-color .15s, color .15s;
+  -webkit-transition: background-color .15s,
+ color .15s;
+  transition: background-color .15s,
+ color .15s;
   background-color: #fff;
   color: #ccc;
 }
@@ -499,8 +502,10 @@
   padding-top: 0;
   padding-bottom: 0;
   fill: currentColor;
-  -webkit-transition: background-color .15s, color .15s;
-  transition: background-color .15s, color .15s;
+  -webkit-transition: background-color .15s,
+ color .15s;
+  transition: background-color .15s,
+ color .15s;
   background-color: #fff;
   color: #ccc;
 }
@@ -586,6 +591,7 @@
   display: -ms-flexbox;
   display: flex;
   padding: 8px 11px;
+  justify-content: center;
 }
 
 .mobile-menu__indicator {
@@ -1008,8 +1014,12 @@
   bottom: 0;
   pointer-events: none;
   z-index: -1;
-  -webkit-transition: color .2s, background .2s, border-color .2s;
-  transition: color .2s, background .2s, border-color .2s;
+  -webkit-transition: color .2s,
+ background .2s,
+ border-color .2s;
+  transition: color .2s,
+ background .2s,
+ border-color .2s;
 }
 
 .mobile-search__button {
@@ -1055,8 +1065,10 @@
       -ms-flex-pack: center;
           justify-content: center;
   border: none;
-  -webkit-transition: color .15s, background-color .15s;
-  transition: color .15s, background-color .15s;
+  -webkit-transition: color .15s,
+ background-color .15s;
+  transition: color .15s,
+ background-color .15s;
 }
 
 .mobile-search__vehicle-picker:hover {
@@ -1092,8 +1104,12 @@
     border-radius: 3px;
     border-width: 1px;
     border-style: solid;
-    -webkit-transition: color .2s, background .2s, border-color .2s;
-    transition: color .2s, background .2s, border-color .2s;
+    -webkit-transition: color .2s,
+ background .2s,
+ border-color .2s;
+    transition: color .2s,
+ background .2s,
+ border-color .2s;
     color: #262626;
     background-color: #f0f0f0;
     border-color: #f0f0f0;
