@@ -988,7 +988,7 @@
 
 .mobile-search__input,
 .mobile-search__button {
-  background: transparent;
+  background: #f7943d;
   border: none;
   font-family: inherit;
   color: inherit;
@@ -1235,7 +1235,7 @@
     border-color: #ebebeb;
   }
   .mobile-search__button {
-    color: #b2b2b2;
+    color: white;
   }
   .mobile-search__button:hover {
     color: #f25900;

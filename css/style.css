@@ -1039,13 +1039,10 @@ button.wishlist-button .fa-heart {
     padding: 9% 0px 5% 0px;
 }
 
-
 .lubrifiantVid {
-
     position: relative;
     height: 100%;
     width: 100%;
-
 }
 
 img.videoFrame {
@@ -1076,8 +1073,7 @@ img.videoFrame {
     z-index: 10;
     outline: none;
     color: #fff;
-    font-size: 40px;
-    /* Adjust icon size */
+    font-size: 40px; /* Adjust icon size */
     opacity: 0.8;
 }
 
@@ -1090,9 +1086,33 @@ img.videoFrame {
 }
 
 .lubrifiantVid .play-button:hover i {
-    transform: scale(1.2);
-    /* Slightly enlarge on hover */
+    transform: scale(1.2); /* Slightly enlarge on hover */
 }
+
+/* Initially hide fullscreen and volume controls */
+.lubrifiantVid .fullscreen-button,
+.lubrifiantVid .volume-control {
+    display: none;
+}
+
+.lubrifiantVid .fullscreen-button {
+    position: absolute;
+    top: 82%;
+    right: 10%;
+    background: grey;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    z-index: 10;
+    opacity: 0.8;
+}
+
+.lubrifiantVid .fullscreen-button:hover {
+    opacity: 1;
+}
+
+
 
 /*------------------------------------
 -------- Chrono section ---------
@@ -2498,7 +2518,7 @@ a.mobile-menu__contacts .phone__body span {
     
     .block-slideshow__item-button {
 
-    left: 35.2% !important;
+    left: 26% !important;
 
 }
     
@@ -2530,17 +2550,30 @@ a.mobile-menu__contacts .phone__body span {
 }
     
        .stockNumber {
-        top: 42.5%;
+        top: 54%;
     }
     
     .fixTop-0 {
-    top: 42.5% !important;
+    top: 55% !important;
 }
     
     a.designation,
 .product-card__name div a:nth-child(2),
 .designation-2 {
-    width: 155px;
+    width: 165px;
+}
+    
+    .logo__image img {
+    width: 55% !important;
+}
+    
+    }
+.search-wrapper span {
+    font-size: 15px;
+}
+
+.block-categories__title {
+    font-size: 22px !important;
 }
     
     
@@ -11458,7 +11491,7 @@ select.form-control::-ms-expand {
 
 @media (max-width: 480px) {
     .block-products-columns__list-item a.designation {
-        width: 200px;
+        width: 160px;
     }
 }
 
@@ -12399,7 +12432,7 @@ select.form-control::-ms-expand {
 
     .block-sale__link {
         padding: 18px 20px;
-        min-width: 310px;
+        min-width: 260px;
         font-size: 14px;
     }
 }
@@ -12724,7 +12757,7 @@ select.form-control::-ms-expand {
 @media (max-width: 474px) {
     .block-slideshow__item {
    
-        height: 360px;
+        height: 220px;
     }
 
     .block-slideshow__item-offer {

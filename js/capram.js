@@ -1087,29 +1087,59 @@ checkInputs();
     
     
     
-    
 (function ($) {
     $(function () {
         const video = $('#oilVideo')[0]; // Access the video element
         const playButton = $('.play-button');
         const playIcon = playButton.find('i');
-
+        const fullscreenButton = $('.fullscreen-button');
+        const volumeControl = $('.volume-control');
+        
+        // Play/Pause functionality
         playButton.on('click', function () {
             if (video.paused) {
                 video.play();
                 playIcon.removeClass('fa-play').addClass('fa-pause'); // Change to pause icon
+                // Show fullscreen and volume controls after play starts
+                fullscreenButton.fadeIn();
+                volumeControl.fadeIn();
             } else {
                 video.pause();
                 playIcon.removeClass('fa-pause').addClass('fa-play'); // Change back to play icon
+                // Hide fullscreen and volume controls when paused
+                fullscreenButton.fadeOut();
+                volumeControl.fadeOut();
             }
         });
 
         // Reset to play icon when the video ends
         $(video).on('ended', function () {
             playIcon.removeClass('fa-pause').addClass('fa-play');
+            // Hide fullscreen and volume controls when the video ends
+            fullscreenButton.fadeOut();
+            volumeControl.fadeOut();
+        });
+
+        // Fullscreen functionality
+        fullscreenButton.on('click', function () {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) { // Firefox
+                video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { // IE/Edge
+                video.msRequestFullscreen();
+            }
+        });
+
+        // Volume control functionality
+        volumeControl.on('input', function () {
+            video.volume = $(this).val() / 100; // Volume control as a percentage
         });
     });
-})(jQuery);    
+})(jQuery);
+
     
     
     
