@@ -1073,7 +1073,7 @@ img.videoFrame {
     z-index: 10;
     outline: none;
     color: #fff;
-    font-size: 40px; /* Adjust icon size */
+    font-size: 5vw; /* Use relative unit for responsive sizing */
     opacity: 0.8;
 }
 
@@ -1095,15 +1095,16 @@ img.videoFrame {
     display: none;
 }
 
+/* Fullscreen button */
 .lubrifiantVid .fullscreen-button {
     position: absolute;
-    top: 82%;
-    right: 10%;
-    background: grey;
+    bottom: 3%;
+    right: 11%;
+    background: transparent;
     border: none;
     cursor: pointer;
     color: #fff;
-    font-size: 16px;
+    font-size: 2vw; /* Responsive size using viewport width */
     z-index: 10;
     opacity: 0.8;
 }
@@ -1111,6 +1112,7 @@ img.videoFrame {
 .lubrifiantVid .fullscreen-button:hover {
     opacity: 1;
 }
+
 
 
 
@@ -2394,6 +2396,13 @@ a.mobile-menu__contacts .phone__body span {
         top: 43.6%;
     }
     
+        /* Fullscreen button */
+    .lubrifiantVid .fullscreen-button {
+
+        font-size: 3vw;
+        /* Responsive size using viewport width */
+
+    }
  
 
 }
@@ -2442,6 +2451,14 @@ a.mobile-menu__contacts .phone__body span {
     line-height: 8px !important;
 
 }
+    
+        /* Fullscreen button */
+    .lubrifiantVid .fullscreen-button {
+
+        font-size: 3vw;
+        /* Responsive size using viewport width */
+
+    }
     
 }
 
@@ -2499,84 +2516,101 @@ a.mobile-menu__contacts .phone__body span {
     top: 47.5% !important;
 }
     
+        /* Fullscreen button */
+    .lubrifiantVid .fullscreen-button {
+
+        font-size: 3vw;
+        /* Responsive size using viewport width */
+
+    }
+    
     
 }
 
 @media (min-width:350px) and (max-width: 480px) {
-    
-            
-     .mobile-header__search {
 
-            margin: 0px auto 0px -1% !important;
-        }
-    
 
-    
+    .mobile-header__search {
+
+        margin: 0px auto 0px -1% !important;
+    }
+
+
+
     .mobile-indicator__icon {
-    fill: white !important;
-}
-    
+        fill: white !important;
+    }
+
     .block-slideshow__item-button {
 
-    left: 26% !important;
+        left: 26% !important;
 
-}
-    
-     .search-left,
+    }
+
+    .search-left,
     .search-right {
         width: 100%;
         margin-bottom: 30px;
 
     }
-    
-    
-    a.allCartes, a.allCategory {
-    width: 45% !important;
-}
-    
-      .category-card--layout--classic .category-card__image {
+
+
+    a.allCartes,
+    a.allCategory {
+        width: 45% !important;
+    }
+
+    .category-card--layout--classic .category-card__image {
         width: 35% !important;
         padding: 45px 0 !important;
     }
-    
+
     .section-header__title {
-    top: -5px !important;
-}
-    
+        top: -5px !important;
+    }
+
     .block-sale__link a {
 
-    line-height: 8px !important;
+        line-height: 8px !important;
 
-}
-    
-       .stockNumber {
+    }
+
+    .stockNumber {
         top: 54%;
     }
-    
-    .fixTop-0 {
-    top: 55% !important;
-}
-    
-    a.designation,
-.product-card__name div a:nth-child(2),
-.designation-2 {
-    width: 165px;
-}
-    
-    .logo__image img {
-    width: 55% !important;
-}
-    
-    }
-.search-wrapper span {
-    font-size: 15px;
-}
 
-.block-categories__title {
-    font-size: 22px !important;
-}
-    
-    
+    .fixTop-0 {
+        top: 55% !important;
+    }
+
+    a.designation,
+    .product-card__name div a:nth-child(2),
+    .designation-2 {
+        width: 165px;
+    }
+
+    .logo__image img {
+        width: 55% !important;
+    }
+
+
+    .search-wrapper span {
+        font-size: 15px;
+    }
+
+    .block-categories__title {
+        font-size: 22px !important;
+    }
+
+    /* Fullscreen button */
+    .lubrifiantVid .fullscreen-button {
+
+        font-size: 3vw;
+        /* Responsive size using viewport width */
+
+    }
+
+
 }
 
 
