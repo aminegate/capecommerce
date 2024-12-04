@@ -860,22 +860,22 @@ checkInputs();
 
     
     
-(function() {
-    // Function to handle login
+    
+          // Function to handle login
     function handleLogin(event) {
         event.preventDefault(); // Prevent form submission
 
         var enteredUsername = $('#fname').val();
         var enteredPassword = $('#pwd').val();
        
+
         // Fake credentials for demonstration
         var correctUsername = 'admin';
         var correctPassword = 'admin';
 
         if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
-            // Store session data in localStorage
-            localStorage.setItem('isLoggedIn', true);
-            
+           
+
             // Redirect to the main page
             window.location.href = 'accueil.html';
         } else {
@@ -884,16 +884,16 @@ checkInputs();
         }
     }
 
-    // Check if the user is already logged in by checking the session
-    if (localStorage.getItem('isLoggedIn')) {
-        // If the user is logged in, redirect them to the main page
-        window.location.href = 'accueil.html';
+    // Auto-fill the username and password if they are stored
+    if (localStorage.getItem('fname') && localStorage.getItem('pwd')) {
+        $('#fname').val(localStorage.getItem('fname'));
+        $('#pwd').val(localStorage.getItem('pwd'));
     }
 
     // Attach the function to the form's submit event
     $('.login-form').on('submit', handleLogin);
-})();
 
+    
     
     
     
