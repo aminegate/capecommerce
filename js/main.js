@@ -996,7 +996,8 @@
                     992: {items: 3, margin: 16},
                     768: {items: 3, margin: 16},
                     576: {items: 2, margin: 16},
-                    460: {items: 2, margin: 16},
+                    455: {items: 2, margin: 16},
+                    360: {items: 1, margin: 16},
                     0: {items: 1},
                 }
             },
@@ -1008,7 +1009,8 @@
                     992: {items: 4, margin: 16},
                     768: {items: 3, margin: 16},
                     576: {items: 2, margin: 16},
-                    460: {items: 2, margin: 16},
+                    455: {items: 2, margin: 16},
+                     360: {items: 1, margin: 16},
                     0: {items: 1},
                 }
             },
@@ -1020,7 +1022,7 @@
                     992: {items: 1, margin: 16},
                     768: {items: 1, margin: 16},
                     576: {items: 1, margin: 16},
-                    460: {items: 1, margin: 16},
+                    480: {items: 1, margin: 16},
                     0: {items: 1},
                 }
             },
@@ -1032,7 +1034,7 @@
                     992: {items: 2, margin: 16},
                     768: {items: 2, margin: 16},
                     576: {items: 1, margin: 16},
-                    460: {items: 1, margin: 16},
+                    480: {items: 1, margin: 16},
                     0: {items: 1},
                 }
             },
@@ -1044,7 +1046,7 @@
                     992: {items: 2, margin: 16},
                     768: {items: 1, margin: 16},
                     576: {items: 1, margin: 16},
-                    460: {items: 1, margin: 16},
+                    480: {items: 1, margin: 16},
                     0: {items: 1},
                 }
             },
@@ -1057,7 +1059,8 @@
                     992: {items: 4, margin: 16},
                     768: {items: 3, margin: 16},
                     576: {items: 2, margin: 16},
-                    460: {items: 2, margin: 16},
+                    455: {items: 2, margin: 16},
+                     360: {items: 1, margin: 16},
                     0: {items: 1},
                 }
             },
@@ -1249,7 +1252,7 @@
 
             owlCarousel.owlCarousel({
                 dots: false,
-                margin: 20,
+                margin: 24,
                 loop: true,
                 items: 4,
                 rtl: isRTL(),

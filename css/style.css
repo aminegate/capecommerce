@@ -150,10 +150,6 @@ a.image__body.promotion-img .promotion-red-icon {
 fix stock number position across pages
 ------------------------------------*/
 
-.fixTop-0 {
-    top: 46.7% !important;
-    right: 1.8% !important;
-}
 
 .fixtop-search-page {
     top: 48% !important;
@@ -844,7 +840,7 @@ input#seacrh-right-two {
 a.designation,
 .product-card__name div a:nth-child(2),
 .designation-2 {
-    width: 217px;
+
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -884,7 +880,7 @@ a.product-reference {
 .stockNumber {
     position: absolute;
     right: 1.5%;
-    top: 47%;
+    top: 99%;
     background: limegreen;
     color: white;
     padding: 2px 5px;
@@ -2300,33 +2296,33 @@ a.mobile-menu__contacts .phone__body span {
 /*****************************************************************************
 ****************************** media query css *******************************
 *****************************************************************************/
-
 @media (min-width: 1200px) and (max-width: 1400px) {
 
     .search__body {
         width: 420px !important;
         margin-left: 7% !important;
     }
-    
+
     li.main-menu__item:nth-child(2) {
-    margin-left: 13px !important;
-}
-    
-        .main-menu__link {
+        margin-left: 13px !important;
+    }
+
+    .main-menu__link {
         padding: 5px 6px !important;
         font-size: 13px !important;
     }
-    
-    .search-left, .search-right {
-    width: 47%;
-}
+
+    .search-left,
+    .search-right {
+        width: 47%;
+    }
 
 }
 
 
 @media (min-width: 992px) and (max-width: 1200px) {
-    
- 
+
+
 
     .mobile-header__logo .logo__image img {
         width: 60%;
@@ -2336,7 +2332,7 @@ a.mobile-menu__contacts .phone__body span {
         text-transform: uppercase;
     }
 
-   
+
 
     button.setting-link a {
         color: black;
@@ -2350,183 +2346,9 @@ a.mobile-menu__contacts .phone__body span {
 
     }
 
-    .stockNumber {
-        top: 44%;
-    }
-
-    a.designation,
-    .product-card__name div a:nth-child(2),
-    .designation-2 {
-        width: 190px;
-    }
-
-    .fixTop-0 {
-        top: 43.7% !important;
-    }
-
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
-    
-       
-     .mobile-header__search {
-
-            margin: 0px auto 0px -1% !important;
-        }
-
-    .search-left,
-    .search-right {
-        width: 100%;
-        margin-bottom: 30px;
-
-    }
-    
-     a.designation,
-    .product-card__name div a:nth-child(2),
-    .designation-2 {
-        width: 190px;
-    }
-    
-     .fixTop-0 {
-        top: 43.7% !important;
-    }
-    
-     .stockNumber {
-        top: 43.6%;
-    }
-    
-        /* Fullscreen button */
-    .lubrifiantVid .fullscreen-button {
-
-        font-size: 3vw;
-        /* Responsive size using viewport width */
-
-    }
- 
-
-}
-
-@media (min-width: 576px) and (max-width: 768px) {
-    
-     .mobile-header__search {
-
-            margin: 0px auto 0px -1% !important;
-        }
-    
-
-    
-    .mobile-indicator__icon {
-    fill: white !important;
-}
-    
-    .block-slideshow__item-button {
-
-    left: 35.2% !important;
-
-}
-    
-     .search-left,
-    .search-right {
-        width: 100%;
-        margin-bottom: 30px;
-
-    }
-    
-    
-    a.allCartes, a.allCategory {
-    width: 30% !important;
-}
-    
-    .category-card--layout--classic .category-card__image {
-        width: 100% !important;
-    }
-    
-    .section-header__title {
-    top: -5px !important;
-}
-    
-    .block-sale__link a {
-
-    line-height: 8px !important;
-
-}
-    
-        /* Fullscreen button */
-    .lubrifiantVid .fullscreen-button {
-
-        font-size: 3vw;
-        /* Responsive size using viewport width */
-
-    }
-    
-}
-
-@media (min-width:480px) and (max-width: 576px) {
-    
-        
-     .mobile-header__search {
-
-            margin: 0px auto 0px -1% !important;
-        }
-    
-
-    
-    .mobile-indicator__icon {
-    fill: white !important;
-}
-    
-    .block-slideshow__item-button {
-
-    left: 35.2% !important;
-
-}
-    
-     .search-left,
-    .search-right {
-        width: 100%;
-        margin-bottom: 30px;
-
-    }
-    
-    
-    a.allCartes, a.allCategory {
-    width: 30% !important;
-}
-    
-    .category-card--layout--classic .category-card__image {
-        width: 100% !important;
-    }
-    
-    .section-header__title {
-    top: -5px !important;
-}
-    
-    .block-sale__link a {
-
-    line-height: 8px !important;
-
-}
-    
-       .stockNumber {
-        top: 48%;
-    }
-    
-    .fixTop-0 {
-    top: 47.5% !important;
-}
-    
-        /* Fullscreen button */
-    .lubrifiantVid .fullscreen-button {
-
-        font-size: 3vw;
-        /* Responsive size using viewport width */
-
-    }
-    
-    
-}
-
-@media (min-width:350px) and (max-width: 480px) {
 
 
     .mobile-header__search {
@@ -2534,35 +2356,54 @@ a.mobile-menu__contacts .phone__body span {
         margin: 0px auto 0px -1% !important;
     }
 
+    .search-left,
+    .search-right {
+        width: 100%;
+        margin-bottom: 30px;
+    }
 
+    .block-space.block-space--layout--divider-nl.box-Shadow {
+        display: none;
+    }
+
+    /* Fullscreen button */
+    .lubrifiantVid .fullscreen-button {
+
+        font-size: 3vw;
+        /* Responsive size using viewport width */
+
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+
+    .mobile-header__search {
+
+        margin: 0px auto 0px -1% !important;
+    }
 
     .mobile-indicator__icon {
         fill: white !important;
     }
 
     .block-slideshow__item-button {
-
-       left: 53% !important;
-        transform: translateX(-50%);
-
+        left: 35.2% !important;
     }
 
     .search-left,
     .search-right {
         width: 100%;
         margin-bottom: 30px;
-
     }
-
 
     a.allCartes,
     a.allCategory {
-        width: 50% !important;
+        width: 30% !important;
     }
 
     .category-card--layout--classic .category-card__image {
-        width: 35% !important;
-        padding: 45px 0 !important;
+        width: 100% !important;
     }
 
     .section-header__title {
@@ -2572,22 +2413,136 @@ a.mobile-menu__contacts .phone__body span {
     .block-sale__link a {
 
         line-height: 8px !important;
+    }
+
+    /* Fullscreen button */
+    .lubrifiantVid .fullscreen-button {
+
+        font-size: 3vw;
+        /* Responsive size using viewport width */
 
     }
 
-    .stockNumber {
-         top: 52.5%;
+    .block-space.block-space--layout--divider-nl.box-Shadow {
+        display: none;
     }
 
-    .fixTop-0 {
-        top: 54% !important;
+}
+
+@media (min-width:480px) and (max-width: 576px) {
+
+    .mobile-header__search {
+        margin: 0px auto 0px -1% !important;
     }
 
-    a.designation,
-    .product-card__name div a:nth-child(2){
-        width: 260px;
+    .mobile-indicator__icon {
+        fill: white !important;
     }
-    
+
+    .block-slideshow__item-button {
+
+        left: 35.2% !important;
+    }
+
+    .search-left,
+    .search-right {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    a.allCartes,
+    a.allCategory {
+        width: 30% !important;
+    }
+
+    .category-card--layout--classic .category-card__image {
+        width: 100% !important;
+    }
+
+    .section-header__title {
+        top: -5px !important;
+    }
+
+    .block-sale__link a {
+        line-height: 8px !important;
+    }
+
+    /* Fullscreen button */
+    .lubrifiantVid .fullscreen-button {
+
+        font-size: 3vw;
+        /* Responsive size using viewport width */
+    }
+
+    .block-space.block-space--layout--divider-nl.box-Shadow {
+        display: none;
+    }
+
+}
+
+@media (min-width:475px) and (max-width: 480px) {
+
+    .category-card--layout--classic .category-card__image {
+        width: 100% !important;
+        padding: 45px 0 !important;
+    }
+
+    .block-space.block-space--layout--divider-nl.box-Shadow {
+        display: none;
+    }
+
+}
+
+@media (min-width:360px) and (max-width: 474px) {
+
+    .category-card--layout--classic .category-card__image {
+        width: 35% !important;
+        padding: 45px 0 !important;
+    }
+
+    .block-space.block-space--layout--divider-nl.box-Shadow {
+        display: none;
+    }
+
+}
+
+@media (min-width:360px) and (max-width: 480px) {
+
+
+    .mobile-header__search {
+
+        margin: 0px auto 0px -1% !important;
+    }
+
+    .mobile-indicator__icon {
+        fill: white !important;
+    }
+
+    .block-slideshow__item-button {
+
+        left: 53% !important;
+        transform: translateX(-50%);
+    }
+
+    .search-left,
+    .search-right {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    a.allCartes,
+    a.allCategory {
+        width: 50% !important;
+    }
+
+    .section-header__title {
+        top: -5px !important;
+    }
+
+    .block-sale__link a {
+        line-height: 8px !important;
+    }
+
     .block-products-columns__list-item .designation-2 {
         width: 145px;
     }
@@ -2595,7 +2550,6 @@ a.mobile-menu__contacts .phone__body span {
     .logo__image img {
         width: 55% !important;
     }
-
 
     .search-wrapper span {
         font-size: 14px;
@@ -2607,23 +2561,20 @@ a.mobile-menu__contacts .phone__body span {
 
     /* Fullscreen button */
     .lubrifiantVid .fullscreen-button {
-
         font-size: 3vw;
         /* Responsive size using viewport width */
-
     }
 
-
-
-
+    .block-space.block-space--layout--divider-nl.box-Shadow {
+        display: none;
+    }
 }
 
-
-    @media (max-width: 768px) {
-       .mobile-search__input,
-.mobile-search__button {
-  background: #f7943d !important;
-}
+@media (max-width: 768px) {
+    .mobile-search__input,
+    .mobile-search__button {
+        background: #f7943d !important;
+    }
 
 }
 
@@ -11534,11 +11485,7 @@ select.form-control::-ms-expand {
     }
 }
 
-@media (max-width: 480px) {
-    .block-products-columns__list-item a.designation {
-        width: 160px;
-    }
-}
+
 
 /*
 // .block-reviews
@@ -12402,7 +12349,7 @@ select.form-control::-ms-expand {
     }
 
     .block-sale__link {
-        padding: 14px 20px;
+        padding: 19px 20px;
     }
 
     .block-sale__arrow .arrow__button {
