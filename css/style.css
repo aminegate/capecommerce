@@ -2542,7 +2542,8 @@ a.mobile-menu__contacts .phone__body span {
 
     .block-slideshow__item-button {
 
-        left: 26% !important;
+       left: 53% !important;
+        transform: translateX(-50%);
 
     }
 
@@ -2610,10 +2611,18 @@ a.mobile-menu__contacts .phone__body span {
     }
 
 
+
+
 }
 
 
+    @media (max-width: 768px) {
+       .mobile-search__input,
+.mobile-search__button {
+  background: #f7943d !important;
+}
 
+}
 
 
 

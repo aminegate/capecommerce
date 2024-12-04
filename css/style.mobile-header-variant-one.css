@@ -988,11 +988,12 @@
 
 .mobile-search__input,
 .mobile-search__button {
-  background: #f7943d;
+  background: transparent;
   border: none;
   font-family: inherit;
   color: inherit;
 }
+
 
 .mobile-search__input:focus,
 .mobile-search__button:focus {
