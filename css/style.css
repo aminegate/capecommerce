@@ -27,6 +27,12 @@
 ******************************* General css **********************************
 *****************************************************************************/
 
+.fixPos-nouveaute-page,
+.fixPos-promotion,
+.fixPos-results{
+        top: -8.3% !important;
+}
+
 td.wishlist__column.wishlist__column--body.wishlist__column--image {
 
     margin-bottom: 15px;
@@ -1891,6 +1897,7 @@ img.chrono-red-icon {
     width: 35%;
     top: -2.2%;
     right: -4.5%;
+    z-index: 1;
 }
 
 .countdown {
