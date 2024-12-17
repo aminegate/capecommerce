@@ -631,18 +631,20 @@
     });
 
     // Play video when the slide is active
-    videoSlider.on('translated.owl.carousel', function(e) {
-        // Check if the active slide has a video
-        if ($('.owl-item.active').find('video').length !== 0) {
-            // Play the active video
-            $('.owl-item.active video').get(0).play();
-            // Pause autoplay when video is playing
-            videoSlider.trigger('stop.owl.autoplay');
-        } else {
-            // Enable autoplay when the video slide is not active
-            videoSlider.trigger('play.owl.autoplay');
-        }
-    });
+  videoSlider.on('translated.owl.carousel', function(e) {
+    var $activeVideo = $('.owl-item.active').find('video');
+    if ($activeVideo.length) {
+        $activeVideo.get(0).muted = true; // Mute video for iOS autoplay
+        $activeVideo.get(0).playsInline = true; // Inline play for iOS
+        $activeVideo.get(0).play().catch(function() {
+            console.warn('Video play failed on iOS');
+        });
+        videoSlider.trigger('stop.owl.autoplay'); // Stop autoplay
+    } else {
+        videoSlider.trigger('play.owl.autoplay');
+    }
+});
+
 
     // Handle the video end event for all videos
     videoSlider.find('video').each(function() {
