@@ -133,7 +133,7 @@
                                     <a href="promotion.html" class="main-menu__link"><i class="fa-solid fa-fire"></i>&nbsp;&nbsp;PROMOTIONS</a>
                                 </li>
                                 <li class="main-menu__item">
-                                    <a href="categorie.html#filtrationTab" class="main-menu__link"><i class="fa-solid fa-filter"></i>&nbsp;&nbsp;FILTRATION</a>
+                                    <a href="categorie/filtration.html" class="main-menu__link"><i class="fa-solid fa-filter"></i>&nbsp;&nbsp;FILTRATION</a>
                                 </li>
                                 <li class="main-menu__item">
                                     <a href="capservice.html" class="main-menu__link"><i class="fa-solid fa-oil-can"></i>&nbsp;&nbsp;CAPSERVICE</a>
@@ -325,7 +325,7 @@
             <div class="block block-slideshow">
                 <div class="container">
                     <div class="block-slideshow__carousel">
-                        <div class="owl-carousel">
+                        <div class="owl-carousel slideShowCarousel">
                             <a class="block-slideshow__item" href="">
                               
                 
@@ -828,24 +828,12 @@
                 </div>
             </div>
             <div class="block-space block-space--layout--divider-nl"></div>
-            <div class="block block-products-carousel" data-layout="grid-5">
+            <div class="block block-products-carousel nouveaute">
                 <div class="container">
                     <div class="section-header">
                         <div class="section-header__body">
                             <h2 class="section-header__title">Nouveautés</h2>
                             <div class="section-header__spring"></div>
-                            <ul class="section-header__groups">
-                                <li class="section-header__groups-item">
-                                    <button type="button" class="section-header__groups-button section-header__groups-button--active">Nouveautés</button>
-                                </li>
-                                <li class="section-header__groups-item">
-                                    <button type="button" class="section-header__groups-button">Promotions</button>
-                                </li>
-                                <!--
-                                <li class="section-header__groups-item">
-                                    <button type="button" class="section-header__groups-button">Aroma</button>
-                                </li>-->
-                            </ul>
                             <div class="section-header__arrows">
                                 <div class="arrow section-header__arrow section-header__arrow--prev arrow--prev">
                                     <button class="arrow__button" type="button"><svg width="7" height="11">
@@ -864,8 +852,9 @@
                         </div>
                     </div>
                     <div class="block-products-carousel__carousel">
-                        <div class="block-products-carousel__carousel-loader"></div>
-                        <div class="owl-carousel">
+
+
+                       <div id="carousel-nouveautes" class="block-products-carousel owl-carousel">
                             <!-- product 1 -->
                             <div class="block-products-carousel__column">
                               
@@ -968,7 +957,7 @@
                                         </div>
                                         <div class="product-card__footer ">
                                             <div class="product-card__prices">
-                                                <div class="product-card__price product-card__price--current">190.00 DH <span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a></div>
+                                                <div class="product-card__price product-card__price--current">190.00 DH <span class="brut">[ BRUT ]</span> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a></div>
                                             </div>
                                             <br>
                                             <div class="bottomFooterWrapper ">
@@ -1095,7 +1084,7 @@
                                         </div>
                                         <div class="product-card__footer ">
                                             <div class="product-card__prices">
-                                                <div class="product-card__price product-card__price--current">190.00 DH <span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a></div>
+                                                <div class="product-card__price product-card__price--current">190.00 DH <span class="brut">[ BRUT ]</span> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a></div>
                                             </div>
                                             <br>
                                             <div class="bottomFooterWrapper">
@@ -1221,7 +1210,7 @@
                                         </div>
                                         <div class="product-card__footer ">
                                             <div class="product-card__prices">
-                                                <div class="product-card__price product-card__price--current">190.00 DH <span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a></div>
+                                                <div class="product-card__price product-card__price--current">190.00 DH <span class="brut">[ BRUT ]</span> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a></div>
                                             </div>
                                             <br>
                                             <div class="bottomFooterWrapper">
@@ -1349,7 +1338,7 @@
                                         </div>
                                         <div class="product-card__footer ">
                                             <div class="product-card__prices">
-                                                <div class="product-card__price product-card__price--current">190.00 DH <span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a></div>
+                                                <div class="product-card__price product-card__price--current">190.00 DH <span class="brut">[ BRUT ]</span> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a></div>
                                             </div>
                                             <br>
                                             <div class="bottomFooterWrapper">
@@ -1476,7 +1465,7 @@
                                         </div>
                                         <div class="product-card__footer ">
                                             <div class="product-card__prices">
-                                                <div class="product-card__price product-card__price--current">190.00 DH <span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a></div>
+                                                <div class="product-card__price product-card__price--current">190.00 DH <span class="brut">[ BRUT ]</span> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a></div>
                                             </div>
                                             <br>
                                             <div class="bottomFooterWrapper">
@@ -1604,7 +1593,7 @@
                                         </div>
                                         <div class="product-card__footer ">
                                             <div class="product-card__prices">
-                                                <div class="product-card__price product-card__price--current">190.00 DH <span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a></div>
+                                                <div class="product-card__price product-card__price--current">190.00 DH <span class="brut">[ BRUT ]</span> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a></div>
                                             </div>
                                             <br>
                                             <div class="bottomFooterWrapper">
@@ -1732,7 +1721,7 @@
                                         </div>
                                         <div class="product-card__footer ">
                                             <div class="product-card__prices">
-                                                <div class="product-card__price product-card__price--current">190.00 DH <span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a></div>
+                                                <div class="product-card__price product-card__price--current">190.00 DH <span class="brut">[ BRUT ]</span> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a></div>
                                             </div>
                                             <br>
                                             <div class="bottomFooterWrapper">
@@ -1860,7 +1849,7 @@
                                         </div>
                                         <div class="product-card__footer ">
                                             <div class="product-card__prices">
-                                                <div class="product-card__price product-card__price--current">190.00 DH <span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a></div>
+                                                <div class="product-card__price product-card__price--current">190.00 DH <span class="brut">[ BRUT ]</span> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a></div>
                                             </div>
                                             <br>
                                             <div class="bottomFooterWrapper">
@@ -1988,7 +1977,7 @@
                                         </div>
                                         <div class="product-card__footer ">
                                             <div class="product-card__prices">
-                                                <div class="product-card__price product-card__price--current">190.00 DH <span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a></div>
+                                                <div class="product-card__price product-card__price--current">190.00 DH <span class="brut">[ BRUT ]</span> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a></div>
                                             </div>
                                             <br>
                                             <div class="bottomFooterWrapper">
@@ -2116,7 +2105,7 @@
                                         </div>
                                         <div class="product-card__footer ">
                                             <div class="product-card__prices">
-                                                <div class="product-card__price product-card__price--current">190.00 DH <span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a></div>
+                                                <div class="product-card__price product-card__price--current">190.00 DH <span class="brut">[ BRUT ]</span> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a></div>
                                             </div>
                                             <br>
                                             <div class="bottomFooterWrapper">
@@ -2203,7 +2192,7 @@
                 </div>
             </div>
             <div class="block-space block-space--layout--divider-nl"></div>
-            <div class="block block-sale">
+            <div class="block block-sale chrono">
                 <div class="block-sale__content">
                     <div class="block-sale__header">
                         <div class="block-sale__title">CHRONO 24</div>
@@ -2370,7 +2359,7 @@
                                                 <div class="product-card__prices">
                                                     <div class="product-card__price product-card__price--new">349.00 DH</div>
                                                     <div class="product-card__price product-card__price--old">415.00 DH</div>
-                                                    &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                    &nbsp;<span class="brut">[ BRUT ]</span> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                 </div>
                                                 <br>
                                                 <div class="bottomFooterWrapper">
@@ -2502,7 +2491,7 @@
                                                 <div class="product-card__prices">
                                                     <div class="product-card__price product-card__price--new">349.00 DH</div>
                                                     <div class="product-card__price product-card__price--old">415.00 DH</div>
-                                                    &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                    &nbsp;<span class="brut">[ BRUT ]</span> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                 </div>
                                                 <br>
                                                 <div class="bottomFooterWrapper">
@@ -2634,7 +2623,7 @@
                                                 <div class="product-card__prices">
                                                     <div class="product-card__price product-card__price--new">349.00 DH</div>
                                                     <div class="product-card__price product-card__price--old">415.00 DH</div>
-                                                    &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                    &nbsp;<span class="brut">[ BRUT ]</span> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                 </div>
                                                 <br>
                                                 <div class="bottomFooterWrapper">
@@ -2769,7 +2758,7 @@
                                                 <div class="product-card__prices">
                                                     <div class="product-card__price product-card__price--new">349.00 DH</div>
                                                     <div class="product-card__price product-card__price--old">415.00 DH</div>
-                                                    &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                    &nbsp;<span class="brut">[ BRUT ]</span> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                 </div>
                                                 <br>
                                                 <div class="bottomFooterWrapper">
@@ -2901,7 +2890,7 @@
                                                 <div class="product-card__prices">
                                                     <div class="product-card__price product-card__price--new">349.00 DH</div>
                                                     <div class="product-card__price product-card__price--old">415.00 DH</div>
-                                                    &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                    &nbsp;<span class="brut">[ BRUT ]</span> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                 </div>
                                                 <br>
                                                 <div class="bottomFooterWrapper">
@@ -3029,7 +3018,7 @@
                                                 <div class="product-card__prices">
                                                     <div class="product-card__price product-card__price--new">180.00 DH</div>
                                                     <div class="product-card__price product-card__price--old">240.00 DH</div>
-                                                    &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                    &nbsp;<span class="brut">[ BRUT ]</span> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                 </div>
                                                 <br>
                                                 <div class="bottomFooterWrapper">
@@ -3161,7 +3150,7 @@
                                                 <div class="product-card__prices">
                                                     <div class="product-card__price product-card__price--new">349.00 DH</div>
                                                     <div class="product-card__price product-card__price--old">415.00 DH</div>
-                                                    &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                    &nbsp;<span class="brut">[ BRUT ]</span> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                 </div>
                                                 <br>
                                                 <div class="bottomFooterWrapper">
@@ -3292,7 +3281,7 @@
                                                 <div class="product-card__prices">
                                                     <div class="product-card__price product-card__price--new">349.00 DH</div>
                                                     <div class="product-card__price product-card__price--old">415.00 DH</div>
-                                                    &nbsp;<span class="brut">[ BRUT ]</span> <br> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
+                                                    &nbsp;<span class="brut">[ BRUT ]</span> <a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                 </div>
                                                 <br>
                                                 <div class="bottomFooterWrapper">
@@ -3765,7 +3754,7 @@
                                     <ul class="footer-links__list">
                                         <li class="footer-links__item"><a href="accueil.html" class="footer-links__link">Accueil</a></li>
                                         <li class="footer-links__item"><a href="categorie.html" class="footer-links__link">CATÉGORIES</a></li>
-                                        <li class="footer-links__item"><a href="famille.html" class="footer-links__link">Capram Cartes</a></li>
+                                        
                                         <li class="footer-links__item"><a href="contact.html" class="footer-links__link">Contactez-nous</a></li>
                                         <li class="footer-links__item"><a href="chrono.html" class="footer-links__link">Chrono</a></li>
                                         <li class="footer-links__item"><a href="https://capram.ma/" class="footer-links__link">capram.ma</a></li>
@@ -3992,7 +3981,7 @@
                             </a>
                         </li>
                         <li data-mobile-menu-item>
-                            <a href="categorie.html#filtrationTab.html" class="mobile-nav-link" data-mobile-menu-trigger>
+                            <a href="categorie/filtration.html.html" class="mobile-nav-link" data-mobile-menu-trigger>
                                 <i class="fa-solid fa-filter"></i>&nbsp;&nbsp;FILTRATION
                             </a>
                         </li>
@@ -4027,243 +4016,7 @@
         </div>
     </div>
     <!-- mobile-menu / end -->
-    <!-- quickview-modal -->
-    <div id="quickview-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
-    <!-- quickview-modal / end -->
-    <!-- add-vehicle-modal -->
-    <div id="add-vehicle-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="vehicle-picker-modal modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <button type="button" class="vehicle-picker-modal__close"><svg width="12" height="12">
-                        <path d="M10.8,10.8L10.8,10.8c-0.4,0.4-1,0.4-1.4,0L6,7.4l-3.4,3.4c-0.4,0.4-1,0.4-1.4,0l0,0c-0.4-0.4-0.4-1,0-1.4L4.6,6L1.2,2.6
-	c-0.4-0.4-0.4-1,0-1.4l0,0c0.4-0.4,1-0.4,1.4,0L6,4.6l3.4-3.4c0.4-0.4,1-0.4,1.4,0l0,0c0.4,0.4,0.4,1,0,1.4L7.4,6l3.4,3.4
-	C11.2,9.8,11.2,10.4,10.8,10.8z" />
-                    </svg>
-                </button>
-                <div class="vehicle-picker-modal__panel vehicle-picker-modal__panel--active">
-                    <div class="vehicle-picker-modal__title card-title">Add A Vehicle</div>
-                    <div class="vehicle-form vehicle-form--layout--modal">
-                        <div class="vehicle-form__item vehicle-form__item--select">
-                            <select class="form-control form-control-select2" aria-label="Year">
-                                <option value="none">Select Year</option>
-                                <option>2010</option>
-                                <option>2011</option>
-                                <option>2012</option>
-                                <option>2013</option>
-                                <option>2014</option>
-                                <option>2015</option>
-                                <option>2016</option>
-                                <option>2017</option>
-                                <option>2018</option>
-                                <option>2024</option>
-                                <option>2020</option>
-                            </select>
-                        </div>
-                        <div class="vehicle-form__item vehicle-form__item--select">
-                            <select class="form-control form-control-select2" aria-label="Brand" disabled>
-                                <option value="none">Select Brand</option>
-                                <option>Audi</option>
-                                <option>BMW</option>
-                                <option>Ferrari</option>
-                                <option>Ford</option>
-                                <option>KIA</option>
-                                <option>Nissan</option>
-                                <option>Tesla</option>
-                                <option>Toyota</option>
-                            </select>
-                        </div>
-                        <div class="vehicle-form__item vehicle-form__item--select">
-                            <select class="form-control form-control-select2" aria-label="Model" disabled>
-                                <option value="none">Select Model</option>
-                                <option>Explorer</option>
-                                <option>Focus S</option>
-                                <option>Fusion SE</option>
-                                <option>Mustang</option>
-                            </select>
-                        </div>
-                        <div class="vehicle-form__item vehicle-form__item--select">
-                            <select class="form-control form-control-select2" aria-label="Engine" disabled>
-                                <option value="none">Select Engine</option>
-                                <option>Gas 1.6L 125 hp AT/L4</option>
-                                <option>Diesel 2.5L 200 hp AT/L5</option>
-                                <option>Diesel 3.0L 250 hp MT/L5</option>
-                            </select>
-                        </div>
-                        <div class="vehicle-form__divider">Or</div>
-                        <div class="vehicle-form__item">
-                            <input type="text" class="form-control" placeholder="Enter VIN number" aria-label="VIN number">
-                        </div>
-                    </div>
-                    <div class="vehicle-picker-modal__actions">
-                        <button type="button" class="btn btn-sm btn-secondary vehicle-picker-modal__close-button">Cancel</button>
-                        <button type="button" class="btn btn-sm btn-primary">Add A Vehicle</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- add-vehicle-modal / end -->
-    <!-- vehicle-picker-modal -->
-    <div id="vehicle-picker-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="vehicle-picker-modal modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <button type="button" class="vehicle-picker-modal__close"><svg width="12" height="12">
-                        <path d="M10.8,10.8L10.8,10.8c-0.4,0.4-1,0.4-1.4,0L6,7.4l-3.4,3.4c-0.4,0.4-1,0.4-1.4,0l0,0c-0.4-0.4-0.4-1,0-1.4L4.6,6L1.2,2.6
-	c-0.4-0.4-0.4-1,0-1.4l0,0c0.4-0.4,1-0.4,1.4,0L6,4.6l3.4-3.4c0.4-0.4,1-0.4,1.4,0l0,0c0.4,0.4,0.4,1,0,1.4L7.4,6l3.4,3.4
-	C11.2,9.8,11.2,10.4,10.8,10.8z" />
-                    </svg>
-                </button>
-                <div class="vehicle-picker-modal__panel vehicle-picker-modal__panel--active" data-panel="list">
-                    <div class="vehicle-picker-modal__title card-title">Select Vehicle</div>
-                    <div class="vehicle-picker-modal__text">
-                        Select a vehicle to find exact fit ts
-                    </div>
-                    <div class="vehicles-list">
-                        <div class="vehicles-list__body">
-                            <label class="vehicles-list__item">
-                                <span class="vehicles-list__item-radio input-radio">
-                                    <span class="input-radio__body">
-                                        <input class="input-radio__input" name="header-vehicle" type="radio">
-                                        <span class="input-radio__circle"></span>
-                                    </span>
-                                </span>
-                                <span class="vehicles-list__item-info">
-                                    <span class="vehicles-list__item-name">2011 Ford Focus S</span>
-                                    <span class="vehicles-list__item-details">Engine 2.0L 1742DA L4 FI Turbo</span>
-                                </span>
-                                <button type="button" class="vehicles-list__item-remove">
-                                    <svg width="16" height="16">
-                                        <path d="M2,4V2h3V1h6v1h3v2H2z M13,13c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V5h10V13z" />
-                                    </svg>
-                                </button>
-                            </label>
-                            <label class="vehicles-list__item">
-                                <span class="vehicles-list__item-radio input-radio">
-                                    <span class="input-radio__body">
-                                        <input class="input-radio__input" name="header-vehicle" type="radio">
-                                        <span class="input-radio__circle"></span>
-                                    </span>
-                                </span>
-                                <span class="vehicles-list__item-info">
-                                    <span class="vehicles-list__item-name">2024 Audi Q7 Premium</span>
-                                    <span class="vehicles-list__item-details">Engine 3.0L 5626CC L6 QK</span>
-                                </span>
-                                <button type="button" class="vehicles-list__item-remove">
-                                    <svg width="16" height="16">
-                                        <path d="M2,4V2h3V1h6v1h3v2H2z M13,13c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V5h10V13z" />
-                                    </svg>
-                                </button>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="vehicle-picker-modal__actions">
-                        <button type="button" class="btn btn-sm btn-secondary vehicle-picker-modal__close-button">Cancel</button>
-                        <button type="button" class="btn btn-sm btn-primary" data-to-panel="form">Add A Vehicle</button>
-                    </div>
-                </div>
-                <div class="vehicle-picker-modal__panel" data-panel="form">
-                    <div class="vehicle-picker-modal__title card-title">Add A Vehicle</div>
-                    <div class="vehicle-form vehicle-form--layout--modal">
-                        <div class="vehicle-form__item vehicle-form__item--select">
-                            <select class="form-control form-control-select2" aria-label="Year">
-                                <option value="none">Select Year</option>
-                                <option>2010</option>
-                                <option>2011</option>
-                                <option>2012</option>
-                                <option>2013</option>
-                                <option>2014</option>
-                                <option>2015</option>
-                                <option>2016</option>
-                                <option>2017</option>
-                                <option>2018</option>
-                                <option>2024</option>
-                                <option>2020</option>
-                            </select>
-                        </div>
-                        <div class="vehicle-form__item vehicle-form__item--select">
-                            <select class="form-control form-control-select2" aria-label="Brand" disabled>
-                                <option value="none">Select Brand</option>
-                                <option>Audi</option>
-                                <option>BMW</option>
-                                <option>Ferrari</option>
-                                <option>Ford</option>
-                                <option>KIA</option>
-                                <option>Nissan</option>
-                                <option>Tesla</option>
-                                <option>Toyota</option>
-                            </select>
-                        </div>
-                        <div class="vehicle-form__item vehicle-form__item--select">
-                            <select class="form-control form-control-select2" aria-label="Model" disabled>
-                                <option value="none">Select Model</option>
-                                <option>Explorer</option>
-                                <option>Focus S</option>
-                                <option>Fusion SE</option>
-                                <option>Mustang</option>
-                            </select>
-                        </div>
-                        <div class="vehicle-form__item vehicle-form__item--select">
-                            <select class="form-control form-control-select2" aria-label="Engine" disabled>
-                                <option value="none">Select Engine</option>
-                                <option>Gas 1.6L 125 hp AT/L4</option>
-                                <option>Diesel 2.5L 200 hp AT/L5</option>
-                                <option>Diesel 3.0L 250 hp MT/L5</option>
-                            </select>
-                        </div>
-                        <div class="vehicle-form__divider">Or</div>
-                        <div class="vehicle-form__item">
-                            <input type="text" class="form-control" placeholder="Enter VIN number" aria-label="VIN number">
-                        </div>
-                    </div>
-                    <div class="vehicle-picker-modal__actions">
-                        <button type="button" class="btn btn-sm btn-secondary" data-to-panel="list">Back to list</button>
-                        <button type="button" class="btn btn-sm btn-primary">Add A Vehicle</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- vehicle-picker-modal / end -->
-    <!-- photoswipe -->
-    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div>
-                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                    <!--<button class="pswp__button pswp__button&#45;&#45;share" title="Share"></button>-->
-                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                            <div class="pswp__preloader__cut">
-                                <div class="pswp__preloader__donut"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div>
-                </div>
-                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- photoswipe / end -->
-    <!-- scripts -->
-    <script>
-
-    </script>
+   <!-- scripts -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/owl-carousel/owl.carousel.min.js"></script>

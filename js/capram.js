@@ -38,100 +38,14 @@ $(document).ready(function() {
     
  
     
-  $('.category-checkbox').change(function() {
-        var $this = $(this); // Reference to the current checkbox
-        var $label = $this.closest('label');
-        var subcatego = $label.find('.subcatego');
-        var downIcon = $label.find('i.fa-sort-down');
-        var upIcon = $label.find('i.fa-sort-up');
 
-        // If the checkbox is checked
-        if ($this.is(':checked')) {
-            // Close all subcategories and reset icons
-            $('.subcatego').not(subcatego).slideUp('fast');
-            $('.category-checkbox').not($this).prop('checked', false); // Uncheck other checkboxes
-            
-            $('i.fa-sort-down').show(); // Show all down icons
-            $('i.fa-sort-up').hide(); // Hide all up icons
-
-            // Open the current subcategory and switch icons
-            subcatego.stop(true, true).slideDown('fast');
-            downIcon.hide(); // Hide the down icon for the current category
-            upIcon.show(); // Show the up icon for the current category
-        } else {
-            // Close the current subcategory and reset icons
-            subcatego.stop(true, true).slideUp('fast');
-            downIcon.show(); // Show the down icon for the current category
-            upIcon.hide(); // Hide the up icon for the current category
-        }
-    }); 
-    
     
     
     
     
 
 
-    $('.subcategory-item').on('click', function(e) {
-        e.preventDefault(); // Prevent the default anchor behavior
 
-        // Get data attributes
-        const categoryId = $(this).data('category');
-        const subcategoryId = $(this).data('subcategory');
-
-        // Redirect to the second page with parameters
-        window.location.href = `boutique.html?category=${categoryId}&subcategory=${subcategoryId}`;
-    });
-    
-   // Function to get URL parameters
-    function getUrlParameter(name) {
-        const regex = new RegExp('[?&]' + name + '=([^&#]*)', 'i');
-        const results = regex.exec(window.location.href);
-        return results ? decodeURIComponent(results[1]) : null;
-    }
-
-    const categoryId = getUrlParameter('category');
-    const subcategoryId = getUrlParameter('subcategory');
-
-    // Check the main category checkbox and show its subcategories
-    if (categoryId) {
-        $(`#catagory_${categoryId}`).prop('checked', true);
-        // Show subcategories for the checked main category
-        const subcategories = $(`#catagory_${categoryId}`).closest('label').find('.subcatego');
-        subcategories.slideDown(); // Show subcategories
-    }
-
-    // Check the subcategory checkbox and apply font weight
-    if (subcategoryId) {
-        $(`#subCatego_${subcategoryId}`).prop('checked', true);
-        // Bold only the specific subcategory name
-        $(`#subCatego_${subcategoryId}`).closest('li').find('.subCategory-name').css('font-weight', 'bold');
-    }
-
-    // Toggle subcategories based on main category checkbox
-    $('.category-checkbox').change(function() {
-        const subcategories = $(this).closest('label').find('.subcatego');
-        
-        if ($(this).is(':checked')) {
-            subcategories.slideDown(); // Show subcategories
-        } else {
-            subcategories.slideUp(); // Hide subcategories
-            // Uncheck all subcategory checkboxes if the main category is unchecked
-            subcategories.find('.subCategory-checkbox').prop('checked', false);
-            subcategories.find('.subCategory-name').css('font-weight', 'normal'); // Reset font weight
-        }
-    });
-
-    // Subcategory click event
-    $('.subCategory-checkbox').change(function() {
-        const $subCategoryName = $(this).closest('li').find('.subCategory-name');
-        if ($(this).is(':checked')) {
-            $subCategoryName.css('font-weight', 'bold'); // Bold the name only for the clicked subcategory
-        } else {
-            $subCategoryName.css('font-weight', 'normal'); // Reset to normal if unchecked
-        }
-    });
-    
     
     
     /*************************************************/
@@ -223,15 +137,15 @@ $(document).ready(function() {
 })();
 
 (function() {
-    $('.new-product-img').append('<img class="new-red-icon" src="images/new.png" alt="" >');
+    $('.nouveaute_item').prepend('<img class="new-red-icon" src="images/new.png" alt="" >');
 })();
     
     (function() {
-    $('.promotion-img').append('<img class="promotion-red-icon" src="images/promo.png" alt="" >');
+    $('.promotion_item').prepend('<img class="promotion-red-icon" src="images/promo.png" alt="" >');
 })();
     
         (function() {
-    $('.chrono-product-img').append('<img class="chrono-red-icon" src="images/24h.png" alt="" >');
+    $('.chrono_item').prepend('<img class="chrono-red-icon" src="images/24h.png" alt="" >');
 })();
     
     
@@ -272,219 +186,9 @@ window.onload = function() {
     }
 };
     
-    
-
-(function($) {
-    // Function to activate the first category on page load
-    function activateFirstCategory() {
-        // Find the first category element
-        var $firstCategory = $('.goToCategoTarget').first();
-        var firstCategoryId = $firstCategory.data('category');
-
-        // Add the 'activey' class to the first category's title
-      /*  $firstCategory.find('.categoBoxTitle').addClass('activey');*/
-
-        // Slide down the first subcategory
-      /*  $('#subcategory-' + firstCategoryId).slideDown(300);*/
-    }
-
- function openSubcategory(categoryId) {
-    var $subcategory = $('#subcategory-' + categoryId);
-
-    // Hide all other subcategories and remove 'activey' class from other titles
-    $('.subcategory').slideUp(300);
-    $('.categoBoxTitle').removeClass('activey');
-
-    // Show the subcategory for the clicked category with 300ms duration
-    $subcategory.slideDown(300, function() {
-        // Once the sliding down is complete, scroll to the category element, offset by 30px
-        $('html, body').animate({
-            scrollTop: $('.goToCategoTarget[data-category="' + categoryId + '"]').offset().top - 30
-        }, 300); // Adjust the duration of the scroll animation as needed
-    });
-
-    $('.goToCategoTarget[data-category="' + categoryId + '"] .categoBoxTitle').addClass('activey'); // Add 'activey' class to the clicked category
-}
+  
 
 
-    // When a category is clicked
-    $('.goToCategoTarget').click(function(event) {
-        event.preventDefault(); // Prevent default anchor click behavior
-        var categoryId = $(this).data('category'); // Get the category ID
-
-        // Check if the clicked subcategory is currently visible
-        var $subcategory = $('#subcategory-' + categoryId);
-
-        if ($subcategory.is(':visible')) {
-            // If it is visible, slide it up (hide) with 300ms duration
-            $subcategory.slideUp(300);
-            $(this).find('.categoBoxTitle').removeClass('activey'); // Remove 'activey' class
-        } else {
-            // Call the function to open the subcategory
-            openSubcategory(categoryId);
-        }
-    });
-
-    // Handle clicks on main menu links
-    $('.main-menu__link').click(function(event) {
-        var targetId = $(this).attr('href').split('#')[1]; // Get the target ID from the link
-        var categoryId = null;
-
-        // Find the corresponding category based on the target ID
-        $('.goToCategoTarget').each(function() {
-            if ($(this).find('.categoBoxTitle').attr('id') === targetId) {
-                categoryId = $(this).data('category'); // Get the corresponding category ID
-            }
-        });
-
-        if (categoryId) {
-            // Allow the link to navigate normally to the new page
-            // No need to call preventDefault here
-            openSubcategory(categoryId); // Open the corresponding subcategory
-        }
-    });
-
-    // Check if there's a hash in the URL and open the corresponding subcategory on page load
-    $(window).on('load', function() {
-        var hash = window.location.hash; // Get the hash from the URL
-        if (hash) {
-            var targetId = hash.substring(1); // Remove the '#' from the hash
-            var categoryId = null;
-
-            // Find the corresponding category based on the target ID
-            $('.goToCategoTarget').each(function() {
-                if ($(this).find('.categoBoxTitle').attr('id') === targetId) {
-                    categoryId = $(this).data('category'); // Get the corresponding category ID
-                }
-            });
-
-            if (categoryId) {
-                openSubcategory(categoryId); // Open the corresponding subcategory
-            }
-        } else {
-          activateFirstCategory();  // If there's no hash, activate the first category
-        }
-    });
-
-    // Call the function to activate the first category when the page loads
-   activateFirstCategory();
-
-})(jQuery);
-
-    /*
-    
-    (function($) {
-    // Function to activate the first category on page load
-    function activateFirstCategory() {
-        // Find the first category element
-        var $firstCategory = $('.goToCategoTarget').first();
-        var firstCategoryId = $firstCategory.data('category');
-
-        // Add the 'activey' class to the first category's title
-        $firstCategory.find('.categoBoxTitle').addClass('activey');
-
-        // Rotate the chevron down for the active category
-        $firstCategory.find('.fa-chevron-down').addClass('rotate');
-
-        // Slide down the first subcategory
-        $('#subcategory-' + firstCategoryId).slideDown(300);
-    }
-
-    // Function to add chevron to all categoBoxTitle elements
-    function addChevronIcons() {
-        $('.categoBoxTitle').each(function() {
-            // Append a chevron span element to each categoBoxTitle
-            $(this).append('<i class="fa-solid fa-chevron-down"></i>'); // Unicode chevron-down
-        });
-    }
-
-    function openSubcategory(categoryId) {
-        var $subcategory = $('#subcategory-' + categoryId);
-
-        // Hide all other subcategories and remove 'activey' class and rotate chevron
-        $('.subcategory').slideUp(300);
-        $('.categoBoxTitle').removeClass('activey');
-        $('.fa-chevron-down').removeClass('rotate');
-
-        // Show the subcategory for the clicked category with 300ms duration
-        $subcategory.slideDown(300, function() {
-            // Once the sliding down is complete, scroll to the category element, offset by 30px
-            $('html, body').animate({
-                scrollTop: $('.goToCategoTarget[data-category="' + categoryId + '"]').offset().top - 30
-            }, 300); // Adjust the duration of the scroll animation as needed
-        });
-
-        // Add 'activey' class and rotate chevron for the clicked category
-        $('.goToCategoTarget[data-category="' + categoryId + '"] .categoBoxTitle').addClass('activey');
-        $('.goToCategoTarget[data-category="' + categoryId + '"] .fa-chevron-down').addClass('rotate');
-    }
-
-    // When a category is clicked
-    $('.goToCategoTarget').click(function(event) {
-        event.preventDefault(); // Prevent default anchor click behavior
-        var categoryId = $(this).data('category'); // Get the category ID
-
-        // Check if the clicked subcategory is currently visible
-        var $subcategory = $('#subcategory-' + categoryId);
-
-        if ($subcategory.is(':visible')) {
-            // If it is visible, slide it up (hide) with 300ms duration
-            $subcategory.slideUp(300);
-            $(this).find('.categoBoxTitle').removeClass('activey'); // Remove 'activey' class
-            $(this).find('.fa-chevron-down').removeClass('rotate'); // Rotate the chevron back
-        } else {
-            // Call the function to open the subcategory
-            openSubcategory(categoryId);
-        }
-    });
-
-    // Handle clicks on main menu links
-    $('.main-menu__link').click(function(event) {
-        var targetId = $(this).attr('href').split('#')[1]; // Get the target ID from the link
-        var categoryId = null;
-
-        // Find the corresponding category based on the target ID
-        $('.goToCategoTarget').each(function() {
-            if ($(this).find('.categoBoxTitle').attr('id') === targetId) {
-                categoryId = $(this).data('category'); // Get the corresponding category ID
-            }
-        });
-
-        if (categoryId) {
-            // Allow the link to navigate normally to the new page
-            openSubcategory(categoryId); // Open the corresponding subcategory
-        }
-    });
-
-    // Check if there's a hash in the URL and open the corresponding subcategory on page load
-    $(window).on('load', function() {
-        var hash = window.location.hash; // Get the hash from the URL
-        if (hash) {
-            var targetId = hash.substring(1); // Remove the '#' from the hash
-            var categoryId = null;
-
-            // Find the corresponding category based on the target ID
-            $('.goToCategoTarget').each(function() {
-                if ($(this).find('.categoBoxTitle').attr('id') === targetId) {
-                    categoryId = $(this).data('category'); // Get the corresponding category ID
-                }
-            });
-
-            if (categoryId) {
-                openSubcategory(categoryId); // Open the corresponding subcategory
-            }
-        } else {
-         /*   activateFirstCategory();  // If there's no hash, activate the first category
-        }
-    });
-
-    // Call the function to add chevron icons
-    addChevronIcons();
-
-    // Call the function to activate the first category when the page loads
-  /*  activateFirstCategory();
-
-})(jQuery);*/
     
     
 (function ($) {
@@ -497,12 +201,16 @@ window.onload = function() {
     $(".tdnn").addClass('day');
     $(".logo__image img").attr('src', 'images/logo.png');
     $(".site-footer__payments img").attr('src', 'images/logo.png');
+    $(".logoPathTarget .logo__image img").attr('src', '../images/logo.png');
+    $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo.png');
     $(".carrosserie-img img").attr('src', 'images/carrosserie-white.jpg');
     $(".nightMode").prop('disabled', true); // Disable night mode CSS
     $(".darkModeCheck").last().append('<i class="fa-solid fa-check"></i>'); // Add check icon to "Désactivé"
   } else {
     $(".logo__image img").attr('src', 'images/logo_white.png');
     $(".site-footer__payments img").attr('src', 'images/logo_white.png');
+    $(".logoPathTarget .logo__image img").attr('src', '../images/logo_white.png');
+    $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo_white.png');
     $(".carrosserie-img img").attr('src', 'images/carrosserie.jpg');
     $(".nightMode").prop('disabled', false); // Enable night mode CSS
     $(".darkModeCheck").first().append('<i class="fa-solid fa-check"></i>'); // Add check icon to "Activé"
@@ -517,6 +225,8 @@ window.onload = function() {
     if ($("body").hasClass('light')) {
       $(".logo__image img").attr('src', 'images/logo.png');
       $(".site-footer__payments img").attr('src', 'images/logo.png');
+      $(".logoPathTarget .logo__image img").attr('src', '../images/logo.png');
+      $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo.png');
       $(".carrosserie-img img").attr('src', 'images/carrosserie-white.jpg');
       $(".nightMode").prop('disabled', true);
       localStorage.setItem('mode', 'light');
@@ -525,6 +235,8 @@ window.onload = function() {
     } else {
       $(".logo__image img").attr('src', 'images/logo_white.png');
       $(".site-footer__payments img").attr('src', 'images/logo_white.png');
+      $(".logoPathTarget .logo__image img").attr('src', '../images/logo_white.png');
+      $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo_white.png');
       $(".carrosserie-img img").attr('src', 'images/carrosserie.jpg');
       $(".nightMode").prop('disabled', false);
       localStorage.setItem('mode', 'dark');
@@ -542,6 +254,8 @@ window.onload = function() {
       $(".tdnn").removeClass('day');
       $(".logo__image img").attr('src', 'images/logo_white.png');
       $(".site-footer__payments img").attr('src', 'images/logo_white.png');
+     $(".logoPathTarget .logo__image img").attr('src', '../images/logo_white.png');
+     $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo_white.png');
       $(".carrosserie-img img").attr('src', 'images/carrosserie.jpg');
       $(".nightMode").prop('disabled', false);
       localStorage.setItem('mode', 'dark');
@@ -553,6 +267,8 @@ window.onload = function() {
       $(".tdnn").addClass('day');
       $(".logo__image img").attr('src', 'images/logo.png');
       $(".site-footer__payments img").attr('src', 'images/logo.png');
+      $(".logoPathTarget .logo__image img").attr('src', '../images/logo.png');
+      $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo.png');
       $(".carrosserie-img img").attr('src', 'images/carrosserie-white.jpg');
       $(".nightMode").prop('disabled', true);
       localStorage.setItem('mode', 'light');
@@ -564,26 +280,7 @@ window.onload = function() {
 
 
 
-$(function () {
-    // Function to update the title based on the button clicked
-    $('.section-header__groups-button').on('click', function () {
-        // Get the text of the clicked button
-        var buttonText = $(this).text();
 
-        // Find the title element and update its text based on the button clicked
-        if (buttonText === 'Nouveautés') {
-            $('.section-header__title').text('Nouveautés');
-        } else if (buttonText === 'Promotions') {
-            $('.section-header__title').text('Promotions');
-        } else if (buttonText === 'Aroma') {
-            $('.section-header__title').text('Aroma');
-        }
-
-        // Optional: Remove active class from all buttons and add it to the clicked button
-        $('.section-header__groups-button').removeClass('section-header__groups-button--active');
-        $(this).addClass('section-header__groups-button--active');
-    });
-});
 
 (function($) {
     $('#whatsapp-chat').on('click', function() {
@@ -894,197 +591,88 @@ checkInputs();
     $('.login-form').on('submit', handleLogin);
 
     
-    
-    
-    
-    
-(function ($) {
-  const lang = 'FR'; // Only French description included
-  const typeCountdown = 'time'; // 'time' for countdown to a specific time, 'date' for countdown to a designated date
-  let EndDate = '2019/07/10, 22:00'; // Expiration Date yyyy/mm/dd, hh:mm (used if typeCountdown = 'date')
-  let days = 1; // Number of days before the end (used if typeCountdown = 'time')
-  let timeOut = '00:00'; // 'hh:mm' (used if typeCountdown = 'time')
-  const ColorDigitEnd = '#bfbfbf';
+(function() {
+    // cube animation
+    var areaHTML =
+        '<div class="area">' +
+            '<ul class="circles">' +
+                '<li></li>' +
+                '<li></li>' +
+                '<li></li>' +
+                '<li></li>' +
+                '<li></li>' +
+                '<li></li>' +
+                '<li></li>' +
+                '<li></li>' +
+                '<li></li>' +
+                '<li></li>' +
+            '</ul>' +
+        '</div>';
 
-  let hours, minutes, target_date, ExpirationDate;
-  let formatCountdown = null;
-  let day_lang = 'Jours', hour_lang = 'Heures', minute_lang = 'Minutes', second_lang = 'Secondes';
+    // Hide the counter initially to avoid flickering
+    $('#the-24h-countdown p').css('visibility', 'hidden');
 
-  function daysLeft(target) {
-    if (target > 24 * 60 * 60 * 1000) {
-      formatCountdown = 'day|hour|minute|second';
-    } else if (target > 60 * 60 * 1000) {
-      formatCountdown = 'hour|minute|second';
-    } else {
-      formatCountdown = 'minute|second';
-    }
-  }
-
-  if (typeCountdown === 'time') {
-    timeOut = timeOut.split(':');
-    hours = timeOut[0];
-    minutes = timeOut[1];
-    target_date = (days * 24 * 60 * 60 + hours * 60 * 60 + minutes * 60) * 1000;
-
-    daysLeft(target_date);
-    target_date += new Date().getTime();
-  } else if (typeCountdown === 'date') {
-    ExpirationDate = new Date(EndDate);
-    target_date = ExpirationDate - new Date();
-    daysLeft(target_date);
-    target_date += new Date().getTime();
-  } else {
-    target_date = 0;
-    formatCountdown = 'day|hour|minute|second';
-  }
-
-  class Countdown {
-    constructor(userOptions) {
-      this.options = $.extend(
-        {
-          cont: null,
-          countdown: true,
-          endDate: { day: 0, hour: 0, minute: 0, second: 0 },
-          endCallback: null,
-          outputFormat: formatCountdown,
-          outputTranslation: {
-            day: day_lang,
-            hour: hour_lang,
-            minute: minute_lang,
-            second: second_lang,
-          },
-        },
-        userOptions
-      );
-
-      this.lastTick = null;
-      this.intervalsBySize = ['day', 'hour', 'minute', 'second'];
-      this.interval = null;
-      this.digitConts = {};
+    // labels
+    function renderCountdown() {
+        return (
+            '<div class="timeWrapper">' +
+                areaHTML + 
+                '<span class="countDownWrapper hours">0</span>' +
+                '<div class="label-hour">heures</div>' + // Label for hours
+            '</div>' +
+            '<div class="timeWrapper">' +
+                areaHTML + 
+                '<span class="countDownWrapper min">00</span>' +
+                '<div class="label-minute">minutes</div>' + // Label for minutes
+            '</div>' +
+            '<div class="timeWrapper">' +
+                areaHTML + 
+                '<span class="countDownWrapper sec">00</span>' +
+                '<div class="label-second">secondes</div>' + // Label for seconds
+            '</div>'
+        );
     }
 
-    start() {
-      let endDate = this._getDate(this.options.endDate);
-      let endDateData = this._prepareTimeByOutputFormat(endDate);
+    // Initial call to render the countdown structure
+    $('#the-24h-countdown p').html(renderCountdown());
 
-      this._writeData(endDateData);
-      this.lastTick = endDateData;
+    // Show the counter with animation after the page is fully ready
+    setTimeout(function() {
+        $('#the-24h-countdown p').css('visibility', 'visible');
+    }, 100);
 
-      if (this.options.countdown && endDate.getTime() <= Date.now()) {
-        if (typeof this.options.endCallback === 'function') {
-          this.stop();
-          this.options.endCallback();
-        }
-      } else {
-        this.interval = setInterval(() => {
-          this._updateView(this._prepareTimeByOutputFormat(endDate));
-        }, 1000);
-      }
+    // Get the time remaining from midnight
+    function getRemainingTime() {
+        var now = new Date();
+        var midnight = new Date(now);
+        midnight.setHours(24, 0, 0, 0); // Set to midnight of the next day
+
+        // Calculate the remaining time in milliseconds
+        var remainingTime = midnight - now;
+
+        var hours = Math.floor(remainingTime / (1000 * 60 * 60));
+        var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+        return { hours: hours, minutes: minutes, seconds: seconds };
     }
 
-    stop() {
-      if (this.interval !== null) {
-        clearInterval(this.interval);
-      }
-    }
+    // Update the countdown every second
+    setInterval(function() {
+        var time = getRemainingTime();
 
-    _getDate(date) {
-      if (typeof date === 'object') {
-        return date instanceof Date ? date : new Date(date.day, date.hour, date.minute, date.second);
-      } else if (typeof date === 'number' || typeof date === 'string') {
-        return new Date(date);
-      } else {
-        return new Date();
-      }
-    }
+        // Format the values with leading zeros if needed
+        var hours = (time.hours < 10 ? '0' : '') + time.hours;
+        var minutes = (time.minutes < 10 ? '0' : '') + time.minutes;
+        var seconds = (time.seconds < 10 ? '0' : '') + time.seconds;
 
-    _prepareTimeByOutputFormat(dateObj) {
-      let output = {}, timeDiff = this.options.countdown ? dateObj.getTime() - Date.now() : Date.now() - dateObj.getTime();
+        // Update the countdown values
+        $('#the-24h-countdown .hours').text(hours);
+        $('#the-24h-countdown .min').text(minutes);
+        $('#the-24h-countdown .sec').text(seconds);
+    }, 1000);
+})();
 
-      this.intervalsBySize.forEach((item) => {
-        if (this.options.outputFormat.includes(item)) {
-          let value;
-          if (timeDiff > 0) {
-            switch (item) {
-              case 'day': value = Math.trunc(timeDiff / (24 * 60 * 60 * 1000)); timeDiff %= 24 * 60 * 60 * 1000; break;
-              case 'hour': value = Math.trunc(timeDiff / (60 * 60 * 1000)); timeDiff %= 60 * 60 * 1000; break;
-              case 'minute': value = Math.trunc(timeDiff / (60 * 1000)); timeDiff %= 60 * 1000; break;
-              case 'second': value = Math.trunc(timeDiff / 1000); timeDiff %= 1000; break;
-            }
-          } else {
-            value = '00';
-            $('.digit_cont').css('color', ColorDigitEnd);
-          }
-          output[item] = value.toString().padStart(2, '0').split('');
-        }
-      });
-
-      return output;
-    }
-
-    _writeData(data) {
-      let code = '';
-
-      for (let intervalName in data) {
-        if (data.hasOwnProperty(intervalName)) {
-          let element = `<div><div class="interval_cont interval_cont_${intervalName}">`;
-          let description = `<div class="description-chrono">${this.options.outputTranslation[intervalName]}</div>`;
-
-          data[intervalName].forEach((digit, index) => {
-            element += `<div class="digit_cont digit_cont_${index}">${this._getDigitElementString(digit, '0')}</div>`;
-          });
-
-          code += element + '</div>' + description + '</div>';
-        }
-      }
-      $(this.options.cont).html(code);
-      this.lastTick = data;
-    }
-
-    _getDigitElementString(newDigit, lastDigit) {
-      return `
-        <div class="last_placeholder"><span>${lastDigit}</span></div>
-        <div class="new_placeholder">${newDigit}</div>
-        <div class="last_rotate">${lastDigit}</div>
-        <div class="new_rotate"><div class="rotated"><span>${newDigit}</span></div></div>`;
-    }
-
-    _updateView(data) {
-      for (let intervalName in data) {
-        if (data.hasOwnProperty(intervalName)) {
-          data[intervalName].forEach((digit, index) => {
-            if (this.lastTick[intervalName][index] !== data[intervalName][index]) {
-              this._getDigitCont(intervalName, index).html(this._getDigitElementString(data[intervalName][index], this.lastTick[intervalName][index]));
-            }
-          });
-        }
-      }
-      this.lastTick = data;
-    }
-
-    _getDigitCont(intervalName, index) {
-      if (!this.digitConts[`${intervalName}_${index}`]) {
-        this.digitConts[`${intervalName}_${index}`] = $(`.interval_cont_${intervalName} .digit_cont_${index}`);
-      }
-      return this.digitConts[`${intervalName}_${index}`];
-    }
-  }
-
-  const cd = new Countdown({
-    cont: $('.flip-countdown'),
-    endDate: target_date,
-    endCallback: function () {
-      const nextTarget = Date.now() + 24 * 60 * 60 * 1000;
-      cd.stop();
-      cd.options.endDate = nextTarget;
-      cd.start();
-    },
-  });
-
-  cd.start();
-})(jQuery);
-
-    
     
     
 (function ($) {
@@ -1141,6 +729,6 @@ checkInputs();
 })(jQuery);
 
     
-    
+
     
 });
