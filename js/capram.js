@@ -725,6 +725,11 @@ checkInputs();
         volumeControl.on('input', function () {
             video.volume = $(this).val() / 100; // Volume control as a percentage
         });
+        (function ($) {
+    $(function () {
+        $('#oilVideo').attr('poster', 'images/oil-screen.jpg'); // Set the thumbnail dynamically
+    });
+})(jQuery);
     });
 })(jQuery);
 

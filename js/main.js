@@ -455,6 +455,8 @@
         var owlCarousel = $('.owl-carousel:not(.slideShowCarousel, .owl-carousel-products)').owlCarousel({
             loop: true, // Enables infinite looping
             margin: 10, // Space between items
+            autoplay: true,
+            autoplayTimeout: 4000,
             nav: false, // Enables next/prev navigation buttons
             dots: false, // Enables navigation dots
             responsive: {
@@ -496,6 +498,8 @@
             loop: true, // Enables infinite looping
             margin: 10, // Space between items
             nav: false, // Enables next/prev navigation buttons
+            autoplay: true,
+            autoplayTimeout: 4000,
             dots: false, // Enables navigation dots
             responsive: {
                 0: {
