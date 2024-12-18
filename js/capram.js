@@ -756,9 +756,8 @@ checkInputs();
 
         // Reset hide controls timer
         function resetHideControlsTimer() {
-            showControls(); // Show controls on user activity
             clearTimeout(hideControlsTimeout); // Clear any existing timeout
-            hideControlsTimeout = setTimeout(hideControls, 1000); // Hide controls after 3 seconds of inactivity
+            hideControlsTimeout = setTimeout(hideControls, 3000); // Hide controls after 3 seconds of inactivity
         }
 
         // Play/Pause functionality
@@ -766,7 +765,7 @@ checkInputs();
             if (video.paused) {
                 video.play();
                 playIcon.removeClass('fa-play').addClass('fa-pause'); // Change to pause icon
-                resetHideControlsTimer();
+                resetHideControlsTimer(); // Start hiding controls timer after playing
             } else {
                 video.pause();
                 playIcon.removeClass('fa-pause').addClass('fa-play'); // Change back to play icon
@@ -778,6 +777,7 @@ checkInputs();
         $(video).on('ended', function () {
             playIcon.removeClass('fa-pause').addClass('fa-play');
             showControls(); // Show controls when the video ends
+            clearTimeout(hideControlsTimeout); // Ensure controls don't hide after the video ends
         });
 
         // Fullscreen functionality
@@ -786,7 +786,7 @@ checkInputs();
                 video.requestFullscreen();
             } else if (video.mozRequestFullScreen) { // Firefox
                 video.mozRequestFullScreen();
-            } else if (video.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            } else if (video.webkitRequestFullscreen) { // Chrome, Safari, and Opera
                 video.webkitRequestFullscreen();
             } else if (video.msRequestFullscreen) { // IE/Edge
                 video.msRequestFullscreen();
@@ -801,10 +801,14 @@ checkInputs();
         });
 
         // Detect mouse and touch events to reset timer
-        $(document).on('mousemove touchstart', resetHideControlsTimer);
+        $(document).on('mousemove touchstart', function () {
+            if (!video.paused) {
+                resetHideControlsTimer();
+            }
+        });
 
-        // Hide controls after inactivity
-        hideControlsTimeout = setTimeout(hideControls, 1000); // Start initial timer
+        // Initially, make sure controls are visible on page load (without timeout)
+        showControls();
 
         // Set video poster dynamically
         $('#oilVideo').attr('poster', 'images/oil-screen.jpg');

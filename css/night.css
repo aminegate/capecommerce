@@ -3,16 +3,20 @@
 }
 
 
+.label-minute, 
+.label-hour, 
+.label-second {
+    color: white;
+}
 
 
+@media (max-width: 767.98px) {
 
-
-
-
-
-
-
-
+    .wishlist__row,
+    .cart-table__row{
+        border: 1px solid #353535 !important;
+    }
+}
 
 .header,
 .header__megamenu-are,
@@ -537,7 +541,7 @@ select.form-control {
 .categoBoxTitle {
 
     color: white;
-    background: #1E1E1E !important
+    background: #F7943D !important
 }
 
 .category-card--layout--classic .category-card__image {

@@ -26,6 +26,9 @@
 /*****************************************************************************
 ******************************* General css **********************************
 *****************************************************************************/
+a.calculNet:hover {
+    color: #F7943D;
+}
 
 .product__tag div {
     padding: 4px 10px;
@@ -299,7 +302,14 @@ body.logoPathTarget .site__body,
 
 
 .label-minute, .label-hour, .label-second {
-    color: white;
+    color: black;
+    font-size: 17px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.label-minute, .label-hour, .label-second {
+    color: black;
     font-size: 17px;
     text-transform: capitalize;
     font-weight: 600;
@@ -1072,7 +1082,7 @@ a.allCartes {
     margin-bottom: 30px;
     background: #F7943D;
     box-shadow: none;
-    color: black;
+    color: white;
 }
 
 a.allCategory {
@@ -1731,10 +1741,11 @@ video.product__video {
 }
 
 .aroma-categories-container {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     margin-bottom: 40px;
     padding: 20px;
     position: relative;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.09);
 }
 
 .aroma-category h3 {
@@ -2554,12 +2565,11 @@ a.subcategory-item p {
 
 .categoBoxTitle {
     transition: color 0.3s, background 0.5s;
-    /* Added color transition */
-    color: black;
+    color: white;
     font-weight: 700;
     font-size: 15px;
     font-family: Raleway, sans-serif;
-    background: white;
+    background: #F7943D;
     width: 100%;
     text-align: center;
     display: block;
@@ -9404,15 +9414,9 @@ select.form-control::-ms-expand {
     transition: color .2s;
 }
 
-.footer-newsletter__form-input:hover {
-    background-color: rgba(255, 255, 255, 0.16);
-    border-color: rgba(255, 255, 255, 0.16);
-}
 
 .footer-newsletter__form-input:focus {
     outline: none;
-    background-color: transparent;
-    border-color: rgba(255, 255, 255, 0.16);
 }
 
 .footer-newsletter__form-input:focus::-webkit-input-placeholder {
@@ -16204,7 +16208,7 @@ select.form-control::-ms-expand {
         position: relative;
         margin: 8px;
         width: calc(100% / 3 - 16px);
-        border: 1px solid #353535 !important;
+        border: 1px solid #e3e3e3 !important;
         border-radius: 5px;
     }
 
@@ -16932,7 +16936,7 @@ select.form-control::-ms-expand {
 }
 
 .category-card--layout--classic .category-card__children a {
-    color: inherit;
+    color: #a4a1a1;
 }
 
 .category-card--layout--classic .category-card__actions {
@@ -23130,7 +23134,7 @@ select.form-control::-ms-expand {
         text-align: center;
         border-radius: 5px;
         margin-bottom: 10px;
-        border: 1px solid #353535 !important;
+        border: 1px solid #e3e3e3 !important;
     }
 
     .wishlist__product-rating {
