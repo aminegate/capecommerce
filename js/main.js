@@ -295,118 +295,138 @@
     /*
     // mobile-menu
     */
-    $(function () {
-        const body = $('body');
-        const mobileMenu = $('.mobile-menu');
-        const mobileMenuBody = mobileMenu.children('.mobile-menu__body');
+$(function () {
+    const body = $('body');
+    const mobileMenu = $('.mobile-menu');
+    const mobileMenuBody = mobileMenu.children('.mobile-menu__body');
 
-        if (mobileMenu.length) {
-            const open = function() {
-                const bodyWidth = body.width();
-                body.css('overflow', 'hidden');
-                body.css('paddingRight', (body.width() - bodyWidth) + 'px');
+    // Store the reference to the first panel
+    const firstPanel = mobileMenuBody.children('.mobile-menu__panel').first();
+    
+    if (mobileMenu.length) {
+        const open = function() {
+            const bodyWidth = body.width();
+            body.css('overflow', 'hidden');
+            body.css('paddingRight', (body.width() - bodyWidth) + 'px');
 
-                mobileMenu.addClass('mobile-menu--open');
-            };
-            const close = function() {
-                body.css('overflow', 'auto');
-                body.css('paddingRight', '');
+            mobileMenu.addClass('mobile-menu--open');
+            
+            // When reopening the menu, reset to the first panel
+            currentPanel = firstPanel;
+            panelsStack.length = 0;  // Clear the stack when reopening
+            currentPanel.removeClass('mobile-menu__panel--hidden');
+            currentPanel.removeClass('mobile-menu__panel--hide');
+        };
+        
+        const close = function() {
+            body.css('overflow', 'auto');
+            body.css('paddingRight', '');
+            mobileMenu.removeClass('mobile-menu--open');
 
-                mobileMenu.removeClass('mobile-menu--open');
-            };
+            // Hide current panel before closing
+            if (currentPanel) {
+                currentPanel.addClass('mobile-menu__panel--hidden');
+            }
+        };
 
-            $('.mobile-header__menu-button').on('click', function() {
-                open();
-            });
-            $('.mobile-menu__backdrop, .mobile-menu__close').on('click', function() {
-                close();
-            });
+        $('.mobile-header__menu-button').on('click', function() {
+            open();
+        });
+        $('.mobile-menu__backdrop, .mobile-menu__close').on('click', function() {
+            close();
+        });
+    }
+
+    const panelsStack = [];
+    let currentPanel = firstPanel;  // Start with the first panel
+
+    mobileMenu.on('click', '[data-mobile-menu-trigger]', function(event) {
+        const trigger = $(this);
+        const item = trigger.closest('[data-mobile-menu-item]');
+        let panel = item.data('panel');
+
+        if (!panel) {
+            panel = item.children('[data-mobile-menu-panel]').children('.mobile-menu__panel');
+            if (panel.length) {
+                mobileMenuBody.append(panel);
+                item.data('panel', panel);
+                panel.width(); // force reflow
+            }
         }
 
-        const panelsStack = [];
-        let currentPanel = mobileMenuBody.children('.mobile-menu__panel');
+        if (panel && panel.length) {
+            event.preventDefault();
 
-        mobileMenu.on('click', '[data-mobile-menu-trigger]', function(event) {
-            const trigger = $(this);
-            const item = trigger.closest('[data-mobile-menu-item]');
-            let panel = item.data('panel');
+            panelsStack.push(currentPanel);
+            currentPanel.addClass('mobile-menu__panel--hide');
 
-            if (!panel) {
-                panel = item.children('[data-mobile-menu-panel]').children('.mobile-menu__panel');
-
-                if (panel.length) {
-                    mobileMenuBody.append(panel);
-                    item.data('panel', panel);
-                    panel.width(); // force reflow
-                }
-            }
-
-            if (panel && panel.length) {
-                event.preventDefault();
-
-                panelsStack.push(currentPanel);
-                currentPanel.addClass('mobile-menu__panel--hide');
-
-                panel.removeClass('mobile-menu__panel--hidden');
-                currentPanel = panel;
-            }
-        });
-        mobileMenu.on('click', '.mobile-menu__panel-back', function() {
-            currentPanel.addClass('mobile-menu__panel--hidden');
-            currentPanel = panelsStack.pop();
-            currentPanel.removeClass('mobile-menu__panel--hide');
-        });
+            panel.removeClass('mobile-menu__panel--hidden');
+            currentPanel = panel;
+        }
     });
+
+    mobileMenu.on('click', '.mobile-menu__panel-back', function() {
+        currentPanel.addClass('mobile-menu__panel--hidden');
+        currentPanel = panelsStack.pop();
+        currentPanel.removeClass('mobile-menu__panel--hide');
+    });
+});
+
 
     /*
     // off canvas filters
     */
-    $(function () {
-        const body = $('body');
-        const sidebar = $('.sidebar');
-        const offcanvas = sidebar.hasClass('sidebar--offcanvas--mobile') ? 'mobile' : 'always';
-        const media = matchMedia('(max-width: 991px)');
+$(function () {
+    const body = $('body');
+    const sidebar = $('.sidebar');
+    const offcanvas = sidebar.hasClass('sidebar--offcanvas--mobile') ? 'mobile' : 'always';
+    const media = matchMedia('(max-width: 991px)');
 
-        if (sidebar.length) {
-            const open = function() {
-                if (offcanvas === 'mobile' && !media.matches) {
-                    return;
-                }
-
-                const bodyWidth = body.width();
-                body.css('overflow', 'hidden');
-                body.css('paddingRight', (body.width() - bodyWidth) + 'px');
-
-                sidebar.addClass('sidebar--open');
-            };
-            const close = function() {
-                body.css('overflow', 'auto');
-                body.css('paddingRight', '');
-
-                sidebar.removeClass('sidebar--open');
-            };
-            const onMediaChange = function() {
-                if (offcanvas === 'mobile') {
-                    if (!media.matches && sidebar.hasClass('sidebar--open')) {
-                        close();
-                    }
-                }
-            };
-
-            if (media.addEventListener) {
-                media.addEventListener('change', onMediaChange);
-            } else {
-                media.addListener(onMediaChange);
+    if (sidebar.length) {
+        const open = function() {
+            if (offcanvas === 'mobile' && !media.matches) {
+                return;
             }
 
-            $('.filters-button').on('click', function() {
-                open();
-            });
-            $('.sidebar__backdrop, .sidebar__close').on('click', function() {
-                close();
-            });
+            const bodyWidth = body.width();
+            body.css('overflow', 'hidden');
+            body.css('paddingRight', (body.width() - bodyWidth) + 'px');
+
+            sidebar.addClass('sidebar--open');
+        };
+        const close = function() {
+            body.css('overflow', 'auto');
+            body.css('paddingRight', '');
+
+            sidebar.removeClass('sidebar--open');
+        };
+        const onMediaChange = function() {
+            if (offcanvas === 'mobile') {
+                if (!media.matches && sidebar.hasClass('sidebar--open')) {
+                    close();
+                }
+            }
+        };
+
+        if (media.addEventListener) {
+            media.addEventListener('change', onMediaChange);
+        } else {
+            media.addListener(onMediaChange);
         }
-    });
+
+        $('.filters-button').on('click', function() {
+            open();
+        });
+        $('.sidebar__backdrop, .sidebar__close').on('click', function() {
+            close();
+        });
+
+        // NEW CODE: Close sidebar on radio button click
+        $('input[type="radio"]').on('click', function() {
+            close(); // Directly close the sidebar
+        });
+    }
+});
 
 
 

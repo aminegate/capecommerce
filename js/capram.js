@@ -1,9 +1,60 @@
 $(document).ready(function() {
     
+    
+    //notification
+    
+    (function ($) {
+    $('.product-card__addtocart-icon').on('click', function () {
+        // Create the notification if it doesn't exist
+        if ($('#cart-notification').length === 0) {
+            $('body').append(`
+                <div id="cart-notification" style="display: none; position: fixed; top: 0; left: 0; right: 0; background-color: #4CAF50; color: white; text-align: center; padding: 10px; font-size: 16px; z-index: 1000;">
+                    Le produit a été ajouté au panier.
+                </div>
+            `);
+        }
+        // Show the notification
+        $('#cart-notification').stop(true, true).fadeIn().delay(2000).fadeOut();
+    });
+})(jQuery);
+
+    //mobile account scroll
    
-       
+(function($) {
+    const menuSelector = '.account-nav'; // Scrollable container
+    const linkSelector = '.account-nav__list a'; // Links within the menu
+
+    // Store the clicked link's href in localStorage before page refresh
+    $(linkSelector).on('click', function() {
+        localStorage.setItem('lastClickedLink', $(this).attr('href'));
+    });
+
+    // On page load, center the last clicked link
+    $(document).ready(function() {
+        const lastClickedHref = localStorage.getItem('lastClickedLink');
+        if (lastClickedHref) {
+            const lastClickedItem = $(`${linkSelector}[href="${lastClickedHref}"]`).parent(); // Target the parent <li>
+            if (lastClickedItem.length) {
+                const parentContainer = $(menuSelector); // Scrollable container
+                const linkOffset = lastClickedItem.position().left; // Left offset of the item
+                const containerWidth = parentContainer.width(); // Width of the scrollable container
+                const itemWidth = lastClickedItem.outerWidth(); // Width of the clicked item
+
+                // Calculate the new scroll position to center the item
+                const newScrollLeft = parentContainer.scrollLeft() + linkOffset - (containerWidth / 2) + (itemWidth / 2);
+
+                // Set the scroll position
+                parentContainer.scrollLeft(newScrollLeft);
+
+                // Clear localStorage after scrolling
+                localStorage.removeItem('lastClickedLink');
+            }
+        }
+    });
+})(jQuery);
+
     
-    
+  //paramétre  
     // Show the user-sub-menu when hovering over the span
     $(".settingsName").on("mouseenter", function() {
         $(".user-sub-menu").stop(true, true).slideDown(250); // Slide down the user sub-menu
@@ -49,7 +100,7 @@ $(document).ready(function() {
     
     
     /*************************************************/
-    
+    // datalist search input
 (function() {
   var inputs = ['#CL_Car', '#CL_Car1']; // Add CL_Car1
   var datalistes = ['#carte', '#carte1']; // Add carte1
@@ -135,6 +186,8 @@ $(document).ready(function() {
     }
   });
 })();
+    
+    // red icons
 
 (function() {
     $('.nouveaute_item').prepend('<img class="new-red-icon" src="images/new.png" alt="" >');
@@ -150,45 +203,13 @@ $(document).ready(function() {
     
     
         
- // Cartes Tabs   
-
-
-function openTab(evt, tabName) {
-    // Hide all elements with class="tabcontent" by default
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-
-    // Remove the class "active" from all tab links
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-
-    // Update the URL hash without page jump
-    history.replaceState(null, null, '#' + tabName);
-}
-
-// Check if a tab is specified in the URL hash on page load
-window.onload = function() {
-    var hash = window.location.hash.substring(1); // Remove the # symbol
-    if (hash) {
-        var tabLink = document.getElementById(hash + 'Tab');
-        if (tabLink) {
-            tabLink.click(); // Simulate click on the corresponding tab
-        }
-    }
-};
-    
   
 
 
+
+  
+
+//swicther dark mode
     
     
 (function ($) {
@@ -281,13 +302,15 @@ window.onload = function() {
 
 
 
-
+//whatsapp
 (function($) {
     $('#whatsapp-chat').on('click', function() {
         window.open('https://wa.me/yourwhatsappnumber', '_blank');
     });
 })(jQuery);
-
+    
+    
+//modal associated
     
 (function ($) {
     $('.associated').click(function () {
@@ -312,7 +335,6 @@ window.onload = function() {
     });
 })(jQuery);
 
-
 (function() {
     const pathname = window.location.pathname;
 
@@ -322,53 +344,60 @@ window.onload = function() {
 
     // Function to highlight the selected filter item and scroll into view
     const highlightSelected = function() {
-        // Remove existing borders from all filter items
         $('.filter-list__item').css({
             'border': 'none' // Reset border for all items
         });
 
-        // Add orange border to the selected item
         $(this).closest('.filter-list__item').css({
-            'border': '4px solid orange',  // Change border color to orange
+            'border': '4px solid orange', // Change border color to orange
             'border-radius': '6px'
         })[0].scrollIntoView({ behavior: 'smooth', block: 'center' }); // Scroll the item into view
     };
 
     // Subcategory page logic
     if (subcategoryPages.some(page => pathname.endsWith(page))) {
-        // Set up click event for both selectors
+        // Modified event to prevent propagation and store the alt text correctly
         $('.subcategory-item img, .block-brands__item-link img, .capramCartesImg').on('click', function(event) {
             event.preventDefault();
-
-            // Get the alt attribute of the clicked item
             const altText = $(this).attr('alt');
             console.log('Alt text:', altText);
 
             if (altText) {
-                // Store the alt text as the shop name
                 localStorage.setItem('shopName', altText);
                 window.location.href = 'boutique.html';
             } else {
                 console.error('Alt text is undefined.');
             }
         });
-    } 
+    }
+
+    // New functionality for subcategoryImg
+    $('.subcategoryImg').on('click', function(event) {
+        event.stopPropagation(); // Prevent the click from propagating to other handlers
+
+        const altText = $(this).find('img').attr('alt'); // Get alt attribute from nested <img>
+        if (altText) {
+            $('.famille-shop-name').text(altText); // Update the span with the alt text
+            localStorage.setItem('shopName', altText); // Optionally, store this value as well
+        } else {
+            console.error('No alt text found for the image in subcategoryImg.');
+        }
+    });
 
     // Highlight filter images on any page when clicked
     $('.filter-list__item img').on('click', function() {
         const $filterItem = $(this).closest('.filter-list__item');
-        const $radioButton = $filterItem.find('input[type="radio"]'); // Find the corresponding radio button
-        const newShopName = $radioButton.val(); // Get the value of the radio button
+        const $radioButton = $filterItem.find('input[type="radio"]');
+        const newShopName = $radioButton.val();
 
         if (newShopName) {
-            localStorage.setItem('shopName', newShopName); // Update shop name with the radio value
+            localStorage.setItem('shopName', newShopName);
 
-            // Update the displayed shop name instantly on boutique page
             if (pathname.endsWith(boutiquePage)) {
-                $('.famille-shop-name').text(`${newShopName} `); // Update the displayed shop name
+                $('.famille-shop-name').text(`${newShopName} `);
             }
 
-            highlightSelected.call(this); // Highlight the corresponding radio item and scroll to it
+            highlightSelected.call(this);
         }
     });
 
@@ -378,9 +407,8 @@ window.onload = function() {
         if (shopName) {
             $('.famille-shop-name').text(`${shopName} `);
 
-            // Highlight and scroll to the corresponding radio button's parent item based on stored shop name
             $(`input[type="radio"][value="${shopName}"]`).closest('.filter-list__item').css({
-                'border': '4px solid orange', // Change border color to orange
+                'border': '4px solid orange',
                 'border-radius': '6px'
             })[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
@@ -390,14 +418,15 @@ window.onload = function() {
 
     // Function to add border to the radio button's filter item when clicked
     $('input[type="radio"]').on('click', function() {
-        const $filterItem = $(this).closest('.filter-list__item'); // Get the corresponding filter item
-        highlightSelected.call($filterItem.find('img')); // Highlight the item and scroll to it
+        const $filterItem = $(this).closest('.filter-list__item');
+        highlightSelected.call($filterItem.find('img'));
     });
 
 })();
 
 
-    
+
+   // search  
 (function($) {
     $(function() {
         // Select the input, search button, and search term display span for both existing and new forms
@@ -405,9 +434,14 @@ window.onload = function() {
         const $searchButton = $('.search__button');
         const $searchTermDisplay = $('.block-header__title .search-term');
 
-        // Selectors for the new form elements
+        // Selectors for the not-found form elements
         const $notFoundSearchInput = $('.not-found__search-input');
         const $notFoundSearchButton = $('.not-found__search-button');
+
+        // Selectors for the mobile search form elements
+        const $mobileSearchInput = $('.mobile-search__input');
+        const $mobileSearchButton = $('.mobile-search__button--search');
+        const $mobileSearchCloseButton = $('.mobile-search__button--close');
 
         // Function to handle the redirection to the results page
         function redirectToResults(searchTerm) {
@@ -431,7 +465,7 @@ window.onload = function() {
             redirectToResults($searchInput.val().trim());
         });
 
-        // Event listener for keypress (Enter key) on the new not-found search input
+        // Event listener for keypress (Enter key) on the not-found search input
         $notFoundSearchInput.on('keypress', function(event) {
             if (event.which === 13) { // 13 is the Enter key
                 event.preventDefault(); // Prevent default form submission
@@ -439,10 +473,29 @@ window.onload = function() {
             }
         });
 
-        // Event listener for the new not-found search button click
+        // Event listener for the not-found search button click
         $notFoundSearchButton.on('click', function(event) {
             event.preventDefault(); // Prevent default button action
             redirectToResults($notFoundSearchInput.val().trim());
+        });
+
+        // Event listener for keypress (Enter key) on the mobile search input
+        $mobileSearchInput.on('keypress', function(event) {
+            if (event.which === 13) { // 13 is the Enter key
+                event.preventDefault(); // Prevent default form submission
+                redirectToResults($mobileSearchInput.val().trim());
+            }
+        });
+
+        // Event listener for the mobile search button click
+        $mobileSearchButton.on('click', function(event) {
+            event.preventDefault(); // Prevent default button action
+            redirectToResults($mobileSearchInput.val().trim());
+        });
+
+        // Event listener for the mobile search close button
+        $mobileSearchCloseButton.on('click', function() {
+            $mobileSearchInput.val(''); // Clear the mobile search input
         });
 
         // Check for a search term in the URL, update input and display span
@@ -451,15 +504,17 @@ window.onload = function() {
         if (searchTermFromURL) {
             const decodedTerm = decodeURIComponent(searchTermFromURL);
             $searchInput.val(decodedTerm); // Set search term in existing input
-            $notFoundSearchInput.val(decodedTerm); // Set search term in new input
+            $notFoundSearchInput.val(decodedTerm); // Set search term in not-found input
+            $mobileSearchInput.val(decodedTerm); // Set search term in mobile input
             $searchTermDisplay.text(decodedTerm); // Set search term in <span>
         }
     });
 })(jQuery);
 
-    
 
     
+
+ // zoom image product   
 (function($) {
     $('.product_all_info_image .image__tag').on('click', function() {
         const imgSrc = $(this).attr('src');
@@ -493,7 +548,9 @@ window.onload = function() {
 })(jQuery);
 
 
-        // Function to check if both inputs are filled
+    // login page
+    
+// Function to check if both inputs are filled
 function checkInputs() {
     const isUsernameFilled = $('#fname').val() !== '';
     const isPasswordFilled = $('#pwd').val() !== '';
@@ -551,14 +608,8 @@ $('.fa-eye').on('click', function() {
 
 // Check inputs initially to set the button state correctly
 checkInputs();
-
-
-
-
     
-    
-    
-          // Function to handle login
+    // Function to handle login
     function handleLogin(event) {
         event.preventDefault(); // Prevent form submission
 
@@ -589,6 +640,11 @@ checkInputs();
 
     // Attach the function to the form's submit event
     $('.login-form').on('submit', handleLogin);
+    
+    
+    
+    
+    // chrono anaimation
 
     
 (function() {
@@ -674,7 +730,7 @@ checkInputs();
 })();
 
     
-    
+    // lubricant video
 (function ($) {
     $(function () {
         const video = $('#oilVideo')[0]; // Access the video element
@@ -682,30 +738,46 @@ checkInputs();
         const playIcon = playButton.find('i');
         const fullscreenButton = $('.fullscreen-button');
         const volumeControl = $('.volume-control');
-        
+        let hideControlsTimeout;
+
+        // Function to show controls
+        function showControls() {
+            playButton.fadeIn();
+            fullscreenButton.fadeIn();
+            volumeControl.fadeIn();
+        }
+
+        // Function to hide controls
+        function hideControls() {
+            playButton.fadeOut();
+            fullscreenButton.fadeOut();
+            volumeControl.fadeOut();
+        }
+
+        // Reset hide controls timer
+        function resetHideControlsTimer() {
+            showControls(); // Show controls on user activity
+            clearTimeout(hideControlsTimeout); // Clear any existing timeout
+            hideControlsTimeout = setTimeout(hideControls, 1000); // Hide controls after 3 seconds of inactivity
+        }
+
         // Play/Pause functionality
         playButton.on('click', function () {
             if (video.paused) {
                 video.play();
                 playIcon.removeClass('fa-play').addClass('fa-pause'); // Change to pause icon
-                // Show fullscreen and volume controls after play starts
-                fullscreenButton.fadeIn();
-                volumeControl.fadeIn();
+                resetHideControlsTimer();
             } else {
                 video.pause();
                 playIcon.removeClass('fa-pause').addClass('fa-play'); // Change back to play icon
-                // Hide fullscreen and volume controls when paused
-                fullscreenButton.fadeOut();
-                volumeControl.fadeOut();
+                showControls(); // Show controls when paused
             }
         });
 
         // Reset to play icon when the video ends
         $(video).on('ended', function () {
             playIcon.removeClass('fa-pause').addClass('fa-play');
-            // Hide fullscreen and volume controls when the video ends
-            fullscreenButton.fadeOut();
-            volumeControl.fadeOut();
+            showControls(); // Show controls when the video ends
         });
 
         // Fullscreen functionality
@@ -719,19 +791,26 @@ checkInputs();
             } else if (video.msRequestFullscreen) { // IE/Edge
                 video.msRequestFullscreen();
             }
+            resetHideControlsTimer();
         });
 
         // Volume control functionality
         volumeControl.on('input', function () {
             video.volume = $(this).val() / 100; // Volume control as a percentage
+            resetHideControlsTimer();
         });
-        (function ($) {
-    $(function () {
-        $('#oilVideo').attr('poster', 'images/oil-screen.jpg'); // Set the thumbnail dynamically
+
+        // Detect mouse and touch events to reset timer
+        $(document).on('mousemove touchstart', resetHideControlsTimer);
+
+        // Hide controls after inactivity
+        hideControlsTimeout = setTimeout(hideControls, 1000); // Start initial timer
+
+        // Set video poster dynamically
+        $('#oilVideo').attr('poster', 'images/oil-screen.jpg');
     });
 })(jQuery);
-    });
-})(jQuery);
+
 
     
 
