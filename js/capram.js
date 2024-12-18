@@ -4,7 +4,7 @@ $(document).ready(function() {
     //notification
     
     (function ($) {
-    $('.product-card__addtocart-icon').on('click', function () {
+    $('.product-card__addtocart-iconn, .product__actions-item.product__actions-item--addtocart button').on('click', function () {
         // Create the notification if it doesn't exist
         if ($('#cart-notification').length === 0) {
             $('body').append(`
