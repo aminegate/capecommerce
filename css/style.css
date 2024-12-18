@@ -27,6 +27,20 @@
 ******************************* General css **********************************
 *****************************************************************************/
 
+.product__tag div {
+    padding: 4px 10px;
+    display: inline-block;
+    background: #DC143C;
+    color: white;
+    border-radius: 5px;
+    margin-right: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.product__tag  {
+    margin-bottom: 15px;
+}
     .search__input {
         color: white !important;
     }
