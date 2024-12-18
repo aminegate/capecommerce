@@ -364,6 +364,7 @@ img.promotion-red-icon {
     top: -2.6%;
     left: 17%;
     width: 65%;
+    z-index: 1;
 }
 
 h1.block-header__title {
@@ -397,6 +398,7 @@ img.new-red-icon {
     width: 65%;
     top: -2%;
     left: 18%;
+    z-index: 1;
 }
 
 .products-list {
