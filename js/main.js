@@ -626,7 +626,7 @@ $(function () {
     */
     $(function () {
     var videoSlider = $('.block-slideshow__carousel .owl-carousel');
-    var videoEndDelay = 4000; // 4 seconds delay after the video ends
+    var videoEndDelay = 10000; // 4 seconds delay after the video ends
     var firstLoop = true; // Flag to track the first loop
 
     // Initialize Owl Carousel
@@ -634,9 +634,9 @@ $(function () {
         loop: true,
         margin: 0,
         nav: true,
-        dots: false,
+        dots: true,
         autoplay: false, // Start with autoplay off
-        autoplayTimeout: 4000,
+        autoplayTimeout: 10000,
         items: 1,
         navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"], // Chevrons
         rtl: isRTL() // Check for RTL support

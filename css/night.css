@@ -2,6 +2,10 @@
     background: #1e1e1e;
 }
 
+.account__card .card {
+    background: #252525 !important;
+}
+
 
 .label-minute, 
 .label-hour, 
