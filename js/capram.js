@@ -1,5 +1,174 @@
 $(document).ready(function() {
     
+    (function () {
+    // Append the popup overlay HTML to the body
+    $('body').append(`
+        <div id="imagePopupOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s;">
+            <img id="popupImage" src="" style="max-width: 90%; max-height: 90%; margin: auto; transform: scale(0.8); transition: transform 0.3s;">
+        </div>
+    `);
+
+    // Function to handle newly uploaded images
+    function handleNewImages(wrapper) {
+        const img = wrapper.find('img');
+        img.hide(); // Hide the uploaded image
+        wrapper.find('a').css('display', 'flex'); // Ensure icon + name remain visible
+    }
+
+    // Observe changes to imgFileWrapper for dynamically added images
+    const observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            $(mutation.addedNodes).each(function () {
+                if ($(this).is('.imgFileWrapper')) {
+                    handleNewImages($(this)); // Handle the new image wrapper
+                } else if ($(this).find('.imgFileWrapper').length > 0) {
+                    $(this).find('.imgFileWrapper').each(function () {
+                        handleNewImages($(this)); // Handle nested image wrappers
+                    });
+                }
+            });
+        });
+    });
+
+    // Start observing the parent container
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+    });
+
+    // Click handler for imgFileWrapper
+    $('body').on('click', '.imgFileWrapper', function (e) {
+        e.preventDefault(); // Prevent default anchor behavior
+
+        const img = $(this).find('img'); // Get the hidden image
+        const imgSrc = img.attr('src'); // Get the image source
+        if (imgSrc) {
+            $('#popupImage').attr('src', imgSrc); // Set the popup image source
+
+            // Show the overlay with animation
+            $('#imagePopupOverlay')
+                .css({ 'pointer-events': 'auto' })
+                .animate({ opacity: 1 }, 300);
+            $('#popupImage').css({ transform: 'scale(1)' });
+        }
+    });
+
+    // Click handler to close the popup overlay
+    $('#imagePopupOverlay').on('click', function () {
+        $(this)
+            .animate({ opacity: 0 }, 300, function () {
+                $(this).css({ 'pointer-events': 'none' });
+            });
+        $('#popupImage').css({ transform: 'scale(0.8)' });
+    });
+})();
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+(function($) {
+    $(document).ready(function() {
+        var scrollPosition = 0;
+        var isDragging = false; // To track if the user is dragging
+        var itemWidth = $('.nav-item').outerWidth(true); // Width of each tab
+        var maxScroll = ($('.nav-item').length * itemWidth) - $('.nav-scroll-container').width(); // Maximum scroll value
+
+        // Function to update the scroll buttons based on position
+        function updateScrollButtons() {
+            $('#scrollLeftBtn').prop('disabled', scrollPosition <= 0);
+            $('#scrollRightBtn').prop('disabled', scrollPosition >= maxScroll);
+        }
+
+        
+        
+
+        // Scroll right button
+        $('#scrollRightBtn').click(function() {
+            scrollPosition += itemWidth;
+            if (scrollPosition > maxScroll) {
+                scrollPosition = maxScroll; // Prevent scrolling beyond the max
+            }
+            $('.nav-tabs').css('transform', 'translateX(-' + scrollPosition + 'px)');
+            updateScrollButtons();
+        });
+
+        // Scroll left button
+        $('#scrollLeftBtn').click(function() {
+            scrollPosition -= itemWidth;
+            if (scrollPosition < 0) {
+                scrollPosition = 0; // Prevent scrolling before the start
+            }
+            $('.nav-tabs').css('transform', 'translateX(-' + scrollPosition + 'px)');
+            updateScrollButtons();
+        });
+
+        updateScrollButtons(); // Initialize button states
+    });
+})(jQuery);
+
+
+
+   (function () {
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function () {
+        // Adjust DataTable columns when the tab is shown
+        $.fn.dataTable.tables({ visible: true, api: true }).columns.adjust();
+    });
+})(); 
+    
+    
+    
+    (function () {
+    // Append the popup overlay HTML to the body
+    $('body').append(`
+        <div id="imagePopupOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s;">
+            <img id="popupImage" src="" style="max-width: 90%; max-height: 90%; margin: auto; transform: scale(0.8); transition: transform 0.3s;">
+        </div>
+    `);
+
+    // Click handler for images inside imgFileWrapper
+    $('.imgFileWrapper img').on('click', function () {
+        const imgSrc = $(this).attr('src'); // Get the image source
+        $('#popupImage').attr('src', imgSrc); // Set the popup image source
+
+        // Show the overlay with animation
+        $('#imagePopupOverlay')
+            .css({ 'pointer-events': 'auto' })
+            .animate({ opacity: 1 }, 300);
+        $('#popupImage').css({ transform: 'scale(1)' });
+    });
+
+    // Click handler to close the popup overlay
+    $('#imagePopupOverlay').on('click', function () {
+        $(this)
+            .animate({ opacity: 0 }, 300, function () {
+                $(this).css({ 'pointer-events': 'none' });
+            });
+        $('#popupImage').css({ transform: 'scale(0.8)' });
+    });
+})();
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 (function($) {
     $("#file-upload").on("change", function() {
         var fileName = this.files[0] ? this.files[0].name : "Aucun fichier choisi";
@@ -43,12 +212,14 @@ $(document).ready(function() {
     });
 })(jQuery);
     
+    
 (function ($) {
         
         // Check if the table exists before initializing DataTable
-        if ($('#accountTable').length) {
-            $('#accountTable').DataTable({
+        if ($('#table__one,#table__two,#table__three,#table__four,#table__five').length) {
+            $('#table__one,#table__two,#table__three,#table__four,#table__five').DataTable({
                 paging: true,
+                responsive: true,
                 searching: true,
                 ordering: false,
                 info: false,
@@ -114,287 +285,10 @@ $(document).ready(function() {
             });
         }
 
-        // Repeat for the second table, if needed
-        if ($('#accountTable_2').length) {
-            $('#accountTable_2').DataTable({
-                paging: true,
-                searching: true,
-                ordering: false,
-                info: false,
-                pageLength: 5,
-                dom: 'Bfrtip',
-                buttons: [
-                    {
-                        extend: 'colvis',
-                        text: 'Toggle Columns'
-                    },
-                    {
-                        extend: 'excelHtml5',
-                        text: 'Export to Excel'
-                    },
-                    {
-                        text: 'Refresh',
-                        action: function (e, dt, node, config) {
-                            dt.ajax.reload();
-                        }
-                    }
-                ],
-                language: {
-                    search: "Rechercher  :  ",
-                    lengthMenu: "Afficher _MENU_ enregistrements par page",
-                    info: "Affichage de _START_ à _END_ sur _TOTAL_ enregistrements",
-                    infoEmpty: "Aucun enregistrement à afficher",
-                    infoFiltered: "(filtré à partir de _MAX_ enregistrements au total)",
-                    paginate: {
-                        first: "Premier",
-                        last: "Dernier",
-                        next: "Suivant",
-                        previous: "Précédent"
-                    },
-                    zeroRecords: "Aucun résultat trouvé",
-                    emptyTable: "Aucune donnée disponible dans le tableau"
-                },
-                lengthMenu: [5, 10, 25, 50],
-                buttons: [
-                    {
-                        extend: 'colvis',
-                        text: '<i class="fa-solid fa-table-columns"></i>'
-                    },
-                    {
-                        extend: 'pageLength',
-                        text: '<i class="fa-solid fa-arrow-down-1-9"></i>',
-                        titleAttr: 'Select number of rows per page',
-                        options: [
-                            [5, 10, 15, -1],
-                            ['5 rows', '10 rows', '15 rows', 'All rows']
-                        ],
-                    },
-                    {
-                        extend: 'excelHtml5',
-                        text: '<i class="fa-solid fa-file-excel"></i>'
-                    },
-                    {
-                        text: '<i class="fa-solid fa-arrows-rotate"></i>',
-                        action: function (e, dt, node, config) {
-                            dt.ajax.reload();
-                        }
-                    }
-                ]
-            });
-        }
- 
+})(jQuery); 
     
-     // Repeat for the third table, if needed
-        if ($('#accountTable_3').length) {
-            $('#accountTable_3').DataTable({
-                paging: true,
-                searching: true,
-                ordering: false,
-                info: false,
-                pageLength: 5,
-                dom: 'Bfrtip',
-                buttons: [
-                    {
-                        extend: 'colvis',
-                        text: 'Toggle Columns'
-                    },
-                    {
-                        extend: 'excelHtml5',
-                        text: 'Export to Excel'
-                    },
-                    {
-                        text: 'Refresh',
-                        action: function (e, dt, node, config) {
-                            dt.ajax.reload();
-                        }
-                    }
-                ],
-                language: {
-                    search: "Rechercher  :  ",
-                    lengthMenu: "Afficher _MENU_ enregistrements par page",
-                    info: "Affichage de _START_ à _END_ sur _TOTAL_ enregistrements",
-                    infoEmpty: "Aucun enregistrement à afficher",
-                    infoFiltered: "(filtré à partir de _MAX_ enregistrements au total)",
-                    paginate: {
-                        first: "Premier",
-                        last: "Dernier",
-                        next: "Suivant",
-                        previous: "Précédent"
-                    },
-                    zeroRecords: "Aucun résultat trouvé",
-                    emptyTable: "Aucune donnée disponible dans le tableau"
-                },
-                lengthMenu: [5, 10, 25, 50],
-                buttons: [
-                    {
-                        extend: 'colvis',
-                        text: '<i class="fa-solid fa-table-columns"></i>'
-                    },
-                    {
-                        extend: 'pageLength',
-                        text: '<i class="fa-solid fa-arrow-down-1-9"></i>',
-                        titleAttr: 'Select number of rows per page',
-                        options: [
-                            [5, 10, 15, -1],
-                            ['5 rows', '10 rows', '15 rows', 'All rows']
-                        ],
-                    },
-                    {
-                        extend: 'excelHtml5',
-                        text: '<i class="fa-solid fa-file-excel"></i>'
-                    },
-                    {
-                        text: '<i class="fa-solid fa-arrows-rotate"></i>',
-                        action: function (e, dt, node, config) {
-                            dt.ajax.reload();
-                        }
-                    }
-                ]
-            });
-        }
- 
     
-    // Repeat for the third table, if needed
-        if ($('#accountTable_4').length) {
-            $('#accountTable_4').DataTable({
-                paging: true,
-                searching: true,
-                ordering: false,
-                info: false,
-                pageLength: 5,
-                dom: 'Bfrtip',
-                buttons: [
-                    {
-                        extend: 'colvis',
-                        text: 'Toggle Columns'
-                    },
-                    {
-                        extend: 'excelHtml5',
-                        text: 'Export to Excel'
-                    },
-                    {
-                        text: 'Refresh',
-                        action: function (e, dt, node, config) {
-                            dt.ajax.reload();
-                        }
-                    }
-                ],
-                language: {
-                    search: "Rechercher  :  ",
-                    lengthMenu: "Afficher _MENU_ enregistrements par page",
-                    info: "Affichage de _START_ à _END_ sur _TOTAL_ enregistrements",
-                    infoEmpty: "Aucun enregistrement à afficher",
-                    infoFiltered: "(filtré à partir de _MAX_ enregistrements au total)",
-                    paginate: {
-                        first: "Premier",
-                        last: "Dernier",
-                        next: "Suivant",
-                        previous: "Précédent"
-                    },
-                    zeroRecords: "Aucun résultat trouvé",
-                    emptyTable: "Aucune donnée disponible dans le tableau"
-                },
-                lengthMenu: [5, 10, 25, 50],
-                buttons: [
-                    {
-                        extend: 'colvis',
-                        text: '<i class="fa-solid fa-table-columns"></i>'
-                    },
-                    {
-                        extend: 'pageLength',
-                        text: '<i class="fa-solid fa-arrow-down-1-9"></i>',
-                        titleAttr: 'Select number of rows per page',
-                        options: [
-                            [5, 10, 15, -1],
-                            ['5 rows', '10 rows', '15 rows', 'All rows']
-                        ],
-                    },
-                    {
-                        extend: 'excelHtml5',
-                        text: '<i class="fa-solid fa-file-excel"></i>'
-                    },
-                    {
-                        text: '<i class="fa-solid fa-arrows-rotate"></i>',
-                        action: function (e, dt, node, config) {
-                            dt.ajax.reload();
-                        }
-                    }
-                ]
-            });
-        }
- 
-     // Repeat for the third table, if needed
-        if ($('#accountTable_5').length) {
-            $('#accountTable_5').DataTable({
-                paging: true,
-                searching: true,
-                ordering: false,
-                info: false,
-                pageLength: 5,
-                dom: 'Bfrtip',
-                buttons: [
-                    {
-                        extend: 'colvis',
-                        text: 'Toggle Columns'
-                    },
-                    {
-                        extend: 'excelHtml5',
-                        text: 'Export to Excel'
-                    },
-                    {
-                        text: 'Refresh',
-                        action: function (e, dt, node, config) {
-                            dt.ajax.reload();
-                        }
-                    }
-                ],
-                language: {
-                    search: "Rechercher  :  ",
-                    lengthMenu: "Afficher _MENU_ enregistrements par page",
-                    info: "Affichage de _START_ à _END_ sur _TOTAL_ enregistrements",
-                    infoEmpty: "Aucun enregistrement à afficher",
-                    infoFiltered: "(filtré à partir de _MAX_ enregistrements au total)",
-                    paginate: {
-                        first: "Premier",
-                        last: "Dernier",
-                        next: "Suivant",
-                        previous: "Précédent"
-                    },
-                    zeroRecords: "Aucun résultat trouvé",
-                    emptyTable: "Aucune donnée disponible dans le tableau"
-                },
-                lengthMenu: [5, 10, 25, 50],
-                buttons: [
-                    {
-                        extend: 'colvis',
-                        text: '<i class="fa-solid fa-table-columns"></i>'
-                    },
-                    {
-                        extend: 'pageLength',
-                        text: '<i class="fa-solid fa-arrow-down-1-9"></i>',
-                        titleAttr: 'Select number of rows per page',
-                        options: [
-                            [5, 10, 15, -1],
-                            ['5 rows', '10 rows', '15 rows', 'All rows']
-                        ],
-                    },
-                    {
-                        extend: 'excelHtml5',
-                        text: '<i class="fa-solid fa-file-excel"></i>'
-                    },
-                    {
-                        text: '<i class="fa-solid fa-arrows-rotate"></i>',
-                        action: function (e, dt, node, config) {
-                            dt.ajax.reload();
-                        }
-                    }
-                ]
-            });
-        }
-     
     
-})(jQuery);
-
     
     (function($) {
     $(window).on('resize', function() {

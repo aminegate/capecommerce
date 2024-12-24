@@ -50,6 +50,10 @@ option {
 /*****************************************************************************
 ******************************* General css **********************************
 *****************************************************************************/
+table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, table.dataTable td.dt-type-numeric, table.dataTable td.dt-type-date {
+    text-align: left !important;
+}
+
 .etatAttente,
 .etatActive,
 .etatFerme{
@@ -58,7 +62,6 @@ option {
     text-align: center;
     padding: 5px 0px;
     border-radius: 5px;
-    width: 70%;
     color: white;
     font-weight: 500;
 }
@@ -112,7 +115,7 @@ input#envoyer {
 
 
 .file-upload-container {
-    width: 300px;
+    width: 100%;
     margin: 20px auto;
     text-align: center;
     font-family: Arial, sans-serif;
@@ -327,25 +330,8 @@ button.printBtn{
 /***************************************************************************************/
 
 
-#accountTable_wrapper a.paginate_button {
-    color: white !important;
-}
 
-#accountTable_wrapper a.paginate_button.current {
-    color: black !important;
-    border-radius: 5px;
-}
 
-#accountTable_wrapper .paginate_button:hover{
-    background: white !important;
-    color: black !important;
-    border-radius: 5px;
-}
-
-#accountTable_wrapper a#accountTable_previous {
-    background: transparent !important;
-    color: grey !important;
-}
 
 hr.separateLine {
     width: 100%;
@@ -354,18 +340,11 @@ hr.separateLine {
     margin: 70px 0px;
 }
 
-a.paginate_button.current {
-    border: none !important;
-}
 
-a#accountTable_next:hover {
-    background: white;
-    color: black !important;
-    outline: none;
-}
+
 
 .col-lg-10.account__details__info {
-    padding: 3% 6%;
+    padding: 3% 1%;
 }
 
 .dataTables_wrapper .dataTables_length, 
@@ -412,7 +391,8 @@ table#accountTable_2 tbody .odd,
 table#accountTable_3 tbody .odd,
 table#accountTable_4 tbody .odd,
 table#accountTable_5 tbody .odd{
-    background: #414141 !important;
+    background: #454545  !important;
+    color: white;
 }
 
 table#accountTable tbody .even,
@@ -420,7 +400,8 @@ table#accountTable_2 tbody .even,
 table#accountTable_3 tbody .even,
 table#accountTable_4 tbody .even,
 table#accountTable_5 tbody .even {
-    background: #3c3c3c !important;
+    background: #5b5b5b !important;
+    color: white;
 }
 
 div.dt-buttons {
@@ -468,9 +449,7 @@ button.filterOption {
     color: #252525;
 }
 
-table.rwd-table td {
-    font-size: 14px;
-}
+
 
 .statutGreen,
 .statuRed{
@@ -520,103 +499,89 @@ button.operationPrint{
     background: black;
 }
 
-.rwd-table {
-  margin: auto;
-  min-width: 300px;
-  max-width: 100%;
-  border-collapse: collapse;
-    margin: 0px 15px;
-     color: white;
-  border-radius: .4em;
-  overflow: hidden;
-    width: 100%;
-        margin-bottom: 30px !important;
-}
 
-.rwd-table thead tr {
-    border-top: none;
-    background: #1e1e1e;
+
+
+
+table.dataTable thead {
     color: #f7943d;
+    background: black;
 }
 
-.rwd-table tr {
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background-color: #f5f9fc;
+table.dataTable tbody {
+    color: white;
+    font-size: 15px;
+}
+                                                                   
+.dt-paging nav {
+    color: white;
 }
 
-.rwd-table tr:nth-child(odd):not(:first-child) {
-  background-color: #ebf3f9;
+.dt-paging {
+    margin-top: 25px;
 }
 
-.rwd-table th {
-  display: none;
+.my-account-dashboard .dt-container .dt-paging .dt-paging-button {
+    color: black !important;
+    background: white;
 }
 
-.rwd-table td {
-  display: block;
+.my-account-dashboard .dt-container .dt-paging .dt-paging-button:not(.current):not(.next):not(.previous):not(.last):not(.first) {
+    color: white !important;
+    background: transparent;
 }
 
-.rwd-table td:first-child {
-  margin-top: .5em;
-}
-
-.rwd-table td:last-child {
-  margin-bottom: .5em;
-}
-
-.rwd-table td:before {
-  content: attr(data-th) ": ";
-  font-weight: bold;
-  width: 120px;
-  display: inline-block;
-  color: #000;
-}
-
-.rwd-table th,
-.rwd-table td {
-  text-align: left;
+.my-account-dashboard .dt-container .dt-paging .dt-paging-button:not(.current):not(.next):not(.previous):not(.last):not(.first):hover {
+    border: 1px solid transparent !important;
+    outline: none;
 }
 
 
-.rwd-table tr {
-  border-color: #bfbfbf;
+
+.my-account-dashboard .dt-container .dt-paging .dt-paging-button.disabled {
+    color: lightgrey !important;
 }
 
-.rwd-table th,
-.rwd-table td {
-  padding: .5em 1em;
+.my-account-dashboard .dt-container .dt-paging .dt-paging-button.disabled:hover {
+    color: lightgrey !important;
 }
-@media screen and (max-width: 601px) {
-  .rwd-table tr:nth-child(2) {
-    border-top: none;
-  }
+
+.my-account-dashboard .dt-container .dt-paging .dt-paging-button:hover {
+    color: black !important;
+    background: white;
 }
-@media screen and (min-width: 600px) {
-  .rwd-table tr:hover:not(:first-child) {
-    background-color: #d8e7f3;
-  }
-  .rwd-table td:before {
-    display: none;
-  }
-  .rwd-table th,
-  .rwd-table td {
-    display: table-cell;
-    padding: .25em .5em;
-  }
-  .rwd-table th:first-child,
-  .rwd-table td:first-child {
-    padding-left: 0;
-  }
-  .rwd-table th:last-child,
-  .rwd-table td:last-child {
-    padding-right: 0;
-  }
-  .rwd-table th,
-  .rwd-table td {
-    padding: 0.8em !important;
-  }
+
+.tabs.tg-tabs-content-wrapp .dt-paging nav button.dt-paging-button.current{
+    color: black !important;
+    background: white !important;
+    border: none !important;
+    outline: none !important;
 }
+
+
+
+
+
+.dt-buttons, .dt-search {
+    width: 50%;
+    display: inline-block;
+}
+
+.dt-search {
+    text-align: right;
+}
+
+.dt-search label {
+    color: white;
+}
+
+div.dt-container .dt-search input {
+    background: white;
+    border: none;
+    padding: 5px 10px;
+    outline: none;
+}
+
 
 
 
@@ -633,7 +598,7 @@ input.accountDashboardSubmit {
 .dashboardMonthInput {
     text-align: center;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
-    border: 1px solid #353535 !important;
+    border: 2px solid #606060 !important;
     padding: 20px;
     width: 88.5%;
     margin: 30px auto 45px auto;
@@ -675,7 +640,8 @@ input#monthInput {
 
 .account__card .card {
     box-shadow: none !important;
-    border: none !important;
+    border: 2px solid #606060 !important;
+    border-radius: 5px;
 }
 
 
@@ -684,13 +650,13 @@ input#monthInput {
 }
 
 .account__details__profile_image {
-    width: 150px;
-    height: 150px;
+    width: 80%;
     background: white;
     border-radius: 50%;
     text-align: center;
     padding: 14px;
     border: 5px solid #f7943d;
+    float: right;
 }
 
 
@@ -722,10 +688,11 @@ h1.user-name {
 }
 
 .tg {
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     border: 1px solid #353535;
     background: #1E1E1E;
     padding: 25px;
+    width: 100%;
 }
 
 .tg-account .account-banner {
@@ -737,6 +704,9 @@ h1.user-name {
 
 .nav-area ul {
     justify-content: center;
+        position: absolute;
+    top: 11% !important;
+    width: 100%;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
@@ -752,8 +722,9 @@ h1.user-name {
 
 .tg-account .account-banner .inner-banner .nav-area {
     width: 100%;
-    float: left;
-    margin-top: 15px;
+    margin-top: 60px;
+    position: relative;
+    height: 50px;
 }
 
 .tg-account .account-banner .inner-banner .nav-area ul li a {
@@ -762,15 +733,13 @@ h1.user-name {
     font-weight: 500;
     border-radius: 5px 5px 0px 0px;
     font-size: 16px;
-    border: none;
     padding: 10px 11px;
     min-width: 120px;
     display: block;
     transition: .4s;
     text-align: center;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
-    border: 1px solid #353535 !important;
-    border-bottom: none;
+    border: 2px solid #606060 !important;
+    border-bottom: none !important;
 }
 
 .tg-account .account-banner .inner-banner .nav-area ul li {
@@ -789,7 +758,8 @@ h1.user-name {
     background: #252525;
         padding: 40px 20px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
-    border: 1px solid #353535 !important;
+    border: 2px solid #606060 !important;
+    border-radius: 5px;
 
 }
 
@@ -927,9 +897,7 @@ table#my-orders-table a.view-order {
 }
 
 @media(max-width:600px) {
-    .tg-account .account-banner .inner-banner .nav-area ul li a span {
-        display: none;
-    }
+   
     .tg-account .account-banner .inner-banner .nav-area ul li a {
         min-width: auto;
         padding: 8px 20px;
@@ -937,7 +905,6 @@ table#my-orders-table a.view-order {
     .tg-account .account-banner .inner-banner .nav-area ul {
         text-align: center;
         margin: 0 auto;
-        width: fit-content;
     }
     .tg-account .detail {
         text-align: center;
@@ -2728,70 +2695,72 @@ video.product__video {
     animation: rotate 4s linear infinite;
 }
 
-.wick::before {
+.nature::before {
     background-image: conic-gradient(rgba(0, 0, 0, 0), #9ef300, rgba(0, 0, 0, 0) 25%);
 }
 
-.cellulose::before {
-    background-image: conic-gradient(rgba(0, 0, 0, 0), #62c3e7, rgba(0, 0, 0, 0) 25%);
+.bag::before {
+    background-image: conic-gradient(rgba(0, 0, 0, 0), #fddd02, rgba(0, 0, 0, 0) 25%);
 }
 
-.gel::before {
-    background-image: conic-gradient(rgba(0, 0, 0, 0), #0474ed, rgba(0, 0, 0, 0) 25%);
+.carte::before {
+    background-image: conic-gradient(rgba(0, 0, 0, 0), #f89a0b, rgba(0, 0, 0, 0) 25%);
 }
 
-.membrane::before {
-    background-image: conic-gradient(rgba(0, 0, 0, 0), #f27904, rgba(0, 0, 0, 0) 25%);
+.clim::before {
+    background-image: conic-gradient(rgba(0, 0, 0, 0), #4cdcfd, rgba(0, 0, 0, 0) 25%);
 }
 
-.organic::before {
-    background-image: conic-gradient(rgba(0, 0, 0, 0), #ffe6a3, rgba(0, 0, 0, 0) 25%);
+.liquide::before {
+    background-image: conic-gradient(rgba(0, 0, 0, 0), #e42686, rgba(0, 0, 0, 0) 25%);
 }
 
-.polymers::before {
-    background-image: conic-gradient(rgba(0, 0, 0, 0), #f63041, rgba(0, 0, 0, 0) 25%);
+.prestige::before {
+    background-image: conic-gradient(rgba(0, 0, 0, 0), #cfba9b, rgba(0, 0, 0, 0) 25%);
 }
 
 .spray::before {
     background-image: conic-gradient(rgba(0, 0, 0, 0), #a400c4, rgba(0, 0, 0, 0) 25%);
 }
 
+.toys::before {
+    background-image: conic-gradient(rgba(0, 0, 0, 0), #e92436, rgba(0, 0, 0, 0) 25%);
+}
+
 
 .wood::before {
-    background-image: conic-gradient(rgba(0, 0, 0, 0), #ef328e, rgba(0, 0, 0, 0) 25%);
-}
-
-.wood-card::before {
-    background-image: conic-gradient(rgba(0, 0, 0, 0), #b99463, rgba(0, 0, 0, 0) 25%);
-}
-
-.ceramic::before {
-    background-image: conic-gradient(rgba(0, 0, 0, 0), #5c47d2, rgba(0, 0, 0, 0) 25%);
+    background-image: conic-gradient(rgba(0, 0, 0, 0), #0e9cdb, rgba(0, 0, 0, 0) 25%);
 }
 
 
-.aroma-title-wick {
+
+
+.aroma-title-nature {
     color: #9ef300 !important;
 }
 
-.aroma-title-cellulose {
-    color: #62c3e7 !important;
+.aroma-title-bag {
+    color: #fddd02 !important;
 }
 
-.aroma-title-gel {
-    color: #0474ed !important;
+.aroma-title-carte {
+    color: #f89a0b !important;
 }
 
-.aroma-title-membrane {
-    color: #f27904 !important;
+.aroma-title-clim {
+    color: #4cdcfd !important;
 }
 
-.aroma-title-organic {
-    color: #ffe6a3 !important;
+.aroma-title-liquide {
+    color: #e42686 !important;
 }
 
-.aroma-title-polymers {
-    color: #f63041 !important;
+.aroma-title-prestige {
+    color: #cfba9b !important;
+}
+
+.aroma-title-toys {
+    color: #e92436 !important;
 }
 
 .aroma-title-spray {
@@ -2799,7 +2768,7 @@ video.product__video {
 }
 
 .aroma-title-wood {
-    color: #ef328e !important;
+    color: #0e9cdb !important;
 }
 
 .aroma-title-wood-card {
@@ -3603,6 +3572,72 @@ a.mobile-menu__contacts .phone__body span {
 *****************************************************************************/
 
 
+
+.nav-scroll-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: clip;
+    position: relative;
+    width: 100%; /* Ensure it stretches the full width */
+    height: 100%;
+}
+
+.nav-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.3s ease;
+    transform: translateX(0%); /* No initial transform */
+}
+
+.nav-item {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: -50px;
+    background: white;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 3px;
+    display: none;
+}
+
+.scroll-btn.left {
+    left: 0;
+}
+
+.scroll-btn.right {
+    right: 0;
+}
+
+
+  
+
+@media (max-width: 1200px) {
+    .nav-item {
+        width: auto;
+        /* Allow tabs to adapt to content width */
+    }
+
+   
+
+    .scroll-btn {
+        display: block;
+    }
+
+}
+
+
+
 /****************************** product grid list *******************************/
 
 @media (min-width: 1200px) {
@@ -3656,6 +3691,59 @@ a.mobile-menu__contacts .phone__body span {
 
 
 @media (min-width: 1200px) and (max-width: 1400px) {
+    
+    input#monthInput {
+
+    width: 80%;
+}
+    
+        table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
+ 
+    border-left: 10px solid #f7943d !important;
+}
+    
+    table.dataTable.dtr-inline.collapsed>tbody>tr.dtr-expanded>td.dtr-control:before {
+        border-top: 10px solid #f7943d !important;
+    border-left: 5px solid transparent !important;
+    }
+    
+  span.dtr-title {
+        text-align: center;
+        width: 100%;
+        display: block !important;
+        margin-bottom: 15px;
+        font-size: 17px;
+        color: #f7943d;
+        background: black;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    
+    span.dtr-data {
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+        
+}
+    
+    .statutGreen, .statuRed {
+    margin: 0px auto 10px auto;
+}
+    
+    .tg-account .account-banner .inner-banner .nav-area ul li a {
+    background: #252525;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px 5px 0px 0px;
+    font-size: 15px;
+    padding: 10px 7px;
+    min-width: 120px;
+    display: block;
+    transition: .4s;
+    text-align: center;
+    border: 2px solid #606060 !important;
+    border-bottom: none !important;
+}
     
             .product_all_info_details h1 {
     display: -webkit-box !important;
@@ -3727,6 +3815,63 @@ a.mobile-menu__contacts .phone__body span {
 
 
 @media (min-width: 992px) and (max-width: 1200px) {
+        input#monthInput {
+
+    width: 80%;
+}
+    
+        table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
+ 
+    border-left: 10px solid #f7943d !important;
+}
+    
+    table.dataTable.dtr-inline.collapsed>tbody>tr.dtr-expanded>td.dtr-control:before {
+        border-top: 10px solid #f7943d !important;
+    border-left: 5px solid transparent !important;
+    }
+    
+  span.dtr-title {
+        text-align: center;
+        width: 100%;
+        display: block !important;
+        margin-bottom: 15px;
+        font-size: 17px;
+        color: #f7943d;
+        background: black;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    
+    span.dtr-data {
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+        
+}
+    
+    .statutGreen, .statuRed {
+    margin: 0px auto 10px auto;
+}
+    
+    
+ .nav-area ul {
+    justify-content: flex-start;
+
+}
+    
+    
+    
+    .card_body_text span {
+    font-size: 16px;
+}
+    
+    .account__details__profile_image {
+    width: 95%;
+}
+    
+    .card_body_numbers span {
+    font-size: 35px;
+}
     
 #whatsapp-chat {
         font-size: 12px;
@@ -3821,6 +3966,85 @@ a.mobile-menu__contacts .phone__body span {
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
+    
+        input#monthInput {
+
+    width: 70%;
+}
+    
+        table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
+ 
+    border-left: 10px solid #f7943d !important;
+}
+            div.dt-container .dt-paging .dt-paging-button {
+
+    padding: .7em !important;
+}
+    
+    table.dataTable.dtr-inline.collapsed>tbody>tr.dtr-expanded>td.dtr-control:before {
+        border-top: 10px solid #f7943d !important;
+    border-left: 5px solid transparent !important;
+    }
+    div.dt-buttons>.dt-button,div.dt-buttons>div.dt-button-split .dt-button {
+
+    padding: .5em .5em !important;
+ 
+}
+    
+      span.dtr-title {
+        text-align: center;
+        width: 100%;
+        display: block !important;
+        margin-bottom: 15px;
+        font-size: 17px;
+        color: #f7943d;
+        background: black;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    
+    span.dtr-data {
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+        
+}
+    
+    .statutGreen, .statuRed {
+    margin: 0px auto 10px auto;
+}
+    
+   .nav-area ul {
+    justify-content: flex-start;
+
+}
+    
+
+    
+    .account__card .card {
+    height: 100%;
+}
+    
+    .card_body_text span {
+    font-size: 15px;
+}
+    
+    .card_body_numbers span {
+    font-size: 25px;
+}
+    
+    
+    .account__details__profile_image {
+    width: 35%;
+}
+    
+    h1.user-name {
+    font-size: 30px;
+}
+    
+    h3.user-job {
+    font-size: 16px;
+}
     
     
     .product__actions-item.product__actions-item--quantity {
@@ -3944,6 +4168,80 @@ a.mobile-menu__contacts .phone__body span {
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
+    
+        .dashboardMonthInput {
+    width: 100%;
+}
+    
+input#monthInput {
+        width: 55%;
+    }
+    
+        table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
+ 
+    border-left: 10px solid #f7943d !important;
+}
+    
+    table.dataTable.dtr-inline.collapsed>tbody>tr.dtr-expanded>td.dtr-control:before {
+        border-top: 10px solid #f7943d !important;
+    border-left: 5px solid transparent !important;
+    }
+    
+    div.dt-buttons>.dt-button,div.dt-buttons>div.dt-button-split .dt-button {
+
+    padding: .5em .5em !important;
+ 
+}
+    
+                div.dt-container .dt-paging .dt-paging-button {
+
+    padding: .7em !important;
+}
+    
+      span.dtr-title {
+        text-align: center;
+        width: 100%;
+        display: block !important;
+        margin-bottom: 15px;
+        font-size: 17px;
+        color: #f7943d;
+        background: black;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    
+    span.dtr-data {
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+        
+}
+    
+    .statutGreen, .statuRed {
+    margin: 0px auto 10px auto;
+}
+    
+     .nav-area ul {
+    justify-content: flex-start;
+
+}
+    
+    .inner {
+    text-align: center;
+}
+    
+        .account__details__profile_image {
+    width: 55%;
+    margin: 0px auto 20px auto;
+            float: none;
+}
+    
+      .account__details__info {
+        order: 2;
+    }
+    .account__details__profile {
+        order: 1;
+    }
     
     td.wishlist__column.wishlist__column--body.wishlist__column--image {
     background: white;
@@ -4103,6 +4401,101 @@ a.mobile-menu__contacts .phone__body span {
 }
 
 @media (min-width:480px) and (max-width: 576px) {
+    
+        .dashboardMonthInput {
+    width: 100%;
+}
+    
+    input#monthInput {
+        width: 100%;
+        display: block;
+        margin-bottom: 15px;
+    }
+    
+        table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
+ 
+    border-left: 10px solid #f7943d !important;
+}
+    
+    table.dataTable.dtr-inline.collapsed>tbody>tr.dtr-expanded>td.dtr-control:before {
+        border-top: 10px solid #f7943d !important;
+    border-left: 5px solid transparent !important;
+    }
+    
+    
+        div.dt-container .dt-paging .dt-paging-button {
+
+    padding: .3em !important;
+}
+    
+        div.dt-buttons {
+        display: block;
+        width: 100%;
+    }
+    
+    .dt-search {
+    display: block;
+    width: 100%;
+    text-align: center !important;
+    margin-bottom: 35px;
+}
+    
+    div.dt-buttons>.dt-button,div.dt-buttons>div.dt-button-split .dt-button {
+
+    padding: .5em 1em !important;
+ 
+}
+      span.dtr-title {
+        text-align: center;
+        width: 100%;
+        display: block !important;
+        margin-bottom: 15px;
+        font-size: 17px;
+        color: #f7943d;
+        background: black;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    
+    span.dtr-data {
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+        
+}
+    
+    .statutGreen, .statuRed {
+    margin: 0px auto 10px auto;
+}
+    
+     .nav-area ul {
+    justify-content: flex-start;
+
+}
+    
+    h1.user-name {
+    font-size: 35px;
+}
+    h3.user-job {
+    font-size: 18px;
+}
+    
+        .inner {
+    text-align: center;
+}
+    
+        .account__details__profile_image {
+    width: 55%;
+    margin: 0px auto 20px auto;
+            float: none;
+}
+    
+      .account__details__info {
+        order: 2;
+    }
+    .account__details__profile {
+        order: 1;
+    }
     
         td.wishlist__column.wishlist__column--body.wishlist__column--image {
     background: white;
@@ -4264,6 +4657,110 @@ a.mobile-menu__contacts .phone__body span {
 }
 
 @media (min-width:360px) and (max-width: 480px) {
+    
+     input#monthInput {
+        width: 100%;
+        display: block;
+        margin-bottom: 15px;
+    }
+    
+    .dashboardMonthInput {
+    width: 100%;
+}
+    
+        table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
+ 
+    border-left: 10px solid #f7943d !important;
+}
+    
+    table.dataTable.dtr-inline.collapsed>tbody>tr.dtr-expanded>td.dtr-control:before {
+        border-top: 10px solid #f7943d !important;
+    border-left: 5px solid transparent !important;
+    }
+    
+    
+        div.dt-container .dt-paging .dt-paging-button {
+
+    padding: .3em !important;
+}
+    
+        div.dt-buttons {
+        display: block;
+        width: 100%;
+    }
+    
+.dt-search {
+    display: block;
+    width: 100%;
+    text-align: center !important;
+    margin-bottom: 35px;
+}
+    
+    div.dt-buttons>.dt-button,div.dt-buttons>div.dt-button-split .dt-button {
+
+    padding: .5em 0.8em !important;
+ 
+}
+    
+      span.dtr-title {
+        text-align: center;
+        width: 100%;
+        display: block !important;
+        margin-bottom: 15px;
+        font-size: 17px;
+        color: #f7943d;
+        background: black;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    
+    span.dtr-data {
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+        
+}
+    
+    .statutGreen, .statuRed {
+    margin: 0px auto 10px auto;
+}
+    
+     .nav-area ul {
+    justify-content: flex-start;
+
+}
+    
+    .card_body_text span {
+    font-size: 17px;
+}
+    
+    .card_body_numbers span {
+    font-size: 45px;
+}
+    
+    h3.user-job {
+    font-size: 15px;
+}
+    
+    h1.user-name {
+        font-size: 30px;
+    }  
+        .inner {
+    text-align: center;
+}
+    
+        .account__details__profile_image {
+    width: 55%;
+    margin: 0px auto 20px auto;
+            float: none;
+}
+    
+      .account__details__info {
+        order: 2;
+    }
+    .account__details__profile {
+        order: 1;
+    }
     
         td.wishlist__column.wishlist__column--body.wishlist__column--image {
     background: white;
