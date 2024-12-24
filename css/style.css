@@ -484,8 +484,7 @@ button.filterOption {
     background: #17a2b8;
 }
 
-button.operationDelete,
-button.operationPrint{
+button.operationDelete{
     border: none;
     outline: none;
     padding: 4px 9px;
@@ -493,6 +492,8 @@ button.operationPrint{
     color: white;
     border-radius: 5px;
     font-size: 18px;
+        margin: 0px auto;
+    display: block;
 }
 
 button.operationPrint{
