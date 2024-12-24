@@ -4186,6 +4186,10 @@ a.mobile-menu__contacts .phone__body span {
 
 @media (min-width: 576px) and (max-width: 768px) {
     
+    td.td-width {
+    text-align: left;
+}
+    
         .dashboardMonthInput {
     width: 100%;
 }
@@ -4412,6 +4416,10 @@ input#monthInput {
 }
 
 @media (min-width:480px) and (max-width: 576px) {
+    
+    td.td-width {
+    text-align: left;
+}
     
         .dashboardMonthInput {
     width: 100%;
@@ -4661,6 +4669,10 @@ input#monthInput {
 }
 
 @media (min-width:360px) and (max-width: 480px) {
+    
+    td.td-width {
+    text-align: left;
+}
     
      input#monthInput {
         width: 100%;

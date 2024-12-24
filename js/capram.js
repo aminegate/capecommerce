@@ -94,104 +94,108 @@ $(document).ready(function () {
 
 
 
-    (function ($) {
-        $(document).ready(function () {
-            var scrollPosition = 0;
-            var itemWidth = $('.nav-item').outerWidth(true); // Width of each tab
-            var containerWidth = $('.nav-scroll-container').width(); // Width of the visible scrollable container
-            var totalWidth = $('.nav-tabs')[0].scrollWidth; // Total width of the ul element
-            var maxScroll = totalWidth - containerWidth; // Maximum scroll value (when the last tab is fully visible)
+  (function ($) {
+    $(function () {
+        var $navTabs = $('.nav-tabs'); // Cache the nav-tabs element
 
-            var isDragging = false; // Flag to track if the user is dragging
-            var startX = 0; // Starting position of the drag/touch
-            var currentX = 0; // Current position during drag/touch
+        // Check if the element exists on the page
+        if ($navTabs.length === 0) {
+            console.log("No '.nav-tabs' element found on this page. Skipping script.");
+            return;
+        }
 
-            // Update scroll buttons' state based on position
-            function updateScrollButtons() {
-                $('#scrollLeftBtn').prop('disabled', scrollPosition <= 0);
-                $('#scrollRightBtn').prop('disabled', scrollPosition >= maxScroll);
+        var scrollPosition = 0;
+        var itemWidth = $('.nav-item').outerWidth(true); // Width of each tab
+        var containerWidth = $('.nav-scroll-container').width(); // Width of the visible scrollable container
+        var totalWidth = $navTabs[0].scrollWidth; // Total width of the ul element
+        var maxScroll = totalWidth - containerWidth; // Maximum scroll value (when the last tab is fully visible)
+
+        var isDragging = false; // Flag to track if the user is dragging
+        var startX = 0; // Starting position of the drag/touch
+        var currentX = 0; // Current position during drag/touch
+
+        // Update scroll buttons' state based on position
+        function updateScrollButtons() {
+            $('#scrollLeftBtn').prop('disabled', scrollPosition <= 0);
+            $('#scrollRightBtn').prop('disabled', scrollPosition >= maxScroll);
+        }
+
+        // Scroll right button
+        $('#scrollRightBtn').click(function () {
+            scrollPosition += itemWidth;
+            if (scrollPosition > maxScroll) {
+                scrollPosition = maxScroll; // Prevent scrolling beyond the max
             }
-
-            // Scroll right button
-            $('#scrollRightBtn').click(function () {
-                // Scroll one tab at a time, but stop at the last tab
-                scrollPosition += itemWidth;
-                if (scrollPosition > maxScroll) {
-                    scrollPosition = maxScroll; // Prevent scrolling beyond the max
-                }
-                $('.nav-tabs').css('transform', 'translateX(-' + scrollPosition + 'px)');
-                updateScrollButtons();
-            });
-
-            // Scroll left button
-            $('#scrollLeftBtn').click(function () {
-                // Scroll one tab at a time, but stop at the first tab
-                scrollPosition -= itemWidth;
-                if (scrollPosition < 0) {
-                    scrollPosition = 0; // Prevent scrolling before the start
-                }
-                $('.nav-tabs').css('transform', 'translateX(-' + scrollPosition + 'px)');
-                updateScrollButtons();
-            });
-
-            // Mouse down event for dragging
-            $('.nav-scroll-container').on('mousedown', function (e) {
-                isDragging = true;
-                startX = e.pageX; // Get the starting position of the mouse
-                $(this).css('cursor', 'grabbing'); // Change cursor to grabbing
-            });
-
-            // Mouse move event for dragging
-            $(document).on('mousemove', function (e) {
-                if (isDragging) {
-                    currentX = e.pageX;
-                    var distance = startX - currentX; // Calculate distance moved
-                    scrollPosition += distance; // Update scroll position
-                    if (scrollPosition < 0) scrollPosition = 0; // Prevent scrolling before the start
-                    if (scrollPosition > maxScroll) scrollPosition = maxScroll; // Prevent scrolling beyond the max
-                    $('.nav-tabs').css('transform', 'translateX(-' + scrollPosition + 'px)');
-                    startX = currentX; // Update starting position
-                    updateScrollButtons();
-                }
-            });
-
-            // Mouse up event to stop dragging
-            $(document).on('mouseup', function () {
-                isDragging = false;
-                $('.nav-scroll-container').css('cursor', 'grab'); // Reset cursor
-            });
-
-            // Touch start event for mobile swipe
-            $('.nav-scroll-container').on('touchstart', function (e) {
-                isDragging = true;
-                startX = e.touches[0].pageX; // Get the starting position of the touch
-            });
-
-            // Touch move event for mobile swipe
-            $(document).on('touchmove', function (e) {
-                if (isDragging) {
-                    currentX = e.touches[0].pageX;
-                    var distance = startX - currentX; // Calculate distance moved
-                    scrollPosition += distance; // Update scroll position
-                    if (scrollPosition < 0) scrollPosition = 0; // Prevent scrolling before the start
-                    if (scrollPosition > maxScroll) scrollPosition = maxScroll; // Prevent scrolling beyond the max
-                    $('.nav-tabs').css('transform', 'translateX(-' + scrollPosition + 'px)');
-                    startX = currentX; // Update starting position
-                    updateScrollButtons();
-                }
-            });
-
-            // Touch end event to stop dragging
-            $(document).on('touchend', function () {
-                isDragging = false;
-            });
-
-            // Initialize button states
+            $navTabs.css('transform', 'translateX(-' + scrollPosition + 'px)');
             updateScrollButtons();
         });
-    })(jQuery);
 
+        // Scroll left button
+        $('#scrollLeftBtn').click(function () {
+            scrollPosition -= itemWidth;
+            if (scrollPosition < 0) {
+                scrollPosition = 0; // Prevent scrolling before the start
+            }
+            $navTabs.css('transform', 'translateX(-' + scrollPosition + 'px)');
+            updateScrollButtons();
+        });
 
+        // Mouse down event for dragging
+        $('.nav-scroll-container').on('mousedown', function (e) {
+            isDragging = true;
+            startX = e.pageX;
+            $(this).css('cursor', 'grabbing');
+        });
+
+        // Mouse move event for dragging
+        $(document).on('mousemove', function (e) {
+            if (isDragging) {
+                currentX = e.pageX;
+                var distance = startX - currentX;
+                scrollPosition += distance;
+                if (scrollPosition < 0) scrollPosition = 0;
+                if (scrollPosition > maxScroll) scrollPosition = maxScroll;
+                $navTabs.css('transform', 'translateX(-' + scrollPosition + 'px)');
+                startX = currentX;
+                updateScrollButtons();
+            }
+        });
+
+        // Mouse up event to stop dragging
+        $(document).on('mouseup', function () {
+            isDragging = false;
+            $('.nav-scroll-container').css('cursor', 'grab');
+        });
+
+        // Touch start event for mobile swipe
+        $('.nav-scroll-container').on('touchstart', function (e) {
+            isDragging = true;
+            startX = e.touches[0].pageX;
+        });
+
+        // Touch move event for mobile swipe
+        $(document).on('touchmove', function (e) {
+            if (isDragging) {
+                currentX = e.touches[0].pageX;
+                var distance = startX - currentX;
+                scrollPosition += distance;
+                if (scrollPosition < 0) scrollPosition = 0;
+                if (scrollPosition > maxScroll) scrollPosition = maxScroll;
+                $navTabs.css('transform', 'translateX(-' + scrollPosition + 'px)');
+                startX = currentX;
+                updateScrollButtons();
+            }
+        });
+
+        // Touch end event to stop dragging
+        $(document).on('touchend', function () {
+            isDragging = false;
+        });
+
+        // Initialize button states
+        updateScrollButtons();
+    });
+})(jQuery);
 
 
 
