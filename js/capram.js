@@ -318,10 +318,10 @@ $(document).ready(function() {
                     infoEmpty: "Aucun enregistrement à afficher",
                     infoFiltered: "(filtré à partir de _MAX_ enregistrements au total)",
                     paginate: {
-                        first: "Premier",
-                        last: "Dernier",
-                        next: "Suivant",
-                        previous: "Précédent"
+                        first: '<i class="fa-solid fa-backward-step"></i>',
+                        last: '<i class="fa-solid fa-forward-step"></i>',
+                        next: '<i class="fa-solid fa-caret-right"></i>',
+                        previous: '<i class="fa-solid fa-caret-left"></i>'
                     },
                     zeroRecords: "Aucun résultat trouvé",
                     emptyTable: "Aucune donnée disponible dans le tableau"
