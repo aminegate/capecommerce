@@ -649,12 +649,19 @@ input#monthInput {
     padding: 15px;
     background: whitesmoke;
     color: black;
-    appearance: none; /* Remove browser-specific styling */
-    -webkit-appearance: none; /* For Safari */
-    -moz-appearance: none; /* For Firefox */
-    text-indent: 10px; /* Add padding for text alignment */
-    font-size: 16px; /* Ensure readable font size */
-    box-sizing: border-box; /* Include padding and border in width/height */
+    appearance: none;
+    -webkit-appearance: none;
+    font-family: 'FontAwesome'; /* Or the appropriate icon font */
+    font-size: 18px; /* Adjust size as needed */
+    padding-right: 35px; /* Space for the icon */
+}
+
+input#monthInput::before {
+    content: '\f0c5'; /* FontAwesome icon code, replace with your desired icon */
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 
