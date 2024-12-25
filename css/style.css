@@ -649,20 +649,15 @@ input#monthInput {
     padding: 15px;
     background: whitesmoke;
     color: black;
-    font-size: 16px;
-    box-sizing: border-box; /* Include padding and border in width/height */
-    
-    /* Preserve native dropdown icon for Safari */
-    -webkit-appearance: menulist; /* For Safari */
-    appearance: menulist;
-
+   
 }
 
-input#monthInput::-webkit-calendar-picker-indicator {
-    display: block; /* Ensure the calendar icon is visible */
-    color: black; /* Optional: Customize icon color */
-    cursor: pointer; /* Change cursor to pointer */
-    margin-right: 10px; /* Adjust spacing if needed */
+input[type="month"]
+{
+    display:block;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    min-height: 1.2em;
 }
 
 
