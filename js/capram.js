@@ -1,17 +1,17 @@
 $(document).ready(function () {
+    
+// get month
 
-   (function () {
+(function () {
     const date = new Date();
     const month = ("0" + (date.getMonth() + 1)).slice(-2);
     const year = date.getFullYear();
     $('input[type="month"]').val(`${year}-${month}`);
 })();
 
+// tab image click
 
-
-
-
-    (function () {
+(function () {
         // Append the popup overlay HTML to the body
         $('body').append(`
         <div id="imagePopupOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s;">
@@ -86,17 +86,12 @@ $(document).ready(function () {
         });
     })();
 
+// tab compte page
 
-
-
-
-
-
-
-
-  (function ($) {
+(function () {
     $(function () {
         var $navTabs = $('.nav-tabs'); // Cache the nav-tabs element
+        var $navItems = $('.nav-item'); // Cache the nav-items (tabs)
 
         // Check if the element exists on the page
         if ($navTabs.length === 0) {
@@ -105,7 +100,7 @@ $(document).ready(function () {
         }
 
         var scrollPosition = 0;
-        var itemWidth = $('.nav-item').outerWidth(true); // Width of each tab
+        var itemWidth = $navItems.outerWidth(true); // Width of each tab
         var containerWidth = $('.nav-scroll-container').width(); // Width of the visible scrollable container
         var totalWidth = $navTabs[0].scrollWidth; // Total width of the ul element
         var maxScroll = totalWidth - containerWidth; // Maximum scroll value (when the last tab is fully visible)
@@ -113,6 +108,8 @@ $(document).ready(function () {
         var isDragging = false; // Flag to track if the user is dragging
         var startX = 0; // Starting position of the drag/touch
         var currentX = 0; // Current position during drag/touch
+        var velocity = 0; // Tracks the velocity of the drag
+        var friction = 0.95; // Friction for momentum
 
         // Update scroll buttons' state based on position
         function updateScrollButtons() {
@@ -120,86 +117,86 @@ $(document).ready(function () {
             $('#scrollRightBtn').prop('disabled', scrollPosition >= maxScroll);
         }
 
-        // Scroll right button
-        $('#scrollRightBtn').click(function () {
-            scrollPosition += itemWidth;
-            if (scrollPosition > maxScroll) {
-                scrollPosition = maxScroll; // Prevent scrolling beyond the max
-            }
+        // Apply smooth scrolling with transform
+        function applyScroll(position) {
+            scrollPosition = Math.max(0, Math.min(position, maxScroll)); // Clamp the position
             $navTabs.css('transform', 'translateX(-' + scrollPosition + 'px)');
             updateScrollButtons();
+        }
+
+        // Scroll right button
+        $('#scrollRightBtn').click(function () {
+            applyScroll(scrollPosition + itemWidth);
         });
 
         // Scroll left button
         $('#scrollLeftBtn').click(function () {
-            scrollPosition -= itemWidth;
-            if (scrollPosition < 0) {
-                scrollPosition = 0; // Prevent scrolling before the start
-            }
-            $navTabs.css('transform', 'translateX(-' + scrollPosition + 'px)');
-            updateScrollButtons();
+            applyScroll(scrollPosition - itemWidth);
         });
 
-        // Mouse down event for dragging
-        $('.nav-scroll-container').on('mousedown', function (e) {
+        // Click event for centering the tab
+        $navItems.click(function () {
+            var $clickedTab = $(this); // The clicked tab
+            var clickedTabOffset = $clickedTab.position().left; // Left position of the clicked tab relative to its container
+            var clickedTabWidth = $clickedTab.outerWidth(); // Width of the clicked tab
+
+            // Calculate the new scroll position to center the clicked tab
+            var newScrollPosition = clickedTabOffset - (containerWidth / 2) + (clickedTabWidth / 2);
+            applyScroll(newScrollPosition);
+        });
+
+        // Dragging functionality
+        function handleDrag(e, isTouch = false) {
+            if (isDragging) {
+                currentX = isTouch ? e.touches[0].pageX : e.pageX;
+                var distance = (startX - currentX) * 1.4; // Scale for smoother drag
+                velocity = distance; // Capture velocity for momentum
+                applyScroll(scrollPosition + distance);
+                startX = currentX;
+            }
+        }
+
+        // Mouse down and touch start event
+        $('.nav-scroll-container').on('mousedown touchstart', function (e) {
             isDragging = true;
-            startX = e.pageX;
+            startX = e.type === 'touchstart' ? e.touches[0].pageX : e.pageX;
+            velocity = 0; // Reset velocity
             $(this).css('cursor', 'grabbing');
         });
 
-        // Mouse move event for dragging
-        $(document).on('mousemove', function (e) {
+        // Mouse move and touch move event
+        $(document).on('mousemove touchmove', function (e) {
+            if (isDragging) handleDrag(e, e.type === 'touchmove');
+        });
+
+        // Mouse up and touch end event
+        $(document).on('mouseup touchend', function () {
             if (isDragging) {
-                currentX = e.pageX;
-                var distance = startX - currentX;
-                scrollPosition += distance;
-                if (scrollPosition < 0) scrollPosition = 0;
-                if (scrollPosition > maxScroll) scrollPosition = maxScroll;
-                $navTabs.css('transform', 'translateX(-' + scrollPosition + 'px)');
-                startX = currentX;
-                updateScrollButtons();
+                isDragging = false;
+                $('.nav-scroll-container').css('cursor', 'grab');
+                applyMomentum();
             }
         });
 
-        // Mouse up event to stop dragging
-        $(document).on('mouseup', function () {
-            isDragging = false;
-            $('.nav-scroll-container').css('cursor', 'grab');
-        });
-
-        // Touch start event for mobile swipe
-        $('.nav-scroll-container').on('touchstart', function (e) {
-            isDragging = true;
-            startX = e.touches[0].pageX;
-        });
-
-        // Touch move event for mobile swipe
-        $(document).on('touchmove', function (e) {
-            if (isDragging) {
-                currentX = e.touches[0].pageX;
-                var distance = startX - currentX;
-                scrollPosition += distance;
-                if (scrollPosition < 0) scrollPosition = 0;
-                if (scrollPosition > maxScroll) scrollPosition = maxScroll;
-                $navTabs.css('transform', 'translateX(-' + scrollPosition + 'px)');
-                startX = currentX;
-                updateScrollButtons();
+        // Momentum scrolling
+        function applyMomentum() {
+            if (Math.abs(velocity) > 1) {
+                velocity *= friction; // Apply friction
+                applyScroll(scrollPosition + velocity);
+                requestAnimationFrame(applyMomentum);
             }
-        });
-
-        // Touch end event to stop dragging
-        $(document).on('touchend', function () {
-            isDragging = false;
-        });
+        }
 
         // Initialize button states
         updateScrollButtons();
     });
-})(jQuery);
+})();
 
 
-
-    (function () {
+    
+// tab swicth + dataTable
+    
+(function () {
         $('a[data-toggle="tab"]').on('shown.bs.tab', function () {
             // Adjust DataTable columns when the tab is shown
             $.fn.dataTable.tables({
@@ -209,9 +206,9 @@ $(document).ready(function () {
         });
     })();
 
+// product click zoom in
 
-
-    (function () {
+(function () {
         // Append the popup overlay HTML to the body
         $('body').append(`
         <div id="imagePopupOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s;">
@@ -253,15 +250,9 @@ $(document).ready(function () {
         });
     })();
 
+// file upload
 
-
-
-
-
-
-
-
-    (function ($) {
+(function ($) {
         $("#file-upload").on("change", function () {
             var fileName = this.files[0] ? this.files[0].name : "Aucun fichier choisi";
             $(".file-name").text(fileName);
@@ -280,9 +271,9 @@ $(document).ready(function () {
         });
     })(jQuery);
 
+// sort cart in accueil   
 
-
-    (function ($) {
+(function ($) {
         $(function () {
             const $list = $('.block-brands__list');
             const $items = $list.find('.block-brands__item');
@@ -304,8 +295,9 @@ $(document).ready(function () {
         });
     })(jQuery);
 
+// datatable
 
-    (function ($) {
+(function ($) {
 
         // Check if the table exists before initializing DataTable
         if ($('#table__one,#table__two,#table__three,#table__four,#table__five').length) {
@@ -378,34 +370,17 @@ $(document).ready(function () {
         }
 
     })(jQuery);
-
-
-
-
-    (function ($) {
-        $(window).on('resize', function () {
-            const width = $(window).width();
-            $('body').css('overflow-x', 'hidden'); // Ensure no horizontal scrolling
-        }).trigger('resize'); // Trigger the function on load
-    })(jQuery);
-
-
-    $('#myTab a').on('click', function (e) {
+    
+$('#myTab a').on('click', function (e) {
         e.preventDefault()
         $(this).tab('show')
     });
-
-    /**
-     * Datatable call
-     */
-    $(document).ready(function () {
+  
+(function () {
         $('#my-orders-table').DataTable();
     });
 
-    /**
-     * My account nav click
-     */
-    $(document).ready(function () {
+(function () {
         $('.tg-tabs-content-wrapp .my-account-dashboard .card').click(function () {
 
             var ariaClick = $(this).attr('area-toggle');
@@ -413,10 +388,18 @@ $(document).ready(function () {
         });
     });
 
+//datatable resize table
+    
+(function ($) {
+        $(window).on('resize', function () {
+            const width = $(window).width();
+            $('body').css('overflow-x', 'hidden'); // Ensure no horizontal scrolling
+        }).trigger('resize'); // Trigger the function on load
+    })(jQuery);
 
-    //notification
-
-    (function ($) {
+//notification
+    
+(function ($) {
         $('.product-card__addtocart-iconn, .product__actions-item.product__actions-item--addtocart button').on('click', function () {
             // Create the notification if it doesn't exist
             if ($('#cart-notification').length === 0) {
@@ -431,7 +414,7 @@ $(document).ready(function () {
         });
     })(jQuery);
 
-    //mobile account scroll
+//mobile account scroll
 
     (function ($) {
         const menuSelector = '.account-nav'; // Scrollable container
@@ -744,101 +727,120 @@ $(document).ready(function () {
         });
     })(jQuery);
 
-    (function () {
-        const pathname = window.location.pathname;
+   (function () {
+    const pathname = window.location.pathname;
 
-        // Define the expected subcategory pages
-        const subcategoryPages = ['categorie.html', 'accueil.html', 'capcarrosserie.html', 'capservice.html'];
-        const boutiquePage = 'boutique.html';
+    // Define the expected subcategory pages
+    const subcategoryPages = ['categorie.html', 'accueil.html', 'capcarrosserie.html', 'capservice.html'];
+    const boutiquePage = 'boutique.html';
 
-        // Function to highlight the selected filter item and scroll into view
-        const highlightSelected = function () {
-            $('.filter-list__item').css({
-                'border': 'none' // Reset border for all items
-            });
+    // Function to highlight the selected filter item and scroll into view
+    const highlightSelected = function () {
+        $('.filter-list__item').css({
+            'border': 'none' // Reset border for all items
+        });
 
-            $(this).closest('.filter-list__item').css({
-                'border': '4px solid orange', // Change border color to orange
+        $(this).closest('.filter-list__item').css({
+            'border': '4px solid orange', // Change border color to orange
+            'border-radius': '6px'
+        })[0].scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        }); // Scroll the item into view
+    };
+
+    // Subcategory page logic
+    if (subcategoryPages.some(page => pathname.endsWith(page))) {
+        // Modified event to prevent propagation and store the alt text correctly
+        $('.subcategory-item img, .block-brands__item-link img, .capramCartesImg').on('click', function (event) {
+            event.preventDefault();
+            const altText = $(this).attr('alt');
+            console.log('Alt text:', altText);
+
+            if (altText) {
+                localStorage.setItem('shopName', altText);
+                window.location.href = 'boutique.html';
+            } else {
+                console.error('Alt text is undefined.');
+            }
+        });
+    }
+
+    // New functionality for subcategoryImg
+    $('.subcategoryImg').on('click', function (event) {
+        event.stopPropagation(); // Prevent the click from propagating to other handlers
+
+        const altText = $(this).find('img').attr('alt'); // Get alt attribute from nested <img>
+        if (altText) {
+            $('.famille-shop-name').text(altText); // Update the span with the alt text
+            localStorage.setItem('shopName', altText); // Optionally, store this value as well
+            // Call the function to highlight the matching filter item based on alt text
+            highlightMatchingFilterItem(altText);
+        } else {
+            console.error('No alt text found for the image in subcategoryImg.');
+        }
+    });
+
+    // Highlight filter images on any page when clicked
+    $('.filter-list__item img').on('click', function () {
+        const $filterItem = $(this).closest('.filter-list__item');
+        const $radioButton = $filterItem.find('input[type="radio"]');
+        const newShopName = $radioButton.val();
+
+        if (newShopName) {
+            localStorage.setItem('shopName', newShopName);
+
+            if (pathname.endsWith(boutiquePage)) {
+                $('.famille-shop-name').text(`${newShopName} `);
+            }
+
+            highlightSelected.call(this);
+        }
+    });
+
+    // Logic for boutique page to initially highlight the stored shop name
+    if (pathname.endsWith(boutiquePage)) {
+        const shopName = localStorage.getItem('shopName');
+        if (shopName) {
+            $('.famille-shop-name').text(`${shopName} `);
+
+            $(`input[type="radio"][value="${shopName}"]`).closest('.filter-list__item').css({
+                'border': '4px solid orange',
                 'border-radius': '6px'
             })[0].scrollIntoView({
                 behavior: 'smooth',
                 block: 'center'
-            }); // Scroll the item into view
-        };
+            });
+        } else {
+            console.warn('No shop name found in localStorage.');
+        }
+    }
 
-        // Subcategory page logic
-        if (subcategoryPages.some(page => pathname.endsWith(page))) {
-            // Modified event to prevent propagation and store the alt text correctly
-            $('.subcategory-item img, .block-brands__item-link img, .capramCartesImg').on('click', function (event) {
-                event.preventDefault();
-                const altText = $(this).attr('alt');
-                console.log('Alt text:', altText);
+    // Function to add border to the radio button's filter item when clicked
+    $('input[type="radio"]').on('click', function () {
+        const $filterItem = $(this).closest('.filter-list__item');
+        highlightSelected.call($filterItem.find('img'));
+    });
 
-                if (altText) {
-                    localStorage.setItem('shopName', altText);
-                    window.location.href = 'boutique.html';
-                } else {
-                    console.error('Alt text is undefined.');
-                }
+    // Function to highlight the filter item that matches the subcategory img's alt text
+    function highlightMatchingFilterItem(altText) {
+        // Look for the filter item with an image whose alt text matches the subcategory image's alt text
+        const $matchingFilterItem = $('.filter-list__item img').filter(function () {
+            return $(this).attr('alt') === altText;
+        }).closest('.filter-list__item');
+
+        if ($matchingFilterItem.length) {
+            $matchingFilterItem.css({
+                'border': '4px solid orange',
+                'border-radius': '6px'
+            })[0].scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
             });
         }
+    }
 
-        // New functionality for subcategoryImg
-        $('.subcategoryImg').on('click', function (event) {
-            event.stopPropagation(); // Prevent the click from propagating to other handlers
-
-            const altText = $(this).find('img').attr('alt'); // Get alt attribute from nested <img>
-            if (altText) {
-                $('.famille-shop-name').text(altText); // Update the span with the alt text
-                localStorage.setItem('shopName', altText); // Optionally, store this value as well
-            } else {
-                console.error('No alt text found for the image in subcategoryImg.');
-            }
-        });
-
-        // Highlight filter images on any page when clicked
-        $('.filter-list__item img').on('click', function () {
-            const $filterItem = $(this).closest('.filter-list__item');
-            const $radioButton = $filterItem.find('input[type="radio"]');
-            const newShopName = $radioButton.val();
-
-            if (newShopName) {
-                localStorage.setItem('shopName', newShopName);
-
-                if (pathname.endsWith(boutiquePage)) {
-                    $('.famille-shop-name').text(`${newShopName} `);
-                }
-
-                highlightSelected.call(this);
-            }
-        });
-
-        // Logic for boutique page to initially highlight the stored shop name
-        if (pathname.endsWith(boutiquePage)) {
-            const shopName = localStorage.getItem('shopName');
-            if (shopName) {
-                $('.famille-shop-name').text(`${shopName} `);
-
-                $(`input[type="radio"][value="${shopName}"]`).closest('.filter-list__item').css({
-                    'border': '4px solid orange',
-                    'border-radius': '6px'
-                })[0].scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
-            } else {
-                console.warn('No shop name found in localStorage.');
-            }
-        }
-
-        // Function to add border to the radio button's filter item when clicked
-        $('input[type="radio"]').on('click', function () {
-            const $filterItem = $(this).closest('.filter-list__item');
-            highlightSelected.call($filterItem.find('img'));
-        });
-
-    })();
-
+})();
 
 
     // search  
