@@ -648,6 +648,8 @@ input#monthInput {
     margin-right: 20px;
         padding: 15px;
     background: whitesmoke;
+    appearance: none; /* Remove browser-specific styling */
+    -webkit-appearance: none; /* For Safari */
 }
 
 .card_body_text span {
