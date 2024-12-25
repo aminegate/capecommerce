@@ -652,12 +652,17 @@ input#monthInput {
     font-size: 16px;
     box-sizing: border-box; /* Include padding and border in width/height */
     
-    /* Remove unwanted customizations for appearance */
-    -webkit-appearance: menulist; /* For Safari (preserve dropdown icon) */
+    /* Preserve native dropdown icon for Safari */
+    -webkit-appearance: menulist; /* For Safari */
     appearance: menulist;
 
-    /* Align text with space for the native icon */
-    padding-right: 40px; /* Space for the native icon */
+}
+
+input#monthInput::-webkit-calendar-picker-indicator {
+    display: block; /* Ensure the calendar icon is visible */
+    color: black; /* Optional: Customize icon color */
+    cursor: pointer; /* Change cursor to pointer */
+    margin-right: 10px; /* Adjust spacing if needed */
 }
 
 
