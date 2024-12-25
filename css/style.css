@@ -646,15 +646,13 @@ input#monthInput {
     outline: none;
     width: 85%;
     margin-right: 20px;
-    padding: 14px;
+    padding: 15px;
     background: whitesmoke;
-    color: #373636;
-    appearance: none;
-    font-size: 14px;
-    padding-right: 15px;
-    font-weight: 500;
-}
-
+    color: black;
+    -webkit-appearance: none; /* For Safari */
+    -webkit-border-radius: 5px; /* WebKit-specific border radius */
+    -webkit-box-sizing: border-box; /* For WebKit layout handling */
+   }
 
 
 
