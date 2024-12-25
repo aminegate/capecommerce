@@ -650,9 +650,11 @@ input#monthInput {
     background: whitesmoke;
     color: black;
     -webkit-appearance: none; /* For Safari */
-    -webkit-border-radius: 5px; /* WebKit-specific border radius */
-    -webkit-box-sizing: border-box; /* For WebKit layout handling */
-   }
+    appearance: none; /* Remove default styling */
+    background-size: 20px 20px; /* Adjust icon size */
+    background-position: right 10px center; /* Position the icon correctly */
+    background-repeat: no-repeat; /* Ensure the icon doesn't repeat */
+}
 
 
 
