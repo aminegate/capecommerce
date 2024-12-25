@@ -646,12 +646,17 @@ input#monthInput {
     outline: none;
     width: 85%;
     margin-right: 20px;
-        padding: 15px;
+    padding: 15px;
     background: whitesmoke;
     color: black;
     appearance: none; /* Remove browser-specific styling */
     -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+    text-indent: 10px; /* Add padding for text alignment */
+    font-size: 16px; /* Ensure readable font size */
+    box-sizing: border-box; /* Include padding and border in width/height */
 }
+
 
 .card_body_text span {
     font-size: 20px;
