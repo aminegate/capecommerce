@@ -649,13 +649,17 @@ input#monthInput {
     padding: 15px;
     background: whitesmoke;
     color: black;
-    appearance: none; /* Remove browser-specific styling */
-    -webkit-appearance: none; /* For Safari */
-    -moz-appearance: none; /* For Firefox */
-    text-indent: 10px; /* Add padding for text alignment */
-    font-size: 16px; /* Ensure readable font size */
+    font-size: 16px;
     box-sizing: border-box; /* Include padding and border in width/height */
+    
+    /* Remove unwanted customizations for appearance */
+    -webkit-appearance: menulist; /* For Safari (preserve dropdown icon) */
+    appearance: menulist;
+
+    /* Align text with space for the native icon */
+    padding-right: 40px; /* Space for the native icon */
 }
+
 
 
 .card_body_text span {
