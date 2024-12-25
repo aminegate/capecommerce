@@ -648,6 +648,7 @@ input#monthInput {
     margin-right: 20px;
         padding: 15px;
     background: whitesmoke;
+    color: black;
     appearance: none; /* Remove browser-specific styling */
     -webkit-appearance: none; /* For Safari */
 }
