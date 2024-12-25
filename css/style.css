@@ -623,6 +623,8 @@ input.accountDashboardSubmit {
     width: 88.5%;
     margin: 30px auto 45px auto;
     border-radius: 5px;
+    appearance: none; /* Remove browser-specific styling */
+    -webkit-appearance: none; /* For Safari */
 }
 
 .card_body_icon i {
