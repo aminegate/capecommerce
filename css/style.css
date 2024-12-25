@@ -646,23 +646,16 @@ input#monthInput {
     outline: none;
     width: 85%;
     margin-right: 20px;
-    padding: 15px;
+    padding: 14px;
     background: whitesmoke;
-    color: black;
+    color: #373636;
     appearance: none;
-    -webkit-appearance: none;
-    font-family: 'FontAwesome'; /* Or the appropriate icon font */
-    font-size: 18px; /* Adjust size as needed */
-    padding-right: 35px; /* Space for the icon */
+    font-size: 14px;
+    padding-right: 15px;
+    font-weight: 500;
 }
 
-input#monthInput::before {
-    content: '\f0c5'; /* FontAwesome icon code, replace with your desired icon */
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-}
+
 
 
 .card_body_text span {
