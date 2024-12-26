@@ -4570,6 +4570,10 @@ input#monthInput {
 
 @media (min-width:360px) and (max-width: 480px) {
     
+    div.dt-container .dt-search input {
+    width: 100%;
+}
+    
     td.td-width {
     text-align: left;
 }
