@@ -2,10 +2,132 @@
     background: #1e1e1e;
 }
 
+.sendInfoToTable {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    border: 1px solid #353535;
+    background: #1E1E1E;
+    padding: 25px;
+    margin-bottom: 45px;
+}
+
+.my-account-dashboard .dt-container .dt-paging .dt-paging-button,
+.tabs.tg-tabs-content-wrapp .dt-paging nav button.dt-paging-button.current{
+    color: #282626 !important;
+    background: #f2f2f2;
+}
+
+.my-account-dashboard .dt-container .dt-paging .dt-paging-button:not(.current):not(.next):not(.previous):not(.last):not(.first) {
+    color: white !important;
+    background: transparent;
+}
 .account__card .card {
     background: #252525 !important;
 }
 
+.tg {
+    background: #1E1E1E;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    border: 1px solid #353535;
+}
+
+.account__details__info, .account__details__profile {
+    display: inline-block;
+    color: white !important;
+}
+
+.account__card .card {
+    box-shadow: none !important;
+    border: 2px solid #606060 !important;
+    border-radius: 5px;
+}
+
+table.dataTable thead {
+    color: #f7943d;
+    background: black;
+}
+
+table.dataTable tbody {
+    color: white;
+    font-size: 15px;
+}
+
+.dashboardMonthInput {
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    border: 2px solid #606060 !important;
+    padding: 20px;
+    width: 88.5%;
+    margin: 30px auto 45px auto;
+    border-radius: 5px;
+    appearance: none; /* Remove browser-specific styling */
+    -webkit-appearance: none; /* For Safari */
+    background: #252525;
+}
+
+#clientNameInput,
+#transportNameInput,
+select#modeDeReg,
+#bordereauInput,
+#dueDate,
+#bdaymonth,
+#referencetInput,
+#points,
+#agenceInput{
+    color: #6c757d;
+    border: 3px solid #f1f1f1;
+    text-align: left;
+    display: block;
+    width: 100%;
+    height: 60px;
+    font-size: 19px;
+    padding: 10px;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+}
+
+.tg-account .account-banner .inner-banner .nav-area ul li a {
+    background: #252525;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 5px 5px 0px 0px;
+    font-size: 16px;
+    padding: 10px 11px;
+    min-width: 120px;
+    display: block;
+    transition: .4s;
+    text-align: center;
+    border: 2px solid #606060 !important;
+    border-bottom: none !important;
+}
+
+.tg-tabs-content-wrapp {
+    width: 100%;
+    float: left;
+    background: #252525;
+    padding: 40px 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    border: 2px solid #606060 !important;
+    border-radius: 5px;
+}
+
+div.dt-container .dt-search input {
+    background: white;
+    border: 1px solid lightgrey !important;
+}
+
+div.dt-buttons>.dt-button {
+    background: white !important;
+    color: black !important;
+    outline: none !important;
+    border: none !important;
+    font-size: 17px !important;
+}
+
+
+.dt-search label {
+    color: white;
+}
 
 .label-minute, 
 .label-hour, 

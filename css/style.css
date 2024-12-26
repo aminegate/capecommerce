@@ -47,9 +47,105 @@ option {
 }
 
 
+
+
 /*****************************************************************************
 ******************************* General css **********************************
 *****************************************************************************/
+
+span.famille-shop-name {
+    display: block;
+    width: 250px;
+    margin: 0px auto;
+}
+
+span.famille-shop-name img {
+    width: 100%;
+}
+
+.progress-wrap.active-progress {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.progress-wrap svg.progress-circle path {
+    stroke: rgba(235, 186, 47, 1);
+    stroke-width: 6;
+    box-sizing: border-box;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+.progress-wrap svg path {
+    fill: none;
+}
+
+.progress-wrap::before {
+    position: absolute;
+    content: '\f062';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    text-align: center;
+    line-height: 46px;
+    font-size: 24px;
+    opacity: 0;
+    background: black;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    left: 2px;
+    top: 2px;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+    display: block;
+    z-index: 2;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+.progress-wrap::after {
+    position: absolute;
+    content: '\f062';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    text-align: center;
+    line-height: 46px;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.3);
+    left: 5px;
+    top: 4px;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+    display: block;
+    z-index: 1;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+.progress-wrap {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    height: 55px;
+    width: 55px;
+    cursor: pointer;
+    display: block;
+    border-radius: 50px;
+    box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 1);
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+    background-color: white;
+    border: 3px solid var(--primary-color);
+}
+ 
+.imgFileWrapper a:hover {
+    color: orange;
+}
 
 input::-webkit-date-and-time-value {
   text-align: left !important; 
@@ -59,7 +155,6 @@ input::-webkit-date-and-time-value {
 
 /* Style the month input field */
 input[type="month"] {
-    background-color: #fff !important;  /* Ensure the input field has a white background */
    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath d='M19 3h-2V1h-2v2H9V1H7v2H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.89 2 1.99 2H19c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM5 19V7h14v12H5z'/%3E%3C/svg%3E%0A") !important; /* Use Font Awesome calendar icon */
     background-repeat: no-repeat !important;
     background-position: right 10px center !important;  /* Position icon on the right side */
@@ -99,6 +194,7 @@ div.dt-container .dt-search input {
     padding: 5px 10px !important;
     background-color: white !important;
     color: black !important;
+    border: 1px solid #e4d8d8 !important;
 }
 
 table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, table.dataTable td.dt-type-numeric, table.dataTable td.dt-type-date {
@@ -131,9 +227,8 @@ table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, table.dataT
 
 
 .sendInfoToTable {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    border: 1px solid #353535;
-    background: #1E1E1E;
+    border: 1px solid #e9e2e2;
+    background: #f5f5f5;
     padding: 25px;
     margin-bottom: 45px;
 }
@@ -307,7 +402,7 @@ select#modeDeReg,
     font-size: 19px;
     padding: 10px;
     border-radius: 5px;
-    background: white;
+    background: #f5f5f5;
     cursor: pointer;
 }
 
@@ -423,8 +518,8 @@ div.dt-buttons>.dt-button:hover:not(.disabled), div.dt-buttons>div.dt-button-spl
 }
 
 div.dt-buttons>.dt-button {
-    background: white !important;
-    color: black !important;
+    background: #f5f5f5 !important;
+    color: #636363 !important;
     outline: none !important;
     border: none !important;
     font-size: 17px !important;
@@ -557,12 +652,12 @@ button.operationPrint{
 
 
 table.dataTable thead {
-    color: #f7943d;
-    background: black;
+    color: grey;
+    background: #e5e5e5;
 }
 
 table.dataTable tbody {
-    color: white;
+    color: #7b7b7b;
     font-size: 15px;
 }
                                                                    
@@ -574,13 +669,13 @@ table.dataTable tbody {
     margin-top: 25px;
 }
 
-.my-account-dashboard .dt-container .dt-paging .dt-paging-button {
-    color: black !important;
-    background: white;
+.my-account-dashboard .dt-container .dt-paging .dt-paging-button,
+.tabs.tg-tabs-content-wrapp .dt-paging nav button.dt-paging-button.current{
+    color: #282626 !important;
+    background: #f2f2f2;
 }
-
 .my-account-dashboard .dt-container .dt-paging .dt-paging-button:not(.current):not(.next):not(.previous):not(.last):not(.first) {
-    color: white !important;
+    color: black !important;
     background: transparent;
 }
 
@@ -601,12 +696,12 @@ table.dataTable tbody {
 
 .my-account-dashboard .dt-container .dt-paging .dt-paging-button:hover {
     color: black !important;
-    background: white;
+    background: #f2f2f2;
+    border: none;
 }
 
 .tabs.tg-tabs-content-wrapp .dt-paging nav button.dt-paging-button.current{
-    color: black !important;
-    background: white !important;
+   
     border: none !important;
     outline: none !important;
 }
@@ -625,11 +720,11 @@ table.dataTable tbody {
 }
 
 .dt-search label {
-    color: white;
+    color: black;
 }
 
 div.dt-container .dt-search input {
-    background: white;
+    background: #f5f5f5 !important;
     border: none;
     padding: 5px 10px;
     outline: none;
@@ -646,20 +741,20 @@ input.accountDashboardSubmit {
     outline: none;
     padding: 10px 35px;
     border-radius: 5px;
-    background: white;
+    background: #f0f0f0;
     color: black;
 }
 
 .dashboardMonthInput {
     text-align: center;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
-    border: 2px solid #606060 !important;
+    border: 2px solid #ececec !important;
     padding: 20px;
     width: 88.5%;
     margin: 30px auto 45px auto;
     border-radius: 5px;
     appearance: none; /* Remove browser-specific styling */
     -webkit-appearance: none; /* For Safari */
+    background: white;
 }
 
 .card_body_icon i {
@@ -702,9 +797,11 @@ input#monthInput {
     border-bottom: none;
 }
 
+
+
 .account__card .card {
     box-shadow: none !important;
-    border: 2px solid #606060 !important;
+    border: 2px solid #ececec !important;
     border-radius: 5px;
 }
 
@@ -729,6 +826,10 @@ h3.user-job {
     text-transform: capitalize;
 }
 
+.account__card {
+    color: #3b3b3b;
+}
+
 
 
 h1.user-name {
@@ -737,7 +838,7 @@ h1.user-name {
 
 .account__details__info, .account__details__profile {
     display: inline-block;
-    color: white;
+    color: #3b3b3b;
 }
 
 .account__details {
@@ -752,11 +853,11 @@ h1.user-name {
 }
 
 .tg {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    border: 1px solid #353535;
-    background: #1E1E1E;
+    border: 1px solid #f2e3e3;
     padding: 25px;
     width: 100%;
+    background: whitesmoke;
+    margin: 0px 10px;
 }
 
 .tg-account .account-banner {
@@ -792,8 +893,8 @@ h1.user-name {
 }
 
 .tg-account .account-banner .inner-banner .nav-area ul li a {
-    background: #252525;
-    color: #fff;
+    background: #e5e5e5;
+    color: #515151;
     font-weight: 500;
     border-radius: 5px 5px 0px 0px;
     font-size: 16px;
@@ -802,7 +903,7 @@ h1.user-name {
     display: block;
     transition: .4s;
     text-align: center;
-    border: 2px solid #606060 !important;
+    border: 2px solid #d1d1d1 !important;
     border-bottom: none !important;
 }
 
@@ -816,15 +917,15 @@ h1.user-name {
     background: #fff;
 }
 
+
+
 .tg-tabs-content-wrapp {
     width: 100%;
     float: left;
-    background: #252525;
-        padding: 40px 20px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
-    border: 2px solid #606060 !important;
+    padding: 40px 20px;
+    border: 2px solid #ececec !important;
     border-radius: 5px;
-
+    background: white;
 }
 
 div#my-orders-table_length {
@@ -4122,7 +4223,7 @@ a.mobile-menu__contacts .phone__body span {
 }
     
         .dashboardMonthInput {
-    width: 100%;
+    width: 100% !important;
 }
     
 input#monthInput {
@@ -4353,7 +4454,7 @@ input#monthInput {
 }
     
         .dashboardMonthInput {
-    width: 100%;
+    width: 100% !important;
 }
     
     input#monthInput {
@@ -4616,7 +4717,7 @@ input#monthInput {
     }
     
     .dashboardMonthInput {
-    width: 100%;
+    width: 100% !important;
 }
     
         table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {

@@ -1,6 +1,77 @@
 $(document).ready(function () {
-    
-    
+        
+$(function() {
+  function initializeScrollProgress() {
+    // Insert HTML dynamically
+    $('body').prepend(`
+      <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" 
+                style="transition: stroke-dashoffset 10ms linear; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 248.567px;">
+          </path>
+        </svg>
+      </div>
+    `);
+
+    var $progressWrap = $('.progress-wrap');
+    var $progressPath = $('.progress-wrap path');
+
+    if ($progressPath.length === 0) {
+      console.warn('SVG path not found');
+      return;
+    }
+
+    var pathLength = $progressPath.get(0).getTotalLength();
+
+    // Initial setup of progress path
+    $progressPath.css({
+      'transition': 'none',
+      'stroke-dasharray': pathLength + ' ' + pathLength,
+      'stroke-dashoffset': pathLength
+    });
+    $progressPath.get(0).getBoundingClientRect();
+
+    // Apply transition
+    $progressPath.css({
+      'transition': 'stroke-dashoffset 10ms linear'
+    });
+
+    // Function to update progress based on scroll
+    function updateProgress() {
+      var scroll = $(window).scrollTop();
+      var height = $(document).height() - $(window).height();
+      var progress = pathLength - (scroll * pathLength / height);
+      $progressPath.css('stroke-dashoffset', progress);
+    }
+
+    // Initial progress update
+    updateProgress();
+
+    // Bind scroll event to update progress and handle progress wrap visibility
+    $(window).on('scroll', function() {
+      updateProgress();
+      if ($(this).scrollTop() > 800) {
+        $progressWrap.addClass('active-progress').fadeIn();
+      } else {
+        $progressWrap.removeClass('active-progress').fadeOut();
+      }
+    });
+
+    // Smooth scroll to top on progress wrap click
+    $progressWrap.on('click', function(event) {
+      event.preventDefault();
+      $('html, body').animate({scrollTop: 0}, 550);
+      return false;
+    });
+
+    // Hide the progress-wrap by default
+    $progressWrap.hide();
+  }
+
+  // Call the function to initialize the scroll progress
+  initializeScrollProgress();
+});
+  
 
     
 (function() {
@@ -843,7 +914,7 @@ $('#myTab a').on('click', function (e) {
         });
     })(jQuery);
 
-   (function () {
+(function () {
     const pathname = window.location.pathname;
 
     // Define the expected subcategory pages
@@ -867,17 +938,19 @@ $('#myTab a').on('click', function (e) {
 
     // Subcategory page logic
     if (subcategoryPages.some(page => pathname.endsWith(page))) {
-        // Modified event to prevent propagation and store the alt text correctly
+        // Modified event to prevent propagation and store the image src correctly
         $('.subcategory-item img, .block-brands__item-link img, .capramCartesImg').on('click', function (event) {
             event.preventDefault();
-            const altText = $(this).attr('alt');
-            console.log('Alt text:', altText);
+            let imgSrc = $(this).attr('src');
+            // Remove ../ to ensure proper image path
+            imgSrc = imgSrc.replace(/^(\.\.\/)+/, '');
+            console.log('Image source:', imgSrc);
 
-            if (altText) {
-                localStorage.setItem('shopName', altText);
+            if (imgSrc) {
+                localStorage.setItem('selectedImage', imgSrc);
                 window.location.href = 'boutique.html';
             } else {
-                console.error('Alt text is undefined.');
+                console.error('Image source is undefined.');
             }
         });
     }
@@ -886,14 +959,16 @@ $('#myTab a').on('click', function (e) {
     $('.subcategoryImg').on('click', function (event) {
         event.stopPropagation(); // Prevent the click from propagating to other handlers
 
-        const altText = $(this).find('img').attr('alt'); // Get alt attribute from nested <img>
-        if (altText) {
-            $('.famille-shop-name').text(altText); // Update the span with the alt text
-            localStorage.setItem('shopName', altText); // Optionally, store this value as well
-            // Call the function to highlight the matching filter item based on alt text
-            highlightMatchingFilterItem(altText);
+        let imgSrc = $(this).find('img').attr('src'); // Get src attribute from nested <img>
+        // Remove ../ to ensure proper image path
+        imgSrc = imgSrc.replace(/^(\.\.\/)+/, '');
+        if (imgSrc) {
+            $('.famille-shop-name').html(`<img src="${imgSrc}" alt="Selected Image">`); // Update the span with the image
+            localStorage.setItem('selectedImage', imgSrc); // Optionally, store this value as well
+            // Call the function to highlight the matching filter item based on the image src
+            highlightMatchingFilterItem(imgSrc);
         } else {
-            console.error('No alt text found for the image in subcategoryImg.');
+            console.error('No image source found for the image in subcategoryImg.');
         }
     });
 
@@ -901,26 +976,28 @@ $('#myTab a').on('click', function (e) {
     $('.filter-list__item img').on('click', function () {
         const $filterItem = $(this).closest('.filter-list__item');
         const $radioButton = $filterItem.find('input[type="radio"]');
-        const newShopName = $radioButton.val();
+        let newImageSrc = $(this).attr('src');
+        // Remove ../ to ensure proper image path
+        newImageSrc = newImageSrc.replace(/^(\.\.\/)+/, '');
 
-        if (newShopName) {
-            localStorage.setItem('shopName', newShopName);
+        if (newImageSrc) {
+            localStorage.setItem('selectedImage', newImageSrc);
 
             if (pathname.endsWith(boutiquePage)) {
-                $('.famille-shop-name').text(`${newShopName} `);
+                $('.famille-shop-name').html(`<img src="${newImageSrc}" alt="Selected Image">`);
             }
 
             highlightSelected.call(this);
         }
     });
 
-    // Logic for boutique page to initially highlight the stored shop name
+    // Logic for boutique page to initially highlight the stored image
     if (pathname.endsWith(boutiquePage)) {
-        const shopName = localStorage.getItem('shopName');
-        if (shopName) {
-            $('.famille-shop-name').text(`${shopName} `);
+        let selectedImage = localStorage.getItem('selectedImage');
+        if (selectedImage) {
+            $('.famille-shop-name').html(`<img src="${selectedImage}" alt="Selected Image">`);
 
-            $(`input[type="radio"][value="${shopName}"]`).closest('.filter-list__item').css({
+            $(`img[src="${selectedImage}"]`).closest('.filter-list__item').css({
                 'border': '4px solid orange',
                 'border-radius': '6px'
             })[0].scrollIntoView({
@@ -928,7 +1005,7 @@ $('#myTab a').on('click', function (e) {
                 block: 'center'
             });
         } else {
-            console.warn('No shop name found in localStorage.');
+            console.warn('No selected image found in localStorage.');
         }
     }
 
@@ -938,11 +1015,11 @@ $('#myTab a').on('click', function (e) {
         highlightSelected.call($filterItem.find('img'));
     });
 
-    // Function to highlight the filter item that matches the subcategory img's alt text
-    function highlightMatchingFilterItem(altText) {
-        // Look for the filter item with an image whose alt text matches the subcategory image's alt text
+    // Function to highlight the filter item that matches the subcategory img's src
+    function highlightMatchingFilterItem(imgSrc) {
+        // Look for the filter item with an image whose src matches the subcategory image's src
         const $matchingFilterItem = $('.filter-list__item img').filter(function () {
-            return $(this).attr('alt') === altText;
+            return $(this).attr('src') === imgSrc;
         }).closest('.filter-list__item');
 
         if ($matchingFilterItem.length) {
