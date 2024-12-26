@@ -53,6 +53,7 @@ option {
 
 input::-webkit-date-and-time-value {
   text-align: left !important; 
+    margin-top: -15px !important;
 }
 
 
