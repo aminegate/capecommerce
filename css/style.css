@@ -681,6 +681,7 @@ input#monthInput {
     background-size: 20px 20px; /* Adjust icon size */
     background-position: right 10px center; /* Position the icon correctly */
     background-repeat: no-repeat; /* Ensure the icon doesn't repeat */
+    text-align: left !important;
 }
 
 
