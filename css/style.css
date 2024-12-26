@@ -51,6 +51,11 @@ option {
 ******************************* General css **********************************
 *****************************************************************************/
 
+input::-webkit-date-and-time-value {
+  text-align: left !important; 
+}
+
+
 /* Style the month input field */
 input[type="month"] {
     background-color: #fff !important;  /* Ensure the input field has a white background */
