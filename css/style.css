@@ -53,13 +53,14 @@ option {
 
 input[type="month"] {
     background-color: #fff !important;  /* Ensure the input field has a white background */
-    background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 24 24%22 fill=%22none%22%3E%3Cpath d=%22M19 3H5V1H3v2H1v18h2v-2h16v2h2V5h-2V3h-2V1h-2v2zM17 19H7v-4h10v4zM17 9H7v6h10V9z%22/%3E%3C/svg%3E')!important;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 24 24%22 fill=%22%23000000%22%3E%3Cpath d=%22M19 3H5V1H3v2H1v18h2v-2h16v2h2V5h-2V3h-2V1h-2v2zM17 19H7v-4h10v4zM17 9H7v6h10V9z%22/%3E%3C/svg%3E')!important;
     background-repeat: no-repeat !important;
     background-position: right 10px center !important; /* Position icon on the right side */
-    padding-right: 30px !important;  /* Add padding for the icon */
     -webkit-appearance: none !important; /* Remove iOS default appearance */
     appearance: none !important; /* Remove Android default appearance */
 }
+
+
 
 /* Optional: Remove the default input arrow on iOS */
 input[type="month"]::-webkit-outer-spin-button,
