@@ -51,6 +51,11 @@ option {
 ******************************* General css **********************************
 *****************************************************************************/
 
+.input__datalist {
+    position: relative;
+    height: 40px;
+    margin-bottom: 40px;
+}
 
 
 th.th-width, td.td-width {
@@ -274,6 +279,7 @@ select#modeDeReg,
     padding: 10px;
     border-radius: 5px;
     background: white;
+    cursor: pointer;
 }
 
 .modeWrapper,
@@ -649,8 +655,6 @@ input#monthInput {
     padding: 15px;
     background: whitesmoke;
     color: black;
-    -webkit-appearance: none; /* For Safari */
-    appearance: none; /* Remove default styling */
     background-size: 20px 20px; /* Adjust icon size */
     background-position: right 10px center; /* Position the icon correctly */
     background-repeat: no-repeat; /* Ensure the icon doesn't repeat */
@@ -2172,7 +2176,11 @@ input#seacrh-right-two {
     padding: 5px;
     max-height: 10rem;
     overflow-y: auto;
-    top: 44%;
+    top: 90%;
+}
+
+.search-wrapper input {
+    cursor: pointer;
 }
 
 .search-wrapper option {
@@ -3152,11 +3160,6 @@ img.capramCartesImg:hover {
     transition: .3s, background-size .3s .3s, background-color .3s, transform .3s, -webkit-transform .3s;
 }
 
-.fae:hover {
-
-    background-color: #42769b !important;
-    /* White background on hover */
-}
 
 
 .capramCartes h1 .decor-1 {
@@ -3170,189 +3173,6 @@ img.capramCartesImg:hover {
     background-clip: padding-box;
 }
 
-.hardex:hover {
-
-    background-color: #e01e26 !important;
-    /* White background on hover */
-}
-
-.continental:hover {
-
-    background-color: #f6931e !important;
-    /* White background on hover */
-}
-
-.misfilter:hover {
-
-    background-color: #eb662e !important;
-    /* White background on hover */
-}
-
-.dolz:hover {
-
-    background-color: #271d51 !important;
-    /* White background on hover */
-}
-
-.formpart:hover {
-
-    background-color: #b21f28 !important;
-    /* White background on hover */
-}
-
-.despa:hover {
-
-    background-color: #21201e !important;
-    /* White background on hover */
-}
-
-.darco:hover {
-
-    background-color: #0074bd !important;
-    /* White background on hover */
-}
-
-.amadini:hover {
-
-    background-color: #007aa1 !important;
-    /* White background on hover */
-}
-
-.diesel:hover {
-
-    background-color: #345dac !important;
-    /* White background on hover */
-}
-
-.hitachi:hover {
-
-    background-color: #d22d29 !important;
-    /* White background on hover */
-}
-
-.professional:hover {
-
-    background-color: #2b3384 !important;
-    /* White background on hover */
-}
-
-.ate:hover {
-
-    background-color: #175da9 !important;
-    /* White background on hover */
-}
-
-.nwp:hover {
-
-    background-color: #13140f !important;
-    /* White background on hover */
-}
-
-.alco:hover {
-
-    background-color: #e51c15 !important;
-}
-
-.alcoTwo:hover {
-
-    background-color: #e10600 !important;
-}
-
-.capfilter:hover {
-
-    background-color: #028632 !important;
-}
-
-.fristom:hover {
-
-    background-color: #015fa5 !important;
-}
-
-.capfilter:hover {
-
-    background-color: #299545 !important;
-}
-
-.misfilter:hover {
-
-    background-color: #f56624 !important;
-}
-
-.onfil:hover {
-
-    background-color: #00944c !important;
-}
-
-.prof-additif:hover {
-
-    background-color: #111111 !important;
-}
-
-.profesional:hover {
-
-    background-color: #1b1464 !important;
-}
-
-.skf:hover {
-
-    background-color: #044f7c !important;
-}
-
-.lpr:hover {
-
-    background-color: #078351 !important;
-}
-
-.a-n:hover {
-
-    background-color: #23386d !important;
-}
-
-.diesel:hover {
-
-    background-color: #27428f !important;
-}
-
-.gebe:hover {
-
-    background-color: #edcc47 !important;
-}
-
-.meyle:hover {
-
-    background-color: #263f78 !important;
-}
-
-.haug:hover {
-
-    background-color: #2556a5 !important;
-}
-
-.threegrHover:hover {
-
-    background-color: #132344 !important;
-}
-
-.fae,
-.hardex,
-.continental,
-.misfilter,
-.dolz,
-.formpart,
-.despa,
-.darco,
-.amadini,
-.diesel,
-.hitachi,
-.nwp,
-.professional,
-.ate,
-.alco,
-.alcoTwo,
-.capfilter {
-    --c: white !important;
-    /* the border color */
-}
 
 
 .tab {
@@ -4828,7 +4648,7 @@ input#monthInput {
 }
     
     .card_body_numbers span {
-    font-size: 45px;
+    font-size: 40px;
 }
     
     h3.user-job {

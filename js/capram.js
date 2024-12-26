@@ -1,5 +1,74 @@
 $(document).ready(function () {
     
+    
+
+    
+(function() {
+    var colorMap = {
+          
+        "002200":   "#015fa5", //fristom
+        "LOC009":   "#f56624", //misfilter
+        "000022":   "#00944c", //onfil
+        "44118824": "#e20500", //alco
+        "44118834": "#299545", //capfilter
+        "000044":   "#edcc47", //gebe
+        "000034":   "#175da9", //ate
+        "005400":   "#111111", //prof.additif
+        "44118822": "#1b1464", //professional
+        "SKF":      "#044f7c", //SKF
+        "000011":      "#281e52", //dolz
+        "000030":      "#45779c", //fae
+        "LOC006":      "#e21d27", //hardex
+        "000010":      "#078351", //lpr
+        "000018":      "#b21f28", //formpart
+        "002900":      "#23386d", //a-n
+        "000040":      "#27458e", //diesel
+        "000109":      "#263f78", //meyle
+        "000080":      "#2556a5", //haug
+        "000039":      "#122244" //3gr
+        
+    };
+
+    $('.subcategoryImg').each(function() {
+        var imgElement = $(this).find('img');
+        var imgSrc = imgElement.attr('src');
+
+        console.log("Image src: " + imgSrc);
+
+        if (imgSrc) {
+            var imgName = imgSrc.split('/').pop().split('.')[0];
+            console.log("Extracted image name: " + imgName);
+
+            if (colorMap[imgName]) {
+                var color = colorMap[imgName];
+
+                // Add the color as a class to the img element
+                imgElement.addClass('image-background-' + imgName);
+
+                console.log("Applied background color: " + color);
+
+                // Apply hover effect directly to the image
+                imgElement.hover(
+                    function() {
+                        // On hover, change the background color of the image
+                        $(this).css('background-color', color);
+                        console.log("Hover - Applied background color: " + color);
+                    },
+                    function() {
+                        // On hover out, revert to the original background color of the image
+                        $(this).css('background-color', '');
+                        console.log("Hover out - Reset background color");
+                    }
+                );
+            } else {
+                console.log("No matching color found for image: " + imgName);
+            }
+        } else {
+            console.log("No src attribute found for image.");
+        }
+    });
+})(jQuery);
+ 
 // get month
 
 (function () {
@@ -493,91 +562,138 @@ $('#myTab a').on('click', function (e) {
 
     /*************************************************/
     // datalist search input
-    (function () {
-        var inputs = ['#CL_Car', '#CL_Car1', '#clientNameInput', '#transportNameInput', '#agenceInput'];
-        var datalistes = ['#carte', '#carte1', '#clientNameList', '#transportNameList', '#agenceList'];
+(function ($) {
+    // Inject CSS dynamically
+    $('<style>')
+        .prop('type', 'text/css')
+        .html(`
+            input[list] {
+                    position: relative;
+                }
+                .toggle-icon {
+                    position: absolute;
+                    right: 10px;
+                    bottom: 30%;
+                    color: black;
+                    pointer-events: none;
+                    transition: transform 0.2s ease;
+                }
 
-        inputs.forEach(function (inputSelector, index) {
-            var input = $(inputSelector);
-            var dataliste = $(datalistes[index]);
+                .form-section-two .toggle-icon {
+                    bottom: 25%;
+                }
+        `)
+        .appendTo('head');
 
-            input.on('focus', function () {
-                dataliste.css('display', 'block'); // Show the datalist when the input is focused
+    // Append toggle icons dynamically to each input[list]
+    $('input[list]').each(function () {
+        $(this).after('<i class="fa fa-chevron-down toggle-icon"></i>');
+    });
+
+    var inputs = ['#CL_Car', '#CL_Car1', '#clientNameInput', '#transportNameInput', '#agenceInput'];
+    var datalistes = ['#carte', '#carte1', '#clientNameList', '#transportNameList', '#agenceList'];
+
+    inputs.forEach(function (inputSelector, index) {
+        var input = $(inputSelector);
+        var dataliste = $(datalistes[index]);
+
+        input.on('mousedown', function (e) {
+            e.preventDefault(); // Prevent default action to avoid focus issues
+            if (dataliste.css('display') === 'none') {
+                dataliste.css('display', 'block'); // Show the datalist when the input is clicked
                 input.css('border-radius', '5px 5px 0 0'); // Change border radius
-            });
-
-            // Handle option click
-            dataliste.find('option').on('click', function () {
-                input.val($(this).val()); // Set the input value to the clicked option
-                dataliste.css('display', 'none'); // Hide the options after selection
+                input.next('.toggle-icon')
+                    .removeClass('fa-chevron-down')
+                    .addClass('fa-chevron-up'); // Update toggle icon
+            } else {
+                dataliste.css('display', 'none'); // Hide the datalist if already open
                 input.css('border-radius', '5px'); // Reset border radius
-            });
+                input.next('.toggle-icon')
+                    .removeClass('fa-chevron-up')
+                    .addClass('fa-chevron-down'); // Update toggle icon
+            }
+        });
 
-            input.on('input', function () {
-                var text = input.val().toUpperCase(); // Get the input value
-                var hasVisibleOptions = false; // Track if there are visible options
+        // Handle option click
+        dataliste.find('option').on('click', function () {
+            input.val($(this).val()); // Set the input value to the clicked option
+            dataliste.css('display', 'none'); // Hide the options after selection
+            input.css('border-radius', '5px'); // Reset border radius
+            input.next('.toggle-icon')
+                .removeClass('fa-chevron-up')
+                .addClass('fa-chevron-down'); // Update toggle icon
+        });
 
-                // Iterate through options and show/hide based on input
-                dataliste.find('option').each(function () {
-                    if ($(this).val().toUpperCase().indexOf(text) > -1) {
-                        $(this).css('display', 'block'); // Show matching option
-                        hasVisibleOptions = true; // At least one option is visible
-                    } else {
-                        $(this).css('display', 'none'); // Hide non-matching option
-                    }
-                });
+        input.on('input', function () {
+            var text = input.val().toUpperCase(); // Get the input value
+            var hasVisibleOptions = false; // Track if there are visible options
 
-                // Show or hide the dropdown based on visible options
-                if (hasVisibleOptions) {
-                    dataliste.css('display', 'block'); // Show dropdown if matches
+            // Iterate through options and show/hide based on input
+            dataliste.find('option').each(function () {
+                if ($(this).val().toUpperCase().indexOf(text) > -1) {
+                    $(this).css('display', 'block'); // Show matching option
+                    hasVisibleOptions = true; // At least one option is visible
                 } else {
-                    dataliste.css('display', 'none'); // Hide if no matches
+                    $(this).css('display', 'none'); // Hide non-matching option
                 }
             });
 
-            var currentFocus = -1; // Track the current focused option
-            input.on('keydown', function (e) {
-                var options = dataliste.find('option'); // Get all options in the datalist
+            // Show or hide the dropdown based on visible options
+            if (hasVisibleOptions) {
+                dataliste.css('display', 'block'); // Show dropdown if matches
+            } else {
+                dataliste.css('display', 'none'); // Hide if no matches
+            }
+        });
 
-                if (e.keyCode === 40) { // Down arrow
-                    currentFocus++;
-                    addActive(options); // Highlight the next option
-                } else if (e.keyCode === 38) { // Up arrow
-                    currentFocus--;
-                    addActive(options); // Highlight the previous option
-                } else if (e.keyCode === 13) { // Enter key
-                    e.preventDefault();
-                    if (currentFocus > -1) {
-                        $(options[currentFocus]).click(); // Simulate a click on the active option
-                    }
+        var currentFocus = -1; // Track the current focused option
+        input.on('keydown', function (e) {
+            var options = dataliste.find('option'); // Get all options in the datalist
+
+            if (e.keyCode === 40) { // Down arrow
+                currentFocus++;
+                addActive(options); // Highlight the next option
+            } else if (e.keyCode === 38) { // Up arrow
+                currentFocus--;
+                addActive(options); // Highlight the previous option
+            } else if (e.keyCode === 13) { // Enter key
+                e.preventDefault();
+                if (currentFocus > -1) {
+                    $(options[currentFocus]).click(); // Simulate a click on the active option
                 }
+            }
+        });
+
+        function addActive(x) {
+            if (!x) return false; // Exit if no options
+            removeActive(x); // Remove active class from all
+            if (currentFocus >= x.length) currentFocus = 0; // Wrap to first option
+            if (currentFocus < 0) currentFocus = (x.length - 1); // Wrap to last option
+            $(x[currentFocus]).addClass('active'); // Add active class to current option
+        }
+
+        function removeActive(x) {
+            $(x).removeClass('active'); // Remove active class from all options
+        }
+    });
+
+    // Close datalist when clicking outside
+    $(document).on('click', function (event) {
+        var target = $(event.target);
+        // Check if the click is outside the input and datalists
+        if (!target.closest(inputs.join(',')).length && !target.closest(datalistes.join(',')).length) {
+            $(datalistes.join(',')).css('display', 'none'); // Hide all datalists
+            inputs.forEach(function (inputSelector) {
+                var input = $(inputSelector);
+                input.css('border-radius', '5px'); // Reset border radius for all inputs
+                input.next('.toggle-icon')
+                    .removeClass('fa-chevron-up')
+                    .addClass('fa-chevron-down'); // Reset toggle icon
             });
+        }
+    });
+})(jQuery);
 
-            function addActive(x) {
-                if (!x) return false; // Exit if no options
-                removeActive(x); // Remove active class from all
-                if (currentFocus >= x.length) currentFocus = 0; // Wrap to first option
-                if (currentFocus < 0) currentFocus = (x.length - 1); // Wrap to last option
-                $(x[currentFocus]).addClass('active'); // Add active class to current option
-            }
-
-            function removeActive(x) {
-                $(x).removeClass('active'); // Remove active class from all options
-            }
-        });
-
-        // Close datalist when clicking outside
-        $(document).on('click', function (event) {
-            var target = $(event.target);
-            // Check if the click is outside the input and datalists
-            if (!target.closest(inputs.join(',')).length && !target.closest(datalistes.join(',')).length) {
-                $(datalistes.join(',')).css('display', 'none'); // Hide all datalists
-                inputs.forEach(function (inputSelector) {
-                    $(inputSelector).css('border-radius', '5px'); // Reset border radius for all inputs
-                });
-            }
-        });
-    })();
 
     // red icons
 

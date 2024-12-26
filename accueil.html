@@ -367,7 +367,9 @@
                             <span>Chercher par carte et article :</span>
                             <!---------------------->
                             <!-- carte datalist -->
+                            
                             <label for="cartes">Carte</label><br>
+                            <div class="input__datalist">
                             <input list="" required="" autocomplete="false" onchange="DataList('carte',this.value,'CL_Car');GetArticle(Frm.hiddenCL_Car.value)" id="CL_Car" class="form-control" placeholder="Sélectionnez une carte">
                             <datalist id="carte">
                                 <option data-value="" value="alco">alco</option>
@@ -377,11 +379,15 @@
                                 <option data-value="" value="fiamm">fiamm</option>
                                 <option data-value="" value="hitachi">hitachi</option>
                             </datalist>
+                            </div>
                             <!---------------------->
                             <!-- article datalist -->
+                            
                             <label for="articles">Article</label><br>
+                            <div class="input__datalist">
                             <input list="Article" required="" autocomplete="false" onchange="DataList('Article',this.value,'AR_Ref');" id="AR_Ref" class="form-control" placeholder="Sélectionnez un article"><br>
                             <datalist id="Article"></datalist>
+                            </div>
                             <!---------------------->
                             <button id="submit-left"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;Recherche</button>
                         </div>
@@ -391,6 +397,7 @@
                             <span>Chercher par carte et famille :</span>
                             <!-- carte datalist -->
                             <label for="carte1">Carte</label><br>
+                            <div class="input__datalist">
                             <input list="" required="" autocomplete="off" onchange="DataList('carte1',this.value,'CL_Car1');GetFamille(Frm1.hiddenCL_Car1.value)" id="CL_Car1" class="form-control" placeholder="Sélectionnez une carte">
                             <datalist id="carte1">
                                 <option data-value="" value="alco">alco</option>
@@ -398,11 +405,14 @@
                                 <option data-value="" value="">dana</option>
                                 <option data-value="" value="lpr">lpr</option>
                             </datalist>
+                             </div>
                             <!---------------------->
                             <!-- famille datalist -->
                             <label for="Famille">Famille</label><br>
+                            <div class="input__datalist">
                             <input list="" required="" autocomplete="false" onchange="DataList('Famille',this.value,'FA_CodeFamille');" id="FA_CodeFamille" class="form-control" placeholder="Sélectionnez une famille"><br>
                             <datalist id="Famille"></datalist>
+                             </div>
                             <!---------------------->
                             <button id="submit-right"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;Recherche</button>
                         </div>
