@@ -69,6 +69,11 @@ input[type="month"]::-webkit-inner-spin-button {
 }
 
 
+input[type="month"]::-webkit-calendar-picker-indicator {
+  display: none !important;
+}
+
+
 .input__datalist {
     position: relative;
     height: 40px;
