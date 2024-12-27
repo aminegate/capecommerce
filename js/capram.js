@@ -1,4 +1,23 @@
 $(document).ready(function () {
+    
+    (function () {
+    $('.associated').each(function (index) {
+        // Generate the dialog ID
+        var dialogIndex = index + 1; // Incremental index starts from 1
+        var dialogId = 'dialog-promo-page-' + dialogIndex;
+
+        // Set the data-dialog attribute and corresponding dialog ID
+        $(this).attr('data-dialog', dialogId);
+        var correspondingDialog = $(this).next('.dialog-wrapper');
+        correspondingDialog.attr('id', dialogId);
+
+        // Add click event to open the corresponding dialog
+        $(this).on('click', function () {
+            $('#' + dialogId).get(0).showModal();
+        });
+    });
+})();
+
         
 $(function() {
   function initializeScrollProgress() {

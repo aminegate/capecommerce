@@ -1753,11 +1753,11 @@ button.dialog-close {
     font-size: 27px;
 }
 
-div#showDialog i {
+div.associated i {
     font-size: 20px;
 }
 
-div#showDialog {
+div.associated {
     position: absolute;
     top: 1%;
     left: 2.5%;

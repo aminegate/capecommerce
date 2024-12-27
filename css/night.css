@@ -627,7 +627,7 @@ a.addresses-list__item.addresses-list__item--new,
 dialog.dialog-wrapper {
     background: #3e3e3e;
     border-radius: 10px;
-    border: 3px solid;
+    border: 3px solid #c3c3c3;
 }
 
 .dialog-header h4,

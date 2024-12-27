@@ -3,26 +3,23 @@
 
 <head>
     <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="format-detection" content="telephone=no">
     <title>Capram - Accueil</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <!-- fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- css -->
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="vendor/owl-carousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="vendor/photoswipe/photoswipe.css">
-    <link rel="stylesheet" href="vendor/photoswipe/default-skin/default-skin.css">
     <link rel="stylesheet" href="vendor/select2/css/select2.min.css">
     <link rel="stylesheet" href="css/style.css" class="dayMode">
     <link rel="stylesheet" href="css/night.css" class="nightMode">
     <link rel="stylesheet" href="css/style.header-classic-variant-one.css" media="(min-width: 1200px)">
     <link rel="stylesheet" href="css/style.mobile-header-variant-one.css" media="(max-width: 1199px)">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
-    <!-- font - fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">  
 </head>
 
 <body>
@@ -33,16 +30,15 @@
             <div class="mobile-header">
                 <div class="container">
                     <div class="mobile-header__body">
-
+                       <!-- logo / Start -->
                         <a class="mobile-header__logo" href="accueil.html">
-                            <!-- mobile-logo -->
                             <div class="logo__image">
-                                <!-- logo -->
+                                
                                 <img src="images/logo_white.png" alt="">
-                                <!-- logo / end -->
                             </div>
-                            <!-- mobile-logo / end -->
                         </a>
+                        <!-- logo / end -->
+                        <!--======= Header Search Bar / Start =======-->
                         <div class="mobile-header__search mobile-search">
                             <form class="mobile-search__body">
                                 <input type="text" class="mobile-search__input" placeholder="Entrez un mot-clé ou un numéro de pièce">
@@ -63,11 +59,13 @@
                                 <div class="mobile-search__field"></div>
                             </form>
                         </div>
-                        
+                         <!--======= Header Search Bar / End =======-->
+                        <!--======= mobile header icons / Start =======-->
                         <div class="mobile-header__indicators">
                             <div class="mobile-indicator mobile-indicator--search d-md-none">
                                 <button type="button" class="mobile-indicator__button">
-                                    <span class="mobile-indicator__icon"><svg width="20" height="20">
+                                    <span class="mobile-indicator__icon">
+                                        <svg width="20" height="20">
                                             <path d="M19.2,17.8c0,0-0.2,0.5-0.5,0.8c-0.4,0.4-0.9,0.6-0.9,0.6s-0.9,0.7-2.8-1.6c-1.1-1.4-2.2-2.8-3.1-3.9C10.9,14.5,9.5,15,8,15
 	c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7c0,1.5-0.5,2.9-1.3,4c1.1,0.8,2.5,2,4,3.1C20,16.8,19.2,17.8,19.2,17.8z M8,3C5.2,3,3,5.2,3,8
 	c0,2.8,2.2,5,5,5c2.8,0,5-2.2,5-5C13,5.2,10.8,3,8,3z"></path>
@@ -75,9 +73,7 @@
                                     </span>
                                 </button>
                             </div>
-            
                         </div>
-                        
                         <button class="mobile-header__menu-button" type="button">
                             <svg width="18px" height="14px">
                                 <path d="M-0,8L-0,6L18,6L18,8L-0,8ZM-0,-0L18,-0L18,2L-0,2L-0,-0ZM14,14L-0,14L-0,12L14,12L14,14Z" />
@@ -118,6 +114,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="header__navbar">
                     <div class="header__navbar-menu">
                         <div class="main-menu">
@@ -329,26 +326,26 @@
                     <div class="block-slideshow__carousel">
                         <div class="owl-carousel slideShowCarousel">
                             <a class="block-slideshow__item" href="">
-                              
-                
-                                    <video src="video/vid.mp4" type="video/mp4" style="width: 100%; height: 100%; object-fit: cover;" autoplay playsinline  muted>
-                                        <source src="video/vid.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                             
+
+
+                                <video src="video/vid.mp4" type="video/mp4" style="width: 100%; height: 100%; object-fit: cover;" autoplay playsinline muted>
+                                    <source src="video/vid.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+
                                 <span class="block-slideshow__item-button">
                                     Achetez maintenant
                                 </span>
                             </a>
 
                             <a class="block-slideshow__item" href="">
-                               <img src="images/slides/slide-1.jpg" alt="">
+                                <img src="images/slides/slide-1.jpg" alt="">
                                 <span class="block-slideshow__item-button">
                                     Achetez maintenant
                                 </span>
                             </a>
                             <a class="block-slideshow__item" href="">
-                         <img src="images/slides/slide-2.jpg" alt="">
+                                <img src="images/slides/slide-2.jpg" alt="">
                                 <span class="block-slideshow__item-button">
                                     Achetez maintenant
                                 </span>
@@ -367,26 +364,26 @@
                             <span>Chercher par carte et article :</span>
                             <!---------------------->
                             <!-- carte datalist -->
-                            
+
                             <label for="cartes">Carte</label><br>
                             <div class="input__datalist">
-                            <input list="" required="" autocomplete="false" onchange="DataList('carte',this.value,'CL_Car');GetArticle(Frm.hiddenCL_Car.value)" id="CL_Car" class="form-control" placeholder="Sélectionnez une carte">
-                            <datalist id="carte">
-                                <option data-value="" value="alco">alco</option>
-                                <option data-value="" value="hepu">hepu</option>
-                                <option data-value="" value="dana">dana</option>
-                                <option data-value="" value="lpr">lpr</option>
-                                <option data-value="" value="fiamm">fiamm</option>
-                                <option data-value="" value="hitachi">hitachi</option>
-                            </datalist>
+                                <input list="" required="" autocomplete="false" onchange="DataList('carte',this.value,'CL_Car');GetArticle(Frm.hiddenCL_Car.value)" id="CL_Car" class="form-control" placeholder="Sélectionnez une carte">
+                                <datalist id="carte">
+                                    <option data-value="" value="alco">alco</option>
+                                    <option data-value="" value="hepu">hepu</option>
+                                    <option data-value="" value="dana">dana</option>
+                                    <option data-value="" value="lpr">lpr</option>
+                                    <option data-value="" value="fiamm">fiamm</option>
+                                    <option data-value="" value="hitachi">hitachi</option>
+                                </datalist>
                             </div>
                             <!---------------------->
                             <!-- article datalist -->
-                            
+
                             <label for="articles">Article</label><br>
                             <div class="input__datalist">
-                            <input list="Article" required="" autocomplete="false" onchange="DataList('Article',this.value,'AR_Ref');" id="AR_Ref" class="form-control" placeholder="Sélectionnez un article"><br>
-                            <datalist id="Article"></datalist>
+                                <input list="Article" required="" autocomplete="false" onchange="DataList('Article',this.value,'AR_Ref');" id="AR_Ref" class="form-control" placeholder="Sélectionnez un article"><br>
+                                <datalist id="Article"></datalist>
                             </div>
                             <!---------------------->
                             <button id="submit-left"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;Recherche</button>
@@ -398,21 +395,21 @@
                             <!-- carte datalist -->
                             <label for="carte1">Carte</label><br>
                             <div class="input__datalist">
-                            <input list="" required="" autocomplete="off" onchange="DataList('carte1',this.value,'CL_Car1');GetFamille(Frm1.hiddenCL_Car1.value)" id="CL_Car1" class="form-control" placeholder="Sélectionnez une carte">
-                            <datalist id="carte1">
-                                <option data-value="" value="alco">alco</option>
-                                <option data-value="" value="hepu">hepu</option>
-                                <option data-value="" value="">dana</option>
-                                <option data-value="" value="lpr">lpr</option>
-                            </datalist>
-                             </div>
+                                <input list="" required="" autocomplete="off" onchange="DataList('carte1',this.value,'CL_Car1');GetFamille(Frm1.hiddenCL_Car1.value)" id="CL_Car1" class="form-control" placeholder="Sélectionnez une carte">
+                                <datalist id="carte1">
+                                    <option data-value="" value="alco">alco</option>
+                                    <option data-value="" value="hepu">hepu</option>
+                                    <option data-value="" value="">dana</option>
+                                    <option data-value="" value="lpr">lpr</option>
+                                </datalist>
+                            </div>
                             <!---------------------->
                             <!-- famille datalist -->
                             <label for="Famille">Famille</label><br>
                             <div class="input__datalist">
-                            <input list="" required="" autocomplete="false" onchange="DataList('Famille',this.value,'FA_CodeFamille');" id="FA_CodeFamille" class="form-control" placeholder="Sélectionnez une famille"><br>
-                            <datalist id="Famille"></datalist>
-                             </div>
+                                <input list="" required="" autocomplete="false" onchange="DataList('Famille',this.value,'FA_CodeFamille');" id="FA_CodeFamille" class="form-control" placeholder="Sélectionnez une famille"><br>
+                                <datalist id="Famille"></datalist>
+                            </div>
                             <!---------------------->
                             <button id="submit-right"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;Recherche</button>
                         </div>
@@ -866,11 +863,11 @@
                     <div class="block-products-carousel__carousel">
 
 
-                       <div id="carousel-nouveautes" class="block-products-carousel owl-carousel">
+                        <div id="carousel-nouveautes" class="block-products-carousel owl-carousel">
                             <!-- product 1 -->
                             <div class="block-products-carousel__column">
-                              
-                                <div class="associated" id="showDialog" data-dialog="dialog-new-product-1"><i class="fa-solid fa-circle-nodes"></i></div>
+
+                                <div class="associated" data-dialog="dialog-new-product-1"><i class="fa-solid fa-circle-nodes"></i></div>
                                 <dialog id="dialog-new-product-1" class="dialog-wrapper">
                                     <div class="dialog-header">
                                         <h4>Produits associés</h4>
@@ -896,7 +893,7 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
-                                                                <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic >99-03</a></td>
+                                                                <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                 <td class="text-right"><span class="dialog-stock">70</span></td>
 
                                                             </tr>
@@ -941,7 +938,7 @@
                                             <div class="image image--type--product">
                                                 <a href="product-full.html" class="image__body">
                                                     <div class="stockNumber">70</div>
-                                <div class="remise">-30%</div>
+                                                    <div class="remise">-30%</div>
                                                     <img class="image__tag" src="images/products/product-1-245x245.png" alt="">
                                                 </a>
                                             </div>
@@ -995,8 +992,8 @@
                             </div>
                             <!-- product 2 -->
                             <div class="block-products-carousel__column">
-                             
-                                <div class="associated" id="showDialog" data-dialog="dialog-new-product-2"><i class="fa-solid fa-circle-nodes"></i></div>
+
+                                <div class="associated" data-dialog="dialog-new-product-2"><i class="fa-solid fa-circle-nodes"></i></div>
                                 <dialog id="dialog-new-product-2" class="dialog-wrapper">
                                     <div class="dialog-header">
                                         <h4>Produits associés</h4>
@@ -1022,7 +1019,7 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
-                                                                <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic >99-03</a></td>
+                                                                <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                 <td class="text-right"><span class="dialog-stock">70</span></td>
 
                                                             </tr>
@@ -1068,7 +1065,7 @@
                                             <div class="image image--type--product">
                                                 <a href="product-full.html" class="image__body">
                                                     <div class="stockNumber">70</div>
-                                <div class="remise">-30%</div>
+                                                    <div class="remise">-30%</div>
                                                     <img class="image__tag" src="images/products/product-2-245x245.png" alt="">
                                                 </a>
                                             </div>
@@ -1122,8 +1119,8 @@
                             </div>
                             <!-- product 3 -->
                             <div class="block-products-carousel__column">
-                            
-                                <div class="associated" id="showDialog" data-dialog="dialog-new-product-3"><i class="fa-solid fa-circle-nodes"></i></div>
+
+                                <div class="associated" data-dialog="dialog-new-product-3"><i class="fa-solid fa-circle-nodes"></i></div>
                                 <dialog id="dialog-new-product-3" class="dialog-wrapper">
                                     <div class="dialog-header">
                                         <h4>Produits associés</h4>
@@ -1148,7 +1145,7 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
-                                                                <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic >99-03</a></td>
+                                                                <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                 <td class="text-right"><span class="dialog-stock">70</span></td>
 
                                                             </tr>
@@ -1194,7 +1191,7 @@
                                             <div class="image image--type--product">
                                                 <a href="product-full.html" class="image__body">
                                                     <div class="stockNumber">70</div>
-                                <div class="remise">-30%</div>
+                                                    <div class="remise">-30%</div>
                                                     <img class="image__tag" src="images/products/product-3-245x245.png" alt="">
                                                 </a>
                                             </div>
@@ -1248,8 +1245,8 @@
                             </div>
                             <!-- product 4 -->
                             <div class="block-products-carousel__column">
-                              
-                                <div class="associated" id="showDialog" data-dialog="dialog-new-product-4"><i class="fa-solid fa-circle-nodes"></i></div>
+
+                                <div class="associated" data-dialog="dialog-new-product-4"><i class="fa-solid fa-circle-nodes"></i></div>
                                 <dialog id="dialog-new-product-4" class="dialog-wrapper">
                                     <div class="dialog-header">
                                         <h4>Produits associés</h4>
@@ -1275,7 +1272,7 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
-                                                                <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic >99-03</a></td>
+                                                                <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                 <td class="text-right"><span class="dialog-stock">70</span></td>
 
                                                             </tr>
@@ -1322,7 +1319,7 @@
                                             <div class="image image--type--product">
                                                 <a href="product-full.html" class="image__body">
                                                     <div class="stockNumber">70</div>
-                                <div class="remise">-30%</div>
+                                                    <div class="remise">-30%</div>
                                                     <img class="image__tag" src="images/products/product-4-245x245.png" alt="">
                                                 </a>
                                             </div>
@@ -1376,8 +1373,8 @@
                             </div>
                             <!-- product 5 -->
                             <div class="block-products-carousel__column">
-                         
-                                <div class="associated" id="showDialog" data-dialog="dialog-new-product-5"><i class="fa-solid fa-circle-nodes"></i></div>
+
+                                <div class="associated" data-dialog="dialog-new-product-5"><i class="fa-solid fa-circle-nodes"></i></div>
                                 <dialog id="dialog-new-product-5" class="dialog-wrapper">
                                     <div class="dialog-header">
                                         <h4>Produits associés</h4>
@@ -1402,7 +1399,7 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
-                                                                <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic >99-03</a></td>
+                                                                <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                 <td class="text-right"><span class="dialog-stock">70</span></td>
 
                                                             </tr>
@@ -1449,7 +1446,7 @@
                                             <div class="image image--type--product">
                                                 <a href="product-full.html" class="image__body">
                                                     <div class="stockNumber">70</div>
-                                <div class="remise">-30%</div>
+                                                    <div class="remise">-30%</div>
                                                     <img class="image__tag" src="images/products/product-5-245x245.png" alt="">
                                                 </a>
                                             </div>
@@ -1503,8 +1500,8 @@
                             </div>
                             <!-- product 6 -->
                             <div class="block-products-carousel__column">
-                             
-                                <div class="associated" id="showDialog" data-dialog="dialog-new-product-6"><i class="fa-solid fa-circle-nodes"></i></div>
+
+                                <div class="associated" data-dialog="dialog-new-product-6"><i class="fa-solid fa-circle-nodes"></i></div>
                                 <dialog id="dialog-new-product-6" class="dialog-wrapper">
                                     <div class="dialog-header">
                                         <h4>Produits associés</h4>
@@ -1530,7 +1527,7 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
-                                                                <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic >99-03</a></td>
+                                                                <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                 <td class="text-right"><span class="dialog-stock">70</span></td>
 
                                                             </tr>
@@ -1577,7 +1574,7 @@
                                             <div class="image image--type--product">
                                                 <a href="product-full.html" class="image__body">
                                                     <div class="stockNumber">70</div>
-                                <div class="remise">-30%</div>
+                                                    <div class="remise">-30%</div>
                                                     <img class="image__tag" src="images/products/product-6-245x245.png" alt="">
                                                 </a>
                                             </div>
@@ -1631,8 +1628,8 @@
                             </div>
                             <!-- product 7 -->
                             <div class="block-products-carousel__column">
-                            
-                                <div class="associated" id="showDialog" data-dialog="dialog-new-product-7"><i class="fa-solid fa-circle-nodes"></i></div>
+
+                                <div class="associated" data-dialog="dialog-new-product-7"><i class="fa-solid fa-circle-nodes"></i></div>
                                 <dialog id="dialog-new-product-7" class="dialog-wrapper">
                                     <div class="dialog-header">
                                         <h4>Produits associés</h4>
@@ -1658,7 +1655,7 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
-                                                                <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic >99-03</a></td>
+                                                                <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                 <td class="text-right"><span class="dialog-stock">70</span></td>
 
                                                             </tr>
@@ -1705,7 +1702,7 @@
                                             <div class="image image--type--product">
                                                 <a href="product-full.html" class="image__body">
                                                     <div class="stockNumber">70</div>
-                                <div class="remise">-30%</div>
+                                                    <div class="remise">-30%</div>
                                                     <img class="image__tag" src="images/products/product-7-245x245.png" alt="">
                                                 </a>
                                             </div>
@@ -1759,8 +1756,8 @@
                             </div>
                             <!-- product 8 -->
                             <div class="block-products-carousel__column">
-                            
-                                <div class="associated" id="showDialog" data-dialog="dialog-new-product-8"><i class="fa-solid fa-circle-nodes"></i></div>
+
+                                <div class="associated" data-dialog="dialog-new-product-8"><i class="fa-solid fa-circle-nodes"></i></div>
                                 <dialog id="dialog-new-product-8" class="dialog-wrapper">
                                     <div class="dialog-header">
                                         <h4>Produits associés</h4>
@@ -1786,7 +1783,7 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
-                                                                <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic >99-03</a></td>
+                                                                <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                 <td class="text-right"><span class="dialog-stock">70</span></td>
 
                                                             </tr>
@@ -1833,7 +1830,7 @@
                                             <div class="image image--type--product">
                                                 <a href="product-full.html" class="image__body">
                                                     <div class="stockNumber">70</div>
-                                <div class="remise">-30%</div>
+                                                    <div class="remise">-30%</div>
                                                     <img class="image__tag" src="images/products/product-8-245x245.png" alt="">
                                                 </a>
                                             </div>
@@ -1887,8 +1884,8 @@
                             </div>
                             <!-- product 9 -->
                             <div class="block-products-carousel__column">
-                       
-                                <div class="associated" id="showDialog" data-dialog="dialog-new-product-9"><i class="fa-solid fa-circle-nodes"></i></div>
+
+                                <div class="associated" data-dialog="dialog-new-product-9"><i class="fa-solid fa-circle-nodes"></i></div>
                                 <dialog id="dialog-new-product-9" class="dialog-wrapper">
                                     <div class="dialog-header">
                                         <h4>Produits associés</h4>
@@ -1914,7 +1911,7 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
-                                                                <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic >99-03</a></td>
+                                                                <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                 <td class="text-right"><span class="dialog-stock">70</span></td>
 
                                                             </tr>
@@ -1961,7 +1958,7 @@
                                             <div class="image image--type--product">
                                                 <a href="product-full.html" class="image__body">
                                                     <div class="stockNumber">70</div>
-                                <div class="remise">-30%</div>
+                                                    <div class="remise">-30%</div>
                                                     <img class="image__tag" src="images/products/product-9-245x245.png" alt="">
                                                 </a>
                                             </div>
@@ -2015,8 +2012,8 @@
                             </div>
                             <!-- product 10 -->
                             <div class="block-products-carousel__column">
-                             
-                                <div class="associated" id="showDialog" data-dialog="dialog-new-product-10"><i class="fa-solid fa-circle-nodes"></i></div>
+
+                                <div class="associated" data-dialog="dialog-new-product-10"><i class="fa-solid fa-circle-nodes"></i></div>
                                 <dialog id="dialog-new-product-10" class="dialog-wrapper">
                                     <div class="dialog-header">
                                         <h4>Produits associés</h4>
@@ -2042,7 +2039,7 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
-                                                                <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic >99-03</a></td>
+                                                                <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                 <td class="text-right"><span class="dialog-stock">70</span></td>
 
                                                             </tr>
@@ -2089,7 +2086,7 @@
                                             <div class="image image--type--product">
                                                 <a href="product-full.html" class="image__body">
                                                     <div class="stockNumber">70</div>
-                                <div class="remise">-30%</div>
+                                                    <div class="remise">-30%</div>
                                                     <img class="image__tag" src="images/products/product-10-245x245.png" alt="">
                                                 </a>
                                             </div>
@@ -2147,29 +2144,29 @@
                 </div>
             </div>
             <div class="block-space block-space--layout--divider-nl"></div>
-           <div class="atlantic">
-    <div class="container">
-        <div class="row">
-            <div class="lubrifiantVid">
-                <img src="images/frame.png" alt="" class="videoFrame">
-                <video id="oilVideo" preload="metadata">
-                    <source src="video/atlantic.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                
-                <!-- Play/Pause button -->
-                <button class="play-button">
-                    <i class="fas fa-play"></i>
-                </button>
+            <div class="atlantic">
+                <div class="container">
+                    <div class="row">
+                        <div class="lubrifiantVid">
+                            <img src="images/frame.png" alt="" class="videoFrame">
+                            <video id="oilVideo" preload="metadata">
+                                <source src="video/atlantic.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
 
-                <!-- Fullscreen button -->
-                <button class="fullscreen-button">
-                    <i class="fas fa-expand"></i> <!-- Fullscreen icon -->
-                </button>
+                            <!-- Play/Pause button -->
+                            <button class="play-button">
+                                <i class="fas fa-play"></i>
+                            </button>
+
+                            <!-- Fullscreen button -->
+                            <button class="fullscreen-button">
+                                <i class="fas fa-expand"></i> <!-- Fullscreen icon -->
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
 
             <div class="block-space block-space--layout--divider-nl"></div>
 
@@ -2264,14 +2261,14 @@
                                 <div class="decor__center"></div>
                             </div>
                         </div>
-                        <div class="block-sale__image" ></div>
+                        <div class="block-sale__image"></div>
                         <div class="container">
                             <div class="block-sale__carousel">
                                 <div class="owl-carousel">
 
                                     <div class="block-sale__item">
-                                     
-                                        <div class="associated" id="showDialog" data-dialog="dialog-promo-product-1"><i class="fa-solid fa-circle-nodes"></i></div>
+
+                                        <div class="associated" data-dialog="dialog-promo-product-1"><i class="fa-solid fa-circle-nodes"></i></div>
                                         <dialog id="dialog-promo-product-1" class="dialog-wrapper">
                                             <div class="dialog-header">
                                                 <h4>Produits associés</h4>
@@ -2297,7 +2294,7 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
-                                                                        <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic >99-03</a></td>
+                                                                        <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                         <td class="text-right"><span class="dialog-stock">70</span></td>
 
                                                                     </tr>
@@ -2340,8 +2337,8 @@
                                             <div class="product-card__image">
                                                 <div class="image image--type--product">
                                                     <a href="product-full.html" class="image__body">
-                                                         <div class="stockNumber fixTop-0">70</div>
-                                        <div class="remise fixPos">-30%</div>
+                                                        <div class="stockNumber fixTop-0">70</div>
+                                                        <div class="remise fixPos">-30%</div>
                                                         <img class="image__tag" src="images/products/product-1-245x245.jpg" alt="">
                                                     </a>
                                                 </div>
@@ -2396,8 +2393,8 @@
                                     </div>
 
                                     <div class="block-sale__item">
-                                    
-                                        <div class="associated" id="showDialog" data-dialog="dialog-promo-product-2"><i class="fa-solid fa-circle-nodes"></i></div>
+
+                                        <div class="associated" data-dialog="dialog-promo-product-2"><i class="fa-solid fa-circle-nodes"></i></div>
                                         <dialog id="dialog-promo-product-2" class="dialog-wrapper">
                                             <div class="dialog-header">
                                                 <h4>Produits associés</h4>
@@ -2423,7 +2420,7 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
-                                                                        <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic >99-03</a></td>
+                                                                        <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                         <td class="text-right"><span class="dialog-stock">70</span></td>
 
                                                                     </tr>
@@ -2468,8 +2465,8 @@
                                             <div class="product-card__image">
                                                 <div class="image image--type--product">
                                                     <a href="product-full.html" class="image__body">
-                                                         <div class="stockNumber fixTop-0">70</div>
-                                        <div class="remise fixPos">-30%</div>
+                                                        <div class="stockNumber fixTop-0">70</div>
+                                                        <div class="remise fixPos">-30%</div>
                                                         <img class="image__tag" src="images/products/product-2-245x245.png" alt="">
                                                     </a>
                                                 </div>
@@ -2528,8 +2525,8 @@
                                     </div>
 
                                     <div class="block-sale__item">
-                                   
-                                        <div class="associated" id="showDialog" data-dialog="dialog-promo-product-3"><i class="fa-solid fa-circle-nodes"></i></div>
+
+                                        <div class="associated" data-dialog="dialog-promo-product-3"><i class="fa-solid fa-circle-nodes"></i></div>
                                         <dialog id="dialog-promo-product-3" class="dialog-wrapper">
                                             <div class="dialog-header">
                                                 <h4>Produits associés</h4>
@@ -2555,7 +2552,7 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
-                                                                        <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic >99-03</a></td>
+                                                                        <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                         <td class="text-right"><span class="dialog-stock">70</span></td>
 
                                                                     </tr>
@@ -2600,8 +2597,8 @@
                                             <div class="product-card__image">
                                                 <div class="image image--type--product">
                                                     <a href="product-full.html" class="image__body">
-                                                         <div class="stockNumber fixTop-0">70</div>
-                                        <div class="remise fixPos">-30%</div>
+                                                        <div class="stockNumber fixTop-0">70</div>
+                                                        <div class="remise fixPos">-30%</div>
                                                         <img class="image__tag" src="images/products/product-3-245x245.png" alt="">
                                                     </a>
                                                 </div>
@@ -2660,9 +2657,9 @@
                                     </div>
 
                                     <div class="block-sale__item">
-                                      
 
-                                        <div class="associated" id="showDialog" data-dialog="dialog-promo-product-4"><i class="fa-solid fa-circle-nodes"></i></div>
+
+                                        <div class="associated" data-dialog="dialog-promo-product-4"><i class="fa-solid fa-circle-nodes"></i></div>
                                         <dialog id="dialog-promo-product-4" class="dialog-wrapper">
                                             <div class="dialog-header">
                                                 <h4>Produits associés</h4>
@@ -2688,7 +2685,7 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
-                                                                        <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic >99-03</a></td>
+                                                                        <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                         <td class="text-right"><span class="dialog-stock">70</span></td>
 
                                                                     </tr>
@@ -2735,8 +2732,8 @@
                                             <div class="product-card__image">
                                                 <div class="image image--type--product">
                                                     <a href="product-full.html" class="image__body">
-                                                         <div class="stockNumber fixTop-0">70</div>
-                                        <div class="remise fixPos">-30%</div>
+                                                        <div class="stockNumber fixTop-0">70</div>
+                                                        <div class="remise fixPos">-30%</div>
                                                         <img class="image__tag" src="images/products/product-4-245x245.png" alt="">
                                                     </a>
                                                 </div>
@@ -2795,8 +2792,8 @@
                                     </div>
 
                                     <div class="block-sale__item">
-                                  
-                                        <div class="associated" id="showDialog" data-dialog="dialog-promo-product-5"><i class="fa-solid fa-circle-nodes"></i></div>
+
+                                        <div class="associated" data-dialog="dialog-promo-product-5"><i class="fa-solid fa-circle-nodes"></i></div>
                                         <dialog id="dialog-promo-product-5" class="dialog-wrapper">
                                             <div class="dialog-header">
                                                 <h4>Produits associés</h4>
@@ -2822,7 +2819,7 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
-                                                                        <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic >99-03</a></td>
+                                                                        <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                         <td class="text-right"><span class="dialog-stock">70</span></td>
 
                                                                     </tr>
@@ -2867,8 +2864,8 @@
                                             <div class="product-card__image">
                                                 <div class="image image--type--product">
                                                     <a href="product-full.html" class="image__body">
-                                                         <div class="stockNumber fixTop-0">70</div>
-                                        <div class="remise fixPos">-30%</div>
+                                                        <div class="stockNumber fixTop-0">70</div>
+                                                        <div class="remise fixPos">-30%</div>
                                                         <img class="image__tag" src="images/products/product-5-245x245.png" alt="">
                                                     </a>
                                                 </div>
@@ -2927,8 +2924,8 @@
                                     </div>
 
                                     <div class="block-sale__item">
-                                      
-                                        <div class="associated" id="showDialog" data-dialog="dialog-promo-product-6"><i class="fa-solid fa-circle-nodes"></i></div>
+
+                                        <div class="associated" data-dialog="dialog-promo-product-6"><i class="fa-solid fa-circle-nodes"></i></div>
                                         <dialog id="dialog-promo-product-6" class="dialog-wrapper">
                                             <div class="dialog-header">
                                                 <h4>Produits associés</h4>
@@ -2954,7 +2951,7 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
-                                                                        <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic >99-03</a></td>
+                                                                        <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                         <td class="text-right"><span class="dialog-stock">70</span></td>
 
                                                                     </tr>
@@ -2999,8 +2996,8 @@
                                             <div class="product-card__image">
                                                 <div class="image image--type--product">
                                                     <a href="product-full.html" class="image__body">
-                                                         <div class="stockNumber fixTop-0">70</div>
-                                        <div class="remise fixPos">-30%</div>
+                                                        <div class="stockNumber fixTop-0">70</div>
+                                                        <div class="remise fixPos">-30%</div>
                                                         <img class="image__tag" src="images/products/product-6-245x245.png" alt="">
                                                     </a>
                                                 </div>
@@ -3055,8 +3052,8 @@
                                     </div>
 
                                     <div class="block-sale__item">
-                                   
-                                        <div class="associated" id="showDialog" data-dialog="dialog-promo-product-7"><i class="fa-solid fa-circle-nodes"></i></div>
+
+                                        <div class="associated" data-dialog="dialog-promo-product-7"><i class="fa-solid fa-circle-nodes"></i></div>
                                         <dialog id="dialog-promo-product-7" class="dialog-wrapper">
                                             <div class="dialog-header">
                                                 <h4>Produits associés</h4>
@@ -3082,7 +3079,7 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
-                                                                        <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic >99-03</a></td>
+                                                                        <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                         <td class="text-right"><span class="dialog-stock">70</span></td>
 
                                                                     </tr>
@@ -3127,8 +3124,8 @@
                                             <div class="product-card__image">
                                                 <div class="image image--type--product">
                                                     <a href="product-full.html" class="image__body">
-                                                         <div class="stockNumber fixTop-0">70</div>
-                                        <div class="remise fixPos">-30%</div>
+                                                        <div class="stockNumber fixTop-0">70</div>
+                                                        <div class="remise fixPos">-30%</div>
                                                         <img class="image__tag" src="images/products/product-7-245x245.png" alt="">
                                                     </a>
                                                 </div>
@@ -3187,8 +3184,8 @@
                                     </div>
 
                                     <div class="block-sale__item">
-                                 
-                                        <div class="associated" id="showDialog" data-dialog="dialog-promo-product-8"><i class="fa-solid fa-circle-nodes"></i></div>
+
+                                        <div class="associated" data-dialog="dialog-promo-product-8"><i class="fa-solid fa-circle-nodes"></i></div>
                                         <dialog id="dialog-promo-product-8" class="dialog-wrapper">
                                             <div class="dialog-header">
                                                 <h4>Produits associés</h4>
@@ -3214,7 +3211,7 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
-                                                                        <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic >99-03</a></td>
+                                                                        <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                         <td class="text-right"><span class="dialog-stock">70</span></td>
 
                                                                     </tr>
@@ -3258,8 +3255,8 @@
                                             <div class="product-card__image">
                                                 <div class="image image--type--product">
                                                     <a href="product-full.html" class="image__body">
-                                                         <div class="stockNumber fixTop-0">70</div>
-                                        <div class="remise fixPos">-30%</div>
+                                                        <div class="stockNumber fixTop-0">70</div>
+                                                        <div class="remise fixPos">-30%</div>
                                                         <img class="image__tag" src="images/products/product-10-245x245.png" alt="">
                                                     </a>
                                                 </div>
@@ -3766,7 +3763,7 @@
                                     <ul class="footer-links__list">
                                         <li class="footer-links__item"><a href="accueil.html" class="footer-links__link">Accueil</a></li>
                                         <li class="footer-links__item"><a href="categorie.html" class="footer-links__link">CATÉGORIES</a></li>
-                                        
+
                                         <li class="footer-links__item"><a href="contact.html" class="footer-links__link">Contactez-nous</a></li>
                                         <li class="footer-links__item"><a href="chrono.html" class="footer-links__link">Chrono</a></li>
                                         <li class="footer-links__item"><a href="https://capram.ma/" class="footer-links__link">capram.ma</a></li>
@@ -4028,22 +4025,18 @@
         </div>
     </div>
     <!-- mobile-menu / end -->
-   <!-- scripts -->
+    <!-- scripts -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.colVis.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.colVis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/owl-carousel/owl.carousel.min.js"></script>
-    <script src="vendor/nouislider/nouislider.min.js"></script>
-    <script src="vendor/photoswipe/photoswipe.min.js"></script>
-    <script src="vendor/photoswipe/photoswipe-ui-default.min.js"></script>
     <script src="vendor/select2/js/select2.min.js"></script>
     <script src="js/number.js"></script>
     <script src="js/main.js"></script>
     <script src="js/capram.js"></script>
 </body>
-
 </html>
