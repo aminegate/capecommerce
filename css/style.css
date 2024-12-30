@@ -1127,7 +1127,7 @@ a.calculNet:hover {
 .fixPos-nouveaute-page,
 .fixPos-promotion,
 .fixPos-results{
-        top: -6.3% !important;
+        top: -8.3% !important;
 }
 
 td.wishlist__column.wishlist__column--body.wishlist__column--image {
@@ -3674,19 +3674,21 @@ a.mobile-menu__contacts .phone__body span {
 
   
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     .nav-item {
         width: auto;
         /* Allow tabs to adapt to content width */
     }
-
-   
 
     .scroll-btn {
         display: block;
     }
 
 }
+
+
+
+
 
 
 
@@ -3743,6 +3745,20 @@ a.mobile-menu__contacts .phone__body span {
 
 
 @media (min-width: 1200px) and (max-width: 1400px) {
+    
+    .nav-area ul {
+    justify-content: left;
+}
+    
+    .card_body_numbers span {
+    font-size: 45px;
+}
+    
+    .fixPos-nouveaute-page, .fixPos-promotion, .fixPos-results {
+    top: -10.3% !important;
+}
+    
+    
     
     input#monthInput {
 
@@ -3823,8 +3839,7 @@ a.mobile-menu__contacts .phone__body span {
 }
     
 .promotion_item span.brut, 
-    .chrono_item span.brut,
-    .product-card__price.product-card__price--current span.brut{
+    .chrono_item span.brut{
         white-space: pre;
         margin-top: 10px;
         display: block;
@@ -3867,9 +3882,16 @@ a.mobile-menu__contacts .phone__body span {
 
 
 @media (min-width: 992px) and (max-width: 1200px) {
+        .card_body_numbers span {
+    font-size: 45px;
+}
+    
+    .image.image--type--product {
+    border-radius: 5px 5px 0px 0px !important;
+}
         input#monthInput {
 
-    width: 80%;
+    width: 75%;
 }
     
         table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
@@ -3972,8 +3994,7 @@ a.mobile-menu__contacts .phone__body span {
 }
     
 .promotion_item span.brut, 
-    .chrono_item span.brut,
-    .product-card__price.product-card__price--current span.brut{
+    .chrono_item span.brut{
         white-space: pre;
         margin-top: 10px;
         display: block;
@@ -4018,6 +4039,12 @@ a.mobile-menu__contacts .phone__body span {
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
+        .card_body_numbers span {
+    font-size: 45px;
+}
+        .image.image--type--product {
+    border-radius: 5px 5px 0px 0px !important;
+}
     
         input#monthInput {
 
@@ -4156,8 +4183,7 @@ a.mobile-menu__contacts .phone__body span {
         }
 
    .promotion_item span.brut, 
-    .chrono_item span.brut,
-    .product-card__price.product-card__price--current span.brut{
+    .chrono_item span.brut{
         white-space: pre;
         margin-top: 10px;
         display: block;
@@ -4217,6 +4243,13 @@ a.mobile-menu__contacts .phone__body span {
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
+    
+        .card_body_numbers span {
+    font-size: 45px;
+}
+        .image.image--type--product {
+    border-radius: 5px 5px 0px 0px !important;
+}
     
     td.td-width {
     text-align: left;
@@ -4448,6 +4481,13 @@ input#monthInput {
 }
 
 @media (min-width:480px) and (max-width: 576px) {
+    
+        .card_body_numbers span {
+    font-size: 45px;
+}
+        .image.image--type--product {
+    border-radius: 5px 5px 0px 0px !important;
+}
     
     td.td-width {
     text-align: left;
@@ -4701,6 +4741,13 @@ input#monthInput {
 }
 
 @media (min-width:360px) and (max-width: 480px) {
+    
+        .card_body_numbers span {
+    font-size: 45px;
+}
+        .image.image--type--product {
+    border-radius: 5px 5px 0px 0px !important;
+}
     
     div.dt-container .dt-search input {
     width: 100%;
