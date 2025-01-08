@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-
 <head>
     <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="format-detection" content="telephone=no">
     <title>Capram -Wishlist</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
@@ -12,8 +11,6 @@
     <!-- css -->
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="vendor/owl-carousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="vendor/photoswipe/photoswipe.css">
-    <link rel="stylesheet" href="vendor/photoswipe/default-skin/default-skin.css">
     <link rel="stylesheet" href="vendor/select2/css/select2.min.css">
     <link rel="stylesheet" href="css/style.css" class="dayMode">
     <link rel="stylesheet" href="css/night.css" class="nightMode">
@@ -24,25 +21,24 @@
     <!-- font - fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
     <!-- site -->
     <div class="site">
-        <!-- site__mobile-header -->
+        <!-- ===========================================
+        ========= Header in Responsive / Start =========
+        =============================================-->
         <header class="site__mobile-header">
             <div class="mobile-header">
                 <div class="container">
                     <div class="mobile-header__body">
-
+                        <!-- logo / Start -->
                         <a class="mobile-header__logo" href="accueil.html">
-                            <!-- mobile-logo -->
                             <div class="logo__image">
-                                <!-- logo -->
                                 <img src="images/logo_white.png" alt="">
-                                <!-- logo / end -->
                             </div>
-                            <!-- mobile-logo / end -->
                         </a>
+                        <!-- logo / end -->
+                        <!--======= Header Search Bar / Start =======-->
                         <div class="mobile-header__search mobile-search">
                             <form class="mobile-search__body">
                                 <input type="text" class="mobile-search__input" placeholder="Entrez un mot-clé ou un numéro de pièce">
@@ -63,11 +59,13 @@
                                 <div class="mobile-search__field"></div>
                             </form>
                         </div>
-                        
+                        <!--======= Header Search Bar / End =======-->
+                        <!--======= Responsive header icons / Start =======-->
                         <div class="mobile-header__indicators">
                             <div class="mobile-indicator mobile-indicator--search d-md-none">
                                 <button type="button" class="mobile-indicator__button">
-                                    <span class="mobile-indicator__icon"><svg width="20" height="20">
+                                    <span class="mobile-indicator__icon">
+                                        <svg width="20" height="20">
                                             <path d="M19.2,17.8c0,0-0.2,0.5-0.5,0.8c-0.4,0.4-0.9,0.6-0.9,0.6s-0.9,0.7-2.8-1.6c-1.1-1.4-2.2-2.8-3.1-3.9C10.9,14.5,9.5,15,8,15
 	c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7c0,1.5-0.5,2.9-1.3,4c1.1,0.8,2.5,2,4,3.1C20,16.8,19.2,17.8,19.2,17.8z M8,3C5.2,3,3,5.2,3,8
 	c0,2.8,2.2,5,5,5c2.8,0,5-2.2,5-5C13,5.2,10.8,3,8,3z"></path>
@@ -75,23 +73,26 @@
                                     </span>
                                 </button>
                             </div>
-            
                         </div>
-                        
                         <button class="mobile-header__menu-button" type="button">
                             <svg width="18px" height="14px">
                                 <path d="M-0,8L-0,6L18,6L18,8L-0,8ZM-0,-0L18,-0L18,2L-0,2L-0,-0ZM14,14L-0,14L-0,12L14,12L14,14Z" />
                             </svg>
                         </button>
+                        <!--======= Responsive header icons / End =======-->
                     </div>
                 </div>
             </div>
         </header>
-        <!-- site__mobile-header / end -->
-        <!-- site__header -->
+        <!-- ===========================================
+        ========== Header in Responsive / End ==========
+        =============================================-->
+        <!-- ===========================================
+        ======== Header in Large Screen / Start ========
+        =============================================-->
         <header class="site__header">
             <div class="header">
-                <div class="header__megamenu-area megamenu-area"></div>
+                
                 <div class="header__topbar-classic-bg"></div>
                 <div class="header__topbar-classic">
                     <div class="topbar topbar--classic">
@@ -100,7 +101,9 @@
                             <div class="phone__number">+212 522 31 93 54</div>
                         </a>
                         <div class="topbar__item-spring"></div>
-
+                        <div class="notification">
+                        <a href="compte.html#referenceNonGereeTab">Notification &#40;<span class="notification__counter">3</span>&#41;</a>
+                        </div>
                         <div class="tdnn">
                             <div class="moon">
                             </div>
@@ -110,6 +113,7 @@
                             <!-- Header Top Menu's Dropdown -->
                             <ul class="user-sub-menu">
                                 <li><a href="compte.html">Mon Compte</a></li>
+                                <li><a href="reglement.html">Réglement</a></li>
                                 <li><a href="panier.html">Panier</a></li>
                                 <li><a href="wishlist.html">Wishlist</a></li>
                                 <li><a href="contact.html">Contact</a></li>
@@ -143,7 +147,6 @@
                                 <li class="main-menu__item">
                                     <a href="capcarrosserie.html" class="main-menu__link"><i class="fa-solid fa-car-side"></i>&nbsp;&nbsp;CAPCARROSSERIE</a>
                                 </li>
-
                                 <li class="main-menu__item"> <a href="aroma.html" class="main-menu__link"><i class="fa-solid fa-spray-can-sparkles"></i>&nbsp;&nbsp;AROMA</a> </li>
                                 <li class="main-menu__item"> <a href="chrono.html" class="main-menu__link"><i class="fa-solid fa-clock"></i>&nbsp;&nbsp;chrono</a> </li>
                             </ul>
@@ -154,7 +157,7 @@
                             <div class="phone__title"><i class="fa-solid fa-square-phone"></i></div>
                             <div class="phone__number">+212 522 31 93 54</div>
                         </a>-->
-                        <a href="assistance.html" class="main-menu__link helpDesk"><i class="fa-solid fa-circle-info"></i>&nbsp;&nbsp;Assistance</a>
+                        <a href="#" class="main-menu__link helpDesk"><i class="fa-solid fa-circle-info"></i>&nbsp;&nbsp;Assistance</a>
                     </div>
                 </div>
                 <div class="header__logo">
@@ -179,7 +182,6 @@
                                     </svg>
                                 </span>
                             </button>
-
                             <div class="search__box"></div>
                             <div class="search__decor">
                                 <div class="search__decor-start"></div>
@@ -320,27 +322,31 @@
                 </div>
             </div>
         </header>
-        <!-- site__header end -->
-        <!-- site__body -->
+        <!-- ============================================
+        ========= Header in Large Screen / End ==========
+        ==============================================-->
+        <!-- ============================================
+        ============= Main Content / Start ==============
+        ==============================================-->
         <div class="site__body whislist-page">
             <div class="block-header block-header--has-breadcrumb block-header--has-title">
                 <div class="container">
                     <div class="block-header__body">
-                        
+                        <!-- title -->
                         <h1 class="block-header__title">Wishlist</h1>
                     </div>
                 </div>
             </div>
             <div class="container">
-               <div class="sidebar sidebar--offcanvas--always">
+                <div class="sidebar sidebar--offcanvas--always">
                     <div class="sidebar__backdrop"></div>
+                    <!-- sidebar Filter / Start -->
                     <div class="sidebar__body">
                         <div class="sidebar__header">
-                           
-                                <div class="widget-filters__actions d-flex">
-                                    <button class="btn btn-primary btn-sm">Filtrer</button>
-                                    <button class="btn btn-secondary btn-sm">Réinitialiser</button>
-                                </div>
+                            <div class="widget-filters__actions d-flex">
+                                <button class="btn btn-primary btn-sm">Filtrer</button>
+                                <button class="btn btn-secondary btn-sm">Réinitialiser</button>
+                            </div>
                             <button class="sidebar__close" type="button"><svg width="12" height="12">
                                     <path d="M10.8,10.8L10.8,10.8c-0.4,0.4-1,0.4-1.4,0L6,7.4l-3.4,3.4c-0.4,0.4-1,0.4-1.4,0l0,0c-0.4-0.4-0.4-1,0-1.4L4.6,6L1.2,2.6
 	c-0.4-0.4-0.4-1,0-1.4l0,0c0.4-0.4,1-0.4,1.4,0L6,4.6l3.4-3.4c0.4-0.4,1-0.4,1.4,0l0,0c0.4,0.4,0.4,1,0,1.4L7.4,6l3.4,3.4
@@ -354,8 +360,7 @@
                                     <h4>Filtres</h4>
                                 </div>
                                 <div class="widget-filters__list">
-                                  
-                                   <div class="widget-filters__item">
+                                    <div class="widget-filters__item">
                                         <div class="filter filter--opened" data-collapse-item>
                                             <button type="button" class="filter__title" data-collapse-trigger>
                                                 FILTRER PAR CARTES
@@ -367,28 +372,24 @@
                                                 <div class="filter__container">
                                                     <div class="filter-list">
                                                         <div class="filter-list__list">
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="3rg industrial" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000039.png" alt="3rg industrial" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="a&s" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/004600.png" alt="a&s" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="afle" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000014.png" alt="cofle" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="alco" class="input-radio__input" />
                                                                 <span class="filter-list__title">
@@ -401,692 +402,592 @@
                                                                     <img src="images/categories/sub-category/44118825.png" alt="alco-lubricants" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="alguerra" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/44118831.png" alt="alguerra" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="alkar" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000051.png" alt="alkar" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="aroma" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000152.png" alt="aroma" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="ate" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000034.png" alt="ate" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="atlantic" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000092.png" alt="atlantic" />
                                                                 </span>
                                                             </label>
-
-                                                            
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="autotec" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000079.png" alt="autotec" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="ayfar" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000031.png" alt="ayfar" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="bardahl" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000135.png" alt="bardahl" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="bendix" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000170.png" alt="bendix" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="borg" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/004900.png" alt="borg" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="bruxol" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/44118820.png" alt="bruxol" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="burtech" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/44118821.png" alt="burtech" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="cap filter" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/44118834.png" alt="cap filter" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="capflex" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000029.png" alt="capflex" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="concorde" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/005300.png" alt="concorde" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="continental" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000023.png" alt="continental" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="coram" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000012.png" alt="coram" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="dana" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/004800.png" alt="dana" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="dayco" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/003700.png" alt="dayco" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="depo" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/44112013.png" alt="depo" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="despa" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000053.png" alt="despa" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="diesel power" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000040.png" alt="diesel power" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="divers fournisseur" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/001000.png" alt="divers fournisseur" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="dolz" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000011.png" alt="dolz" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="eurobump" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000151.png" alt="eurobump" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="eyquem" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000172.png" alt="eyquem" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="fae" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000030.png" alt="fae" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="fare" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/002000.png" alt="fare" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="feituo" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000047.png" alt="feituo" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="fiamm" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/44118823.png" alt="fiamm" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="flosser" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000035.png" alt="flosser" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="formpart" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000018.png" alt="formpart" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="fristom" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/002200.png" alt="fristom" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="gebe" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000044.png" alt="gebe" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="gomet" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000020.png" alt="gomet" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="gr" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/002800.png" alt="gr" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="haituo" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/003300.png" alt="haituo" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="hardex brake" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/LOC006.png" alt="hardex brake" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="haug" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000080.png" alt="haug" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="hepu" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000134.png" alt="hepu" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="huco" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000042.png" alt="huco" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="hushan" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/003500.png" alt="hushan" />
                                                                 </span>
                                                             </label>
-
-                                                            
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="impergom" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000041.png" alt="impergom" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="isam" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/005100.png" alt="isam" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="itsa" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/44118819.png" alt="itsa" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="juncheng" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/005800.png" alt="juncheng" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="jurid" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000062.png" alt="jurid" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="kayaplastik" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/005600.png" alt="kayaplastik" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="liaoning" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000129.png" alt="liaoning" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="lion" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/003100.png" alt="lion" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="lpr" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000010.png" alt="lpr" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="ltm" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000013.png" alt="ltm" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="mad" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000015.png" alt="mad" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="mars tech" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/004500.png" alt="mars tech" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="maxem otomotive" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/005900.png" alt="maxem otomotive" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="meyle products" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000109.png" alt="meyle products" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="misfilter" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/LOC009.png" alt="misfilter" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="mta" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000058.png" alt="mta" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="narva" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000016.png" alt="narva" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="ntn-snr" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/005200.png" alt="ntn-snr" />
                                                                 </span>
                                                             </label>
-
-                                                          
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="onfil filter" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000022.png" alt="onfil filter" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="otohakan" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/002100.png" alt="otohakan" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="phira" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/003600.png" alt="phira" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="plastex" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/005600.png" alt="plastex" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="pleksan" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000054.png" alt="pleksan" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="prasco" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/003200.png" alt="prasco" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="prof.additif" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/005400.png" alt="prof.additif" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="profesional" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/44118822.png" alt="profesional" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="pulo" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/003800.png" alt="pulo" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="quinton pads" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000140.png" alt="quinton pads" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="r2a" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000164.png" alt="r2a" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="record" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000061.png" alt="record" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="reshine" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/005700.png" alt="reshine" />
                                                                 </span>
                                                             </label>
-
-                                                            
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="serck" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000019.png" alt="serck" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="sertplas" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000036.png" alt="sertplas" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="sevgili" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/005000.png" alt="sevgili" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="skf" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/SKF.png" alt="skf" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="smp" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000078.png" alt="smp" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="soikon" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000046.png" alt="soikon" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="suspenssion diver" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000068.png" alt="suspenssion diver" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="trw" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/LOC008.png" alt="trw" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="tursan" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/004700.png" alt="tursan" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="tyc" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/001130.png" alt="tyc" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="van pres" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/005500.png" alt="van pres" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="vernet" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000027.png" alt="vernet" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="vipiemme" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000153.png" alt="vipiemme" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="windsor" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000065.png" alt="windsor" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="wrakynson" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000049.png" alt="wrakynson" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="yih-sheng" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/003900.png" alt="yih-sheng" />
                                                                 </span>
                                                             </label>
-
                                                             <label class="filter-list__item">
                                                                 <input type="radio" name="filter_radio" value="zen" class="input-radio__input" />
                                                                 <span class="filter-list__title">
                                                                     <img src="images/categories/sub-category/000017.png" alt="zen" />
                                                                 </span>
                                                             </label>
-
-
                                                         </div>
-                                                     </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                               </div>
-                                
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- sidebar Filter / End -->
                 </div>
-                        <div class="products-view__options view-options view-options--offcanvas--always">
-                                        <div class="view-options__body">
-                                            <button type="button" class="view-options__filters-button filters-button">
-                                                <span class="filters-button__icon"><svg width="16" height="16">
-                                                        <path d="M7,14v-2h9v2H7z M14,7h2v2h-2V7z M12.5,6C12.8,6,13,6.2,13,6.5v3c0,0.3-0.2,0.5-0.5,0.5h-2
+                <!-- other filter / Start -->
+                <div class="products-view__options view-options view-options--offcanvas--always">
+                    <div class="view-options__body">
+                        <button type="button" class="view-options__filters-button filters-button">
+                            <span class="filters-button__icon"><svg width="16" height="16">
+                                    <path d="M7,14v-2h9v2H7z M14,7h2v2h-2V7z M12.5,6C12.8,6,13,6.2,13,6.5v3c0,0.3-0.2,0.5-0.5,0.5h-2
 	C10.2,10,10,9.8,10,9.5v-3C10,6.2,10.2,6,10.5,6H12.5z M7,2h9v2H7V2z M5.5,5h-2C3.2,5,3,4.8,3,4.5v-3C3,1.2,3.2,1,3.5,1h2
 	C5.8,1,6,1.2,6,1.5v3C6,4.8,5.8,5,5.5,5z M0,2h2v2H0V2z M9,9H0V7h9V9z M2,14H0v-2h2V14z M3.5,11h2C5.8,11,6,11.2,6,11.5v3
 	C6,14.8,5.8,15,5.5,15h-2C3.2,15,3,14.8,3,14.5v-3C3,11.2,3.2,11,3.5,11z" />
-                                                    </svg>
-                                                </span>
-                                                <span class="filters-button__title">Filters</span>
-                                            </button>
-                                            <div class="view-options__select fixWidth">
-                                                <label for="view-option-limit" class="displayInline">Articles par page : </label>
-                                                <select id="view-option-limit" class="displayInline form-control form-control-sm" name="">
-                                                    <option value="">12</option>
-                                                    <option value="">24</option>
-                                                    <option value="">36</option>
-                                                </select>
-                                            </div>
-                                            <div class="view-options__select">
-                                                <label for="view-option-sort" class="displayInline moveToRight">Afficher : </label>
-                                                <select id="view-option-sort" class="displayInline form-control form-control-sm" name="">
-                                                    <option value="">Tri par promotion</option>
-                                                    <option value="">Tri par note moyenne</option>
-                                                    <option value="">Tri par prix : du moins cher au plus cher</option>
-                                                    <option value="">Tri par prix : du plus cher au moins cher</option>
-                                                    <option value="">Nom du produit : A - Z</option>
-                                                </select>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                               
+                                </svg>
+                            </span>
+                            <span class="filters-button__title">Filters</span>
+                        </button>
+                        <div class="view-options__select fixWidth">
+                            <label for="view-option-limit" class="displayInline">Articles par page : </label>
+                            <select id="view-option-limit" class="displayInline form-control form-control-sm" name="">
+                                <option value="">12</option>
+                                <option value="">24</option>
+                                <option value="">36</option>
+                            </select>
+                        </div>
+                        <div class="view-options__select">
+                            <label for="view-option-sort" class="displayInline moveToRight">Afficher : </label>
+                            <select id="view-option-sort" class="displayInline form-control form-control-sm" name="">
+                                <option value="">Tri par promotion</option>
+                                <option value="">Tri par note moyenne</option>
+                                <option value="">Tri par prix : du moins cher au plus cher</option>
+                                <option value="">Tri par prix : du plus cher au moins cher</option>
+                                <option value="">Nom du produit : A - Z</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- other filter / End -->
             </div>
             <div class="block">
                 <div class="container container--max--xl">
@@ -1103,8 +1004,10 @@
                                 </tr>
                             </thead>
                             <tbody class="wishlist__body">
+                                <!-- produit 1 -->
                                 <tr class="wishlist__row wishlist__row--body">
                                     <td class="wishlist__column wishlist__column--body wishlist__column--image">
+                                       <!-- produit 1 image + lien -->
                                         <div class="image image--type--product">
                                             <a href="product-full.html" class="image__body">
                                                 <img class="image__tag" src="images/products/product-11-245x245.png" alt="">
@@ -1113,10 +1016,12 @@
                                     </td>
                                     <td class="wishlist__column wishlist__column--body wishlist__column--product">
                                         <div class="wishlist__product-name">
-                                           <a href="" class="wishlist-reference">BDX-750Z370-S</a>
+                                           <!-- produit 1 designation + reference -->
+                                            <a href="" class="wishlist-reference">BDX-750Z370-S</a>
                                             <a href="">Brandix Spark Plug Kit ASR-400</a>
                                         </div>
                                     </td>
+                                    <!-- produit statut -->
                                     <td class="wishlist__column wishlist__column--body wishlist__column--stock">
                                         <div class="status-badge status-badge--style--success status-badge--has-text">
                                             <div class="status-badge__body">
@@ -1124,12 +1029,15 @@
                                             </div>
                                         </div>
                                     </td>
+                                    <!-- produit prix -->
                                     <td class="wishlist__column wishlist__column--body wishlist__column--price">
                                         190.00 DH
                                     </td>
+                                    <!-- produit "ajouter button" -->
                                     <td class="wishlist__column wishlist__column--body wishlist__column--button">
                                         <button type="button" class="btn btn-sm btn-primary">Ajouter</button>
                                     </td>
+                                    <!-- produit "supprimer button" -->
                                     <td class="wishlist__column wishlist__column--body wishlist__column--remove">
                                         <button type="button" class="wishlist__remove btn btn-sm btn-muted btn-icon">
                                             <svg width="12" height="12">
@@ -1140,6 +1048,7 @@
                                         </button>
                                     </td>
                                 </tr>
+                                <!-- produit 2 -->
                                 <tr class="wishlist__row wishlist__row--body">
                                     <td class="wishlist__column wishlist__column--body wishlist__column--image">
                                         <div class="image image--type--product">
@@ -1177,6 +1086,7 @@
                                         </button>
                                     </td>
                                 </tr>
+                                <!-- produit 3 -->
                                 <tr class="wishlist__row wishlist__row--body">
                                     <td class="wishlist__column wishlist__column--body wishlist__column--image">
                                         <div class="image image--type--product">
@@ -1187,7 +1097,7 @@
                                     </td>
                                     <td class="wishlist__column wishlist__column--body wishlist__column--product">
                                         <div class="wishlist__product-name">
-                                           <a href="" class="wishlist-reference">BDX-750Z370-S</a>
+                                            <a href="" class="wishlist-reference">BDX-750Z370-S</a>
                                             <a href="">Left Headlight Of Brandix Z54</a>
                                         </div>
                                     </td>
@@ -1217,128 +1127,174 @@
                             </tbody>
                         </table>
                     </div>
+                    <!-- pagination / Start -->
+                    <div class="products-view__pagination">
+                                        <nav aria-label="Page navigation example" class="bottom_Pagination">
+                                            <ul class="pagination">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link page-link--with-arrow" href="" aria-label="Previous">
+                                                        <span class="page-link__arrow page-link__arrow--left" aria-hidden="true"><svg width="7" height="11">
+                                                                <path d="M6.7,0.3L6.7,0.3c-0.4-0.4-0.9-0.4-1.3,0L0,5.5l5.4,5.2c0.4,0.4,0.9,0.3,1.3,0l0,0c0.4-0.4,0.4-1,0-1.3l-4-3.9l4-3.9C7.1,1.2,7.1,0.6,6.7,0.3z"></path>
+                                                            </svg>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item active" aria-current="page">
+                                                    <span class="page-link">
+                                                        2
+                                                        <span class="sr-only">(current)</span>
+                                                    </span>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                                <li class="page-item page-item--dots">
+                                                    <div class="pagination__dots"></div>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">9</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link page-link--with-arrow" href="" aria-label="Next">
+                                                        <span class="page-link__arrow page-link__arrow--right" aria-hidden="true"><svg width="7" height="11">
+                                                                <path d="M0.3,10.7L0.3,10.7c0.4,0.4,0.9,0.4,1.3,0L7,5.5L1.6,0.3C1.2-0.1,0.7,0,0.3,0.3l0,0c-0.4,0.4-0.4,1,0,1.3l4,3.9l-4,3.9
+	C-0.1,9.8-0.1,10.4,0.3,10.7z"></path>
+                                                            </svg>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <!-- pagination / End -->
                 </div>
             </div>
             <div class="block-space block-space--layout--before-footer"></div>
         </div>
-        <!-- site__body / end -->
-          <!-- site__footer -->
-    <footer class="site__footer">
-        <div class="site-footer">
-            <div class="decor site-footer__decor decor--type--bottom">
-                <div class="decor__body">
-                    <div class="decor__start"></div>
-                    <div class="decor__end"></div>
-                    <div class="decor__center"></div>
+        <!--=============================================
+        ============== Main Content / End ===============
+        ==============================================-->
+        <!--=============================================
+        ================ Footer / Start =================
+        ==============================================-->
+        <footer class="site__footer">
+            <div class="site-footer">
+                <div class="decor site-footer__decor decor--type--bottom">
+                    <div class="decor__body">
+                        <div class="decor__start"></div>
+                        <div class="decor__end"></div>
+                        <div class="decor__center"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="site-footer__widgets">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-xl-4">
-                            <div class="site-footer__widget footer-contacts">
-                                <h5 class="footer-contacts__title">Contactez-nous</h5>
-                                <div class="footer-contacts__text">     Notre équipe est là pour vous répondre ! Pour toute question sur nos produits, vos commandes ou pour toute autre demande, n'hésitez pas à nous contacter. </div>
-                                <address class="footer-contacts__contacts">
-                                    <dl>
-                                        <dt>Numéro de téléphone</dt>
-                                        <dd>+212 522 31 93 54</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Adresse e-mail</dt>
-                                        <dd>contact@capram.ma</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>LOCALISATION</dt>
-                                        <dd>35 Rue Bachir Ibrahimi, Casablanca 20250 <br>
-                                        ------------------------------------- <br>
-18 Bd de Khouribga, Casablanca 20250</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Horaires</dt>
-                                        <dd>Lundi – Vendredi <br>8:30 AM – 18:30 PM<br>
-                                        ---------------------------------- <br>
-Samedi <br> 8:30 AM – 13:00 PM</dd>
-                                    </dl>
-                                </address>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3 col-xl-2">
-                            <div class="site-footer__widget footer-links">
-                                <h5 class="footer-links__title">Information</h5>
-                                <ul class="footer-links__list">
-                                    <li class="footer-links__item"><a href="accueil.html" class="footer-links__link">Accueil</a></li>
-                                    <li class="footer-links__item"><a href="categorie.html" class="footer-links__link">CATÉGORIES</a></li>
-                                    
-                                    <li class="footer-links__item"><a href="contact.html" class="footer-links__link">Contactez-nous</a></li>
-                                    <li class="footer-links__item"><a href="chrono.html" class="footer-links__link">Chrono</a></li>
-                                     <li class="footer-links__item"><a href="https://capram.ma/" class="footer-links__link">capram.ma</a></li>
-                                      <li class="footer-links__item"><a href="https://turbo-accessories.com/" class="footer-links__link">turbo ecommerce</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3 col-xl-2">
-                            <div class="site-footer__widget footer-links">
-                                <h5 class="footer-links__title">Mon Compte</h5>
-                                <ul class="footer-links__list">
-                                    <li class="footer-links__item"><a href="commandes.html" class="footer-links__link">commandes</a></li>
-                                    <li class="footer-links__item"><a href="wishlist.html" class="footer-links__link">Wishlist</a></li>
-                                    <li class="footer-links__item"><a href="panier.html" class="footer-links__link">Panier</a></li>
-                                    <li class="footer-links__item"><a href="compte.html" class="footer-links__link">Détails du compte</a></li>
-                                    <li class="footer-links__item"><a href="promotion.html" class="footer-links__link">Promotions</a></li>
-                                    <li class="footer-links__item"><a href="nouveaute.html" class="footer-links__link">NOUVEAUTÉS</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-xl-4">
-                            <div class="site-footer__widget footer-newsletter">
-                                <h5 class="footer-newsletter__title">Newsletter</h5>
-                                <div class="footer-newsletter__text">
-                                    Entrez votre adresse e-mail ci-dessous pour vous abonner à notre bulletin d'information et rester à jour avec les réductions et les offres spéciales.
+                <div class="site-footer__widgets">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-xl-4">
+                                <div class="site-footer__widget footer-contacts">
+                                    <h5 class="footer-contacts__title">Contactez-nous</h5>
+                                    <div class="footer-contacts__text"> Notre équipe est là pour vous répondre ! Pour toute question sur nos produits, vos commandes ou pour toute autre demande, n'hésitez pas à nous contacter. </div>
+                                    <address class="footer-contacts__contacts">
+                                        <dl>
+                                            <dt>Numéro de téléphone</dt>
+                                            <dd>+212 522 31 93 54</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>Adresse e-mail</dt>
+                                            <dd>contact@capram.ma</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>LOCALISATION</dt>
+                                            <dd>35 Rue Bachir Ibrahimi, Casablanca 20250 <br>
+                                                ------------------------------------- <br>
+                                                18 Bd de Khouribga, Casablanca 20250</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>Horaires</dt>
+                                            <dd>Lundi – Vendredi <br>8:30 AM – 18:30 PM<br>
+                                                ---------------------------------- <br>
+                                                Samedi <br> 8:30 AM – 13:00 PM</dd>
+                                        </dl>
+                                    </address>
                                 </div>
-                                <form action="" class="footer-newsletter__form">
-                                    <label class="sr-only" for="footer-newsletter-address">Adresse e-mail</label>
-                                    <input type="text" class="footer-newsletter__form-input" id="footer-newsletter-address" placeholder="Adresse e-mail...">
-                                    <button class="footer-newsletter__form-button">S'abonner</button>
-                                </form>
-                                <div class="footer-newsletter__text footer-newsletter__text--social">
-                                    Suivez-nous sur les réseaux sociaux
-                                </div>
-                                <div class="footer-newsletter__social-links social-links">
-                                    <ul class="social-links__list">
-                                        <li class="social-links__item social-links__item--facebook"><a href="https://www.facebook.com/people/Capram-Maroc/61561691562602/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li class="social-links__item social-links__item--youtube"><a href="https://www.linkedin.com/company/centre-africain-de-pi%C3%A8ces-de-rechange-pour-l%E2%80%99automobile-au-maroc" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                                        <li class="social-links__item social-links__item--instagram"><a href="https://www.instagram.com/capram.auto/" target="_blank"><i class="fab fa-instagram"></i></a></li>  
+                            </div>
+                            <div class="col-6 col-md-3 col-xl-2">
+                                <div class="site-footer__widget footer-links">
+                                    <h5 class="footer-links__title">Information</h5>
+                                    <ul class="footer-links__list">
+                                        <li class="footer-links__item"><a href="accueil.html" class="footer-links__link">Accueil</a></li>
+                                        <li class="footer-links__item"><a href="categorie.html" class="footer-links__link">CATÉGORIES</a></li>
+                                        <li class="footer-links__item"><a href="contact.html" class="footer-links__link">Contactez-nous</a></li>
+                                        <li class="footer-links__item"><a href="chrono.html" class="footer-links__link">Chrono</a></li>
+                                        <li class="footer-links__item"><a href="https://capram.ma/" class="footer-links__link">Capram.ma</a></li>
+                                        <li class="footer-links__item"><a href="https://turbo-accessories.com/" class="footer-links__link">Turbo ecommerce</a></li>
                                     </ul>
                                 </div>
                             </div>
+                            <div class="col-6 col-md-3 col-xl-2">
+                                <div class="site-footer__widget footer-links">
+                                    <h5 class="footer-links__title">Mon Compte</h5>
+                                    <ul class="footer-links__list">
+                                        <li class="footer-links__item"><a href="wishlist.html" class="footer-links__link">Wishlist</a></li>
+                                        <li class="footer-links__item"><a href="panier.html" class="footer-links__link">Panier</a></li>
+                                        <li class="footer-links__item"><a href="compte.html" class="footer-links__link">Détails du compte</a></li>
+                                        <li class="footer-links__item"><a href="promotion.html" class="footer-links__link">Promotions</a></li>
+                                        <li class="footer-links__item"><a href="nouveaute.html" class="footer-links__link">NOUVEAUTÉS</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <div class="site-footer__widget footer-newsletter">
+                                    <h5 class="footer-newsletter__title">Newsletter</h5>
+                                    <div class="footer-newsletter__text">
+                                        Entrez votre adresse e-mail ci-dessous pour vous abonner à notre bulletin d'information et rester à jour avec les réductions et les offres spéciales.
+                                    </div>
+                                    <!-- NewsLetter -->
+                                    <form action="" class="footer-newsletter__form">
+                                        <label class="sr-only" for="footer-newsletter-address">Adresse e-mail</label>
+                                        <input type="text" class="footer-newsletter__form-input" id="footer-newsletter-address" placeholder="Adresse e-mail...">
+                                        <button class="footer-newsletter__form-button">S'abonner</button>
+                                    </form>
+                                    <div class="footer-newsletter__text footer-newsletter__text--social">
+                                        Suivez-nous sur les réseaux sociaux
+                                    </div>
+                                    <div class="footer-newsletter__social-links social-links">
+                                        <ul class="social-links__list">
+                                            <li class="social-links__item social-links__item--facebook"><a href="https://www.facebook.com/people/Capram-Maroc/61561691562602/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li class="social-links__item social-links__item--youtube"><a href="https://www.linkedin.com/company/centre-africain-de-pi%C3%A8ces-de-rechange-pour-l%E2%80%99automobile-au-maroc" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                                            <li class="social-links__item social-links__item--instagram"><a href="https://www.instagram.com/capram.auto/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="site-footer__bottom">
+                    <div class="container">
+                        <div class="site-footer__bottom-row">
+                            <div class="site-footer__copyright">
+                                <!-- copyright -->
+                                <p class="copyright-area-text">Copyright © <span id="copyright-year">2024</span> <a class="copyright-link" href="accueil.html">Capram</a></p>
+                                <!-- copyright / end -->
+                            </div>
+                            <div class="site-footer__payments"> <img src="images/logo_white.png" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="site-footer__bottom">
-                <div class="container">
-                    <div class="site-footer__bottom-row">
-                        <div class="site-footer__copyright">
-                            <!-- copyright -->
-                            <p class="copyright-area-text">Copyright © <span id="copyright-year">2024</span> <a class="copyright-link" href="accueil.html">Capram</a></p>
-                            <!-- copyright / end -->
-                        </div>
-                        <div class="site-footer__payments">     <img src="images/logo_white.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- site__footer / end -->
+        </footer>
+        <!--=============================================
+        ================= Footer / End ==================
+        ==============================================-->
     </div>
-    <!-- site / end -->
-      <!-- mobile-menu -->
-    <div class="mobile-menu">
+        <!--=============================================
+        ========== Menu In Responsive / Start ===========
+        ==============================================-->
+        <div class="mobile-menu">
         <div class="mobile-menu__backdrop"></div>
         <div class="mobile-menu__body">
-            <button class="mobile-menu__close" type="button"><svg width="12" height="12">
+            <!-- Menu Close Button -->
+            <button class="mobile-menu__close" type="button">
+                <svg width="12" height="12">
                     <path d="M10.8,10.8L10.8,10.8c-0.4,0.4-1,0.4-1.4,0L6,7.4l-3.4,3.4c-0.4,0.4-1,0.4-1.4,0l0,0c-0.4-0.4-0.4-1,0-1.4L4.6,6L1.2,2.6
 	c-0.4-0.4-0.4-1,0-1.4l0,0c0.4-0.4,1-0.4,1.4,0L6,4.6l3.4-3.4c0.4-0.4,1-0.4,1.4,0l0,0c0.4,0.4,0.4,1,0,1.4L7.4,6l3.4,3.4
 	C11.2,9.8,11.2,10.4,10.8,10.8z" />
@@ -1351,13 +1307,15 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
                 <div class="mobile-menu__panel-body">
                     <div class="mobile-menu__settings-list">
                         <div class="mobile-menu__setting" data-mobile-menu-item>
-                            <button class="mobile-menu__setting-button" title="Language" data-mobile-menu-trigger>
+                            <!-- night / day switch button -->
+                            <button class="mobile-menu__setting-button" data-mobile-menu-trigger>
                                 <span class="mobile-menu__setting-title">Mode Sombre</span>
                                 <span class="mobile-menu__setting-arrow"><svg width="6px" height="9px">
                                         <path d="M0.3,7.4l3-2.9l-3-2.9c-0.4-0.3-0.4-0.9,0-1.3l0,0c0.4-0.3,0.9-0.4,1.3,0L6,4.5L1.6,8.7c-0.4,0.4-0.9,0.4-1.3,0l0,0C-0.1,8.4-0.1,7.8,0.3,7.4z" />
                                     </svg>
                                 </span>
                             </button>
+                            <!-- night / day switch panel -->
                             <div class="mobile-menu__setting-panel" data-mobile-menu-panel>
                                 <div class="mobile-menu__panel mobile-menu__panel--hidden">
                                     <div class="mobile-menu__panel-header">
@@ -1386,14 +1344,15 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
                             </div>
                         </div>
                         <div class="mobile-menu__setting" data-mobile-menu-item>
-                            <button class="mobile-menu__setting-button" title="Currency" data-mobile-menu-trigger>
-
+                            <!-- Paramètres button -->
+                            <button class="mobile-menu__setting-button" data-mobile-menu-trigger>
                                 <span class="mobile-menu__setting-title">Paramètres</span>
                                 <span class="mobile-menu__setting-arrow"><svg width="6px" height="9px">
                                         <path d="M0.3,7.4l3-2.9l-3-2.9c-0.4-0.3-0.4-0.9,0-1.3l0,0c0.4-0.3,0.9-0.4,1.3,0L6,4.5L1.6,8.7c-0.4,0.4-0.9,0.4-1.3,0l0,0C-0.1,8.4-0.1,7.8,0.3,7.4z" />
                                     </svg>
                                 </span>
                             </button>
+                            <!-- Paramètres Panel -->
                             <div class="mobile-menu__setting-panel" data-mobile-menu-panel>
                                 <div class="mobile-menu__panel mobile-menu__panel--hidden">
                                     <div class="mobile-menu__panel-header">
@@ -1426,13 +1385,11 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
                                                     <a href="contact.html">Contact</a>
                                                 </button>
                                             </li>
-
                                             <li data-mobile-menu-item>
                                                 <button type="button" class="setting-link" data-mobile-menu-trigger>
                                                     <a href="#">Déconnexion</a>
                                                 </button>
                                             </li>
-
                                         </ul>
                                     </div>
                                 </div>
@@ -1471,9 +1428,20 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
                             </span>
                             <span class="mobile-menu__indicator-title">Panier</span>
                         </a>
+                         <a class="mobile-menu__indicator" href="compte.html#referenceNonGereeTab">
+                           <span class="notification__counter">3</span>
+                            <span class="mobile-menu__indicator-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path>
+  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+</svg>
 
+                            </span>
+                            <span class="mobile-menu__indicator-title">Notification</span>
+                        </a>
                     </div>
                     <div class="mobile-menu__divider"></div>
+                    <!-- menu -->
                     <ul class="mobile-menu__links">
                         <li data-mobile-menu-item>
                             <a href="accueil.html" class="mobile-nav-link" data-mobile-menu-trigger>
@@ -1530,23 +1498,21 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
             </div>
         </div>
     </div>
-    <!-- mobile-menu / end -->
+        <!--=============================================
+        =========== Menu In Responsive / End ============
+        ==============================================-->
     <!-- scripts -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.colVis.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.colVis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/owl-carousel/owl.carousel.min.js"></script>
-    <script src="vendor/nouislider/nouislider.min.js"></script>
-    <script src="vendor/photoswipe/photoswipe.min.js"></script>
-    <script src="vendor/photoswipe/photoswipe-ui-default.min.js"></script>
     <script src="vendor/select2/js/select2.min.js"></script>
     <script src="js/number.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/capram.js"></script>
+    
 </body>
-
 </html>

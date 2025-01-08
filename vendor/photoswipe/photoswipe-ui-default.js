@@ -19,8 +19,6 @@
 
 	'use strict';
 
-
-
 var PhotoSwipeUI_Default =
  function(pswp, framework) {
 
@@ -52,7 +50,7 @@ var PhotoSwipeUI_Default =
 			timeToIdle: 4000, 
 			timeToIdleOutside: 1000,
 			loadingIndicatorDelay: 1000, // 2s
-			
+
 			addCaptionHTMLFn: function(item, captionEl /*, isFake */) {
 				if(!item.title) {
 					captionEl.children[0].innerHTML = '';
@@ -92,7 +90,7 @@ var PhotoSwipeUI_Default =
 			getTextForShare: function( /* shareButtonData */ ) {
 				return pswp.currItem.title || '';
 			},
-				
+
 			indexIndicatorSep: ' / ',
 			fitControlsWidth: 1200
 
@@ -100,13 +98,10 @@ var PhotoSwipeUI_Default =
 		_blockControlsTap,
 		_blockControlsTapTimeout;
 
-
-
 	var _onControlsTap = function(e) {
 			if(_blockControlsTap) {
 				return true;
 			}
-
 
 			e = e || window.event;
 
@@ -114,7 +109,6 @@ var PhotoSwipeUI_Default =
 				// reset idle timer
 				_onIdleMouseMove();
 			}
-
 
 			var target = e.target || e.srcElement,
 				uiElement,
@@ -172,8 +166,7 @@ var PhotoSwipeUI_Default =
 		_toggleShareModal = function() {
 
 			_shareModalHidden = !_shareModalHidden;
-			
-			
+
 			if(!_shareModalHidden) {
 				_toggleShareModalClass();
 				setTimeout(function() {
@@ -189,7 +182,7 @@ var PhotoSwipeUI_Default =
 					}
 				}, 300);
 			}
-			
+
 			if(!_shareModalHidden) {
 				_updateShareURLs();
 			}
@@ -217,7 +210,7 @@ var PhotoSwipeUI_Default =
 			if(!_shareModalHidden) {
 				_toggleShareModal();
 			}
-			
+
 			return false;
 		},
 		_updateShareURLs = function() {
@@ -297,7 +290,7 @@ var PhotoSwipeUI_Default =
 		_setupLoadingIndicator = function() {
 			// Setup loading indicator
 			if(_options.preloaderEl) {
-			
+
 				_toggleLoadingIndicator(true);
 
 				_listen('beforeChange', function() {
@@ -315,13 +308,13 @@ var PhotoSwipeUI_Default =
 								_toggleLoadingIndicator(false); 
 								// items-controller.js function allowProgressiveImg
 							}
-							
+
 						} else {
 							_toggleLoadingIndicator(true); // hide preloader
 						}
 
 					}, _options.loadingIndicatorDelay);
-					
+
 				});
 				_listen('imageLoadComplete', function(index, item) {
 					if(pswp.currItem === item) {
@@ -341,7 +334,7 @@ var PhotoSwipeUI_Default =
 			var gap = item.vGap;
 
 			if( _fitControlsInViewport() ) {
-				
+
 				var bars = _options.barsSize; 
 				if(_options.captionEl && bars.bottom === 'auto') {
 					if(!_fakeCaptionContainer) {
@@ -360,7 +353,7 @@ var PhotoSwipeUI_Default =
 				} else {
 					gap.bottom = bars.bottom === 'auto' ? 0 : bars.bottom;
 				}
-				
+
 				// height of top bar is static, no need to calculate it
 				gap.top = bars.top;
 			} else {
@@ -371,7 +364,7 @@ var PhotoSwipeUI_Default =
 			// Hide controls when mouse is used
 			if(_options.timeToIdle) {
 				_listen('mouseUsed', function() {
-					
+
 					framework.bind(document, 'mousemove', _onIdleMouseMove);
 					framework.bind(document, 'mouseout', _onMouseLeaveWindow);
 
@@ -414,8 +407,6 @@ var PhotoSwipeUI_Default =
 			});
 
 		};
-
-
 
 	var _uiElements = [
 		{ 
@@ -514,12 +505,12 @@ var PhotoSwipeUI_Default =
 					if(classAttr.indexOf('pswp__' + uiElement.name) > -1  ) {
 
 						if( _options[uiElement.option] ) { // if element is not disabled from options
-							
+
 							framework.removeClass(item, 'pswp__element--disabled');
 							if(uiElement.onInit) {
 								uiElement.onInit(item);
 							}
-							
+
 							//item.style.display = 'block';
 						} else {
 							framework.addClass(item, 'pswp__element--disabled');
@@ -537,9 +528,6 @@ var PhotoSwipeUI_Default =
 		}
 	};
 
-
-	
-
 	ui.init = function() {
 
 		// extend options
@@ -553,7 +541,6 @@ var PhotoSwipeUI_Default =
 
 		// create local link
 		_listen = pswp.listen;
-
 
 		_setupHidingControlsDuringGestures();
 
@@ -617,7 +604,6 @@ var PhotoSwipeUI_Default =
 			}
 		});
 
-
 		// clean up things when gallery is destroyed
 		_listen('destroy', function() {
 			if(_options.captionEl) {
@@ -634,7 +620,6 @@ var PhotoSwipeUI_Default =
 			framework.addClass( _controls, 'pswp__ui--hidden');
 			ui.setIdle(false);
 		});
-		
 
 		if(!_options.showAnimationDuration) {
 			framework.removeClass( _controls, 'pswp__ui--hidden');
@@ -649,7 +634,7 @@ var PhotoSwipeUI_Default =
 		});
 
 		_listen('parseVerticalMargin', _applyNavBarGaps);
-		
+
 		_setupUIElements();
 
 		if(_options.shareEl && _shareButton && _shareModal) {
@@ -673,7 +658,7 @@ var PhotoSwipeUI_Default =
 	ui.update = function() {
 		// Don't update UI if it's hidden
 		if(_controlsVisible && pswp.currItem) {
-			
+
 			ui.updateIndexIndicator();
 
 			if(_options.captionEl) {
@@ -704,7 +689,7 @@ var PhotoSwipeUI_Default =
 				pswp.setScrollOffset( 0, framework.getScrollY() );
 			}, 50);
 		}
-		
+
 		// toogle pswp--fs class on root element
 		framework[ (_fullscrenAPI.isFullscreen() ? 'add' : 'remove') + 'Class' ](pswp.template, 'pswp--fs');
 	};
@@ -716,7 +701,7 @@ var PhotoSwipeUI_Default =
 										_options.getNumItemsFn();
 		}
 	};
-	
+
 	ui.onGlobalTap = function(e) {
 		e = e || window.event;
 		var target = e.target || e.srcElement;
@@ -742,7 +727,7 @@ var PhotoSwipeUI_Default =
 					pswp.toggleDesktopZoom(e.detail.releasePoint);
 				}
 			}
-			
+
 		} else {
 
 			// tap anywhere (except buttons) to toggle visibility of controls
@@ -759,7 +744,7 @@ var PhotoSwipeUI_Default =
 				pswp.close();
 				return;
 			}
-			
+
 		}
 	};
 	ui.onMouseOver = function(e) {
@@ -809,8 +794,6 @@ var PhotoSwipeUI_Default =
 				eventK: 'moz' + tF
 			};
 
-			
-
 		} else if(dE.webkitRequestFullscreen) {
 			api = {
 				enterK: 'webkitRequestFullscreen',
@@ -852,10 +835,7 @@ var PhotoSwipeUI_Default =
 		return api;
 	};
 
-
-
 };
 return PhotoSwipeUI_Default;
-
 
 });

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-
 <head>
     <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -12,8 +11,6 @@
     <!-- css -->
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="vendor/owl-carousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="vendor/photoswipe/photoswipe.css">
-    <link rel="stylesheet" href="vendor/photoswipe/default-skin/default-skin.css">
     <link rel="stylesheet" href="vendor/select2/css/select2.min.css">
     <link rel="stylesheet" href="css/style.css" class="dayMode">
     <link rel="stylesheet" href="css/night.css" class="nightMode">
@@ -24,25 +21,25 @@
     <!-- font - fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
     <!-- site -->
     <div class="site">
        <!-- site__mobile-header -->
+        <!-- ===========================================
+        ========= Header in Responsive / Start =========
+        =============================================-->
         <header class="site__mobile-header">
             <div class="mobile-header">
                 <div class="container">
                     <div class="mobile-header__body">
-
+                       <!-- logo / Start -->
                         <a class="mobile-header__logo" href="accueil.html">
-                            <!-- mobile-logo -->
                             <div class="logo__image">
-                                <!-- logo -->
                                 <img src="images/logo_white.png" alt="">
-                                <!-- logo / end -->
                             </div>
-                            <!-- mobile-logo / end -->
                         </a>
+                        <!-- logo / end -->
+                        <!--======= Header Search Bar / Start =======-->
                         <div class="mobile-header__search mobile-search">
                             <form class="mobile-search__body">
                                 <input type="text" class="mobile-search__input" placeholder="Entrez un mot-clé ou un numéro de pièce">
@@ -63,11 +60,13 @@
                                 <div class="mobile-search__field"></div>
                             </form>
                         </div>
-                        
+                         <!--======= Header Search Bar / End =======-->
+                        <!--======= Responsive header icons / Start =======-->
                         <div class="mobile-header__indicators">
                             <div class="mobile-indicator mobile-indicator--search d-md-none">
                                 <button type="button" class="mobile-indicator__button">
-                                    <span class="mobile-indicator__icon"><svg width="20" height="20">
+                                    <span class="mobile-indicator__icon">
+                                        <svg width="20" height="20">
                                             <path d="M19.2,17.8c0,0-0.2,0.5-0.5,0.8c-0.4,0.4-0.9,0.6-0.9,0.6s-0.9,0.7-2.8-1.6c-1.1-1.4-2.2-2.8-3.1-3.9C10.9,14.5,9.5,15,8,15
 	c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7c0,1.5-0.5,2.9-1.3,4c1.1,0.8,2.5,2,4,3.1C20,16.8,19.2,17.8,19.2,17.8z M8,3C5.2,3,3,5.2,3,8
 	c0,2.8,2.2,5,5,5c2.8,0,5-2.2,5-5C13,5.2,10.8,3,8,3z"></path>
@@ -75,23 +74,26 @@
                                     </span>
                                 </button>
                             </div>
-            
                         </div>
-                        
                         <button class="mobile-header__menu-button" type="button">
                             <svg width="18px" height="14px">
                                 <path d="M-0,8L-0,6L18,6L18,8L-0,8ZM-0,-0L18,-0L18,2L-0,2L-0,-0ZM14,14L-0,14L-0,12L14,12L14,14Z" />
                             </svg>
                         </button>
+                        <!--======= Responsive header icons / End =======-->
                     </div>
                 </div>
             </div>
         </header>
-        <!-- site__mobile-header / end -->
-        <!-- site__header -->
+        <!-- ===========================================
+        ========== Header in Responsive / End ==========
+        =============================================-->
+        <!-- ===========================================
+        ======== Header in Large Screen / Start ========
+        =============================================-->
         <header class="site__header">
             <div class="header">
-                <div class="header__megamenu-area megamenu-area"></div>
+                
                 <div class="header__topbar-classic-bg"></div>
                 <div class="header__topbar-classic">
                     <div class="topbar topbar--classic">
@@ -100,7 +102,9 @@
                             <div class="phone__number">+212 522 31 93 54</div>
                         </a>
                         <div class="topbar__item-spring"></div>
-
+                        <div class="notification">
+                        <a href="compte.html#referenceNonGereeTab">Notification &#40;<span class="notification__counter">3</span>&#41;</a>
+                        </div>
                         <div class="tdnn">
                             <div class="moon">
                             </div>
@@ -110,6 +114,7 @@
                             <!-- Header Top Menu's Dropdown -->
                             <ul class="user-sub-menu">
                                 <li><a href="compte.html">Mon Compte</a></li>
+                                <li><a href="reglement.html">Réglement</a></li>
                                 <li><a href="panier.html">Panier</a></li>
                                 <li><a href="wishlist.html">Wishlist</a></li>
                                 <li><a href="contact.html">Contact</a></li>
@@ -143,7 +148,6 @@
                                 <li class="main-menu__item">
                                     <a href="capcarrosserie.html" class="main-menu__link"><i class="fa-solid fa-car-side"></i>&nbsp;&nbsp;CAPCARROSSERIE</a>
                                 </li>
-
                                 <li class="main-menu__item"> <a href="aroma.html" class="main-menu__link"><i class="fa-solid fa-spray-can-sparkles"></i>&nbsp;&nbsp;AROMA</a> </li>
                                 <li class="main-menu__item"> <a href="chrono.html" class="main-menu__link"><i class="fa-solid fa-clock"></i>&nbsp;&nbsp;chrono</a> </li>
                             </ul>
@@ -154,7 +158,7 @@
                             <div class="phone__title"><i class="fa-solid fa-square-phone"></i></div>
                             <div class="phone__number">+212 522 31 93 54</div>
                         </a>-->
-                        <a href="assistance.html" class="main-menu__link helpDesk"><i class="fa-solid fa-circle-info"></i>&nbsp;&nbsp;Assistance</a>
+                        <a href="#" class="main-menu__link helpDesk"><i class="fa-solid fa-circle-info"></i>&nbsp;&nbsp;Assistance</a>
                     </div>
                 </div>
                 <div class="header__logo">
@@ -179,7 +183,6 @@
                                     </svg>
                                 </span>
                             </button>
-
                             <div class="search__box"></div>
                             <div class="search__decor">
                                 <div class="search__decor-start"></div>
@@ -320,13 +323,16 @@
                 </div>
             </div>
         </header>
-        <!-- site__header end -->
-        <!-- site__body -->
+        <!-- ============================================
+        ========= Header in Large Screen / End ==========
+        ==============================================-->
+        <!-- ============================================
+        ============= Main Content / Start ==============
+        ==============================================-->
         <div class="site__body cart-page">
             <div class="block-header block-header--has-breadcrumb block-header--has-title">
                 <div class="container">
                     <div class="block-header__body">
-                        
                         <h1 class="block-header__title">Panier</h1>
                     </div>
                 </div>
@@ -347,8 +353,10 @@
                                     </tr>
                                 </thead>
                                 <tbody class="cart-table__body">
+                                    <!-- produit 1 -->
                                     <tr class="cart-table__row">
                                         <td class="cart-table__column cart-table__column--image">
+                                           <!-- produit 1 image + lien -->
                                             <div class="image image--type--product">
                                                 <a href="product-full.html" class="image__body">
                                                     <img class="image__tag" src="images/products/product-1-245x245.png" alt="">
@@ -356,9 +364,11 @@
                                             </div>
                                         </td>
                                         <td class="cart-table__column cart-table__column--product">
+                                            <!-- produit 1 designation + reference -->
                                             <a href="" class="cart-table__product-reference">0165A5841A</a>
                                             <a href="" class="cart-table__product-name">Glossy Gray 19" Aluminium Wheel AR-19</a>
                                         </td>
+                                        <!-- produit 1 prix + input number -->
                                         <td class="cart-table__column cart-table__column--price" data-title="Prix">699.00 DH</td>
                                         <td class="cart-table__column cart-table__column--quantity" data-title="Quantité">
                                             <div class="cart-table__quantity input-number">
@@ -367,6 +377,7 @@
                                                 <div class="input-number__sub"></div>
                                             </div>
                                         </td>
+                                        <!-- produit 1 total + supprimer button -->
                                         <td class="cart-table__column cart-table__column--total" data-title="Total">1398.00 DH</td>
                                         <td class="cart-table__column cart-table__column--remove">
                                             <button type="button" class="cart-table__remove btn btn-sm btn-icon btn-muted">
@@ -378,6 +389,7 @@
                                             </button>
                                         </td>
                                     </tr>
+                                    <!-- produit 2 -->
                                     <tr class="cart-table__row">
                                         <td class="cart-table__column cart-table__column--image">
                                             <div class="image image--type--product">
@@ -387,7 +399,6 @@
                                             </div>
                                         </td>
                                         <td class="cart-table__column cart-table__column--product">
-                                           
                                             <a href="" class="cart-table__product-reference">0165A5841A</a>
                                             <a href="" class="cart-table__product-name">Brandix Brake Kit BDX-750Z370-S</a>
                                         </td>
@@ -410,6 +421,7 @@
                                             </button>
                                         </td>
                                     </tr>
+                                    <!-- produit 3 -->
                                     <tr class="cart-table__row">
                                         <td class="cart-table__column cart-table__column--image">
                                             <div class="image image--type--product">
@@ -419,7 +431,6 @@
                                             </div>
                                         </td>
                                         <td class="cart-table__column cart-table__column--product">
-                                           
                                             <a href="" class="cart-table__product-reference">0165A5841A</a>
                                             <a href="" class="cart-table__product-name">Twin Exhaust Pipe From Brandix Z54</a>
                                         </td>
@@ -444,7 +455,46 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            <!-- pagination / start -->
+                                    <div class="products-view__pagination">
+                                        <nav aria-label="Page navigation example" class="bottom_Pagination">
+                                            <ul class="pagination">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link page-link--with-arrow" href="" aria-label="Previous">
+                                                        <span class="page-link__arrow page-link__arrow--left" aria-hidden="true"><svg width="7" height="11">
+                                                                <path d="M6.7,0.3L6.7,0.3c-0.4-0.4-0.9-0.4-1.3,0L0,5.5l5.4,5.2c0.4,0.4,0.9,0.3,1.3,0l0,0c0.4-0.4,0.4-1,0-1.3l-4-3.9l4-3.9C7.1,1.2,7.1,0.6,6.7,0.3z" />
+                                                            </svg>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item active" aria-current="page">
+                                                    <span class="page-link">
+                                                        2
+                                                        <span class="sr-only">(current)</span>
+                                                    </span>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                                <li class="page-item page-item--dots">
+                                                    <div class="pagination__dots"></div>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">9</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link page-link--with-arrow" href="" aria-label="Next">
+                                                        <span class="page-link__arrow page-link__arrow--right" aria-hidden="true"><svg width="7" height="11">
+                                                                <path d="M0.3,10.7L0.3,10.7c0.4,0.4,0.9,0.4,1.3,0L7,5.5L1.6,0.3C1.2-0.1,0.7,0,0.3,0.3l0,0c-0.4,0.4-0.4,1,0,1.3l4,3.9l-4,3.9
+	C-0.1,9.8-0.1,10.4,0.3,10.7z" />
+                                                            </svg>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                 <!-- pagination / End -->
                         </div>
+                        <!-- Totaux du panier / Start -->
                         <div class="cart__totals">
                             <div class="card">
                                 <div class="card-body card-body--padding--2">
@@ -481,129 +531,138 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Totaux du panier / End -->
                     </div>
                 </div>
             </div>
             <div class="block-space block-space--layout--before-footer"></div>
         </div>
-        <!-- site__body / end -->
-        <!-- site__footer -->
-    <footer class="site__footer">
-        <div class="site-footer">
-            <div class="decor site-footer__decor decor--type--bottom">
-                <div class="decor__body">
-                    <div class="decor__start"></div>
-                    <div class="decor__end"></div>
-                    <div class="decor__center"></div>
+        <!--=============================================
+        ============== Main Content / End ===============
+        ==============================================-->
+        <!--=============================================
+        ================ Footer / Start =================
+        ==============================================-->
+        <footer class="site__footer">
+            <div class="site-footer">
+                <div class="decor site-footer__decor decor--type--bottom">
+                    <div class="decor__body">
+                        <div class="decor__start"></div>
+                        <div class="decor__end"></div>
+                        <div class="decor__center"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="site-footer__widgets">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-xl-4">
-                            <div class="site-footer__widget footer-contacts">
-                                <h5 class="footer-contacts__title">Contactez-nous</h5>
-                                <div class="footer-contacts__text">     Notre équipe est là pour vous répondre ! Pour toute question sur nos produits, vos commandes ou pour toute autre demande, n'hésitez pas à nous contacter. </div>
-                                <address class="footer-contacts__contacts">
-                                    <dl>
-                                        <dt>Numéro de téléphone</dt>
-                                        <dd>+212 522 31 93 54</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Adresse e-mail</dt>
-                                        <dd>contact@capram.ma</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>LOCALISATION</dt>
-                                        <dd>35 Rue Bachir Ibrahimi, Casablanca 20250 <br>
-                                        ------------------------------------- <br>
-18 Bd de Khouribga, Casablanca 20250</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Horaires</dt>
-                                        <dd>Lundi – Vendredi <br>8:30 AM – 18:30 PM<br>
-                                        ---------------------------------- <br>
-Samedi <br> 8:30 AM – 13:00 PM</dd>
-                                    </dl>
-                                </address>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3 col-xl-2">
-                            <div class="site-footer__widget footer-links">
-                                <h5 class="footer-links__title">Information</h5>
-                                <ul class="footer-links__list">
-                                    <li class="footer-links__item"><a href="" class="footer-links__link">Accueil</a></li>
-                                    <li class="footer-links__item"><a href="" class="footer-links__link">CATÉGORIES</a></li>
-                                    
-                                    <li class="footer-links__item"><a href="contact.html" class="footer-links__link">Contactez-nous</a></li>
-                                    <li class="footer-links__item"><a href="chrono.html" class="footer-links__link">Chrono</a></li>
-                                     <li class="footer-links__item"><a href="https://capram.ma/" class="footer-links__link">capram.ma</a></li>
-                                      <li class="footer-links__item"><a href="https://turbo-accessories.com/" class="footer-links__link">turbo ecommerce</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3 col-xl-2">
-                            <div class="site-footer__widget footer-links">
-                                <h5 class="footer-links__title">Mon Compte</h5>
-                                <ul class="footer-links__list">
-                                    <li class="footer-links__item"><a href="commandes.html" class="footer-links__link">commandes</a></li>
-                                    <li class="footer-links__item"><a href="wishlist.html" class="footer-links__link">Wishlist</a></li>
-                                    <li class="footer-links__item"><a href="panier.html" class="footer-links__link">Panier</a></li>
-                                    <li class="footer-links__item"><a href="compte.html" class="footer-links__link">Détails du compte</a></li>
-                                    <li class="footer-links__item"><a href="promotion.html" class="footer-links__link">Promotions</a></li>
-                                    <li class="footer-links__item"><a href="nouveaute.html" class="footer-links__link">NOUVEAUTÉS</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-xl-4">
-                            <div class="site-footer__widget footer-newsletter">
-                                <h5 class="footer-newsletter__title">Newsletter</h5>
-                                <div class="footer-newsletter__text">
-                                    Entrez votre adresse e-mail ci-dessous pour vous abonner à notre bulletin d'information et rester à jour avec les réductions et les offres spéciales.
+                <div class="site-footer__widgets">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-xl-4">
+                                <div class="site-footer__widget footer-contacts">
+                                    <h5 class="footer-contacts__title">Contactez-nous</h5>
+                                    <div class="footer-contacts__text"> Notre équipe est là pour vous répondre ! Pour toute question sur nos produits, vos commandes ou pour toute autre demande, n'hésitez pas à nous contacter. </div>
+                                    <address class="footer-contacts__contacts">
+                                        <dl>
+                                            <dt>Numéro de téléphone</dt>
+                                            <dd>+212 522 31 93 54</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>Adresse e-mail</dt>
+                                            <dd>contact@capram.ma</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>LOCALISATION</dt>
+                                            <dd>35 Rue Bachir Ibrahimi, Casablanca 20250 <br>
+                                                ------------------------------------- <br>
+                                                18 Bd de Khouribga, Casablanca 20250</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>Horaires</dt>
+                                            <dd>Lundi – Vendredi <br>8:30 AM – 18:30 PM<br>
+                                                ---------------------------------- <br>
+                                                Samedi <br> 8:30 AM – 13:00 PM</dd>
+                                        </dl>
+                                    </address>
                                 </div>
-                                <form action="" class="footer-newsletter__form">
-                                    <label class="sr-only" for="footer-newsletter-address">Adresse e-mail</label>
-                                    <input type="text" class="footer-newsletter__form-input" id="footer-newsletter-address" placeholder="Adresse e-mail...">
-                                    <button class="footer-newsletter__form-button">S'abonner</button>
-                                </form>
-                                <div class="footer-newsletter__text footer-newsletter__text--social">
-                                    Suivez-nous sur les réseaux sociaux
-                                </div>
-                                <div class="footer-newsletter__social-links social-links">
-                                    <ul class="social-links__list">
-                                        <li class="social-links__item social-links__item--facebook"><a href="https://www.facebook.com/people/Capram-Maroc/61561691562602/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li class="social-links__item social-links__item--youtube"><a href="https://www.linkedin.com/company/centre-africain-de-pi%C3%A8ces-de-rechange-pour-l%E2%80%99automobile-au-maroc" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                                        <li class="social-links__item social-links__item--instagram"><a href="https://www.instagram.com/capram.auto/" target="_blank"><i class="fab fa-instagram"></i></a></li>  
+                            </div>
+                            <div class="col-6 col-md-3 col-xl-2">
+                                <div class="site-footer__widget footer-links">
+                                    <h5 class="footer-links__title">Information</h5>
+                                    <ul class="footer-links__list">
+                                        <li class="footer-links__item"><a href="accueil.html" class="footer-links__link">Accueil</a></li>
+                                        <li class="footer-links__item"><a href="categorie.html" class="footer-links__link">CATÉGORIES</a></li>
+                                        <li class="footer-links__item"><a href="contact.html" class="footer-links__link">Contactez-nous</a></li>
+                                        <li class="footer-links__item"><a href="chrono.html" class="footer-links__link">Chrono</a></li>
+                                        <li class="footer-links__item"><a href="https://capram.ma/" class="footer-links__link">Capram.ma</a></li>
+                                        <li class="footer-links__item"><a href="https://turbo-accessories.com/" class="footer-links__link">Turbo ecommerce</a></li>
                                     </ul>
                                 </div>
                             </div>
+                            <div class="col-6 col-md-3 col-xl-2">
+                                <div class="site-footer__widget footer-links">
+                                    <h5 class="footer-links__title">Mon Compte</h5>
+                                    <ul class="footer-links__list">
+                                        <li class="footer-links__item"><a href="wishlist.html" class="footer-links__link">Wishlist</a></li>
+                                        <li class="footer-links__item"><a href="panier.html" class="footer-links__link">Panier</a></li>
+                                        <li class="footer-links__item"><a href="compte.html" class="footer-links__link">Détails du compte</a></li>
+                                        <li class="footer-links__item"><a href="promotion.html" class="footer-links__link">Promotions</a></li>
+                                        <li class="footer-links__item"><a href="nouveaute.html" class="footer-links__link">NOUVEAUTÉS</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <div class="site-footer__widget footer-newsletter">
+                                    <h5 class="footer-newsletter__title">Newsletter</h5>
+                                    <div class="footer-newsletter__text">
+                                        Entrez votre adresse e-mail ci-dessous pour vous abonner à notre bulletin d'information et rester à jour avec les réductions et les offres spéciales.
+                                    </div>
+                                    <!-- NewsLetter -->
+                                    <form action="" class="footer-newsletter__form">
+                                        <label class="sr-only" for="footer-newsletter-address">Adresse e-mail</label>
+                                        <input type="text" class="footer-newsletter__form-input" id="footer-newsletter-address" placeholder="Adresse e-mail...">
+                                        <button class="footer-newsletter__form-button">S'abonner</button>
+                                    </form>
+                                    <div class="footer-newsletter__text footer-newsletter__text--social">
+                                        Suivez-nous sur les réseaux sociaux
+                                    </div>
+                                    <div class="footer-newsletter__social-links social-links">
+                                        <ul class="social-links__list">
+                                            <li class="social-links__item social-links__item--facebook"><a href="https://www.facebook.com/people/Capram-Maroc/61561691562602/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li class="social-links__item social-links__item--youtube"><a href="https://www.linkedin.com/company/centre-africain-de-pi%C3%A8ces-de-rechange-pour-l%E2%80%99automobile-au-maroc" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                                            <li class="social-links__item social-links__item--instagram"><a href="https://www.instagram.com/capram.auto/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="site-footer__bottom">
+                    <div class="container">
+                        <div class="site-footer__bottom-row">
+                            <div class="site-footer__copyright">
+                                <!-- copyright -->
+                                <p class="copyright-area-text">Copyright © <span id="copyright-year">2024</span> <a class="copyright-link" href="accueil.html">Capram</a></p>
+                                <!-- copyright / end -->
+                            </div>
+                            <div class="site-footer__payments"> <img src="images/logo_white.png" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="site-footer__bottom">
-                <div class="container">
-                    <div class="site-footer__bottom-row">
-                        <div class="site-footer__copyright">
-                            <!-- copyright -->
-                            <p class="copyright-area-text">Copyright © <span id="copyright-year">2024</span> <a class="copyright-link" href="accueil.html">Capram</a></p>
-                            <!-- copyright / end -->
-                        </div>
-                        <div class="site-footer__payments">     <img src="images/logo_white.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- site__footer / end -->
+        </footer>
+        <!--=============================================
+        ================= Footer / End ==================
+        ==============================================-->
     </div>
-    <!-- site / end -->
-    <!-- mobile-menu -->
-    <div class="mobile-menu">
-        <div class="mobile-menu__backdrop"></div>
-        <div class="mobile-menu__body">
-            <button class="mobile-menu__close" type="button"><svg width="12" height="12">
+        <!--=============================================
+        ========== Menu In Responsive / Start ===========
+        ==============================================-->
+        <div class="mobile-menu">
+            <div class="mobile-menu__backdrop"></div>
+                <div class="mobile-menu__body">
+           <!-- Menu Close Button -->
+            <button class="mobile-menu__close" type="button">
+                   <svg width="12" height="12">
                     <path d="M10.8,10.8L10.8,10.8c-0.4,0.4-1,0.4-1.4,0L6,7.4l-3.4,3.4c-0.4,0.4-1,0.4-1.4,0l0,0c-0.4-0.4-0.4-1,0-1.4L4.6,6L1.2,2.6
 	c-0.4-0.4-0.4-1,0-1.4l0,0c0.4-0.4,1-0.4,1.4,0L6,4.6l3.4-3.4c0.4-0.4,1-0.4,1.4,0l0,0c0.4,0.4,0.4,1,0,1.4L7.4,6l3.4,3.4
 	C11.2,9.8,11.2,10.4,10.8,10.8z" />
@@ -616,13 +675,15 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
                 <div class="mobile-menu__panel-body">
                     <div class="mobile-menu__settings-list">
                         <div class="mobile-menu__setting" data-mobile-menu-item>
-                            <button class="mobile-menu__setting-button" title="Language" data-mobile-menu-trigger>
+                           <!-- night / day switch button -->
+                            <button class="mobile-menu__setting-button"  data-mobile-menu-trigger>
                                 <span class="mobile-menu__setting-title">Mode Sombre</span>
                                 <span class="mobile-menu__setting-arrow"><svg width="6px" height="9px">
                                         <path d="M0.3,7.4l3-2.9l-3-2.9c-0.4-0.3-0.4-0.9,0-1.3l0,0c0.4-0.3,0.9-0.4,1.3,0L6,4.5L1.6,8.7c-0.4,0.4-0.9,0.4-1.3,0l0,0C-0.1,8.4-0.1,7.8,0.3,7.4z" />
                                     </svg>
                                 </span>
                             </button>
+                            <!-- night / day switch panel -->
                             <div class="mobile-menu__setting-panel" data-mobile-menu-panel>
                                 <div class="mobile-menu__panel mobile-menu__panel--hidden">
                                     <div class="mobile-menu__panel-header">
@@ -651,14 +712,15 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
                             </div>
                         </div>
                         <div class="mobile-menu__setting" data-mobile-menu-item>
-                            <button class="mobile-menu__setting-button" title="Currency" data-mobile-menu-trigger>
-
+                           <!-- Paramètres button -->
+                            <button class="mobile-menu__setting-button" data-mobile-menu-trigger>
                                 <span class="mobile-menu__setting-title">Paramètres</span>
                                 <span class="mobile-menu__setting-arrow"><svg width="6px" height="9px">
                                         <path d="M0.3,7.4l3-2.9l-3-2.9c-0.4-0.3-0.4-0.9,0-1.3l0,0c0.4-0.3,0.9-0.4,1.3,0L6,4.5L1.6,8.7c-0.4,0.4-0.9,0.4-1.3,0l0,0C-0.1,8.4-0.1,7.8,0.3,7.4z" />
                                     </svg>
                                 </span>
                             </button>
+                            <!-- Paramètres Panel -->
                             <div class="mobile-menu__setting-panel" data-mobile-menu-panel>
                                 <div class="mobile-menu__panel mobile-menu__panel--hidden">
                                     <div class="mobile-menu__panel-header">
@@ -678,6 +740,11 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
                                             </li>
                                             <li data-mobile-menu-item>
                                                 <button type="button" class="setting-link" data-mobile-menu-trigger>
+                                                    <a href="reglement.html">Règlement</a>
+                                                </button>
+                                            </li>
+                                            <li data-mobile-menu-item>
+                                                <button type="button" class="setting-link" data-mobile-menu-trigger>
                                                     <a href="panier.html">Panier</a>
                                                 </button>
                                             </li>
@@ -691,13 +758,11 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
                                                     <a href="contact.html">Contact</a>
                                                 </button>
                                             </li>
-
                                             <li data-mobile-menu-item>
                                                 <button type="button" class="setting-link" data-mobile-menu-trigger>
                                                     <a href="#">Déconnexion</a>
                                                 </button>
                                             </li>
-
                                         </ul>
                                     </div>
                                 </div>
@@ -736,9 +801,20 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
                             </span>
                             <span class="mobile-menu__indicator-title">Panier</span>
                         </a>
+                        <a class="mobile-menu__indicator" href="compte.html#referenceNonGereeTab">
+                           <span class="notification__counter">3</span>
+                            <span class="mobile-menu__indicator-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path>
+  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+</svg>
 
+                            </span>
+                            <span class="mobile-menu__indicator-title">Notification</span>
+                        </a>
                     </div>
                     <div class="mobile-menu__divider"></div>
+                    <!-- menu -->
                     <ul class="mobile-menu__links">
                         <li data-mobile-menu-item>
                             <a href="accueil.html" class="mobile-nav-link" data-mobile-menu-trigger>
@@ -795,23 +871,21 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
             </div>
         </div>
     </div>
-    <!-- mobile-menu / end -->
+        <!--=============================================
+        =========== Menu In Responsive / End ============
+        ==============================================-->
     <!-- scripts -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.colVis.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.colVis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/owl-carousel/owl.carousel.min.js"></script>
-    <script src="vendor/nouislider/nouislider.min.js"></script>
-    <script src="vendor/photoswipe/photoswipe.min.js"></script>
-    <script src="vendor/photoswipe/photoswipe-ui-default.min.js"></script>
     <script src="vendor/select2/js/select2.min.js"></script>
     <script src="js/number.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/capram.js"></script>
+    
 </body>
-
 </html>

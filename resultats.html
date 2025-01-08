@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-
 <head>
     <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="format-detection" content="telephone=no">
     <title>Capram - Recherche</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
@@ -12,8 +11,6 @@
     <!-- css -->
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="vendor/owl-carousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="vendor/photoswipe/photoswipe.css">
-    <link rel="stylesheet" href="vendor/photoswipe/default-skin/default-skin.css">
     <link rel="stylesheet" href="vendor/select2/css/select2.min.css">
     <link rel="stylesheet" href="css/style.css" class="dayMode">
     <link rel="stylesheet" href="css/night.css" class="nightMode">
@@ -25,25 +22,24 @@
     <!-- font - fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
     <!-- site -->
     <div class="site">
-        <!-- site__mobile-header -->
+        <!-- ===========================================
+        ========= Header in Responsive / Start =========
+        =============================================-->
         <header class="site__mobile-header">
             <div class="mobile-header">
                 <div class="container">
                     <div class="mobile-header__body">
-
+                        <!-- logo / Start -->
                         <a class="mobile-header__logo" href="accueil.html">
-                            <!-- mobile-logo -->
                             <div class="logo__image">
-                                <!-- logo -->
                                 <img src="images/logo_white.png" alt="">
-                                <!-- logo / end -->
                             </div>
-                            <!-- mobile-logo / end -->
                         </a>
+                        <!-- logo / end -->
+                        <!--======= Header Search Bar / Start =======-->
                         <div class="mobile-header__search mobile-search">
                             <form class="mobile-search__body">
                                 <input type="text" class="mobile-search__input" placeholder="Entrez un mot-clé ou un numéro de pièce">
@@ -64,11 +60,13 @@
                                 <div class="mobile-search__field"></div>
                             </form>
                         </div>
-                        
+                        <!--======= Header Search Bar / End =======-->
+                        <!--======= Responsive header icons / Start =======-->
                         <div class="mobile-header__indicators">
                             <div class="mobile-indicator mobile-indicator--search d-md-none">
                                 <button type="button" class="mobile-indicator__button">
-                                    <span class="mobile-indicator__icon"><svg width="20" height="20">
+                                    <span class="mobile-indicator__icon">
+                                        <svg width="20" height="20">
                                             <path d="M19.2,17.8c0,0-0.2,0.5-0.5,0.8c-0.4,0.4-0.9,0.6-0.9,0.6s-0.9,0.7-2.8-1.6c-1.1-1.4-2.2-2.8-3.1-3.9C10.9,14.5,9.5,15,8,15
 	c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7c0,1.5-0.5,2.9-1.3,4c1.1,0.8,2.5,2,4,3.1C20,16.8,19.2,17.8,19.2,17.8z M8,3C5.2,3,3,5.2,3,8
 	c0,2.8,2.2,5,5,5c2.8,0,5-2.2,5-5C13,5.2,10.8,3,8,3z"></path>
@@ -76,23 +74,26 @@
                                     </span>
                                 </button>
                             </div>
-            
                         </div>
-                        
                         <button class="mobile-header__menu-button" type="button">
                             <svg width="18px" height="14px">
                                 <path d="M-0,8L-0,6L18,6L18,8L-0,8ZM-0,-0L18,-0L18,2L-0,2L-0,-0ZM14,14L-0,14L-0,12L14,12L14,14Z" />
                             </svg>
                         </button>
+                        <!--======= Responsive header icons / End =======-->
                     </div>
                 </div>
             </div>
         </header>
-        <!-- site__mobile-header / end -->
-        <!-- site__header -->
+        <!-- ===========================================
+        ========== Header in Responsive / End ==========
+        =============================================-->
+        <!-- ===========================================
+        ======== Header in Large Screen / Start ========
+        =============================================-->
         <header class="site__header">
             <div class="header">
-                <div class="header__megamenu-area megamenu-area"></div>
+                
                 <div class="header__topbar-classic-bg"></div>
                 <div class="header__topbar-classic">
                     <div class="topbar topbar--classic">
@@ -101,7 +102,9 @@
                             <div class="phone__number">+212 522 31 93 54</div>
                         </a>
                         <div class="topbar__item-spring"></div>
-
+                        <div class="notification">
+                        <a href="compte.html#referenceNonGereeTab">Notification &#40;<span class="notification__counter">3</span>&#41;</a>
+                        </div>
                         <div class="tdnn">
                             <div class="moon">
                             </div>
@@ -111,6 +114,7 @@
                             <!-- Header Top Menu's Dropdown -->
                             <ul class="user-sub-menu">
                                 <li><a href="compte.html">Mon Compte</a></li>
+                                <li><a href="reglement.html">Réglement</a></li>
                                 <li><a href="panier.html">Panier</a></li>
                                 <li><a href="wishlist.html">Wishlist</a></li>
                                 <li><a href="contact.html">Contact</a></li>
@@ -144,7 +148,6 @@
                                 <li class="main-menu__item">
                                     <a href="capcarrosserie.html" class="main-menu__link"><i class="fa-solid fa-car-side"></i>&nbsp;&nbsp;CAPCARROSSERIE</a>
                                 </li>
-
                                 <li class="main-menu__item"> <a href="aroma.html" class="main-menu__link"><i class="fa-solid fa-spray-can-sparkles"></i>&nbsp;&nbsp;AROMA</a> </li>
                                 <li class="main-menu__item"> <a href="chrono.html" class="main-menu__link"><i class="fa-solid fa-clock"></i>&nbsp;&nbsp;chrono</a> </li>
                             </ul>
@@ -155,7 +158,7 @@
                             <div class="phone__title"><i class="fa-solid fa-square-phone"></i></div>
                             <div class="phone__number">+212 522 31 93 54</div>
                         </a>-->
-                        <a href="assistance.html" class="main-menu__link helpDesk"><i class="fa-solid fa-circle-info"></i>&nbsp;&nbsp;Assistance</a>
+                        <a href="#" class="main-menu__link helpDesk"><i class="fa-solid fa-circle-info"></i>&nbsp;&nbsp;Assistance</a>
                     </div>
                 </div>
                 <div class="header__logo">
@@ -180,7 +183,6 @@
                                     </svg>
                                 </span>
                             </button>
-
                             <div class="search__box"></div>
                             <div class="search__decor">
                                 <div class="search__decor-start"></div>
@@ -321,13 +323,17 @@
                 </div>
             </div>
         </header>
-        <!-- site__header end -->
-     <!-- site__body -->
+        <!-- ============================================
+        ========= Header in Large Screen / End ==========
+        ==============================================-->
+        <!-- ============================================
+        ============= Main Content / Start ==============
+        ==============================================-->
         <div class="site__body shop-grid">
             <div class="block-header block-header--has-breadcrumb block-header--has-title">
                 <div class="container">
                     <div class="block-header__body">
-                        
+                        <!-- view search result title -->
                         <h1 class="block-header__title fix-font-size">Résultats de recherche pour : <span class="search-term"></span></h1>
                     </div>
                 </div>
@@ -338,9 +344,10 @@
                         <div class="block-split__item block-split__item-content col-auto">
                             <div class="block">
                                 <div class="products-view">
-                                       <div class="products-view__options view-options view-options--offcanvas--always">
+                                    <!-- search filter bar / start -->
+                                    <div class="products-view__options view-options view-options--offcanvas--always">
                                         <div class="view-options__body">
-                                            <button type="button" class="view-options__filters-button filters-button">
+                                            <button type="button" class="view-options__filters-button filters-button not-visible">
                                                 <span class="filters-button__icon"><svg width="16" height="16">
                                                         <path d="M7,14v-2h9v2H7z M14,7h2v2h-2V7z M12.5,6C12.8,6,13,6.2,13,6.5v3c0,0.3-0.2,0.5-0.5,0.5h-2
 	C10.2,10,10,9.8,10,9.5v-3C10,6.2,10.2,6,10.5,6H12.5z M7,2h9v2H7V2z M5.5,5h-2C3.2,5,3,4.8,3,4.5v-3C3,1.2,3.2,1,3.5,1h2
@@ -368,45 +375,42 @@
                                                     <option value="">Nom du produit : A - Z</option>
                                                 </select>
                                             </div>
-
                                         </div>
                                     </div>
-                               <div class="products-view__list">
-                                     
-                                      <div class="products-list__content">
-
-
-
-                                            <div class="products-list__item ">
-                                                <div class="associated" ><i class="fa-solid fa-circle-nodes"></i></div>
-                                                <dialog  class="dialog-wrapper">
+                                    <!-- search filter bar / End -->
+                                    <div class="products-view__list">
+                                        <div class="products-list__content">
+                                            <!-- Produit 1 -->
+                                            <div class="products-list__item resultat_item">
+                                                <!-- Dialog button / produit associé button -->
+                                                <div class="associated"><i class="fa-solid fa-circle-nodes"></i></div>
+                                                <!-- Dialog pop up -->
+                                                <dialog class="dialog-wrapper">
                                                     <div class="dialog-header">
                                                         <h4>Produits associés</h4>
                                                         <button class="dialog-close">x</button>
                                                     </div>
+                                                    <!-- Dialog pop up Info -->
                                                     <form method="dialog" class="form-dialog">
-
                                                         <div class="card">
-
                                                             <div class="card-divider"></div>
                                                             <div class="card-table">
                                                                 <div class="table-responsive-sm">
                                                                     <table>
+                                                                        <!-- Dialog pop up Info Title -->
                                                                         <thead>
                                                                             <tr>
                                                                                 <th>Référence</th>
                                                                                 <th>Désignation</th>
                                                                                 <th>Stock</th>
-
-
                                                                             </tr>
                                                                         </thead>
+                                                                        <!-- Dialog pop up Content -->
                                                                         <tbody>
                                                                             <tr>
                                                                                 <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
                                                                                 <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                                 <td class="text-right"><span class="dialog-stock">70</span></td>
-
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><a href="#">DFV108V</a></td>
@@ -417,7 +421,6 @@
                                                                                 <td><a href="#">QP718</a></td>
                                                                                 <td><a href="#" class="designation dialog-designation">Motor Oil Level 5</a></td>
                                                                                 <td class="text-right"><span class="dialog-stock">150</span></td>
-
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><a href="#">446-1917R-UE</a></td>
@@ -438,31 +441,26 @@
                                                                     </table>
                                                                 </div>
                                                             </div>
-
-
                                                         </div>
-
                                                     </form>
                                                 </dialog>
-
-
                                                 <div class="product-card">
+                                                   <!-- produit wishlist -->
                                                     <button class="wishlist-button" type="button">
                                                         <i class="fa-regular fa-heart"></i>
                                                     </button>
+                                                    <!-- produit image + lien + stock + remise -->
                                                     <div class="product-card__image">
-                                                       
-                                                <div class="stockNumber fixTop-boutique ">70</div>
-                                                <div class="remise ">-30%</div>
+                                                        <div class="stockNumber fixTop-boutique ">70</div>
+                                                        <div class="remise ">-30%</div>
                                                         <div class="image image--type--product ">
-
                                                             <a href="product-full.html" class="image__body ">
                                                                 <img class="image__tag" src="images/products/product-1-245x245.jpg" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
+                                                    <!-- produit info -->
                                                     <div class="product-card__info">
-
                                                         <div class="product-card__name">
                                                             <div>
                                                                 <a href="#" class="product-reference">010015</a>
@@ -482,10 +480,10 @@
                                                             <div class="product-card__rating-label">4 on 3 Avis</div>
                                                         </div>
                                                     </div>
+                                                    <!-- produit prix + input number -->
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            
-                                                           <span class="product-card__price product-card__price--current">190.00 DH</span>
+                                                            <span class="product-card__price product-card__price--current">190.00 DH</span>
                                                             &nbsp;<span class="brut">[ BRUT ]&nbsp;</span><a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                         </div>
                                                         <br>
@@ -495,7 +493,6 @@
                                                                 <div class="input-number__add"></div>
                                                                 <div class="input-number__sub"></div>
                                                             </div>
-
                                                             <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
                                                                 <svg width="20" height="20">
                                                                     <circle cx="7" cy="17" r="2"></circle>
@@ -509,7 +506,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="products-list__item ">
+                                            <!-- Produit 2 -->
+                                            <div class="products-list__item resultat_item">
                                                 <div class="associated"><i class="fa-solid fa-circle-nodes"></i></div>
                                                 <dialog class="dialog-wrapper">
                                                     <div class="dialog-header">
@@ -517,9 +515,7 @@
                                                         <button class="dialog-close">x</button>
                                                     </div>
                                                     <form method="dialog" class="form-dialog">
-
                                                         <div class="card">
-
                                                             <div class="card-divider"></div>
                                                             <div class="card-table">
                                                                 <div class="table-responsive-sm">
@@ -529,8 +525,6 @@
                                                                                 <th>Référence</th>
                                                                                 <th>Désignation</th>
                                                                                 <th>Stock</th>
-
-
                                                                             </tr>
                                                                         </thead>
                                                                         <tbody>
@@ -538,7 +532,6 @@
                                                                                 <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
                                                                                 <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                                 <td class="text-right"><span class="dialog-stock">70</span></td>
-
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><a href="#">DFV108V</a></td>
@@ -549,7 +542,6 @@
                                                                                 <td><a href="#">QP718</a></td>
                                                                                 <td><a href="#" class="designation dialog-designation">Motor Oil Level 5</a></td>
                                                                                 <td class="text-right"><span class="dialog-stock">150</span></td>
-
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><a href="#">446-1917R-UE</a></td>
@@ -570,31 +562,23 @@
                                                                     </table>
                                                                 </div>
                                                             </div>
-
-
                                                         </div>
-
                                                     </form>
                                                 </dialog>
-
-
                                                 <div class="product-card">
                                                     <button class="wishlist-button" type="button">
                                                         <i class="fa-regular fa-heart"></i>
                                                     </button>
                                                     <div class="product-card__image">
-                                                       
-                                                <div class="stockNumber fixTop-boutique">70</div>
-                                                <div class="remise ">-30%</div>
+                                                        <div class="stockNumber fixTop-boutique">70</div>
+                                                        <div class="remise ">-30%</div>
                                                         <div class="image image--type--product ">
-
                                                             <a href="product-full.html" class="image__body ">
                                                                 <img class="image__tag" src="images/products/product-2-245x245.png" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="product-card__info">
-
                                                         <div class="product-card__name">
                                                             <div>
                                                                 <a href="#" class="product-reference">010015</a>
@@ -616,8 +600,7 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            
-                                                           <span class="product-card__price product-card__price--current">190.00 DH</span>
+                                                            <span class="product-card__price product-card__price--current">190.00 DH</span>
                                                             &nbsp;<span class="brut">[ BRUT ]&nbsp;</span><a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                         </div>
                                                         <br>
@@ -627,7 +610,6 @@
                                                                 <div class="input-number__add"></div>
                                                                 <div class="input-number__sub"></div>
                                                             </div>
-
                                                             <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
                                                                 <svg width="20" height="20">
                                                                     <circle cx="7" cy="17" r="2"></circle>
@@ -641,17 +623,16 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="products-list__item ">
-                                                <div class="associated" ><i class="fa-solid fa-circle-nodes"></i></div>
-                                                <dialog  class="dialog-wrapper">
+                                            <!-- Produit 3 -->
+                                            <div class="products-list__item resultat_item">
+                                                <div class="associated"><i class="fa-solid fa-circle-nodes"></i></div>
+                                                <dialog class="dialog-wrapper">
                                                     <div class="dialog-header">
                                                         <h4>Produits associés</h4>
                                                         <button class="dialog-close">x</button>
                                                     </div>
                                                     <form method="dialog" class="form-dialog">
-
                                                         <div class="card">
-
                                                             <div class="card-divider"></div>
                                                             <div class="card-table">
                                                                 <div class="table-responsive-sm">
@@ -661,8 +642,6 @@
                                                                                 <th>Référence</th>
                                                                                 <th>Désignation</th>
                                                                                 <th>Stock</th>
-
-
                                                                             </tr>
                                                                         </thead>
                                                                         <tbody>
@@ -670,7 +649,6 @@
                                                                                 <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
                                                                                 <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                                 <td class="text-right"><span class="dialog-stock">70</span></td>
-
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><a href="#">DFV108V</a></td>
@@ -681,7 +659,6 @@
                                                                                 <td><a href="#">QP718</a></td>
                                                                                 <td><a href="#" class="designation dialog-designation">Motor Oil Level 5</a></td>
                                                                                 <td class="text-right"><span class="dialog-stock">150</span></td>
-
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><a href="#">446-1917R-UE</a></td>
@@ -702,30 +679,23 @@
                                                                     </table>
                                                                 </div>
                                                             </div>
-
-
                                                         </div>
-
                                                     </form>
                                                 </dialog>
-
                                                 <div class="product-card">
                                                     <button class="wishlist-button" type="button">
                                                         <i class="fa-regular fa-heart"></i>
                                                     </button>
                                                     <div class="product-card__image">
-                                                       
-                                                <div class="stockNumber fixTop-boutique ">70</div>
-                                                <div class="remise ">-30%</div>
+                                                        <div class="stockNumber fixTop-boutique ">70</div>
+                                                        <div class="remise ">-30%</div>
                                                         <div class="image image--type--product ">
-
                                                             <a href="product-full.html" class="image__body ">
                                                                 <img class="image__tag" src="images/products/product-3-245x245.png" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="product-card__info">
-
                                                         <div class="product-card__name">
                                                             <div>
                                                                 <a href="#" class="product-reference">010015</a>
@@ -747,8 +717,7 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            
-                                                           <span class="product-card__price product-card__price--current">190.00 DH</span>
+                                                            <span class="product-card__price product-card__price--current">190.00 DH</span>
                                                             &nbsp;<span class="brut">[ BRUT ]&nbsp;</span><a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                         </div>
                                                         <br>
@@ -758,7 +727,6 @@
                                                                 <div class="input-number__add"></div>
                                                                 <div class="input-number__sub"></div>
                                                             </div>
-
                                                             <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
                                                                 <svg width="20" height="20">
                                                                     <circle cx="7" cy="17" r="2"></circle>
@@ -772,17 +740,16 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="products-list__item ">
-                                                <div class="associated" ><i class="fa-solid fa-circle-nodes"></i></div>
-                                                <dialog  class="dialog-wrapper">
+                                            <!-- Produit 4 -->
+                                            <div class="products-list__item resultat_item">
+                                                <div class="associated"><i class="fa-solid fa-circle-nodes"></i></div>
+                                                <dialog class="dialog-wrapper">
                                                     <div class="dialog-header">
                                                         <h4>Produits associés</h4>
                                                         <button class="dialog-close">x</button>
                                                     </div>
                                                     <form method="dialog" class="form-dialog">
-
                                                         <div class="card">
-
                                                             <div class="card-divider"></div>
                                                             <div class="card-table">
                                                                 <div class="table-responsive-sm">
@@ -792,8 +759,6 @@
                                                                                 <th>Référence</th>
                                                                                 <th>Désignation</th>
                                                                                 <th>Stock</th>
-
-
                                                                             </tr>
                                                                         </thead>
                                                                         <tbody>
@@ -801,7 +766,6 @@
                                                                                 <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
                                                                                 <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                                 <td class="text-right"><span class="dialog-stock">70</span></td>
-
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><a href="#">DFV108V</a></td>
@@ -812,7 +776,6 @@
                                                                                 <td><a href="#">QP718</a></td>
                                                                                 <td><a href="#" class="designation dialog-designation">Motor Oil Level 5</a></td>
                                                                                 <td class="text-right"><span class="dialog-stock">150</span></td>
-
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><a href="#">446-1917R-UE</a></td>
@@ -833,34 +796,26 @@
                                                                     </table>
                                                                 </div>
                                                             </div>
-
-
                                                         </div>
-
                                                     </form>
                                                 </dialog>
-
-
                                                 <div class="product-card">
                                                     <button class="wishlist-button" type="button">
                                                         <i class="fa-regular fa-heart"></i>
                                                     </button>
                                                     <div class="product-card__image">
-                                                       
-                                                <div class="stockNumber fixTop-boutique ">70</div>
-                                                <div class="remise ">-30%</div>
+                                                        <div class="stockNumber fixTop-boutique ">70</div>
+                                                        <div class="remise ">-30%</div>
                                                         <div class="image image--type--product ">
-
                                                             <a href="product-full.html" class="image__body ">
                                                                 <img class="image__tag" src="images/products/product-6-245x245.png" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="product-card__info">
-
                                                         <div class="product-card__name">
                                                             <div>
-                                                               <a href="#" class="product-reference">010015</a>
+                                                                <a href="#" class="product-reference">010015</a>
                                                                 <a href="product-full.html">Brandix Spark Plug Kit ASR-400</a>
                                                             </div>
                                                         </div>
@@ -879,8 +834,7 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            
-                                                           <span class="product-card__price product-card__price--current">190.00 DH</span>
+                                                            <span class="product-card__price product-card__price--current">190.00 DH</span>
                                                             &nbsp;<span class="brut">[ BRUT ]&nbsp;</span><a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                         </div>
                                                         <br>
@@ -890,7 +844,6 @@
                                                                 <div class="input-number__add"></div>
                                                                 <div class="input-number__sub"></div>
                                                             </div>
-
                                                             <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
                                                                 <svg width="20" height="20">
                                                                     <circle cx="7" cy="17" r="2"></circle>
@@ -904,17 +857,16 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="products-list__item ">
-                                                <div class="associated" ><i class="fa-solid fa-circle-nodes"></i></div>
-                                                <dialog  class="dialog-wrapper">
+                                            <!-- Produit 5 -->
+                                            <div class="products-list__item resultat_item">
+                                                <div class="associated"><i class="fa-solid fa-circle-nodes"></i></div>
+                                                <dialog class="dialog-wrapper">
                                                     <div class="dialog-header">
                                                         <h4>Produits associés</h4>
                                                         <button class="dialog-close">x</button>
                                                     </div>
                                                     <form method="dialog" class="form-dialog">
-
                                                         <div class="card">
-
                                                             <div class="card-divider"></div>
                                                             <div class="card-table">
                                                                 <div class="table-responsive-sm">
@@ -924,8 +876,6 @@
                                                                                 <th>Référence</th>
                                                                                 <th>Désignation</th>
                                                                                 <th>Stock</th>
-
-
                                                                             </tr>
                                                                         </thead>
                                                                         <tbody>
@@ -933,7 +883,6 @@
                                                                                 <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
                                                                                 <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                                 <td class="text-right"><span class="dialog-stock">70</span></td>
-
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><a href="#">DFV108V</a></td>
@@ -944,7 +893,6 @@
                                                                                 <td><a href="#">QP718</a></td>
                                                                                 <td><a href="#" class="designation dialog-designation">Motor Oil Level 5</a></td>
                                                                                 <td class="text-right"><span class="dialog-stock">150</span></td>
-
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><a href="#">446-1917R-UE</a></td>
@@ -965,34 +913,26 @@
                                                                     </table>
                                                                 </div>
                                                             </div>
-
-
                                                         </div>
-
                                                     </form>
                                                 </dialog>
-
-
                                                 <div class="product-card">
                                                     <button class="wishlist-button" type="button">
                                                         <i class="fa-regular fa-heart"></i>
                                                     </button>
                                                     <div class="product-card__image">
-                                                       
-                                                <div class="stockNumber fixTop-boutique ">70</div>
-                                                <div class="remise ">-30%</div>
+                                                        <div class="stockNumber fixTop-boutique ">70</div>
+                                                        <div class="remise ">-30%</div>
                                                         <div class="image image--type--product ">
-
                                                             <a href="product-full.html" class="image__body ">
                                                                 <img class="image__tag" src="images/products/product-7-245x245.png" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="product-card__info">
-
                                                         <div class="product-card__name">
                                                             <div>
-                                                               <a href="#" class="product-reference">010015</a>
+                                                                <a href="#" class="product-reference">010015</a>
                                                                 <a href="product-full.html">Brandix Spark Plug Kit ASR-400</a>
                                                             </div>
                                                         </div>
@@ -1011,8 +951,7 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            
-                                                           <span class="product-card__price product-card__price--current">190.00 DH</span>
+                                                            <span class="product-card__price product-card__price--current">190.00 DH</span>
                                                             &nbsp;<span class="brut">[ BRUT ]&nbsp;</span><a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                         </div>
                                                         <br>
@@ -1022,7 +961,6 @@
                                                                 <div class="input-number__add"></div>
                                                                 <div class="input-number__sub"></div>
                                                             </div>
-
                                                             <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
                                                                 <svg width="20" height="20">
                                                                     <circle cx="7" cy="17" r="2"></circle>
@@ -1036,17 +974,15 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="products-list__item ">
-                                                <div class="associated" ><i class="fa-solid fa-circle-nodes"></i></div>
-                                                <dialog  class="dialog-wrapper">
+                                            <div class="products-list__item resultat_item">
+                                                <div class="associated"><i class="fa-solid fa-circle-nodes"></i></div>
+                                                <dialog class="dialog-wrapper">
                                                     <div class="dialog-header">
                                                         <h4>Produits associés</h4>
                                                         <button class="dialog-close">x</button>
                                                     </div>
                                                     <form method="dialog" class="form-dialog">
-
                                                         <div class="card">
-
                                                             <div class="card-divider"></div>
                                                             <div class="card-table">
                                                                 <div class="table-responsive-sm">
@@ -1056,8 +992,6 @@
                                                                                 <th>Référence</th>
                                                                                 <th>Désignation</th>
                                                                                 <th>Stock</th>
-
-
                                                                             </tr>
                                                                         </thead>
                                                                         <tbody>
@@ -1065,7 +999,6 @@
                                                                                 <td><a href="#" class="dialog-reference">551-11ADR-LDEM2</a></td>
                                                                                 <td><a href="#" class="designation dialog-designation">Rlt Ar Mégane - Scenic 99-03</a></td>
                                                                                 <td class="text-right"><span class="dialog-stock">70</span></td>
-
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><a href="#">DFV108V</a></td>
@@ -1076,7 +1009,6 @@
                                                                                 <td><a href="#">QP718</a></td>
                                                                                 <td><a href="#" class="designation dialog-designation">Motor Oil Level 5</a></td>
                                                                                 <td class="text-right"><span class="dialog-stock">150</span></td>
-
                                                                             </tr>
                                                                             <tr>
                                                                                 <td><a href="#">446-1917R-UE</a></td>
@@ -1097,35 +1029,26 @@
                                                                     </table>
                                                                 </div>
                                                             </div>
-
-
                                                         </div>
-
                                                     </form>
                                                 </dialog>
-
-
-
                                                 <div class="product-card">
                                                     <button class="wishlist-button" type="button">
                                                         <i class="fa-regular fa-heart"></i>
                                                     </button>
                                                     <div class="product-card__image">
-                                                       
-                                                <div class="stockNumber fixTop-boutique ">70</div>
-                                                <div class="remise ">-30%</div>
+                                                        <div class="stockNumber fixTop-boutique ">70</div>
+                                                        <div class="remise ">-30%</div>
                                                         <div class="image image--type--product ">
-
                                                             <a href="product-full.html" class="image__body ">
                                                                 <img class="image__tag" src="images/products/product-4-245x245.png" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="product-card__info">
-
                                                         <div class="product-card__name">
                                                             <div>
-                                                               <a href="#" class="product-reference">010015</a>
+                                                                <a href="#" class="product-reference">010015</a>
                                                                 <a href="product-full.html">Brandix Spark Plug Kit ASR-400</a>
                                                             </div>
                                                         </div>
@@ -1144,8 +1067,7 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            
-                                                           <span class="product-card__price product-card__price--current">190.00 DH</span>
+                                                            <span class="product-card__price product-card__price--current">190.00 DH</span>
                                                             &nbsp;<span class="brut">[ BRUT ]&nbsp;</span><a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                         </div>
                                                         <br>
@@ -1155,7 +1077,6 @@
                                                                 <div class="input-number__add"></div>
                                                                 <div class="input-number__sub"></div>
                                                             </div>
-
                                                             <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
                                                                 <svg width="20" height="20">
                                                                     <circle cx="7" cy="17" r="2"></circle>
@@ -1169,27 +1090,24 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="products-list__item ">
+                                            <div class="products-list__item resultat_item">
                                                 <div class="product-card">
                                                     <button class="wishlist-button" type="button">
                                                         <i class="fa-regular fa-heart"></i>
                                                     </button>
                                                     <div class="product-card__image">
-                                                       
-                                                <div class="stockNumber fixTop-boutique ">70</div>
-                                                <div class="remise ">-30%</div>
+                                                        <div class="stockNumber fixTop-boutique ">70</div>
+                                                        <div class="remise ">-30%</div>
                                                         <div class="image image--type--product ">
-
                                                             <a href="product-full.html" class="image__body ">
                                                                 <img class="image__tag" src="images/products/product-5-245x245.png" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="product-card__info">
-
                                                         <div class="product-card__name">
                                                             <div>
-                                                               <a href="#" class="product-reference">010015</a>
+                                                                <a href="#" class="product-reference">010015</a>
                                                                 <a href="product-full.html">Brandix Spark Plug Kit ASR-400</a>
                                                             </div>
                                                         </div>
@@ -1208,8 +1126,7 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            
-                                                           <span class="product-card__price product-card__price--current">190.00 DH</span>
+                                                            <span class="product-card__price product-card__price--current">190.00 DH</span>
                                                             &nbsp;<span class="brut">[ BRUT ]&nbsp;</span><a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                         </div>
                                                         <br>
@@ -1219,7 +1136,6 @@
                                                                 <div class="input-number__add"></div>
                                                                 <div class="input-number__sub"></div>
                                                             </div>
-
                                                             <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
                                                                 <svg width="20" height="20">
                                                                     <circle cx="7" cy="17" r="2"></circle>
@@ -1233,27 +1149,24 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="products-list__item ">
+                                            <div class="products-list__item resultat_item">
                                                 <div class="product-card">
                                                     <button class="wishlist-button" type="button">
                                                         <i class="fa-regular fa-heart"></i>
                                                     </button>
                                                     <div class="product-card__image">
-                                                       
-                                                <div class="stockNumber fixTop-boutique ">70</div>
-                                                <div class="remise ">-30%</div>
+                                                        <div class="stockNumber fixTop-boutique ">70</div>
+                                                        <div class="remise ">-30%</div>
                                                         <div class="image image--type--product ">
-
                                                             <a href="product-full.html" class="image__body ">
                                                                 <img class="image__tag" src="images/products/product-15-245x245.png" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="product-card__info">
-
                                                         <div class="product-card__name">
                                                             <div>
-                                                               <a href="#" class="product-reference">010015</a>
+                                                                <a href="#" class="product-reference">010015</a>
                                                                 <a href="product-full.html">Brandix Spark Plug Kit ASR-400</a>
                                                             </div>
                                                         </div>
@@ -1272,8 +1185,7 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            
-                                                           <span class="product-card__price product-card__price--current">190.00 DH</span>
+                                                            <span class="product-card__price product-card__price--current">190.00 DH</span>
                                                             &nbsp;<span class="brut">[ BRUT ]&nbsp;</span><a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                         </div>
                                                         <br>
@@ -1283,7 +1195,6 @@
                                                                 <div class="input-number__add"></div>
                                                                 <div class="input-number__sub"></div>
                                                             </div>
-
                                                             <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
                                                                 <svg width="20" height="20">
                                                                     <circle cx="7" cy="17" r="2"></circle>
@@ -1297,27 +1208,24 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="products-list__item ">
+                                            <div class="products-list__item resultat_item">
                                                 <div class="product-card">
                                                     <button class="wishlist-button" type="button">
                                                         <i class="fa-regular fa-heart"></i>
                                                     </button>
                                                     <div class="product-card__image">
-                                                       
-                                                <div class="stockNumber fixTop-boutique ">70</div>
-                                                <div class="remise ">-30%</div>
+                                                        <div class="stockNumber fixTop-boutique ">70</div>
+                                                        <div class="remise ">-30%</div>
                                                         <div class="image image--type--product ">
-
                                                             <a href="product-full.html" class="image__body ">
                                                                 <img class="image__tag" src="images/products/product-16-245x245.png" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="product-card__info">
-
                                                         <div class="product-card__name">
                                                             <div>
-                                                               <a href="#" class="product-reference">010015</a>
+                                                                <a href="#" class="product-reference">010015</a>
                                                                 <a href="product-full.html">Brandix Spark Plug Kit ASR-400</a>
                                                             </div>
                                                         </div>
@@ -1336,8 +1244,7 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            
-                                                           <span class="product-card__price product-card__price--current">190.00 DH</span>
+                                                            <span class="product-card__price product-card__price--current">190.00 DH</span>
                                                             &nbsp;<span class="brut">[ BRUT ]&nbsp;</span><a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                         </div>
                                                         <br>
@@ -1347,7 +1254,6 @@
                                                                 <div class="input-number__add"></div>
                                                                 <div class="input-number__sub"></div>
                                                             </div>
-
                                                             <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
                                                                 <svg width="20" height="20">
                                                                     <circle cx="7" cy="17" r="2"></circle>
@@ -1361,27 +1267,24 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="products-list__item ">
+                                            <div class="products-list__item resultat_item">
                                                 <div class="product-card">
                                                     <button class="wishlist-button" type="button">
                                                         <i class="fa-regular fa-heart"></i>
                                                     </button>
                                                     <div class="product-card__image">
-                                                       
-                                                <div class="stockNumber fixTop-boutique ">70</div>
-                                                <div class="remise ">-30%</div>
+                                                        <div class="stockNumber fixTop-boutique ">70</div>
+                                                        <div class="remise ">-30%</div>
                                                         <div class="image image--type--product ">
-
                                                             <a href="product-full.html" class="image__body ">
                                                                 <img class="image__tag" src="images/products/product-17-245x245.png" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="product-card__info">
-
                                                         <div class="product-card__name">
                                                             <div>
-                                                               <a href="#" class="product-reference">010015</a>
+                                                                <a href="#" class="product-reference">010015</a>
                                                                 <a href="product-full.html">Brandix Spark Plug Kit ASR-400</a>
                                                             </div>
                                                         </div>
@@ -1400,8 +1303,7 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            
-                                                           <span class="product-card__price product-card__price--current">190.00 DH</span>
+                                                            <span class="product-card__price product-card__price--current">190.00 DH</span>
                                                             &nbsp;<span class="brut">[ BRUT ]&nbsp;</span><a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                         </div>
                                                         <br>
@@ -1411,7 +1313,6 @@
                                                                 <div class="input-number__add"></div>
                                                                 <div class="input-number__sub"></div>
                                                             </div>
-
                                                             <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
                                                                 <svg width="20" height="20">
                                                                     <circle cx="7" cy="17" r="2"></circle>
@@ -1425,28 +1326,24 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="products-list__item ">
-
+                                            <div class="products-list__item resultat_item">
                                                 <div class="product-card">
                                                     <button class="wishlist-button" type="button">
                                                         <i class="fa-regular fa-heart"></i>
                                                     </button>
                                                     <div class="product-card__image">
-                                                       
-                                                <div class="stockNumber fixTop-boutique ">70</div>
-                                                <div class="remise ">-30%</div>
+                                                        <div class="stockNumber fixTop-boutique ">70</div>
+                                                        <div class="remise ">-30%</div>
                                                         <div class="image image--type--product ">
-
                                                             <a href="product-full.html" class="image__body ">
                                                                 <img class="image__tag" src="images/products/product-20-245x245.png" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="product-card__info">
-
                                                         <div class="product-card__name">
                                                             <div>
-                                                               <a href="#" class="product-reference">010015</a>
+                                                                <a href="#" class="product-reference">010015</a>
                                                                 <a href="product-full.html">Brandix Spark Plug Kit ASR-400</a>
                                                             </div>
                                                         </div>
@@ -1465,8 +1362,7 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            
-                                                           <span class="product-card__price product-card__price--current">190.00 DH</span>
+                                                            <span class="product-card__price product-card__price--current">190.00 DH</span>
                                                             &nbsp;<span class="brut">[ BRUT ]&nbsp;</span><a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                         </div>
                                                         <br>
@@ -1476,7 +1372,6 @@
                                                                 <div class="input-number__add"></div>
                                                                 <div class="input-number__sub"></div>
                                                             </div>
-
                                                             <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
                                                                 <svg width="20" height="20">
                                                                     <circle cx="7" cy="17" r="2"></circle>
@@ -1490,29 +1385,24 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="products-list__item ">
-
+                                            <div class="products-list__item resultat_item">
                                                 <div class="product-card">
                                                     <button class="wishlist-button" type="button">
                                                         <i class="fa-regular fa-heart"></i>
                                                     </button>
                                                     <div class="product-card__image">
-                                                       
-                                                <div class="stockNumber fixTop-boutique ">70</div>
-                                                <div class="remise ">-30%</div>
+                                                        <div class="stockNumber fixTop-boutique ">70</div>
+                                                        <div class="remise ">-30%</div>
                                                         <div class="image image--type--product ">
-
                                                             <a href="product-full.html" class="image__body ">
                                                                 <img class="image__tag" src="images/products/product-19-245x245.png" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="product-card__info">
-
                                                         <div class="product-card__name">
                                                             <div>
-                                                              
-                                                               <a href="#" class="product-reference">010015</a>
+                                                                <a href="#" class="product-reference">010015</a>
                                                                 <a href="product-full.html">Brandix Spark Plug Kit ASR-400</a>
                                                             </div>
                                                         </div>
@@ -1531,8 +1421,7 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            
-                                                           <span class="product-card__price product-card__price--current">190.00 DH</span>
+                                                            <span class="product-card__price product-card__price--current">190.00 DH</span>
                                                             &nbsp;<span class="brut">[ BRUT ]&nbsp;</span><a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                         </div>
                                                         <br>
@@ -1542,7 +1431,6 @@
                                                                 <div class="input-number__add"></div>
                                                                 <div class="input-number__sub"></div>
                                                             </div>
-
                                                             <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
                                                                 <svg width="20" height="20">
                                                                     <circle cx="7" cy="17" r="2"></circle>
@@ -1556,27 +1444,24 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="products-list__item ">
+                                            <div class="products-list__item resultat_item">
                                                 <div class="product-card">
                                                     <button class="wishlist-button" type="button">
                                                         <i class="fa-regular fa-heart"></i>
                                                     </button>
                                                     <div class="product-card__image">
-                                                       
-                                                <div class="stockNumber fixTop-boutique ">70</div>
-                                                <div class="remise ">-30%</div>
+                                                        <div class="stockNumber fixTop-boutique ">70</div>
+                                                        <div class="remise ">-30%</div>
                                                         <div class="image image--type--product ">
-
                                                             <a href="product-full.html" class="image__body ">
                                                                 <img class="image__tag" src="images/products/product-21-245x245.png" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="product-card__info">
-
                                                         <div class="product-card__name">
                                                             <div>
-                                                               <a href="#" class="product-reference">010015</a>
+                                                                <a href="#" class="product-reference">010015</a>
                                                                 <a href="product-full.html">Brandix Spark Plug Kit ASR-400</a>
                                                             </div>
                                                         </div>
@@ -1595,8 +1480,7 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            
-                                                           <span class="product-card__price product-card__price--current">190.00 DH</span>
+                                                            <span class="product-card__price product-card__price--current">190.00 DH</span>
                                                             &nbsp;<span class="brut">[ BRUT ]&nbsp;</span><a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                         </div>
                                                         <br>
@@ -1606,7 +1490,6 @@
                                                                 <div class="input-number__add"></div>
                                                                 <div class="input-number__sub"></div>
                                                             </div>
-
                                                             <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
                                                                 <svg width="20" height="20">
                                                                     <circle cx="7" cy="17" r="2"></circle>
@@ -1620,27 +1503,24 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="products-list__item ">
+                                            <div class="products-list__item resultat_item">
                                                 <div class="product-card">
                                                     <button class="wishlist-button" type="button">
                                                         <i class="fa-regular fa-heart"></i>
                                                     </button>
                                                     <div class="product-card__image">
-                                                       
-                                                <div class="stockNumber fixTop-boutique ">70</div>
-                                                <div class="remise ">-30%</div>
+                                                        <div class="stockNumber fixTop-boutique ">70</div>
+                                                        <div class="remise ">-30%</div>
                                                         <div class="image image--type--product ">
-
                                                             <a href="product-full.html" class="image__body ">
                                                                 <img class="image__tag" src="images/products/product-10-245x245.png" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="product-card__info">
-
                                                         <div class="product-card__name">
                                                             <div>
-                                                               <a href="#" class="product-reference">010015</a>
+                                                                <a href="#" class="product-reference">010015</a>
                                                                 <a href="product-full.html">Brandix Spark Plug Kit ASR-400</a>
                                                             </div>
                                                         </div>
@@ -1659,8 +1539,7 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            
-                                                           <span class="product-card__price product-card__price--current">190.00 DH</span>
+                                                            <span class="product-card__price product-card__price--current">190.00 DH</span>
                                                             &nbsp;<span class="brut">[ BRUT ]&nbsp;</span><a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                         </div>
                                                         <br>
@@ -1670,7 +1549,6 @@
                                                                 <div class="input-number__add"></div>
                                                                 <div class="input-number__sub"></div>
                                                             </div>
-
                                                             <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
                                                                 <svg width="20" height="20">
                                                                     <circle cx="7" cy="17" r="2"></circle>
@@ -1684,27 +1562,24 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="products-list__item ">
+                                            <div class="products-list__item resultat_item">
                                                 <div class="product-card">
                                                     <button class="wishlist-button" type="button">
                                                         <i class="fa-regular fa-heart"></i>
                                                     </button>
                                                     <div class="product-card__image">
-                                                       
-                                                <div class="stockNumber fixTop-boutique ">70</div>
-                                                <div class="remise ">-30%</div>
+                                                        <div class="stockNumber fixTop-boutique ">70</div>
+                                                        <div class="remise ">-30%</div>
                                                         <div class="image image--type--product ">
-
                                                             <a href="product-full.html" class="image__body ">
                                                                 <img class="image__tag" src="images/products/product-22-245x245.png" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="product-card__info">
-
                                                         <div class="product-card__name">
                                                             <div>
-                                                               <a href="#" class="product-reference">010015</a>
+                                                                <a href="#" class="product-reference">010015</a>
                                                                 <a href="product-full.html">Brandix Spark Plug Kit ASR-400</a>
                                                             </div>
                                                         </div>
@@ -1723,8 +1598,7 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            
-                                                           <span class="product-card__price product-card__price--current">190.00 DH</span>
+                                                            <span class="product-card__price product-card__price--current">190.00 DH</span>
                                                             &nbsp;<span class="brut">[ BRUT ]&nbsp;</span><a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                         </div>
                                                         <br>
@@ -1734,7 +1608,6 @@
                                                                 <div class="input-number__add"></div>
                                                                 <div class="input-number__sub"></div>
                                                             </div>
-
                                                             <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
                                                                 <svg width="20" height="20">
                                                                     <circle cx="7" cy="17" r="2"></circle>
@@ -1748,27 +1621,24 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="products-list__item ">
+                                            <div class="products-list__item resultat_item">
                                                 <div class="product-card">
                                                     <button class="wishlist-button" type="button">
                                                         <i class="fa-regular fa-heart"></i>
                                                     </button>
                                                     <div class="product-card__image">
-                                                       
-                                                    <div class="stockNumber fixTop-boutique ">70</div>
-                                                    <div class="remise ">-30%</div>
+                                                        <div class="stockNumber fixTop-boutique ">70</div>
+                                                        <div class="remise ">-30%</div>
                                                         <div class="image image--type--product ">
-
                                                             <a href="product-full.html" class="image__body ">
                                                                 <img class="image__tag" src="images/products/product-23-245x245.png" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="product-card__info">
-
                                                         <div class="product-card__name">
                                                             <div>
-                                                               <a href="#" class="product-reference">010015</a>
+                                                                <a href="#" class="product-reference">010015</a>
                                                                 <a href="product-full.html">Brandix Spark Plug Kit ASR-400</a>
                                                             </div>
                                                         </div>
@@ -1787,8 +1657,7 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            
-                                                           <span class="product-card__price product-card__price--current">190.00 DH</span>
+                                                            <span class="product-card__price product-card__price--current">190.00 DH</span>
                                                             &nbsp;<span class="brut">[ BRUT ]&nbsp;</span><a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                         </div>
                                                         <br>
@@ -1798,7 +1667,6 @@
                                                                 <div class="input-number__add"></div>
                                                                 <div class="input-number__sub"></div>
                                                             </div>
-
                                                             <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
                                                                 <svg width="20" height="20">
                                                                     <circle cx="7" cy="17" r="2"></circle>
@@ -1812,28 +1680,24 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="products-list__item ">
-
+                                            <div class="products-list__item resultat_item">
                                                 <div class="product-card">
                                                     <button class="wishlist-button" type="button">
                                                         <i class="fa-regular fa-heart"></i>
                                                     </button>
                                                     <div class="product-card__image">
-                                                       
-                                                <div class="stockNumber fixTop-boutique ">70</div>
-                                                <div class="remise ">-30%</div>
+                                                        <div class="stockNumber fixTop-boutique ">70</div>
+                                                        <div class="remise ">-30%</div>
                                                         <div class="image image--type--product ">
-
                                                             <a href="product-full.html" class="image__body ">
                                                                 <img class="image__tag" src="images/products/product-24-245x245.png" alt="">
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="product-card__info">
-
                                                         <div class="product-card__name">
                                                             <div>
-                                                               <a href="#" class="product-reference">010015</a>
+                                                                <a href="#" class="product-reference">010015</a>
                                                                 <a href="product-full.html">Brandix Spark Plug Kit ASR-400</a>
                                                             </div>
                                                         </div>
@@ -1852,8 +1716,7 @@
                                                     </div>
                                                     <div class="product-card__footer">
                                                         <div class="product-card__prices">
-                                                            
-                                                           <span class="product-card__price product-card__price--current">190.00 DH</span>
+                                                            <span class="product-card__price product-card__price--current">190.00 DH</span>
                                                             &nbsp;<span class="brut">[ BRUT ]&nbsp;</span><a href="#" class="calculNet">(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)</a>
                                                         </div>
                                                         <br>
@@ -1863,7 +1726,6 @@
                                                                 <div class="input-number__add"></div>
                                                                 <div class="input-number__sub"></div>
                                                             </div>
-
                                                             <button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
                                                                 <svg width="20" height="20">
                                                                     <circle cx="7" cy="17" r="2"></circle>
@@ -1877,9 +1739,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
                                         </div>
-                                   </div>
+                                    </div>
+                                    <!-- Pagination / start -->
                                     <div class="products-view__pagination">
                                         <nav aria-label="Page navigation example" class="bottom_Pagination">
                                             <ul class="pagination">
@@ -1916,6 +1778,7 @@
                                             </ul>
                                         </nav>
                                     </div>
+                                <!-- Pagination / End -->
                                 </div>
                             </div>
                         </div>
@@ -1924,124 +1787,132 @@
                 </div>
             </div>
         </div>
-        <!-- site__body / end -->
-    <!-- site__footer -->
-    <footer class="site__footer">
-        <div class="site-footer">
-            <div class="decor site-footer__decor decor--type--bottom">
-                <div class="decor__body">
-                    <div class="decor__start"></div>
-                    <div class="decor__end"></div>
-                    <div class="decor__center"></div>
+        <!--=============================================
+        ============== Main Content / End ===============
+        ==============================================-->
+        <!--=============================================
+        ================ Footer / Start =================
+        ==============================================-->
+        <footer class="site__footer">
+            <div class="site-footer">
+                <div class="decor site-footer__decor decor--type--bottom">
+                    <div class="decor__body">
+                        <div class="decor__start"></div>
+                        <div class="decor__end"></div>
+                        <div class="decor__center"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="site-footer__widgets">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-xl-4">
-                            <div class="site-footer__widget footer-contacts">
-                                <h5 class="footer-contacts__title">Contactez-nous</h5>
-                                <div class="footer-contacts__text">     Notre équipe est là pour vous répondre ! Pour toute question sur nos produits, vos commandes ou pour toute autre demande, n'hésitez pas à nous contacter. </div>
-                                <address class="footer-contacts__contacts">
-                                    <dl>
-                                        <dt>Numéro de téléphone</dt>
-                                        <dd>+212 522 31 93 54</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Adresse e-mail</dt>
-                                        <dd>contact@capram.ma</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>LOCALISATION</dt>
-                                        <dd>35 Rue Bachir Ibrahimi, Casablanca 20250 <br>
-                                        ------------------------------------- <br>
-18 Bd de Khouribga, Casablanca 20250</dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>Horaires</dt>
-                                        <dd>Lundi – Vendredi <br>8:30 AM – 18:30 PM<br>
-                                        ---------------------------------- <br>
-Samedi <br> 8:30 AM – 13:00 PM</dd>
-                                    </dl>
-                                </address>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3 col-xl-2">
-                            <div class="site-footer__widget footer-links">
-                                <h5 class="footer-links__title">Information</h5>
-                                <ul class="footer-links__list">
-                                    <li class="footer-links__item"><a href="accueil.html" class="footer-links__link">Accueil</a></li>
-                                    <li class="footer-links__item"><a href="categorie.html" class="footer-links__link">CATÉGORIES</a></li>
-                                    
-                                    <li class="footer-links__item"><a href="contact.html" class="footer-links__link">Contactez-nous</a></li>
-                                    <li class="footer-links__item"><a href="chrono.html" class="footer-links__link">Chrono</a></li>
-                                     <li class="footer-links__item"><a href="https://capram.ma/" class="footer-links__link">capram.ma</a></li>
-                                      <li class="footer-links__item"><a href="https://turbo-accessories.com/" class="footer-links__link">turbo ecommerce</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3 col-xl-2">
-                            <div class="site-footer__widget footer-links">
-                                <h5 class="footer-links__title">Mon Compte</h5>
-                                <ul class="footer-links__list">
-                                    <li class="footer-links__item"><a href="commandes.html" class="footer-links__link">commandes</a></li>
-                                    <li class="footer-links__item"><a href="wishlist.html" class="footer-links__link">Wishlist</a></li>
-                                    <li class="footer-links__item"><a href="panier.html" class="footer-links__link">Panier</a></li>
-                                    <li class="footer-links__item"><a href="compte.html" class="footer-links__link">Détails du compte</a></li>
-                                    <li class="footer-links__item"><a href="promotion.html" class="footer-links__link">Promotions</a></li>
-                                    <li class="footer-links__item"><a href="nouveaute.html" class="footer-links__link">NOUVEAUTÉS</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-xl-4">
-                            <div class="site-footer__widget footer-newsletter">
-                                <h5 class="footer-newsletter__title">Newsletter</h5>
-                                <div class="footer-newsletter__text">
-                                    Entrez votre adresse e-mail ci-dessous pour vous abonner à notre bulletin d'information et rester à jour avec les réductions et les offres spéciales.
+                <div class="site-footer__widgets">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-xl-4">
+                                <div class="site-footer__widget footer-contacts">
+                                    <h5 class="footer-contacts__title">Contactez-nous</h5>
+                                    <div class="footer-contacts__text"> Notre équipe est là pour vous répondre ! Pour toute question sur nos produits, vos commandes ou pour toute autre demande, n'hésitez pas à nous contacter. </div>
+                                    <address class="footer-contacts__contacts">
+                                        <dl>
+                                            <dt>Numéro de téléphone</dt>
+                                            <dd>+212 522 31 93 54</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>Adresse e-mail</dt>
+                                            <dd>contact@capram.ma</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>LOCALISATION</dt>
+                                            <dd>35 Rue Bachir Ibrahimi, Casablanca 20250 <br>
+                                                ------------------------------------- <br>
+                                                18 Bd de Khouribga, Casablanca 20250</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>Horaires</dt>
+                                            <dd>Lundi – Vendredi <br>8:30 AM – 18:30 PM<br>
+                                                ---------------------------------- <br>
+                                                Samedi <br> 8:30 AM – 13:00 PM</dd>
+                                        </dl>
+                                    </address>
                                 </div>
-                                <form action="" class="footer-newsletter__form">
-                                    <label class="sr-only" for="footer-newsletter-address">Adresse e-mail</label>
-                                    <input type="text" class="footer-newsletter__form-input" id="footer-newsletter-address" placeholder="Adresse e-mail...">
-                                    <button class="footer-newsletter__form-button">S'abonner</button>
-                                </form>
-                                <div class="footer-newsletter__text footer-newsletter__text--social">
-                                    Suivez-nous sur les réseaux sociaux
-                                </div>
-                                <div class="footer-newsletter__social-links social-links">
-                                    <ul class="social-links__list">
-                                        <li class="social-links__item social-links__item--facebook"><a href="https://www.facebook.com/people/Capram-Maroc/61561691562602/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li class="social-links__item social-links__item--youtube"><a href="https://www.linkedin.com/company/centre-africain-de-pi%C3%A8ces-de-rechange-pour-l%E2%80%99automobile-au-maroc" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                                        <li class="social-links__item social-links__item--instagram"><a href="https://www.instagram.com/capram.auto/" target="_blank"><i class="fab fa-instagram"></i></a></li>  
+                            </div>
+                            <div class="col-6 col-md-3 col-xl-2">
+                                <div class="site-footer__widget footer-links">
+                                    <h5 class="footer-links__title">Information</h5>
+                                    <ul class="footer-links__list">
+                                        <li class="footer-links__item"><a href="accueil.html" class="footer-links__link">Accueil</a></li>
+                                        <li class="footer-links__item"><a href="categorie.html" class="footer-links__link">CATÉGORIES</a></li>
+                                        <li class="footer-links__item"><a href="contact.html" class="footer-links__link">Contactez-nous</a></li>
+                                        <li class="footer-links__item"><a href="chrono.html" class="footer-links__link">Chrono</a></li>
+                                        <li class="footer-links__item"><a href="https://capram.ma/" class="footer-links__link">Capram.ma</a></li>
+                                        <li class="footer-links__item"><a href="https://turbo-accessories.com/" class="footer-links__link">Turbo ecommerce</a></li>
                                     </ul>
                                 </div>
                             </div>
+                            <div class="col-6 col-md-3 col-xl-2">
+                                <div class="site-footer__widget footer-links">
+                                    <h5 class="footer-links__title">Mon Compte</h5>
+                                    <ul class="footer-links__list">
+                                        <li class="footer-links__item"><a href="wishlist.html" class="footer-links__link">Wishlist</a></li>
+                                        <li class="footer-links__item"><a href="panier.html" class="footer-links__link">Panier</a></li>
+                                        <li class="footer-links__item"><a href="compte.html" class="footer-links__link">Détails du compte</a></li>
+                                        <li class="footer-links__item"><a href="promotion.html" class="footer-links__link">Promotions</a></li>
+                                        <li class="footer-links__item"><a href="nouveaute.html" class="footer-links__link">NOUVEAUTÉS</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <div class="site-footer__widget footer-newsletter">
+                                    <h5 class="footer-newsletter__title">Newsletter</h5>
+                                    <div class="footer-newsletter__text">
+                                        Entrez votre adresse e-mail ci-dessous pour vous abonner à notre bulletin d'information et rester à jour avec les réductions et les offres spéciales.
+                                    </div>
+                                    <!-- NewsLetter -->
+                                    <form action="" class="footer-newsletter__form">
+                                        <label class="sr-only" for="footer-newsletter-address">Adresse e-mail</label>
+                                        <input type="text" class="footer-newsletter__form-input" id="footer-newsletter-address" placeholder="Adresse e-mail...">
+                                        <button class="footer-newsletter__form-button">S'abonner</button>
+                                    </form>
+                                    <div class="footer-newsletter__text footer-newsletter__text--social">
+                                        Suivez-nous sur les réseaux sociaux
+                                    </div>
+                                    <div class="footer-newsletter__social-links social-links">
+                                        <ul class="social-links__list">
+                                            <li class="social-links__item social-links__item--facebook"><a href="https://www.facebook.com/people/Capram-Maroc/61561691562602/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li class="social-links__item social-links__item--youtube"><a href="https://www.linkedin.com/company/centre-africain-de-pi%C3%A8ces-de-rechange-pour-l%E2%80%99automobile-au-maroc" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                                            <li class="social-links__item social-links__item--instagram"><a href="https://www.instagram.com/capram.auto/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="site-footer__bottom">
+                    <div class="container">
+                        <div class="site-footer__bottom-row">
+                            <div class="site-footer__copyright">
+                                <!-- copyright -->
+                                <p class="copyright-area-text">Copyright © <span id="copyright-year">2024</span> <a class="copyright-link" href="accueil.html">Capram</a></p>
+                                <!-- copyright / end -->
+                            </div>
+                            <div class="site-footer__payments"> <img src="images/logo_white.png" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="site-footer__bottom">
-                <div class="container">
-                    <div class="site-footer__bottom-row">
-                        <div class="site-footer__copyright">
-                            <!-- copyright -->
-                            <p class="copyright-area-text">Copyright © <span id="copyright-year">2024</span> <a class="copyright-link" href="accueil.html">Capram</a></p>
-                            <!-- copyright / end -->
-                        </div>
-                        <div class="site-footer__payments">     <img src="images/logo_white.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- site__footer / end -->
+        </footer>
+        <!--=============================================
+        ================= Footer / End ==================
+        ==============================================-->
     </div>
-    <!-- site / end -->
- <!-- mobile-menu -->
-    <div class="mobile-menu">
+        <!--=============================================
+        ========== Menu In Responsive / Start ===========
+        ==============================================-->
+        <div class="mobile-menu">
         <div class="mobile-menu__backdrop"></div>
         <div class="mobile-menu__body">
-            <button class="mobile-menu__close" type="button"><svg width="12" height="12">
+            <!-- Menu Close Button -->
+            <button class="mobile-menu__close" type="button">
+                <svg width="12" height="12">
                     <path d="M10.8,10.8L10.8,10.8c-0.4,0.4-1,0.4-1.4,0L6,7.4l-3.4,3.4c-0.4,0.4-1,0.4-1.4,0l0,0c-0.4-0.4-0.4-1,0-1.4L4.6,6L1.2,2.6
 	c-0.4-0.4-0.4-1,0-1.4l0,0c0.4-0.4,1-0.4,1.4,0L6,4.6l3.4-3.4c0.4-0.4,1-0.4,1.4,0l0,0c0.4,0.4,0.4,1,0,1.4L7.4,6l3.4,3.4
 	C11.2,9.8,11.2,10.4,10.8,10.8z" />
@@ -2054,13 +1925,15 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
                 <div class="mobile-menu__panel-body">
                     <div class="mobile-menu__settings-list">
                         <div class="mobile-menu__setting" data-mobile-menu-item>
-                            <button class="mobile-menu__setting-button" title="Language" data-mobile-menu-trigger>
+                            <!-- night / day switch button -->
+                            <button class="mobile-menu__setting-button" data-mobile-menu-trigger>
                                 <span class="mobile-menu__setting-title">Mode Sombre</span>
                                 <span class="mobile-menu__setting-arrow"><svg width="6px" height="9px">
                                         <path d="M0.3,7.4l3-2.9l-3-2.9c-0.4-0.3-0.4-0.9,0-1.3l0,0c0.4-0.3,0.9-0.4,1.3,0L6,4.5L1.6,8.7c-0.4,0.4-0.9,0.4-1.3,0l0,0C-0.1,8.4-0.1,7.8,0.3,7.4z" />
                                     </svg>
                                 </span>
                             </button>
+                            <!-- night / day switch panel -->
                             <div class="mobile-menu__setting-panel" data-mobile-menu-panel>
                                 <div class="mobile-menu__panel mobile-menu__panel--hidden">
                                     <div class="mobile-menu__panel-header">
@@ -2089,14 +1962,15 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
                             </div>
                         </div>
                         <div class="mobile-menu__setting" data-mobile-menu-item>
-                            <button class="mobile-menu__setting-button" title="Currency" data-mobile-menu-trigger>
-
+                            <!-- Paramètres button -->
+                            <button class="mobile-menu__setting-button" data-mobile-menu-trigger>
                                 <span class="mobile-menu__setting-title">Paramètres</span>
                                 <span class="mobile-menu__setting-arrow"><svg width="6px" height="9px">
                                         <path d="M0.3,7.4l3-2.9l-3-2.9c-0.4-0.3-0.4-0.9,0-1.3l0,0c0.4-0.3,0.9-0.4,1.3,0L6,4.5L1.6,8.7c-0.4,0.4-0.9,0.4-1.3,0l0,0C-0.1,8.4-0.1,7.8,0.3,7.4z" />
                                     </svg>
                                 </span>
                             </button>
+                            <!-- Paramètres Panel -->
                             <div class="mobile-menu__setting-panel" data-mobile-menu-panel>
                                 <div class="mobile-menu__panel mobile-menu__panel--hidden">
                                     <div class="mobile-menu__panel-header">
@@ -2116,6 +1990,11 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
                                             </li>
                                             <li data-mobile-menu-item>
                                                 <button type="button" class="setting-link" data-mobile-menu-trigger>
+                                                    <a href="reglement.html">Règlement</a>
+                                                </button>
+                                            </li>
+                                            <li data-mobile-menu-item>
+                                                <button type="button" class="setting-link" data-mobile-menu-trigger>
                                                     <a href="panier.html">Panier</a>
                                                 </button>
                                             </li>
@@ -2129,13 +2008,11 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
                                                     <a href="contact.html">Contact</a>
                                                 </button>
                                             </li>
-
                                             <li data-mobile-menu-item>
                                                 <button type="button" class="setting-link" data-mobile-menu-trigger>
                                                     <a href="#">Déconnexion</a>
                                                 </button>
                                             </li>
-
                                         </ul>
                                     </div>
                                 </div>
@@ -2174,9 +2051,20 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
                             </span>
                             <span class="mobile-menu__indicator-title">Panier</span>
                         </a>
+                         <a class="mobile-menu__indicator" href="compte.html#referenceNonGereeTab">
+                           <span class="notification__counter">3</span>
+                            <span class="mobile-menu__indicator-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path>
+  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+</svg>
 
+                            </span>
+                            <span class="mobile-menu__indicator-title">Notification</span>
+                        </a>
                     </div>
                     <div class="mobile-menu__divider"></div>
+                    <!-- menu -->
                     <ul class="mobile-menu__links">
                         <li data-mobile-menu-item>
                             <a href="accueil.html" class="mobile-nav-link" data-mobile-menu-trigger>
@@ -2233,23 +2121,21 @@ Samedi <br> 8:30 AM – 13:00 PM</dd>
             </div>
         </div>
     </div>
-    <!-- mobile-menu / end -->
+        <!--=============================================
+        =========== Menu In Responsive / End ============
+        ==============================================-->
     <!-- scripts -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.colVis.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.colVis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/owl-carousel/owl.carousel.min.js"></script>
-    <script src="vendor/nouislider/nouislider.min.js"></script>
-    <script src="vendor/photoswipe/photoswipe.min.js"></script>
-    <script src="vendor/photoswipe/photoswipe-ui-default.min.js"></script>
     <script src="vendor/select2/js/select2.min.js"></script>
     <script src="js/number.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/capram.js"></script>
+    
 </body>
-
 </html>

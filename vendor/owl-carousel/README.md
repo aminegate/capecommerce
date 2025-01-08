@@ -20,9 +20,9 @@ Or download the [latest release](https://github.com/OwlCarousel2/OwlCarousel2/re
 #### Webpack
 
 Add jQuery via the "webpack.ProvidePlugin" to your webpack configuration:
-    
+
     const webpack = require('webpack');
-    
+
     //...
     plugins: [
         new webpack.ProvidePlugin({
@@ -54,7 +54,6 @@ Put the required stylesheet at the [top](https://developer.yahoo.com/performance
 
 **NOTE:** If you want to use the default navigation styles, you will also need to include `owl.theme.default.css`.
 
-
 Put the script at the [bottom](https://developer.yahoo.com/performance/rules.html#js_bottom) of your markup right after jQuery:
 
 ```html
@@ -83,7 +82,6 @@ Wrap your items (`div`, `a`, `img`, `span`, `li` etc.) with a container element 
 </div>
 ```
 **NOTE:** The `owl-theme` class is optional, but without it, you will need to style navigation features on your own.
-
 
 Call the [plugin](https://learn.jquery.com/plugins/) function and your carousel is ready.
 
@@ -115,7 +113,6 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md).
 ## Roadmap
 
 Please make sure to check out our [Roadmap Discussion](https://github.com/OwlCarousel2/OwlCarousel2/issues/1756).
-
 
 ## License
 
