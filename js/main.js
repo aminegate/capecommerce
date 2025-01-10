@@ -22,19 +22,22 @@ jQuery(document).ready(function($){
 
 
     
-    (function () {
-        flatpickr("input#dueDate", {
-            dateFormat: "d/m/Y", // Set the format to dd/mm/yyyy
-            altInput: true, // Use a text input field instead of the native date picker
-            altFormat: "d/m/Y", // Set the format for the text input to dd/mm/yyyy
-            allowInput: true, // Allow manual input
-            locale: "fr", // Use the appropriate locale for the format
-            onReady: function (selectedDates, dateStr, instance) {
-                // Optional: Trigger the icon display if needed
-                document.getElementById(".dueDateWrapper .form-control.input").classList.add("has-icon");
-            }
-        });
-    })();
+(function () {
+    flatpickr("input#dueDate", {
+        dateFormat: "d/m/Y", // Set the format to dd/mm/yyyy
+        altInput: true, // Use a text input field instead of the native date picker
+        altFormat: "d/m/Y", // Set the format for the text input to dd/mm/yyyy
+        allowInput: true, // Allow manual input
+        locale: "fr", // Use the appropriate locale for the format
+        onReady: function (selectedDates, dateStr, instance) {
+            // Target the correct wrapper element and add a class if needed
+            document.querySelector(".dueDateWrapper .form-control.input").classList.add("has-icon");
+
+            // If you want to make sure the calendar icon is visible:
+            document.querySelector("#calendar-icon").style.display = "block"; // Show the icon
+        }
+    });
+})();
 
 
 
