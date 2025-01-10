@@ -9,10 +9,12 @@ input[type="date"] {
 }
 
 input#dueDate {
-    cursor: pointer;
-    position: absolute;
-    width: 100%;
+        position: absolute;
+    width: 100% !important;
     display: block;
+    top: 36%;
+    left: 0%;
+    max-width: -webkit-fill-available !important;
 }
 
 
