@@ -1432,7 +1432,8 @@ select#modeDeReg,
 #referencetInput,
 #points,
 #agenceInput,
-input.flatpickr-input.flatpickr-mobile{
+input.flatpickr-input.flatpickr-mobile,
+.dueDateWrapper .form-control.input{
     color: #6c757d;
     border: 0px solid #f1f1f1;
     text-align: left;

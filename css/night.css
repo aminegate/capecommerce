@@ -393,7 +393,8 @@ select#modeDeReg,
 #bdaymonth,
 #referencetInput,
 textarea#description,
-input.flatpickr-input.flatpickr-mobile{
+input.flatpickr-input.flatpickr-mobile,
+.dueDateWrapper .form-control.input{
     background-color: #353535 !important;
 }
 

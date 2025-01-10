@@ -31,7 +31,7 @@ jQuery(document).ready(function($){
             locale: "fr", // Use the appropriate locale for the format
             onReady: function (selectedDates, dateStr, instance) {
                 // Optional: Trigger the icon display if needed
-                document.getElementById("dueDate").classList.add("has-icon");
+                document.getElementById(".dueDateWrapper .form-control.input").classList.add("has-icon");
             }
         });
     })();
