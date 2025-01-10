@@ -1431,7 +1431,8 @@ select#modeDeReg,
 #bdaymonth,
 #referencetInput,
 #points,
-#agenceInput{
+#agenceInput,
+input.flatpickr-input.flatpickr-mobile{
     color: #6c757d;
     border: 0px solid #f1f1f1;
     text-align: left;

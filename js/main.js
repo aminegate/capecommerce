@@ -20,21 +20,14 @@ jQuery(document).ready(function($){
 })(jQuery);
     
 
-(function ($) {
-    // Detect iOS devices
-    function isIOS() {
-        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
-    }
 
-    if (isIOS()) {
-        // Adjust for iOS
-        $('input#dueDate').css({
-            "line-height": "60px", // Match the input height
-            "display": "flex",
-            "width": "100%"
-        });
-    }
-})(jQuery);
+   (function() {
+      flatpickr("input#dueDate", {
+         dateFormat: "Y-m-d", // Define date format
+         allowInput: true      // Allow text input
+      });
+   })();
+
 
     
 
