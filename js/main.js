@@ -21,54 +21,6 @@ jQuery(document).ready(function($){
     
 
 
-(function () {
-    // Ensure Flatpickr runs only on reglement.html
-    if (window.location.pathname.includes('reglement.html')) {
-        flatpickr("input#dueDate", {
-            dateFormat: "d/m/Y", // Set the format to dd/mm/yyyy
-            altInput: true, // Use a text input field instead of the native date picker
-            altFormat: "d/m/Y", // Set the format for the text input to dd/mm/yyyy
-            allowInput: true, // Allow manual input
-            onReady: function (selectedDates, dateStr, instance) {
-                $(".dueDateWrapper .form-control.input").addClass("has-icon");
-
-                var $calendarIcon = $("#calendar-icon-reg");
-
-                // Check if the calendar icon exists before applying styles
-                if ($calendarIcon.length) {
-                    // Log to check if Safari is detected
-                    console.log("User Agent: " + navigator.userAgent);
-
-                    // Refined Safari detection: Only detect Safari on iOS (exclude Chrome on all platforms)
-                    var isSafari = /iPhone|iPad|iPod/.test(navigator.userAgent) && /AppleWebKit/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
-
-                    // Debug log
-                    console.log("Is Safari: " + isSafari);
-
-                    if (isSafari) {
-                        // Display the icon only for Safari on iOS (iPhone/iPad/iPod)
-                        $calendarIcon.css({
-                            "display": "block",
-                            "position": "absolute",
-                            "right": "14px",
-                            "top": "68%",
-                            "transform": "translateY(-50%)",
-                            "pointer-events": "none",
-                            "font-size": "20px",
-                            "color": "white"
-                        });
-                    } else {
-                        // Hide the icon on other devices/browsers
-                        $calendarIcon.css("display", "none");
-                    }
-                }
-            }
-        });
-    }
-})();
-
-
-
 
 
     
