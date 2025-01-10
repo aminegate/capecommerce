@@ -26,27 +26,42 @@ jQuery(document).ready(function($){
         return /iPhone|iPad|iPod/i.test(navigator.userAgent);
     }
 
+    // Check if the device is iOS
     if (isIOS()) {
-        $('input[type="date"]').each(function () {
-            $(this).css({
-                "background-image": "url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' width=\'24\' height=\'24\'%3E%3Cpath fill=\'%23ffffff\' d=\'M19 3h-2V1h-2v2H9V1H7v2H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.89 2 1.99 2H19c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM5 19V7h14v12H5z\'/%3E%3C/svg%3E%0A')",
-                "background-repeat": "no-repeat",
-                "background-position": "right 10px center",
-                "background-size": "24px 24px"
+        $('.dueDateWrapper  input[type="date"]').each(function () {
+            // Replace input[type="date"] with input[type="text"] for iOS
+            var $input = $(this);
+            var inputId = $input.attr('id');  // Get the input's ID
+            var value = $input.val();         // Get the current value
+            
+            // Replace the date input with a text input for iOS
+            var $newInput = $('<input>', {
+                type: 'text',
+                id: inputId,
+                value: value,
+                placeholder: 'dd/mm/yyyy',
+                class: $input.attr('class'),  // Preserve the original class
+                style: 'background-image: url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' width=\'24\' height=\'24\'%3E%3Cpath fill=\'%23ffffff\' d=\'M19 3h-2V1h-2v2H9V1H7v2H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.89 2 1.99 2H19c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM5 19V7h14v12H5z\'/%3E%3C/svg%3E%0A");' +
+                'background-repeat: no-repeat;' +
+                'background-position: right 10px center;' +
+                'background-size: 24px 24px;'
             });
 
-            // Hide the native calendar picker icon
-            $(this).css('appearance', 'none');
-            $(this).css('-webkit-appearance', 'none');
-            
-            $(this).on("focus", function () {
-                $(this).attr("placeholder", "dd/mm/yyyy"); // Show placeholder on focus
-            }).on("blur", function () {
-                $(this).removeAttr("placeholder"); // Remove to avoid native issues
+            // Replace the old input with the new one
+            $input.replaceWith($newInput);
+
+            // Add date picker behavior to the new input (using a jQuery date picker library like jQuery UI)
+            $newInput.datepicker({
+                dateFormat: 'dd/mm/yy',  // Format as day/month/year
+                onSelect: function (dateText) {
+                    $newInput.val(dateText); // Update the value on date select
+                }
             });
+
         });
     }
 })(jQuery);
+
 
     
 
