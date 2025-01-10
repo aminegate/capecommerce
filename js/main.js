@@ -19,24 +19,36 @@ jQuery(document).ready(function($){
     }
 })(jQuery);
     
-    (function ($) {
+
+    
+(function ($) {
     function isIOS() {
         return /iPhone|iPad|iPod/i.test(navigator.userAgent);
     }
 
     if (isIOS()) {
-        $('input[type="date"]').css({
-            "line-height": "60px",
-            "display": "flex",
-            "align-items": "center",
-            "color": "white" // Ensure text is visible
-        }).on("focus", function () {
-            $(this).attr("placeholder", "dd/mm/yyyy"); // Placeholder on focus
-        }).on("blur", function () {
-            $(this).removeAttr("placeholder"); // Remove to avoid native issues
+        $('input[type="date"]').each(function () {
+            $(this).css({
+                "background-image": "url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' width=\'24\' height=\'24\'%3E%3Cpath fill=\'%23ffffff\' d=\'M19 3h-2V1h-2v2H9V1H7v2H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.89 2 1.99 2H19c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM5 19V7h14v12H5z\'/%3E%3C/svg%3E%0A')",
+                "background-repeat": "no-repeat",
+                "background-position": "right 10px center",
+                "background-size": "24px 24px"
+            });
+
+            // Hide the native calendar picker icon
+            $(this).css('appearance', 'none');
+            $(this).css('-webkit-appearance', 'none');
+            
+            $(this).on("focus", function () {
+                $(this).attr("placeholder", "dd/mm/yyyy"); // Show placeholder on focus
+            }).on("blur", function () {
+                $(this).removeAttr("placeholder"); // Remove to avoid native issues
+            });
         });
     }
 })(jQuery);
+
+    
 
 /*............................................................................
 ................................. Front-End ..................................
