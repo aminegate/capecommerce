@@ -18,6 +18,25 @@ jQuery(document).ready(function($){
         });
     }
 })(jQuery);
+    
+    (function ($) {
+    function isIOS() {
+        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    if (isIOS()) {
+        $('input[type="date"]').css({
+            "line-height": "60px",
+            "display": "flex",
+            "align-items": "center",
+            "color": "white" // Ensure text is visible
+        }).on("focus", function () {
+            $(this).attr("placeholder", "dd/mm/yyyy"); // Placeholder on focus
+        }).on("blur", function () {
+            $(this).removeAttr("placeholder"); // Remove to avoid native issues
+        });
+    }
+})(jQuery);
 
 /*............................................................................
 ................................. Front-End ..................................
