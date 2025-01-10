@@ -1,20 +1,9 @@
-input[type="date"] {
-    width: 100%; /* Or a specific width like 300px */
-    max-width: none; /* Remove iOS-imposed max-width */
-}
-
-.dueDateWrapper {
-    position: relative;
-    height: 94px;
-}
-
-input#dueDate {
-        position: absolute;
-    width: 100% !important;
-    display: block;
-    top: 36%;
-    left: 0%;
-    max-width: -webkit-fill-available !important;
+span#calendar-icon-reg {
+    position: absolute;
+    top: 53%;
+    right: 4%;
+    color: white;
+    font-size: 19px;
 }
 
 

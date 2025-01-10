@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.2.0/css/buttons.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.3/css/responsive.dataTables.min.css">   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
     <!-- font - fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -373,7 +375,8 @@
 
                                 <div class="dueDateWrapper">
                                     <label for="dueDate">Date D'échéance</label>
-                                    <input type="date" id="dueDate" name="dueDate"  placeholder="DD/MM/YYYY">
+                                    <input type="text" id="dueDate" placeholder="dd/mm/yyyy" >
+                                    <span id="calendar-icon-reg"><i class="fa-solid fa-calendar-days"></i></span>
                                 </div>
 
                             </div>
@@ -1322,6 +1325,7 @@
         ==============================================-->
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <!-- DataTables -->
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/3.2.0/js/dataTables.buttons.min.js"></script>
@@ -1338,6 +1342,8 @@
     <script src="vendor/owl-carousel/owl.carousel.min.js"></script>
     <script src="vendor/select2/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
 
 </body>
 </html>

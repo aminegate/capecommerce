@@ -19,6 +19,42 @@ jQuery(document).ready(function($){
     }
 })();
     
+    
+    (function($) {
+    $(function() {
+        // Initialize datepicker
+        $("#dueDate").datepicker({
+            dateFormat: "dd/mm/yy",
+            showButtonPanel: true,
+            beforeShow: function(input, inst) {
+                var inputOffset = $(input).offset();
+                var inputHeight = $(input).outerHeight();
+                setTimeout(function() {
+                    inst.dpDiv.css({
+                        top: inputOffset.top + inputHeight + "px", // Position below the input
+                        left: inputOffset.left + "px" // Align with input's left edge
+                    });
+                }, 0);
+            }
+        });
+
+        // Open datepicker when the calendar icon is clicked
+        $(".calendar-icon-reg").on("click", function() {
+            $("#dueDate").datepicker("show");
+        });
+        
+         // Close datepicker on outside click
+        $(document).on("mousedown", function(e) {
+            if (
+                !$(e.target).closest(".ui-datepicker, #dueDate, .calendar-icon-reg").length
+            ) {
+                $("#custom-date").datepicker("hide");
+            }
+        });
+        
+    });
+})(jQuery);
+
 
 
 
