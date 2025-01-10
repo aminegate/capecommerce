@@ -40,10 +40,10 @@ jQuery(document).ready(function($){
                     // Log to check if Safari is detected
                     console.log("User Agent: " + navigator.userAgent);
 
-                    // Check if the user is on Safari (on iPhone, iPad, or iPod, but not Chrome)
-                    var isSafari = navigator.userAgent.match(/iPhone|iPad|iPod/i) && navigator.userAgent.match(/Safari/i) && !navigator.userAgent.match(/Chrome/i);
+                    // Refined Safari detection: Only detect Safari on iOS (exclude Chrome on all platforms)
+                    var isSafari = /iPhone|iPad|iPod/.test(navigator.userAgent) && /AppleWebKit/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
 
-                    // Log the detection result
+                    // Debug log
                     console.log("Is Safari: " + isSafari);
 
                     if (isSafari) {
@@ -67,6 +67,7 @@ jQuery(document).ready(function($){
         });
     }
 })();
+
 
 
 
