@@ -3,17 +3,7 @@
 jQuery(document).ready(function($){
 
     
-(function ($) {
-    $(function () {
-        // Adjust styles for all input[type="month"]
-        $("input[type='month']").each(function () {
-            var inputHeight = $(this).outerHeight();
-            $(this).css({
-                "line-height": inputHeight + "px", // Match line-height to input height
-                "padding": "0"
-        });
-    });
-})(jQuery);
+
 
 /*............................................................................
 ................................. Front-End ..................................
