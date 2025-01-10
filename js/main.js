@@ -32,15 +32,22 @@ jQuery(document).ready(function($){
             // Target the child input field and add the 'has-icon' class
             document.querySelector(".dueDateWrapper .form-control.input").classList.add("has-icon");
 
-            // Ensure the icon shows up on iOS devices (and all devices, for consistency)
             const calendarIcon = document.querySelector("#calendar-icon-reg");
 
-            // Check if the user is on an iOS device
-            if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-                calendarIcon.style.display = "block"; // Show the icon on iOS
+            // Check if the user is on an iPhone running Safari
+            if (navigator.userAgent.match(/iPhone|iPad|iPod/i) && navigator.userAgent.match(/Safari/i) && !navigator.userAgent.match(/Chrome/i)) {
+                // Only display the icon for Safari on iOS (iPhone/iPad/iPod)
+                calendarIcon.style.display = "block"; // Show the icon
+                calendarIcon.style.position = "absolute";
+                calendarIcon.style.right = "14px";
+                calendarIcon.style.top = "68%";
+                calendarIcon.style.transform = "translateY(-50%)";
+                calendarIcon.style.pointerEvents = "none"; // Prevent interaction with the icon
+                calendarIcon.style.fontSize = "20px"; // Icon size
+                calendarIcon.style.color = "white"; // Icon color
             } else {
-                // Show the icon on other devices as well
-                calendarIcon.style.display = "block";
+                // Hide the icon on other devices
+                calendarIcon.style.display = "none";
             }
         }
     });
