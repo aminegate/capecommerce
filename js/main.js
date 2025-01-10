@@ -21,7 +21,6 @@ jQuery(document).ready(function($){
     
 
 
-    
 (function () {
     flatpickr("input#dueDate", {
         dateFormat: "d/m/Y", // Set the format to dd/mm/yyyy
@@ -30,11 +29,19 @@ jQuery(document).ready(function($){
         allowInput: true, // Allow manual input
         locale: "fr", // Use the appropriate locale for the format
         onReady: function (selectedDates, dateStr, instance) {
-            // Target the correct wrapper element and add a class if needed
+            // Target the child input field and add the 'has-icon' class
             document.querySelector(".dueDateWrapper .form-control.input").classList.add("has-icon");
 
-            // If you want to make sure the calendar icon is visible:
-            document.querySelector("#calendar-icon").style.display = "block"; // Show the icon
+            // Ensure the icon shows up on iOS devices (and all devices, for consistency)
+            const calendarIcon = document.querySelector("#calendar-icon-reg");
+
+            // Check if the user is on an iOS device
+            if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+                calendarIcon.style.display = "block"; // Show the icon on iOS
+            } else {
+                // Show the icon on other devices as well
+                calendarIcon.style.display = "block";
+            }
         }
     });
 })();
