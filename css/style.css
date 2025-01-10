@@ -1,4 +1,7 @@
-
+input[type="date"] {
+    width: 100%; /* Or a specific width like 300px */
+    max-width: none; /* Remove iOS-imposed max-width */
+}
 .input-container {
   display: flex;
 }

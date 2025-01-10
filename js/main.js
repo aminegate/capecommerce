@@ -21,7 +21,15 @@ jQuery(document).ready(function($){
     
 
 
-
+(function () {
+    // Apply custom date picker
+    $('input[type="date"]').each(function () {
+        $(this).attr('type', 'text'); // Change type to text to disable native date picker
+        $(this).flatpickr({
+            dateFormat: "d/m/Y", // Format to match dd/mm/yyyy
+        });
+    });
+})();
 
     
 
