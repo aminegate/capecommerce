@@ -1109,7 +1109,7 @@
     transition: color .2s,
  background .2s,
  border-color .2s;
-    color: #262626;
+    color: black;
     background-color: #f0f0f0;
     border-color: #f0f0f0;
   }

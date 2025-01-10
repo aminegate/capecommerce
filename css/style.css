@@ -1,11 +1,33 @@
+.compte-icon a {
+    color: #303030;
+}
+
+.compte-icon a i {
+    font-size: 18px;
+    background: white;
+    padding: 4px 10px;
+    border-radius: 30%;
+    margin-top: 5px;
+}
+
+.compte-icon a:hover {
+    color: #F7943D;
+}
+
+.compte-icon {
+    display: flex;
+    justify-content: center;
+    line-height: 35px;
+    margin-right: 15px;
+}
+
 span#calendar-icon-reg {
     position: absolute;
     top: 53%;
-    right: 4%;
+    right: 2%;
     color: white;
     font-size: 19px;
 }
-
 
 .search-input {
   background: #EEEEEE;
@@ -3163,12 +3185,12 @@ video.product__video {
 *****************************************************************************/
 
 .aroma-content-wrapper {
-    margin: 60px auto;
+    margin: 40px auto 60px auto;
 }
 
 .aroma-header img {
-    margin: 60px auto;
-    width: 71%;
+        margin: 40px auto 0px auto;
+    width: 100%;
     display: block;
     border-radius: 5px;
 }
@@ -3961,6 +3983,10 @@ span.search-term {
 /********************************** main media query ***********************/
 
 @media (min-width: 1200px) and (max-width: 1400px) {
+    
+    span#calendar-icon-reg {
+    right: 2% !important;
+}
 
     .nav-area ul {
     justify-content: left;
@@ -4094,6 +4120,14 @@ span.search-term {
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
+    
+        span#calendar-icon-reg {
+    right: 3% !important;
+}
+    button.view-options__filters-button.filters-button.not-visible {
+    display: none;
+}
+    
         .card_body_numbers span {
     font-size: 45px;
 }
@@ -4241,6 +4275,12 @@ span.search-term {
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
+    
+    span#calendar-icon-reg {
+    right: 4% !important;
+}
+    
+    
         .card_body_numbers span {
     font-size: 45px;
 }
@@ -4434,6 +4474,12 @@ span.search-term {
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
+    
+        
+span#calendar-icon-reg {
+
+    right: 5% !important;
+}
     
     .video-js .vjs-big-play-button {
     font-size: 4em !important;
@@ -4669,6 +4715,12 @@ input#monthInput {
 }
 
 @media (min-width:480px) and (max-width: 576px) {
+    
+    span#calendar-icon-reg {
+
+    right: 3% !important;
+}
+   
     
     .video-js .vjs-big-play-button {
     font-size: 4em !important;

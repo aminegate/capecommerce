@@ -203,7 +203,8 @@ span.settingsName,
 .product-card .product-card__prices,
 h1.block-header__title,
 .bottomFooterWrapper .product-card__addtocart-icon,
-.contact-us__address .fa-square-phone:before {
+.contact-us__address .fa-square-phone:before,
+.mobile-search__input{
     color: white !important;
 }
 
