@@ -29,18 +29,25 @@ jQuery(document).ready(function($){
             altInput: true, // Use a text input field instead of the native date picker
             altFormat: "d/m/Y", // Set the format for the text input to dd/mm/yyyy
             allowInput: true, // Allow manual input
-            locale: "fr", // Use the appropriate locale for the format
+            locale: "fr", // Use the French locale
             onReady: function (selectedDates, dateStr, instance) {
-                // Add the 'has-icon' class to the input field when Flatpickr is ready
                 $(".dueDateWrapper .form-control.input").addClass("has-icon");
 
                 var $calendarIcon = $("#calendar-icon-reg");
 
                 // Check if the calendar icon exists before applying styles
                 if ($calendarIcon.length) {
+                    // Log to check if Safari is detected
+                    console.log("User Agent: " + navigator.userAgent);
+
                     // Check if the user is on Safari (on iPhone, iPad, or iPod, but not Chrome)
-                    if (navigator.userAgent.match(/iPhone|iPad|iPod/i) && navigator.userAgent.match(/Safari/i) && !navigator.userAgent.match(/Chrome/i)) {
-                        // Only display the icon for Safari on iOS (iPhone/iPad/iPod)
+                    var isSafari = navigator.userAgent.match(/iPhone|iPad|iPod/i) && navigator.userAgent.match(/Safari/i) && !navigator.userAgent.match(/Chrome/i);
+
+                    // Log the detection result
+                    console.log("Is Safari: " + isSafari);
+
+                    if (isSafari) {
+                        // Display the icon only for Safari on iOS (iPhone/iPad/iPod)
                         $calendarIcon.css({
                             "display": "block",
                             "position": "absolute",
