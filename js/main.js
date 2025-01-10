@@ -3,24 +3,18 @@
 jQuery(document).ready(function($){
 
     
-    (function ($) {
+(function ($) {
     $(function () {
-        // Check if the browser supports input[type="date"]
-        var input = document.createElement("input");
-        input.setAttribute("type", "date");
-
-        if (input.type !== "date") {
-            // Browser does not support date input
-            // Replace with a date picker
-            $("input[type='date']").each(function () {
-                // Apply Flatpickr as a fallback
-                $(this).flatpickr({
-                    dateFormat: "Y-m-d", // Format to match YYYY-MM-DD
-                });
-            });
-        }
+        // Adjust styles for all input[type="month"]
+        $("input[type='month']").each(function () {
+            var inputHeight = $(this).outerHeight();
+            $(this).css({
+                "line-height": inputHeight + "px", // Match line-height to input height
+                "padding": "0"
+        });
     });
 })(jQuery);
+
 /*............................................................................
 ................................. Front-End ..................................
 ............................................................................*/
