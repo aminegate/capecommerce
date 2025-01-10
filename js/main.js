@@ -3,7 +3,21 @@
 jQuery(document).ready(function($){
 
     
+(function ($) {
+    // Detect iOS devices
+    function isIOS() {
+        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
 
+    if (isIOS()) {
+        // Adjust for iOS
+        $('#bdaymonth').css({
+            "line-height": "60px", // Match the input height
+            "display": "flex",
+            "align-items": "center"
+        });
+    }
+})(jQuery);
 
 /*............................................................................
 ................................. Front-End ..................................
