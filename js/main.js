@@ -21,24 +21,6 @@ jQuery(document).ready(function($){
     
 
 
-(function ($) {
-    $('input[type="date"]').each(function () {
-        if (!$(this).val()) {
-            // If no value is set, show a placeholder-like text
-            $(this).attr('placeholder', 'dd/mm/yyyy');
-        }
-
-        // Add a fallback listener for input focus to show the native picker
-        $(this).on('focus', function () {
-            $(this).attr('placeholder', ''); // Clear placeholder on focus
-        }).on('blur', function () {
-            if (!$(this).val()) {
-                $(this).attr('placeholder', 'dd/mm/yyyy'); // Restore placeholder
-            }
-        });
-    });
-})(jQuery);
-
 
     
 
