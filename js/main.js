@@ -29,7 +29,6 @@ jQuery(document).ready(function($){
             altInput: true, // Use a text input field instead of the native date picker
             altFormat: "d/m/Y", // Set the format for the text input to dd/mm/yyyy
             allowInput: true, // Allow manual input
-            locale: "fr", // Use the French locale
             onReady: function (selectedDates, dateStr, instance) {
                 $(".dueDateWrapper .form-control.input").addClass("has-icon");
 
