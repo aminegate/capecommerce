@@ -113,7 +113,7 @@
                             <!-- Header Top Menu's Dropdown -->
                             <ul class="user-sub-menu">
                                 <li><a href="compte.html">Mon Compte</a></li>
-                                <li><a href="reglement.html">Réglement</a></li>
+                                <li><a href="reglement.html">Règlement</a></li>
                                 <li><a href="panier.html">Panier</a></li>
                                 <li><a href="wishlist.html">Wishlist</a></li>
                                 <li><a href="contact.html">Contact</a></li>
@@ -342,19 +342,33 @@
                     <div class="sidebar__backdrop"></div>
                     <!-- sidebar Filter / Start -->
                     <div class="sidebar__body">
-                        <div class="sidebar__header">
-                            <div class="widget-filters__actions d-flex">
-                                <button class="btn btn-primary btn-sm">Filtrer</button>
-                                <button class="btn btn-secondary btn-sm">Réinitialiser</button>
-                            </div>
-                            <button class="sidebar__close" type="button"><svg width="12" height="12">
-                                    <path d="M10.8,10.8L10.8,10.8c-0.4,0.4-1,0.4-1.4,0L6,7.4l-3.4,3.4c-0.4,0.4-1,0.4-1.4,0l0,0c-0.4-0.4-0.4-1,0-1.4L4.6,6L1.2,2.6
+                       <div class="sidebar__header">
+                            <div class="sidebar__header__top">
+                                <span class="sidebar__header__title">Filters</span>
+                                <button class="sidebar__close" type="button"><svg width="12" height="12">
+                                        <path d="M10.8,10.8L10.8,10.8c-0.4,0.4-1,0.4-1.4,0L6,7.4l-3.4,3.4c-0.4,0.4-1,0.4-1.4,0l0,0c-0.4-0.4-0.4-1,0-1.4L4.6,6L1.2,2.6
 	c-0.4-0.4-0.4-1,0-1.4l0,0c0.4-0.4,1-0.4,1.4,0L6,4.6l3.4-3.4c0.4-0.4,1-0.4,1.4,0l0,0c0.4,0.4,0.4,1,0,1.4L7.4,6l3.4,3.4
-	C11.2,9.8,11.2,10.4,10.8,10.8z"></path>
-                                </svg>
-                            </button>
+	C11.2,9.8,11.2,10.4,10.8,10.8z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <form role="search" method="get" action="" class="search-filter">
+                                <div class="input-container">
+                                    <input type="search" class="search-input" value="" name="s" placeholder="Rechercher ..." />
+                                    <button type="submit" class="search-submit" name="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                </div><!-- input-container -->
+                            </form><!-- searchform -->
+                            <div class="widget-filters__actions d-flex">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                        Nouveauté
+                                    </label>
+                                </div>
+                                <button class="btn btn-secondary btn-sm btn-actualiser">Actualiser</button>
+                            </div>
                         </div>
-                        <div class="sidebar__content">
+                           <div class="sidebar__content">
                             <div class="widget widget-filters widget-filters--offcanvas--always" data-collapse="" data-collapse-opened-class="filter--opened">
                                 <div class="widget__header widget-filters__header">
                                     <h4>Filtres</h4>
@@ -1223,8 +1237,8 @@
                                         <li class="footer-links__item"><a href="categorie.html" class="footer-links__link">CATÉGORIES</a></li>
                                         <li class="footer-links__item"><a href="contact.html" class="footer-links__link">Contactez-nous</a></li>
                                         <li class="footer-links__item"><a href="chrono.html" class="footer-links__link">Chrono</a></li>
-                                        <li class="footer-links__item"><a href="https://capram.ma/" class="footer-links__link">Capram.ma</a></li>
-                                        <li class="footer-links__item"><a href="https://turbo-accessories.com/" class="footer-links__link">Turbo ecommerce</a></li>
+                                        <li class="footer-links__item"><a href="https://capram.ma/" class="footer-links__link" target="_blank">Capram.ma</a></li>
+                                        <li class="footer-links__item"><a href="https://turbo-accessories.com/" class="footer-links__link" target="_blank">Turbo ecommerce</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1398,7 +1412,8 @@
                     </div>
                     <div class="mobile-menu__divider"></div>
                     <div class="mobile-menu__indicators">
-                        <a class="mobile-menu__indicator" href="wishlist.html">
+                        <a class="mobile-menu__indicator wishlist__indicator" href="wishlist.html">
+                           <span class="notification__counter">3</span>
                             <span class="mobile-menu__indicator-icon">
                                 <svg width="20" height="20">
                                     <path d="M14,3c2.2,0,4,1.8,4,4c0,4-5.2,10-8,10S2,11,2,7c0-2.2,1.8-4,4-4c1,0,1.9,0.4,2.7,1L10,5.2L11.3,4C12.1,3.4,13,3,14,3 M14,1
@@ -1408,6 +1423,7 @@
                             <span class="mobile-menu__indicator-title">Wishlist</span>
                         </a>
                         <a class="mobile-menu__indicator" href="compte.html">
+                           <span class="notification__counter">3</span>
                             <span class="mobile-menu__indicator-icon">
                                 <svg width="20" height="20">
                                     <path d="M20,20h-2c0-4.4-3.6-8-8-8s-8,3.6-8,8H0c0-4.2,2.6-7.8,6.3-9.3C4.9,9.6,4,7.9,4,6c0-3.3,2.7-6,6-6s6,2.7,6,6
@@ -1428,13 +1444,13 @@
                             </span>
                             <span class="mobile-menu__indicator-title">Panier</span>
                         </a>
-                         <a class="mobile-menu__indicator" href="compte.html#referenceNonGereeTab">
-                           <span class="notification__counter">3</span>
+                        <a class="mobile-menu__indicator" href="compte.html#referenceNonGereeTab">
+                            <span class="notification__counter">3</span>
                             <span class="mobile-menu__indicator-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path>
-  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-</svg>
+                                    <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                </svg>
 
                             </span>
                             <span class="mobile-menu__indicator-title">Notification</span>

@@ -1,4 +1,39 @@
 
+.input-container {
+  display: flex;
+}
+
+
+.search-input {
+  background: #EEEEEE;
+  color: #212121;
+  vertical-align: middle;
+  font-size: 16px;
+  line-height: 2;
+  padding: 10px 20px;
+  border: 0;
+  outline: none;
+  box-shadow: inset 0 -1px 1px -1px #CCCCCC, inset 0 1px 1px -1px #CCCCCC, inset 1px 0 1px -1px #CCCCCC;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.search-submit {
+  background: #f7943d;
+  color: #FFFFFF;
+  vertical-align: middle;
+  padding: 0 20px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+        border-radius: 0px 5px 5px 0px;
+}
+
+
+.search-submit i {
+  font-size: 24px;
+}
+
+
 /*
 
 - General css
@@ -516,7 +551,7 @@ button.dialog-close {
     display: inline-block;
     width: 100%;
     color: black;
-    text-align: center;
+    text-align: left;
     font-size: 27px;
 }
 
@@ -556,8 +591,19 @@ a.mobile-menu__indicator {
 a.mobile-menu__indicator .notification__counter {
     position: absolute;
     top: 0%;
-    right: 20%;
+    left: 60%;
     font-size: 10px;
+}
+
+a.mobile-menu__indicator .notification__counter {
+    position: absolute;
+    top: 0%;
+    left: 60%;
+    font-size: 10px;
+}
+
+.wishlist__indicator .notification__counter {
+    left: 65% !important;
 }
 
 span.mobile-menu__indicator-icon svg {
@@ -677,6 +723,8 @@ span.notification__counter {
 **************************** Reglement.html css ******************************
 *****************************************************************************/
 
+
+
 .pagination__wrapper {
     margin-bottom: 100px;
 }
@@ -789,6 +837,11 @@ span.notification__counter {
 }
 
 /*=== Modal ===*/
+
+div#confirmationModal {
+    width: 100% !important;
+    max-width: 400px;
+}
 
 .modal-content button {
     margin: 10px;
@@ -3883,10 +3936,13 @@ span.search-term {
     }
 }
 
-@media (min-width:360px) and (max-width: 480px) {
+@media (min-width:320px) and (max-width: 480px) {
     .products-list__item {
         margin: 0px auto;
+        
     }
+    
+    
 }
 
 /********************************** main media query ***********************/
@@ -5179,6 +5235,11 @@ input#monthInput {
     top: -7.3% !important;
 }
     
+    div#confirmationModal {
+    width: 90% !important;
+    max-width: 400px;
+}
+    
 }
 
 /************************ other media query ************************************/
@@ -5389,6 +5450,32 @@ input#monthInput {
     .fixRowTab {
         margin-left: 0;
     }
+}
+
+@media (min-width: 320px) and (max-width: 360px) {
+
+    .fixPos-nouveaute-page,
+    .fixPos-promotion,
+    .fixPos-results {
+        top: -7.3% !important;
+    }
+
+    img.chrono-red-icon {
+        top: -2.4%;
+        right: -4.2%;
+    }
+    
+    div#confirmationModal {
+    width: 90% !important;
+    max-width: 400px;
+}
+        .products-list__item {
+        margin: 0px auto;
+        flex: 0 0 calc(100% - 16px);
+        
+    }
+    
+
 }
 
 /***********************************************************************************************************************
@@ -6669,7 +6756,6 @@ h6 {
 
 .card-table table {
     width: 100%;
-    min-width: 500px;
 }
 
 [dir=ltr] .card-table table {
@@ -6716,7 +6802,7 @@ h6 {
 
 [dir=ltr] .card-table th:first-child,
 [dir=ltr] .card-table td:first-child {
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
 [dir=ltr] .card-table th:last-child,
@@ -9187,8 +9273,13 @@ select.form-control::-ms-expand {
     border-bottom: 1px solid #ebebeb;
     -ms-flex-negative: 0;
     flex-shrink: 0;
+       -ms-flex-wrap: wrap; /* Add this */
+    flex-wrap: wrap;     /* Add this */
 }
 
+form.search-filter {
+    margin: 20px auto 0px auto;
+}
 .sidebar--offcanvas--always .sidebar__title {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
@@ -9198,9 +9289,60 @@ select.form-control::-ms-expand {
     padding: 0 20px;
 }
 
+.sidebar__header__top {
+    display: flex;
+    width: 100%;
+    padding: 20px 12px 0px 12px;
+}
+
+.sidebar__header__top span {
+    font-size: 25px;
+}
+
+
+
+.widget-filters__actions.d-flex input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 4px;
+    position: relative;
+    background-color: #fff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    padding: 12px;
+    margin: 0px 5px 0px 0px;
+}
+
+
+.widget-filters__actions.d-flex label {
+    display: flex;
+}
+
+button.btn.btn-secondary.btn-sm.btn-actualiser {
+    margin-left: auto;
+    background: white !important;
+}
+
+/* When the checkbox is checked */
+.widget-filters__actions.d-flex input[type="checkbox"]:checked {
+    background-color: orange; /* Set background color to orange */
+    border-color: orange; /* Optional: change the border color to orange */
+}
+
+.widget-filters__actions.d-flex input[type="checkbox"]:checked::after {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: white;
+    position: absolute;
+    top: -3px;
+    left: 3px;
+    font-size: 20px;
+}
+
+
 .sidebar--offcanvas--always .sidebar__close {
-    width: 48px;
-    height: 50px;
+
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -9211,16 +9353,16 @@ select.form-control::-ms-expand {
     -ms-flex-pack: center;
     justify-content: center;
     border: none;
-    fill: currentColor;
-    padding: 0 0 2px;
+    fill: black;
+    padding: 12px 13px;
     -ms-flex-negative: 0;
     flex-shrink: 0;
-    -webkit-transition: background-color .15s,
-        color .15s;
-    transition: background-color .15s,
-        color .15s;
+    -webkit-transition: background-color .15s, color .15s;
+    transition: background-color .15s, color .15s;
     background-color: #fff;
     color: #ccc;
+    border-radius: 5px;
+    margin-left: auto;
 }
 
 .sidebar--offcanvas--always .sidebar__close:hover {
@@ -16598,8 +16740,12 @@ select.form-control::-ms-expand {
 }
 
 .widget-filters__actions {
-    padding: 20px 1.5rem 1.5rem;
-    margin-right: 30px;
+    padding: 20px 0.7rem 1.5rem;
+    width: 100%;
+}
+
+.widget-filters__actions.d-flex .checkbox {
+    margin-top: 7px;
 }
 
 [dir=ltr] .widget-filters__actions > * + * {

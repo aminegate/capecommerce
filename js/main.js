@@ -1,6 +1,26 @@
+
+
 jQuery(document).ready(function($){
+
     
-    
+    (function ($) {
+    $(function () {
+        // Check if the browser supports input[type="date"]
+        var input = document.createElement("input");
+        input.setAttribute("type", "date");
+
+        if (input.type !== "date") {
+            // Browser does not support date input
+            // Replace with a date picker
+            $("input[type='date']").each(function () {
+                // Apply Flatpickr as a fallback
+                $(this).flatpickr({
+                    dateFormat: "Y-m-d", // Format to match YYYY-MM-DD
+                });
+            });
+        }
+    });
+})(jQuery);
 /*............................................................................
 ................................. Front-End ..................................
 ............................................................................*/
@@ -17,7 +37,9 @@ jQuery(document).ready(function($){
 (function () {
     // Add a focus event listener to select elements (excluding '#view-option-sort'),
     // textarea, and input elements (excluding those of type 'submit').
-    $("select:not('#view-option-sort'),textarea,input:not([type='submit'])")
+$("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([type='checkbox']):not([type='search'])")
+
+
         .on("focus", function () {
             // When the element gains focus, apply a 3px solid border with the color #f2d6a1.
             $(this).css("border", "3px solid #f2d6a1");
@@ -675,15 +697,32 @@ jQuery(document).ready(function($){
   // Check if the current page is accueil.html
   if (window.location.pathname.includes('accueil.html')) {
     const playerMiddle = videojs('#my-video'); // Replace with your middle video ID
-    const exactScrollPosition = 3200; // The exact position you gave
+    const atlanticDiv = document.querySelector('.atlantic'); // Target the atlantic div
+
+    let atlanticPositionTop = 0;
+
+    // Function to update the position of the atlantic div dynamically
+    function updateAtlanticPosition() {
+      if (atlanticDiv) {
+        const rect = atlanticDiv.getBoundingClientRect(); // Get the position and dimensions of the atlantic div
+        atlanticPositionTop = rect.top + window.scrollY; // Get the position relative to the page
+      }
+    }
+
+    // Update the position on page load and on window resize
+    window.addEventListener('load', updateAtlanticPosition);
+    window.addEventListener('resize', updateAtlanticPosition);
 
     playerMiddle.on('fullscreenchange', function () {
+      const currentScrollPosition = window.scrollY; // Get the current scroll position
+
       if (playerMiddle.isFullscreen()) {
-        console.log("Entered fullscreen, scroll position saved: " + exactScrollPosition);
+        // Save the current scroll position when entering fullscreen
+        console.log("Entered fullscreen, scroll position saved: " + currentScrollPosition);
       } else {
-        // When exiting fullscreen, scroll to the exact position
-        console.log("Exited fullscreen, restoring scroll position to: " + exactScrollPosition);
-        window.scrollTo(0, exactScrollPosition); // Scroll to the saved position
+        // When exiting fullscreen, restore the scroll position relative to the Atlantic div
+        console.log("Exited fullscreen, restoring scroll position to: " + atlanticPositionTop);
+        window.scrollTo(0, atlanticPositionTop); // Scroll to the Atlantic div position
 
         // Optionally, blur the header video or handle other events
         const $headerVideo = $('#header-video'); // Target the header <video> element
@@ -1660,90 +1699,103 @@ jQuery(document).ready(function($){
 /*=========================== Search Bar =============================*/
 
 (function () {
-  
-        // Select the input, search button, and search term display span for both existing and new forms
-        const $searchInput = $('.search__input');
-        const $searchButton = $('.search__button');
-        const $searchTermDisplay = $('.block-header__title .search-term');
 
-        // Selectors for the not-found form elements
-        const $notFoundSearchInput = $('.not-found__search-input');
-        const $notFoundSearchButton = $('.not-found__search-button');
+    // Select the input, search button, and search term display span for both existing and new forms
+    const $searchInput = $('.search__input');
+    const $searchButton = $('.search__button');
+    const $searchTermDisplay = $('.block-header__title .search-term');
 
-        // Selectors for the mobile search form elements
-        const $mobileSearchInput = $('.mobile-search__input');
-        const $mobileSearchButton = $('.mobile-search__button--search');
-        const $mobileSearchCloseButton = $('.mobile-search__button--close');
+    // Selectors for the not-found form elements
+    const $notFoundSearchInput = $('.not-found__search-input');
+    const $notFoundSearchButton = $('.not-found__search-button');
 
-        // Function to determine the correct path for the results page
-        function getResultsPagePath() {
-            // Check if the current page is inside a subfolder
-            const currentPath = window.location.pathname;
-            const isInSubfolder = currentPath.includes('/categorie/'); // Change '/folder/' to match your subfolder's name
-            
-            // If we're inside a subfolder, go up one level and point to resultats.html
-            return isInSubfolder ? '../resultats.html' : 'resultats.html';
+    // Selectors for the mobile search form elements
+    const $mobileSearchInput = $('.mobile-search__input');
+    const $mobileSearchButton = $('.mobile-search__button--search');
+    const $mobileSearchCloseButton = $('.mobile-search__button--close');
+
+    // Function to determine the correct path for the results page
+    function getResultsPagePath() {
+        // Check if the current page is inside a subfolder
+        const currentPath = window.location.pathname;
+        const isInSubfolder = currentPath.includes('/categorie/'); // Change '/folder/' to match your subfolder's name
+        
+        // If we're inside a subfolder, go up one level and point to resultats.html
+        return isInSubfolder ? '../resultats.html' : 'resultats.html';
+    }
+
+    // Function to handle the redirection to the results page
+    function redirectToResults(searchTerm) {
+        if (searchTerm) {
+            const targetUrl = `${getResultsPagePath()}?search=${encodeURIComponent(searchTerm)}`;
+            window.location.href = targetUrl;
         }
+    }
 
-        // Function to handle the redirection to the results page
-        function redirectToResults(searchTerm) {
-            if (searchTerm) {
-                const targetUrl = `${getResultsPagePath()}?search=${encodeURIComponent(searchTerm)}`;
-                window.location.href = targetUrl;
-            }
+    // Function to check if no results are found
+    function checkForNoResults() {
+        const noResultsIndicator = $('.no-results'); // You can customize this to check for specific elements indicating no results
+        if (noResultsIndicator.length > 0) {
+            window.location.href = '404.html'; // Redirect to 404 if no results are found
         }
+    }
 
-        // Event listeners for search inputs and buttons
-        $searchInput.on('keypress', function (event) {
-            if (event.which === 13) { // 13 is the Enter key
-                event.preventDefault(); // Prevent default form submission
-                redirectToResults($searchInput.val().trim());
-            }
-        });
-
-        $searchButton.on('click', function (event) {
-            event.preventDefault(); // Prevent default button action
+    // Event listeners for search inputs and buttons
+    $searchInput.on('keypress', function (event) {
+        if (event.which === 13) { // 13 is the Enter key
+            event.preventDefault(); // Prevent default form submission
             redirectToResults($searchInput.val().trim());
-        });
-
-        $notFoundSearchInput.on('keypress', function (event) {
-            if (event.which === 13) { // 13 is the Enter key
-                event.preventDefault(); // Prevent default form submission
-                redirectToResults($notFoundSearchInput.val().trim());
-            }
-        });
-
-        $notFoundSearchButton.on('click', function (event) {
-            event.preventDefault(); // Prevent default button action
-            redirectToResults($notFoundSearchInput.val().trim());
-        });
-
-        $mobileSearchInput.on('keypress', function (event) {
-            if (event.which === 13) { // 13 is the Enter key
-                event.preventDefault(); // Prevent default form submission
-                redirectToResults($mobileSearchInput.val().trim());
-            }
-        });
-
-        $mobileSearchButton.on('click', function (event) {
-            event.preventDefault(); // Prevent default button action
-            redirectToResults($mobileSearchInput.val().trim());
-        });
-
-        $mobileSearchCloseButton.on('click', function () {
-            $mobileSearchInput.val(''); // Clear the mobile search input
-        });
-
-        // Check for a search term in the URL, update input and display span
-        const urlParams = new URLSearchParams(window.location.search);
-        const searchTermFromURL = urlParams.get('search');
-        if (searchTermFromURL) {
-            const decodedTerm = decodeURIComponent(searchTermFromURL);
-            $searchInput.val(decodedTerm); // Set search term in existing input
-            $notFoundSearchInput.val(decodedTerm); // Set search term in not-found input
-            $mobileSearchInput.val(decodedTerm); // Set search term in mobile input
-            $searchTermDisplay.text(decodedTerm); // Set search term in <span>
         }
+    });
+
+    $searchButton.on('click', function (event) {
+        event.preventDefault(); // Prevent default button action
+        redirectToResults($searchInput.val().trim());
+    });
+
+    $notFoundSearchInput.on('keypress', function (event) {
+        if (event.which === 13) { // 13 is the Enter key
+            event.preventDefault(); // Prevent default form submission
+            redirectToResults($notFoundSearchInput.val().trim());
+        }
+    });
+
+    $notFoundSearchButton.on('click', function (event) {
+        event.preventDefault(); // Prevent default button action
+        redirectToResults($notFoundSearchInput.val().trim());
+    });
+
+    $mobileSearchInput.on('keypress', function (event) {
+        if (event.which === 13) { // 13 is the Enter key
+            event.preventDefault(); // Prevent default form submission
+            redirectToResults($mobileSearchInput.val().trim());
+        }
+    });
+
+    $mobileSearchButton.on('click', function (event) {
+        event.preventDefault(); // Prevent default button action
+        redirectToResults($mobileSearchInput.val().trim());
+    });
+
+    $mobileSearchCloseButton.on('click', function () {
+        $mobileSearchInput.val(''); // Clear the mobile search input
+    });
+
+    // Check for a search term in the URL, update input and display span
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchTermFromURL = urlParams.get('search');
+    if (searchTermFromURL) {
+        const decodedTerm = decodeURIComponent(searchTermFromURL);
+        $searchInput.val(decodedTerm); // Set search term in existing input
+        $notFoundSearchInput.val(decodedTerm); // Set search term in not-found input
+        $mobileSearchInput.val(decodedTerm); // Set search term in mobile input
+        $searchTermDisplay.text(decodedTerm); // Set search term in <span>
+    }
+
+    // Call this on the results page to check if no results were found
+    if (window.location.pathname === 'resultats.html') {
+        checkForNoResults();
+    }
 
 })();
     

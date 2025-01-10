@@ -1,3 +1,13 @@
+.block.block-products-carousel.nouveaute,
+.block-space.block-space--layout--divider-nl.change-bg-color,
+.block.search-section,
+.block.block-brands.block-brands--layout--columns-8-full
+
+{
+    background: #252525;
+}
+
+
 /****************************** Background Only ******************************/
 
 .product-card__footer,
@@ -125,7 +135,7 @@
 
 .sidebar--offcanvas--always .sidebar__close,
 .products-list[data-layout="grid"] .product-card:after{
-    background-color: #1e1e1e;
+    background-color: white;
 }
 
 /****************************** Color Only ******************************/
