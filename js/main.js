@@ -35,7 +35,7 @@ jQuery(document).ready(function($){
             const calendarIcon = document.querySelector("#calendar-icon-reg");
 
             // Check if the user is on an iPhone running Safari
-            if (navigator.userAgent.match(/iPhone|iPad|iPod/i) && navigator.userAgent.match(/Safari/i) && !navigator.userAgent.match(/Chrome/i)) {
+            if (!navigator.userAgent.match(/iPhone|iPad|iPod/i) && !navigator.userAgent.match(/Safari/i) && navigator.userAgent.match(/Chrome/i)) {
                 // Only display the icon for Safari on iOS (iPhone/iPad/iPod)
                 calendarIcon.style.display = "block"; // Show the icon
                 calendarIcon.style.position = "absolute";
