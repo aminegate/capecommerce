@@ -21,12 +21,21 @@ jQuery(document).ready(function($){
     
 
 
-   (function() {
-      flatpickr("input#dueDate", {
-         dateFormat: "Y-m-d", // Define date format
-         allowInput: true      // Allow text input
-      });
-   })();
+    
+    (function () {
+        flatpickr("input#dueDate", {
+            dateFormat: "d/m/Y", // Set the format to dd/mm/yyyy
+            altInput: true, // Use a text input field instead of the native date picker
+            altFormat: "d/m/Y", // Set the format for the text input to dd/mm/yyyy
+            allowInput: true, // Allow manual input
+            locale: "fr", // Use the appropriate locale for the format
+            onReady: function (selectedDates, dateStr, instance) {
+                // Optional: Trigger the icon display if needed
+                document.getElementById("dueDate").classList.add("has-icon");
+            }
+        });
+    })();
+
 
 
     
