@@ -3,7 +3,7 @@
 jQuery(document).ready(function($){
 
     
-(function ($) {
+(function () {
     // Detect iOS devices
     function isIOS() {
         return /iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -17,41 +17,50 @@ jQuery(document).ready(function($){
             "align-items": "center"
         });
     }
-})(jQuery);
+})();
     
 
 
 (function () {
-    flatpickr("input#dueDate", {
-        dateFormat: "d/m/Y", // Set the format to dd/mm/yyyy
-        altInput: true, // Use a text input field instead of the native date picker
-        altFormat: "d/m/Y", // Set the format for the text input to dd/mm/yyyy
-        allowInput: true, // Allow manual input
-        locale: "fr", // Use the appropriate locale for the format
-        onReady: function (selectedDates, dateStr, instance) {
-            // Target the child input field and add the 'has-icon' class
-            document.querySelector(".dueDateWrapper .form-control.input").classList.add("has-icon");
+    // Ensure Flatpickr runs only on reglement.html
+    if (window.location.pathname.includes('reglement.html')) {
+        flatpickr("input#dueDate", {
+            dateFormat: "d/m/Y", // Set the format to dd/mm/yyyy
+            altInput: true, // Use a text input field instead of the native date picker
+            altFormat: "d/m/Y", // Set the format for the text input to dd/mm/yyyy
+            allowInput: true, // Allow manual input
+            locale: "fr", // Use the appropriate locale for the format
+            onReady: function (selectedDates, dateStr, instance) {
+                // Add the 'has-icon' class to the input field when Flatpickr is ready
+                $(".dueDateWrapper .form-control.input").addClass("has-icon");
 
-            const calendarIcon = document.querySelector("#calendar-icon-reg");
+                var $calendarIcon = $("#calendar-icon-reg");
 
-            // Check if the user is on an iPhone running Safari
-            if (!navigator.userAgent.match(/iPhone|iPad|iPod/i) && !navigator.userAgent.match(/Safari/i) && navigator.userAgent.match(/Chrome/i)) {
-                // Only display the icon for Safari on iOS (iPhone/iPad/iPod)
-                calendarIcon.style.display = "block"; // Show the icon
-                calendarIcon.style.position = "absolute";
-                calendarIcon.style.right = "14px";
-                calendarIcon.style.top = "68%";
-                calendarIcon.style.transform = "translateY(-50%)";
-                calendarIcon.style.pointerEvents = "none"; // Prevent interaction with the icon
-                calendarIcon.style.fontSize = "20px"; // Icon size
-                calendarIcon.style.color = "white"; // Icon color
-            } else {
-                // Hide the icon on other devices
-                calendarIcon.style.display = "none";
+                // Check if the calendar icon exists before applying styles
+                if ($calendarIcon.length) {
+                    // Check if the user is on Safari (on iPhone, iPad, or iPod, but not Chrome)
+                    if (navigator.userAgent.match(/iPhone|iPad|iPod/i) && navigator.userAgent.match(/Safari/i) && !navigator.userAgent.match(/Chrome/i)) {
+                        // Only display the icon for Safari on iOS (iPhone/iPad/iPod)
+                        $calendarIcon.css({
+                            "display": "block",
+                            "position": "absolute",
+                            "right": "14px",
+                            "top": "68%",
+                            "transform": "translateY(-50%)",
+                            "pointer-events": "none",
+                            "font-size": "20px",
+                            "color": "white"
+                        });
+                    } else {
+                        // Hide the icon on other devices/browsers
+                        $calendarIcon.css("display", "none");
+                    }
+                }
             }
-        }
-    });
+        });
+    }
 })();
+
 
 
 
