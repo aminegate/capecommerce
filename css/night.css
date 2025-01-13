@@ -355,6 +355,9 @@ select#modeDeReg,
 }
 
 /******************************** other css **************************************/
+button.btn.btn-secondary.btn-sm.btn-actualiser {
+    background: white;
+}
 
 
 .widget-filters__actions.d-flex input[type="checkbox"] {

@@ -628,12 +628,6 @@ a.mobile-menu__indicator .notification__counter {
     right: initial !important;
 }
 
-a.mobile-menu__indicator .notification__counter {
-    position: absolute;
-    top: 0%;
-    left: 60%;
-    font-size: 10px;
-}
 
 span.mobile-menu__indicator-icon svg {
     color: black;
@@ -2183,7 +2177,7 @@ td.wishlist__column.w__column--body.wishlist__column--image {
 a.wishlist-reference {
     color: grey !important;
     font-size: 14px;
-    margin-bottom: 10px;
+    margin: 10px 0px;
     display: block;
 }
 
@@ -2431,6 +2425,7 @@ button.darkModeCheck i {
 
 button.setting-link a {
     color: black;
+    width: 100%;
 }
 
  a.mobile-nav-link i {
@@ -5011,30 +5006,36 @@ input#monthInput {
 
 @media (min-width:360px) and (max-width: 480px) {
     
-        button.view-options__filters-button.filters-button.not-visible {
-    display: none;
-}
-    
-    .video-js .vjs-big-play-button {
-    font-size: 3em !important;
-    background-color: orange !important;
-    border: 0.06686em solid #fff !important;
-}
+    span#calendar-icon-reg {
 
-        .card_body_numbers span {
-    font-size: 45px;
-}
-        .image.image--type--product {
-    border-radius: 5px 5px 0px 0px !important;
-}
+        right: 4% !important;
+    }
+
+    button.view-options__filters-button.filters-button.not-visible {
+        display: none;
+    }
+
+    .video-js .vjs-big-play-button {
+        font-size: 3em !important;
+        background-color: orange !important;
+        border: 0.06686em solid #fff !important;
+    }
+
+    .card_body_numbers span {
+        font-size: 45px;
+    }
+
+    .image.image--type--product {
+        border-radius: 5px 5px 0px 0px !important;
+    }
 
     div.dt-container .dt-search input {
-    width: 100%;
-}
+        width: 100%;
+    }
 
     td.td-width {
-    text-align: left;
-}
+        text-align: left;
+    }
 
      input#monthInput {
         width: 100%;
@@ -9423,7 +9424,7 @@ form.search-filter {
 
 button.btn.btn-secondary.btn-sm.btn-actualiser {
     margin-left: auto;
-    background: white !important
+    background: #efefef;
 }
 
 button.btn.btn-secondary.btn-sm.btn-actualiser i {
@@ -21608,7 +21609,7 @@ button.btn.btn-secondary.btn-sm.btn-actualiser i {
     background-color: white;
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.09);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.09);
-
+    width: 100%;
 }
 
 .product-card .product-card__action {

@@ -3,6 +3,80 @@ jQuery(document).ready(function($){
 
     
 
+(function($) {
+    // Add the modal HTML dynamically
+    $('body').append(`
+        <div id="wishlistConfirmationModal" class="custom-modal" style="display: none;">
+            <div class="modal-content">
+                <p>Voulez-vous réellement supprimer ce règlement ?</p>
+                <button id="confirmButton" class="confirm-btn">Oui</button>
+                <button id="cancelButton" class="cancel-btn">Non</button>
+            </div>
+        </div>
+    `);
+
+    // Add CSS dynamically
+    $('<style>')
+        .prop('type', 'text/css')
+        .html(`
+            .custom-modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+            }
+            .modal-content {
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                text-align: center;
+                width: 300px;
+            }
+            .modal-content button {
+                margin: 5px;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .confirm-btn {
+                background-color: #4CAF50;
+                color: white;
+            }
+            .cancel-btn {
+                background-color: #f44336;
+                color: white;
+            }
+        `)
+        .appendTo('head');
+
+    // Functionality for button click
+    $('button.wishlist__remove.btn.btn-sm.btn-muted.btn-icon,button.cart-table__remove.btn.btn-sm.btn-icon.btn-muted').on('click', function(event) {
+        event.preventDefault();
+        $('#wishlistConfirmationModal').fadeIn(); // Show the modal
+    });
+
+    // Handle "Oui" button click
+    $(document).on('click', '#confirmButton', function() {
+        $('#wishlistConfirmationModal').fadeOut(); // Hide the modal
+        console.log('User confirmed the action.');
+        // Add logic to handle the deletion here.
+    });
+
+    // Handle "Non" button click
+    $(document).on('click', '#cancelButton', function() {
+        $('#wishlistConfirmationModal').fadeOut(); // Hide the modal
+        console.log('User canceled the action.');
+    });
+})(jQuery);
+
 
     
 
