@@ -5004,7 +5004,7 @@ input#monthInput {
 
 }
 
-@media (min-width:360px) and (max-width: 480px) {
+@media (min-width:320px) and (max-width: 480px) {
     
     span#calendar-icon-reg {
 
@@ -5372,7 +5372,7 @@ input#monthInput {
 
 }
 
-@media (min-width:360px) and (max-width: 474px) {
+@media (min-width:320px) and (max-width: 474px) {
 
     .category-card--layout--classic .category-card__image {
         width: 35% !important;
@@ -5557,16 +5557,19 @@ input#monthInput {
 
 @media (min-width: 320px) and (max-width: 360px) {
 
-    .fixPos-nouveaute-page,
-    .fixPos-promotion,
-    .fixPos-results {
-        top: -7.3% !important;
+     .fixPos-nouveaute-page, .fixPos-promotion, .fixPos-results {
+        top: -6.3% !important;
     }
 
     img.chrono-red-icon {
         top: -2.4%;
         right: -4.2%;
     }
+    
+        img.promotion-red-icon {
+        top: -2.7%;
+    }
+
     
     div#confirmationModal {
     width: 90% !important;
