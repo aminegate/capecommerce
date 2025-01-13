@@ -4149,9 +4149,7 @@ span.search-term {
     font-size: 45px;
 }
 
-    .image.image--type--product {
-    border-radius: 5px 5px 0px 0px !important;
-}
+
         input#monthInput {
 
     width: 75%;
@@ -4292,6 +4290,10 @@ span.search-term {
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
+    
+    td.cart-table__column.cart-table__column--image .image--type--product {
+    border-radius: 5px 5px 0px 0px !important;
+}
         button.view-options__filters-button.filters-button.not-visible {
     display: none;
 }
@@ -4304,9 +4306,7 @@ span.search-term {
         .card_body_numbers span {
     font-size: 45px;
 }
-        .image.image--type--product {
-    border-radius: 5px 5px 0px 0px !important;
-}
+
 
         input#monthInput {
 
@@ -4494,6 +4494,17 @@ span.search-term {
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
+    td.cart-table__column.cart-table__column--image .image--type--product {
+    border-radius: 5px 5px 0px 0px !important;
+}
+    
+    td.wishlist__column.wishlist__column--body.wishlist__column--image {
+    border-radius: 5px 5px 0px 0px;
+}
+    
+    button.wishlist__remove.btn.btn-sm.btn-muted.btn-icon {
+    border-radius: 0px 5px 0px 0px;
+}
     
         button.view-options__filters-button.filters-button.not-visible {
     display: none;
@@ -4513,9 +4524,7 @@ span#calendar-icon-reg {
         .card_body_numbers span {
     font-size: 45px;
 }
-        .image.image--type--product {
-    border-radius: 5px 5px 0px 0px !important;
-}
+
 
     td.td-width {
     text-align: left;
@@ -4739,6 +4748,18 @@ input#monthInput {
 }
 
 @media (min-width:480px) and (max-width: 576px) {
+    
+    td.cart-table__column.cart-table__column--image .image--type--product {
+    border-radius: 5px 5px 0px 0px !important;
+}
+    
+    td.wishlist__column.wishlist__column--body.wishlist__column--image {
+    border-radius: 5px 5px 0px 0px;
+}
+    
+    button.wishlist__remove.btn.btn-sm.btn-muted.btn-icon {
+    border-radius: 0px 5px 0px 0px;
+}
     
         button.view-options__filters-button.filters-button.not-visible {
     display: none;
@@ -5005,6 +5026,17 @@ input#monthInput {
 }
 
 @media (min-width:320px) and (max-width: 480px) {
+    td.cart-table__column.cart-table__column--image .image--type--product {
+    border-radius: 5px 5px 0px 0px !important;
+}
+        
+td.wishlist__column.wishlist__column--body.wishlist__column--image {
+    border-radius: 5px 5px 0px 0px;
+}
+    
+    button.wishlist__remove.btn.btn-sm.btn-muted.btn-icon {
+    border-radius: 0px 5px 0px 0px;
+}
     
     span#calendar-icon-reg {
 
@@ -18118,7 +18150,7 @@ button.btn.btn-secondary.btn-sm.btn-actualiser i {
         position: relative;
         margin: 8px;
         width: calc(100% / 3 - 16px);
-        border: 1px solid #e3e3e3 !important;
+        border: 1px solid #6a6868 !important;
         border-radius: 5px;
     }
 
