@@ -202,9 +202,11 @@ h1.block-header__title,
 .mobile-search__input,
 span.settingsName i,
 .compte-icon a i,
-.notification a i{
+.notification a i,
+span#calendar-icon-reg {
     color: white !important;
 }
+
 
 .block-features__item-subtitle,
 .product-card .product-card__price--old{

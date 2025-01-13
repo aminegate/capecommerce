@@ -766,7 +766,7 @@ span#calendar-icon-reg {
     position: absolute;
     top: 53%;
     right: 2%;
-    color: white;
+    color: black;
     font-size: 19px;
 }
 
@@ -9423,7 +9423,7 @@ form.search-filter {
 
 button.btn.btn-secondary.btn-sm.btn-actualiser {
     margin-left: auto;
-    background: #efefef !important
+    background: white !important
 }
 
 button.btn.btn-secondary.btn-sm.btn-actualiser i {
