@@ -1,62 +1,7 @@
-.compte-icon a {
-    color: #303030;
-}
-
-.compte-icon a i {
-    font-size: 18px;
-    background: white;
-    padding: 4px 10px;
-    border-radius: 30%;
-    margin-top: 5px;
-}
-
-.compte-icon a:hover {
-    color: #F7943D;
-}
-
-.compte-icon {
-    display: flex;
-    justify-content: center;
-    line-height: 35px;
-    margin-right: 15px;
-}
-
-span#calendar-icon-reg {
-    position: absolute;
-    top: 53%;
-    right: 2%;
-    color: white;
-    font-size: 19px;
-}
-
-.search-input {
-  background: #EEEEEE;
-  color: #212121;
-  vertical-align: middle;
-  font-size: 16px;
-  line-height: 2;
-  padding: 10px 20px;
-  border: 0;
-  outline: none;
-  box-shadow: inset 0 -1px 1px -1px #CCCCCC, inset 0 1px 1px -1px #CCCCCC, inset 1px 0 1px -1px #CCCCCC;
-    border-radius: 5px 0px 0px 5px;
-}
-
-.search-submit {
-  background: #f7943d;
-  color: #FFFFFF;
-  vertical-align: middle;
-  padding: 0 20px;
-  border: 0;
-  outline: none;
-  cursor: pointer;
-        border-radius: 0px 5px 5px 0px;
-}
 
 
-.search-submit i {
-  font-size: 24px;
-}
+
+
 
 
 /*
@@ -482,6 +427,44 @@ fix stock number position across pages
 /*------------------------------------
 --------- Filter with brands ---------
 ------------------------------------*/
+.sidebar--offcanvas--always .sidebar__close, .products-list[data-layout="grid"] .product-card:after {
+    background-color: white;
+}
+
+button.view-options__filters-button.filters-button.not-visible {
+    display: none;
+}
+
+.search-input {
+  background: #EEEEEE;
+  color: #212121;
+  vertical-align: middle;
+  font-size: 16px;
+  line-height: 2;
+  padding: 10px 16px;
+  border: 0;
+  outline: none;
+  box-shadow: inset 0 -1px 1px -1px #CCCCCC, inset 0 1px 1px -1px #CCCCCC, inset 1px 0 1px -1px #CCCCCC;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.search-submit {
+  background: #f7943d;
+  color: #FFFFFF;
+  vertical-align: middle;
+  padding: 12px 20px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  border-radius: 0px 5px 5px 0px;
+}
+
+
+.search-submit i {
+  font-size: 24px;
+}
+
+
 
 .widget-filters__list {
     background: #f0f0f0;
@@ -608,6 +591,30 @@ div.associated {
 /*------------------------------------
 ------------ mobile css --------------
 ------------------------------------*/
+.compte-icon a {
+    color: #303030;
+}
+
+.compte-icon a i {
+    font-size: 16px;
+    padding: 4px 8px;
+    border-radius: 10%;
+    margin-top: 5px;
+    color: black;
+}
+
+.compte-icon a:hover {
+    color: #F7943D;
+}
+
+.compte-icon {
+    display: flex;
+    justify-content: center;
+    line-height: 35px;
+    margin-right: 15px;
+}
+
+
 
 a.mobile-menu__indicator {
     position: relative;
@@ -616,8 +623,9 @@ a.mobile-menu__indicator {
 a.mobile-menu__indicator .notification__counter {
     position: absolute;
     top: 0%;
-    left: 60%;
+    left: 69%;
     font-size: 10px;
+    right: initial !important;
 }
 
 a.mobile-menu__indicator .notification__counter {
@@ -625,10 +633,6 @@ a.mobile-menu__indicator .notification__counter {
     top: 0%;
     left: 60%;
     font-size: 10px;
-}
-
-.wishlist__indicator .notification__counter {
-    left: 65% !important;
 }
 
 span.mobile-menu__indicator-icon svg {
@@ -642,13 +646,16 @@ span.mobile-menu__indicator-icon svg {
 span.notification__counter {
     color: #ffffff;
     background: #f7943d;
-    padding: 0px 3px;
+    padding: 2px 5px;
     border-radius: 5px;
-    margin: 0px 2px;
+    position: absolute;
+    top: 8%;
+    right: -20%;
+    font-size: 11px;
 }
 
 .notification a {
-    padding: 12px 0px 9px 0px;
+    padding: 5px 0px 9px 0px;
     display: block;
     font-weight: 500;
     position: relative;
@@ -658,6 +665,13 @@ span.notification__counter {
     margin-right: 15px;
     color: white;
     position: relative;
+}
+
+.notification a i {
+    font-size: 16px;
+    padding: 4px 8px;
+    border-radius: 10%;
+    color: black;
 }
 
 /*------------------------------------
@@ -748,7 +762,13 @@ span.notification__counter {
 **************************** Reglement.html css ******************************
 *****************************************************************************/
 
-
+span#calendar-icon-reg {
+    position: absolute;
+    top: 53%;
+    right: 2%;
+    color: white;
+    font-size: 19px;
+}
 
 .pagination__wrapper {
     margin-bottom: 100px;
@@ -2428,14 +2448,16 @@ button.setting-link a {
 }
 
 span.settingsName {
-    display: block;
     color: #3b3b3b;
-    font-weight: 600;
-    height: 35px;
-    width: 95px;
-    padding: 11px 0px;
-    float: right;
     cursor: pointer;
+}
+
+span.settingsName i {
+    font-size: 20px;
+    padding: 4px 8px;
+    border-radius: 10%;
+    margin-top: 5px;
+    color: black;
 }
 
 ul.user-sub-menu {
@@ -4275,6 +4297,9 @@ span.search-term {
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
+        button.view-options__filters-button.filters-button.not-visible {
+    display: none;
+}
     
     span#calendar-icon-reg {
     right: 4% !important;
@@ -4474,6 +4499,10 @@ span.search-term {
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
+    
+        button.view-options__filters-button.filters-button.not-visible {
+    display: none;
+}
     
         
 span#calendar-icon-reg {
@@ -4715,6 +4744,10 @@ input#monthInput {
 }
 
 @media (min-width:480px) and (max-width: 576px) {
+    
+        button.view-options__filters-button.filters-button.not-visible {
+    display: none;
+}
     
     span#calendar-icon-reg {
 
@@ -4977,6 +5010,10 @@ input#monthInput {
 }
 
 @media (min-width:360px) and (max-width: 480px) {
+    
+        button.view-options__filters-button.filters-button.not-visible {
+    display: none;
+}
     
     .video-js .vjs-big-play-button {
     font-size: 3em !important;
@@ -6385,7 +6422,8 @@ h6 {
 .btn-sm:not(.btn-icon) {
     font-size: 14px;
     line-height: 17px;
-    padding: calc(13px / 2) 12px;
+    padding: 12px 13px;
+    border-radius: 5px;
 }
 
 .btn-sm.btn-icon {
@@ -9372,7 +9410,7 @@ form.search-filter {
     appearance: none;
     border-radius: 4px;
     position: relative;
-    background-color: #fff;
+    background-color: #efefef;
     transition: background-color 0.3s ease, border-color 0.3s ease;
     padding: 12px;
     margin: 0px 5px 0px 0px;
@@ -9385,7 +9423,11 @@ form.search-filter {
 
 button.btn.btn-secondary.btn-sm.btn-actualiser {
     margin-left: auto;
-    background: white !important;
+    background: #efefef !important
+}
+
+button.btn.btn-secondary.btn-sm.btn-actualiser i {
+    color: black;
 }
 
 /* When the checkbox is checked */
@@ -9424,7 +9466,7 @@ button.btn.btn-secondary.btn-sm.btn-actualiser {
     flex-shrink: 0;
     -webkit-transition: background-color .15s, color .15s;
     transition: background-color .15s, color .15s;
-    background-color: #fff;
+    background-color: #efefef;
     color: #ccc;
     border-radius: 5px;
     margin-left: auto;

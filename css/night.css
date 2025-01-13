@@ -1,12 +1,3 @@
-.block.block-products-carousel.nouveaute,
-.block-space.block-space--layout--divider-nl.change-bg-color,
-.block.search-section,
-.block.block-brands.block-brands--layout--columns-8-full
-
-{
-    background: #252525;
-}
-
 
 /****************************** Background Only ******************************/
 
@@ -61,7 +52,11 @@
 .refroidissement,
 .soufflet,
 .suspension,
-.reg{
+.reg,
+.block.block-products-carousel.nouveaute,
+.block-space.block-space--layout--divider-nl.change-bg-color,
+.block.search-section,
+.block.block-brands.block-brands--layout--columns-8-full{
     background: #252525 !important;
 }
 
@@ -204,7 +199,10 @@ span.settingsName,
 h1.block-header__title,
 .bottomFooterWrapper .product-card__addtocart-icon,
 .contact-us__address .fa-square-phone:before,
-.mobile-search__input{
+.mobile-search__input,
+span.settingsName i,
+.compte-icon a i,
+.notification a i{
     color: white !important;
 }
 
@@ -355,6 +353,12 @@ select#modeDeReg,
 }
 
 /******************************** other css **************************************/
+
+
+.widget-filters__actions.d-flex input[type="checkbox"] {
+    background-color: #fff;
+}
+
 
 hr.separateLine {
     width: 100%;

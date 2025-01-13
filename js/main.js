@@ -1,16 +1,24 @@
-
-
 jQuery(document).ready(function($){
+    
 
-(function() {
-    var indicatorValue = parseInt($('.indicator__value').text()); // Get the indicator value
+    
 
-    if (indicatorValue >= 1) {
-        $('a[href="wishlist.html"] .indicator__icon svg').replaceWith('<svg width="32" height="32" viewBox="0 0 24 24"><path d="M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z"/></svg>');
-    }
-})();
 
-(function() {
+    
+
+/*............................................................................
+................................. Front-End ..................................
+............................................................................*/
+    
+/*
+.
+.
+.
+.
+*/
+    
+/*====================== Wishlist Icon change Based on Product Count  ===================*/ 
+(function () {
     var indicatorValue = parseInt($('.indicator__value').text()); // Get the indicator value
 
     if (indicatorValue >= 1) {
@@ -18,7 +26,7 @@ jQuery(document).ready(function($){
     }
 })();
     
-    
+/*====================== Fix Inpute month STYLE in IOS  ===================*/     
     
 (function () {
     // Detect iOS devices
@@ -34,61 +42,7 @@ jQuery(document).ready(function($){
             "align-items": "center"
         });
     }
-})();
-    
-(function() {
-    $(function() {
-        // Check if we are on reglement.html
-        if (window.location.pathname.includes("reglement.html")) {
-            // Initialize datepicker
-            $("#dueDate").datepicker({
-                dateFormat: "dd/mm/yy",
-                showButtonPanel: true,
-                beforeShow: function(input, inst) {
-                    var inputOffset = $(input).offset();
-                    var inputHeight = $(input).outerHeight();
-                    setTimeout(function() {
-                        inst.dpDiv.css({
-                            top: inputOffset.top + inputHeight + "px", // Position below the input
-                            left: inputOffset.left + "px" // Align with input's left edge
-                        });
-                    }, 0);
-                }
-            });
-
-            // Open datepicker when the calendar icon is clicked
-            $(".calendar-icon-reg").on("click", function() {
-                $("#dueDate").datepicker("show");
-            });
-
-            // Close datepicker on outside click
-            $(document).on("mousedown", function(e) {
-                if (
-                    !$(e.target).closest(".ui-datepicker, #dueDate, .calendar-icon-reg").length
-                ) {
-                    $("#dueDate").datepicker("hide");
-                }
-            });
-        }
-    });
-})();
-
-
-
-
-
-    
-
-/*............................................................................
-................................. Front-End ..................................
-............................................................................*/
-    
-/*
-.
-.
-.
-.
-*/
+})();    
 
 /*====================== Highlight Inputs on Focus ===================*/
     
@@ -2012,6 +1966,48 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
             updateTimer();
         });
     })();
+    
+/*====================== Fix Inpute Date in IOS  ===================*/     
+    
+(function () {
+    $(function() {
+        // Check if we are on reglement.html
+        if (window.location.pathname.includes("reglement.html")) {
+            // Initialize datepicker
+            $("#dueDate").datepicker({
+                dateFormat: "dd/mm/yy",
+                showButtonPanel: true,
+                beforeShow: function(input, inst) {
+                    var inputOffset = $(input).offset();
+                    var inputHeight = $(input).outerHeight();
+                    setTimeout(function() {
+                        inst.dpDiv.css({
+                            top: inputOffset.top + inputHeight + "px", // Position below the input
+                            left: inputOffset.left + "px" // Align with input's left edge
+                        });
+                    }, 0);
+                }
+            });
+
+            // Open datepicker when the calendar icon is clicked
+            $(".calendar-icon-reg").on("click", function() {
+                $("#dueDate").datepicker("show");
+            });
+
+            // Close datepicker on outside click
+            $(document).on("mousedown", function(e) {
+                if (
+                    !$(e.target).closest(".ui-datepicker, #dueDate, .calendar-icon-reg").length
+                ) {
+                    $("#dueDate").datepicker("hide");
+                }
+            });
+        }
+    });
+})();
+
+
+
 
  
 /*
