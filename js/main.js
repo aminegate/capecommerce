@@ -1,19 +1,19 @@
 jQuery(document).ready(function($){
     
 (function() {
-    let isPrinting = false; // Flag to prevent re-triggering the print dialog
+    let isPrintDialogOpened = false; // Flag to track if the print dialog is opened
 
     // Function to toggle between print and view buttons
     function toggleButtons() {
-        if ($(window).width() <= 768) {  // Detect small screen
-            $('#viewInvoice').show();    // Show "View Invoice" button
-            $('#printInvoice').hide();  // Hide "Print Invoice" button
-            $('#invoice').hide();       // Hide the invoice element
-            captureScreenshot();        // Capture screenshot of the invoice
+        if ($(window).width() <= 768) {  
+            $('#viewInvoice').show();   
+            $('#printInvoice').hide();  
+            $('#invoice').hide();       
+            captureScreenshot();        
         } else {
-            $('#viewInvoice').hide();   // Hide "View Invoice" button
-            $('#printInvoice').show(); // Show "Print Invoice" button
-            $('#invoice').show();       // Show the invoice element
+            $('#viewInvoice').hide();   
+            $('#printInvoice').show(); 
+            $('#invoice').show();       
         }
     }
 
@@ -66,8 +66,8 @@ jQuery(document).ready(function($){
                         body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
                         #invoicewrapper {
                             font-size: 10px;
-                            width: 100%; /* Full width */
-                            margin: 0 auto; /* Center align */
+                            width: 100%; 
+                            margin: 0 auto; 
                         }
                         @media print {
                             body { margin: 0; }
@@ -89,17 +89,24 @@ jQuery(document).ready(function($){
 
     // Wait for the document to be ready
     $(document).ready(function() {
-        toggleButtons();
-        $(window).resize(toggleButtons);
+        toggleButtons();  // Initial check to set button visibility
+        $(window).resize(toggleButtons);  // Detect window resize and switch buttons
 
         // Handle the "Print Invoice" button click
         $('#printInvoice').click(function() {
-            if (isPrinting) return; // Prevent re-triggering the print dialog
-            isPrinting = true;      // Set the printing flag
+            if (isPrintDialogOpened) return; // Prevent re-triggering the print dialog
+
+            isPrintDialogOpened = true;  // Mark print dialog as opened
+            $('#printInvoice').hide();   // Hide the print button temporarily
+
+            // Open the print dialog
             window.print();
-            setTimeout(() => {
-                isPrinting = false; // Reset the flag after a delay
-            }, 1000); // Delay to ensure the print process finishes
+
+            // After the print dialog closes, show the print button again
+            setTimeout(function() {
+                $('#printInvoice').show(); // Show the print button
+                isPrintDialogOpened = false; // Reset the print dialog status
+            }, 1000);  // Adjust delay as needed
         });
 
         // Handle the "View Invoice" button click
@@ -110,14 +117,6 @@ jQuery(document).ready(function($){
 })();
 
 
-
-
-    
-(function () {
-            $('#printInvoice').on('click', function () {
-                window.print();
-            });
-        })();  
 
 (function () {
     // Add the modal HTML dynamically
