@@ -28,7 +28,7 @@ jQuery(document).ready(function($){
 
         const originalStyles = devisElement.attr('style') || '';
         devisElement.css({
-            'width': '100%',
+            'width': '1200px',
             'font-size': '16px',
             'display': 'block',
             'position': 'static',
