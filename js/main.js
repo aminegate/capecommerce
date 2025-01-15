@@ -28,10 +28,10 @@ jQuery(document).ready(function($){
 
         const originalStyles = devisElement.attr('style') || '';
         devisElement.css({
-            'width': '100%',
+            'width': '1024px',
             'font-size': '16px',
             'display': 'block',
-            'position': 'static',
+            'position': 'static'
         });
 
         html2canvas(devisElement[0]).then(function(canvas) {
@@ -63,21 +63,8 @@ jQuery(document).ready(function($){
                 <head>
                     ${headContent.html()}
                     <style>
-                        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-                        #invoice {
-                            font-size: 10px;
-                            width: 1200px;  /* Fixed width for desktop view */
-                            max-width: 100%;  /* Allow it to adjust on small screens */
-                            margin: 0 auto; 
-                        }
-                        @media (max-width: 768px) {
-                            #invoice {
-                                width: 100%;  /* Ensure it takes full width on small screens */
-                                font-size: 12px;  /* Adjust font size if necessary */
-                            }
-                        }
-                        @media print {
-                            body { margin: 0; }
+                        div#invoicewrapper {
+                            width: 1200px;
                         }
                     </style>
                 </head>
@@ -122,7 +109,6 @@ jQuery(document).ready(function($){
         });
     });
 })();
-
 
 
 
