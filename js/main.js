@@ -28,7 +28,7 @@ jQuery(document).ready(function($){
 
         const originalStyles = devisElement.attr('style') || '';
         devisElement.css({
-            'width': '1024px',
+            'width': '100%',
             'font-size': '16px',
             'display': 'block',
             'position': 'static',
@@ -64,7 +64,7 @@ jQuery(document).ready(function($){
                     ${headContent.html()}
                     <style>
                         body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-                        #invoicewrapper {
+                        #invoice {
                             font-size: 10px;
                             width: 100%; 
                             margin: 0 auto; 
