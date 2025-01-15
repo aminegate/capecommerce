@@ -5,44 +5,51 @@ jQuery(document).ready(function($){
 
     // Function to toggle between print and view buttons
     function toggleButtons() {
-        if ($(window).width() <= 768) {  
+        if ($(window).width() <= 768) { 
             $('#viewInvoice').show();   
             $('#printInvoice').hide();  
-            $('#invoice').hide();       
+                  
             captureScreenshot();        
         } else {
             $('#viewInvoice').hide();   
             $('#printInvoice').show(); 
-            $('#invoice').show();       
+       
         }
     }
 
     // Function to capture a screenshot
     function captureScreenshot() {
-        const devisElement = $('#invoice');
+    const devisElement = $('#invoice');
 
-        if (devisElement.length === 0) {
-            console.error("Invoice element not found.");
-            return;
-        }
+    if (devisElement.length === 0) {
+        console.error("Invoice element not found.");
+        return;
+    }
 
-        const originalStyles = devisElement.attr('style') || '';
-        devisElement.css({
-            'width': '1024px',
-            'font-size': '16px',
-            'display': 'block',
-            'position': 'static'
-        });
+    const originalStyles = devisElement.attr('style') || '';
 
+    // Temporarily apply styles to make the invoice element ready for capturing
+    devisElement.css({
+        'position': 'absolute',   // Position it off-screen (hidden)
+        'left': '-9999px',        // Move it far off-screen
+        'width': '1024px',        // Ensure the width for the capture
+        'font-size': '16px',      // Adjust font size
+        'display': 'block',       // Ensure it's rendered (but off-screen)
+        'visibility': 'visible'  // Make it visible for the capture
+    });
+
+    // Allow the browser to render the element before capturing the screenshot
+    setTimeout(function() {
         html2canvas(devisElement[0]).then(function(canvas) {
-            devisElement.attr('style', originalStyles);
+            devisElement.attr('style', originalStyles);  // Restore original styles
             const screenshotURL = canvas.toDataURL("image/png");
             $('.deviscapture .screenshot').attr('src', screenshotURL);
         }).catch(function(error) {
             console.error("Error capturing screenshot:", error);
-            devisElement.attr('style', originalStyles);
+            devisElement.attr('style', originalStyles);  // Restore original styles
         });
-    }
+    }, 100);  // Delay to allow rendering
+}
 
     // Function to display the invoice in full width
     function displayInvoiceAsHTML() {
