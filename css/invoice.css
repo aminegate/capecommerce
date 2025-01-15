@@ -21,9 +21,7 @@ button#viewInvoice {
 @media (max-width: 768px) {
     div#invoice {
        display: none;
-    }
-    
-    
+    }   
 }
 
 

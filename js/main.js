@@ -1,200 +1,5 @@
 jQuery(document).ready(function($){
     
-(function() {
-    let isPrintDialogOpened = false; // Flag to track if the print dialog is opened
-
-    // Function to toggle between print and view buttons
-    function toggleButtons() {
-        if ($(window).width() <= 768) { 
-            $('#viewInvoice').show();   
-            $('#printInvoice').hide();  
-                  
-            captureScreenshot();        
-        } else {
-            $('#viewInvoice').hide();   
-            $('#printInvoice').show(); 
-       
-        }
-    }
-
-    // Function to capture a screenshot
-    function captureScreenshot() {
-    const devisElement = $('#invoice');
-
-    if (devisElement.length === 0) {
-        console.error("Invoice element not found.");
-        return;
-    }
-
-    const originalStyles = devisElement.attr('style') || '';
-
-    // Temporarily apply styles to make the invoice element ready for capturing
-    devisElement.css({
-        'position': 'absolute',   // Position it off-screen (hidden)
-        'left': '-9999px',        // Move it far off-screen
-        'width': '1024px',        // Ensure the width for the capture
-        'font-size': '16px',      // Adjust font size
-        'display': 'block',       // Ensure it's rendered (but off-screen)
-        'visibility': 'visible'  // Make it visible for the capture
-    });
-
-    // Allow the browser to render the element before capturing the screenshot
-    setTimeout(function() {
-        html2canvas(devisElement[0]).then(function(canvas) {
-            devisElement.attr('style', originalStyles);  // Restore original styles
-            const screenshotURL = canvas.toDataURL("image/png");
-            $('.deviscapture .screenshot').attr('src', screenshotURL);
-        }).catch(function(error) {
-            console.error("Error capturing screenshot:", error);
-            devisElement.attr('style', originalStyles);  // Restore original styles
-        });
-    }, 100);  // Delay to allow rendering
-}
-
-    // Function to display the invoice in full width
-    function displayInvoiceAsHTML() {
-        const invoiceContent = $('#invoice').html();
-
-        if (!invoiceContent) {
-            console.error("No content found in #invoice");
-            return;
-        }
-
-        const newWindow = window.open('', '_blank');
-        if (newWindow) {
-            const headContent = $('head').clone();
-
-            newWindow.document.write(`
-                <!DOCTYPE html>
-                <html lang="en">
-                <head>
-                    ${headContent.html()}
-                    <style>
-                        div#invoicewrapper {
-                            width: 1200px;
-                        }
-                    </style>
-                </head>
-                <body>
-                    <div id="invoicewrapper">
-                        ${invoiceContent}
-                    </div>
-                </body>
-                </html>
-            `);
-            newWindow.document.close();
-        } else {
-            alert("Please allow pop-ups to view the invoice.");
-        }
-    }
-
-    // Wait for the document to be ready
-    $(document).ready(function() {
-        toggleButtons();  // Initial check to set button visibility
-        $(window).resize(toggleButtons);  // Detect window resize and switch buttons
-
-        // Handle the "Print Invoice" button click
-        $('#printInvoice').click(function() {
-            if (isPrintDialogOpened) return; // Prevent re-triggering the print dialog
-
-            isPrintDialogOpened = true;  // Mark print dialog as opened
-            $('#printInvoice').hide();   // Hide the print button temporarily
-
-            // Open the print dialog
-            window.print();
-
-            // After the print dialog closes, show the print button again
-            setTimeout(function() {
-                $('#printInvoice').show(); // Show the print button
-                isPrintDialogOpened = false; // Reset the print dialog status
-            }, 1000);  // Adjust delay as needed
-        });
-
-        // Handle the "View Invoice" button click
-        $('#viewInvoice').click(function() {
-            displayInvoiceAsHTML();
-        });
-    });
-})();
-
-
-
-(function () {
-    // Add the modal HTML dynamically
-    $('body').append(`
-        <div id="wishlistConfirmationModal" class="custom-modal" style="display: none;">
-            <div class="modal-content">
-                <p>Voulez-vous réellement supprimer ce règlement ?</p>
-                <button id="confirmButton" class="confirm-btn">Oui</button>
-                <button id="cancelButton" class="cancel-btn">Non</button>
-            </div>
-        </div>
-    `);
-
-    // Add CSS dynamically
-    $('<style>')
-        .prop('type', 'text/css')
-        .html(`
-            .custom-modal {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.5);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 1000;
-            }
-            .modal-content {
-                background: white;
-                padding: 20px;
-                border-radius: 8px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-                text-align: center;
-                width: 300px;
-            }
-            .modal-content button {
-                margin: 5px;
-                padding: 10px 20px;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-            .confirm-btn {
-                background-color: #4CAF50;
-                color: white;
-            }
-            .cancel-btn {
-                background-color: #f44336;
-                color: white;
-            }
-        `)
-        .appendTo('head');
-
-    // Functionality for button click
-    $('button.wishlist__remove.btn.btn-sm.btn-muted.btn-icon,button.cart-table__remove.btn.btn-sm.btn-icon.btn-muted').on('click', function(event) {
-        event.preventDefault();
-        $('#wishlistConfirmationModal').fadeIn(); // Show the modal
-    });
-
-    // Handle "Oui" button click
-    $(document).on('click', '#confirmButton', function() {
-        $('#wishlistConfirmationModal').fadeOut(); // Hide the modal
-        console.log('User confirmed the action.');
-        // Add logic to handle the deletion here.
-    });
-
-    // Handle "Non" button click
-    $(document).on('click', '#cancelButton', function() {
-        $('#wishlistConfirmationModal').fadeOut(); // Hide the modal
-        console.log('User canceled the action.');
-    });
-})();
-
-
-    
 
 /*............................................................................
 ................................. Front-End ..................................
@@ -2196,6 +2001,205 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
     });
 })();
 
+
+/*============================ devis =============================*/    
+    
+(function () {
+    if (window.location.pathname.indexOf('paiement.html') === -1) {
+        return; // Exit the function if not on paiment.html
+    }
+
+    let isPrintDialogOpened = false; // Flag to track if the print dialog is opened
+
+    // Function to toggle between print and view buttons
+    function toggleButtons() {
+        if ($(window).width() <= 768) { 
+            $('#viewInvoice').show();   
+            $('#printInvoice').hide();  
+                  
+            captureScreenshot();        
+        } else {
+            $('#viewInvoice').hide();   
+            $('#printInvoice').show(); 
+       
+        }
+    }
+
+    // Function to capture a screenshot
+    function captureScreenshot() {
+        const devisElement = $('#invoice');
+
+        if (devisElement.length === 0) {
+            console.error("Invoice element not found.");
+            return;
+        }
+
+        const originalStyles = devisElement.attr('style') || '';
+
+        // Temporarily apply styles to make the invoice element ready for capturing
+        devisElement.css({
+            'position': 'absolute',   // Position it off-screen (hidden)
+            'left': '-9999px',        // Move it far off-screen
+            'width': '1024px',        // Ensure the width for the capture
+            'font-size': '16px',      // Adjust font size
+            'display': 'block',       // Ensure it's rendered (but off-screen)
+            'visibility': 'visible'  // Make it visible for the capture
+        });
+
+        // Allow the browser to render the element before capturing the screenshot
+        setTimeout(function() {
+            html2canvas(devisElement[0]).then(function(canvas) {
+                devisElement.attr('style', originalStyles);  // Restore original styles
+                const screenshotURL = canvas.toDataURL("image/png");
+                $('.deviscapture .screenshot').attr('src', screenshotURL);
+            }).catch(function(error) {
+                console.error("Error capturing screenshot:", error);
+                devisElement.attr('style', originalStyles);  // Restore original styles
+            });
+        }, 100);  // Delay to allow rendering
+    }
+
+    // Function to display the invoice in full width
+    function displayInvoiceAsHTML() {
+        const invoiceContent = $('#invoice').html();
+
+        if (!invoiceContent) {
+            console.error("No content found in #invoice");
+            return;
+        }
+
+        const newWindow = window.open('', '_blank');
+        if (newWindow) {
+            const headContent = $('head').clone();
+
+            newWindow.document.write(`
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    ${headContent.html()}
+                    <style>
+                        div#invoicewrapper {
+                            width: 1200px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div id="invoicewrapper">
+                        ${invoiceContent}
+                    </div>
+                </body>
+                </html>
+            `);
+            newWindow.document.close();
+        } else {
+            alert("Please allow pop-ups to view the invoice.");
+        }
+    }
+
+    // Wait for the document to be ready
+    $(document).ready(function() {
+        toggleButtons();  // Initial check to set button visibility
+        $(window).resize(toggleButtons);  // Detect window resize and switch buttons
+
+        // Handle the "Print Invoice" button click
+        $('#printInvoice').click(function() {
+            if (isPrintDialogOpened) return; // Prevent re-triggering the print dialog
+
+            isPrintDialogOpened = true;  // Mark print dialog as opened
+            $('#printInvoice').hide();   // Hide the print button temporarily
+
+            // Open the print dialog
+            window.print();
+
+            // After the print dialog closes, show the print button again
+            setTimeout(function() {
+                $('#printInvoice').show(); // Show the print button
+                isPrintDialogOpened = false; // Reset the print dialog status
+            }, 1000);  // Adjust delay as needed
+        });
+
+        // Handle the "View Invoice" button click
+        $('#viewInvoice').click(function() {
+            displayInvoiceAsHTML();
+        });
+    });
+})();
+
+/*========= delete confirmation modal (wishlist + panier) ========*/
+    
+(function () {
+    // Add the modal HTML dynamically
+    $('body').append(`
+        <div id="wishlistConfirmationModal" class="custom-modal" style="display: none;">
+            <div class="modal-content">
+                <p>Voulez-vous réellement supprimer ce règlement ?</p>
+                <button id="confirmButton" class="confirm-btn">Oui</button>
+                <button id="cancelButton" class="cancel-btn">Non</button>
+            </div>
+        </div>
+    `);
+
+    // Add CSS dynamically
+    $('<style>')
+        .prop('type', 'text/css')
+        .html(`
+            .custom-modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+            }
+            .modal-content {
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                text-align: center;
+                width: 300px;
+            }
+            .modal-content button {
+                margin: 5px;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .confirm-btn {
+                background-color: #4CAF50;
+                color: white;
+            }
+            .cancel-btn {
+                background-color: #f44336;
+                color: white;
+            }
+        `)
+        .appendTo('head');
+
+    // Functionality for button click
+    $('button.wishlist__remove.btn.btn-sm.btn-muted.btn-icon,button.cart-table__remove.btn.btn-sm.btn-icon.btn-muted').on('click', function(event) {
+        event.preventDefault();
+        $('#wishlistConfirmationModal').fadeIn(); // Show the modal
+    });
+
+    // Handle "Oui" button click
+    $(document).on('click', '#confirmButton', function() {
+        $('#wishlistConfirmationModal').fadeOut(); // Hide the modal
+        console.log('User confirmed the action.');
+        // Add logic to handle the deletion here.
+    });
+
+    // Handle "Non" button click
+    $(document).on('click', '#cancelButton', function() {
+        $('#wishlistConfirmationModal').fadeOut(); // Hide the modal
+        console.log('User canceled the action.');
+    });
+})();
 
 
 

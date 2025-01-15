@@ -1,35 +1,3 @@
-.floaty {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    bottom: -9%;
-    right: 0%;
-    background-color: #25d366;
-    color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    z-index: 100;
-}
-
-.relative-wrap {
-    position: relative;
-}
-
-.my-float {
-    margin-top: 14px;
-    width: 23px !important;
-}
-
-
-p.max-width {
-    width: 85%;
-}
-
-.deviscapture {
-    height: 275px;
-}
-
 /*
 
 - General css
@@ -79,6 +47,7 @@ p.max-width {
 - old css
 
 */
+
 /*****************************************************************************
 ******************************* General css **********************************
 *****************************************************************************/
@@ -777,6 +746,51 @@ span.notification__counter {
     background-color: white;
     border: 3px solid var(--primary-color);
 }
+
+
+/*****************************************************************************
+***************************** contact.html css *******************************
+*****************************************************************************/
+
+/*** whatsapp **/
+
+.floaty {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    bottom: -9%;
+    right: 0%;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    z-index: 100;
+}
+
+.floaty_two {
+    width: 90%;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 30px;
+    margin: 20px auto 0px auto;
+}
+
+.my-float {
+    margin-top: 14px;
+    width: 23px !important;
+}
+
+.relative-wrap {
+    position: relative;
+}
+
+p.max-width {
+    width: 85%;
+}
+
 
 /*****************************************************************************
 **************************** Reglement.html css ******************************
@@ -4778,6 +4792,18 @@ input#monthInput {
 
 @media (min-width:480px) and (max-width: 576px) {
     
+    .floaty {
+        display: none;
+    }
+    
+    p.max-width {
+    width: 100%;
+}
+    
+    .floaty_two {
+        display: block;
+    }
+    
     td.cart-table__column.cart-table__column--image .image--type--product {
     border-radius: 5px 5px 0px 0px !important;
 }
@@ -5055,6 +5081,21 @@ input#monthInput {
 }
 
 @media (min-width:320px) and (max-width: 480px) {
+    
+        p.max-width {
+    width: 100%;
+}
+ 
+    
+    .floaty {
+        display: none
+
+    }
+    
+    .floaty_two {
+        display: block;
+    }
+    
     td.cart-table__column.cart-table__column--image .image--type--product {
     border-radius: 5px 5px 0px 0px !important;
 }
