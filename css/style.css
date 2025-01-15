@@ -776,6 +776,7 @@ span.notification__counter {
     text-align: center;
     font-size: 30px;
     margin: 20px auto 0px auto;
+    display: none
 }
 
 .my-float {
