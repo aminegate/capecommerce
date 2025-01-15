@@ -1,13 +1,15 @@
 jQuery(document).ready(function($){
     
 (function() {
+    let isPrinting = false; // Flag to prevent re-triggering the print dialog
+
     // Function to toggle between print and view buttons
     function toggleButtons() {
         if ($(window).width() <= 768) {  // Detect small screen
             $('#viewInvoice').show();    // Show "View Invoice" button
             $('#printInvoice').hide();  // Hide "Print Invoice" button
             $('#invoice').hide();       // Hide the invoice element
-            captureScreenshot();        // Capture screenshot of the devis
+            captureScreenshot();        // Capture screenshot of the invoice
         } else {
             $('#viewInvoice').hide();   // Hide "View Invoice" button
             $('#printInvoice').show(); // Show "Print Invoice" button
@@ -15,65 +17,61 @@ jQuery(document).ready(function($){
         }
     }
 
-    
+    // Function to capture a screenshot
     function captureScreenshot() {
-    const devisElement = $('#invoice');
+        const devisElement = $('#invoice');
 
-    if (devisElement.length === 0) {
-        console.error("Invoice element not found.");
-        return;
+        if (devisElement.length === 0) {
+            console.error("Invoice element not found.");
+            return;
+        }
+
+        const originalStyles = devisElement.attr('style') || '';
+        devisElement.css({
+            'width': '1024px',
+            'font-size': '16px',
+            'display': 'block',
+            'position': 'static',
+        });
+
+        html2canvas(devisElement[0]).then(function(canvas) {
+            devisElement.attr('style', originalStyles);
+            const screenshotURL = canvas.toDataURL("image/png");
+            $('.deviscapture .screenshot').attr('src', screenshotURL);
+        }).catch(function(error) {
+            console.error("Error capturing screenshot:", error);
+            devisElement.attr('style', originalStyles);
+        });
     }
 
-    // Save original styles to restore later
-    const originalStyles = devisElement.attr('style') || '';
-
-    // Apply styles to mimic a large screen
-    devisElement.css({
-        'width': '1024px',    // Set width to match a typical large screen
-        'font-size': '16px',  // Adjust font size for large screen appearance
-        'display': 'block',   // Ensure it's visible
-        'position': 'static', // Avoid positioning issues
-    });
-
-    html2canvas(devisElement[0]).then(function(canvas) {
-        // Restore the original styles
-        devisElement.attr('style', originalStyles);
-
-        // Convert the canvas to a data URL and insert it into the screenshot element
-        const screenshotURL = canvas.toDataURL("image/png");
-        $('.deviscapture .screenshot').attr('src', screenshotURL);
-    }).catch(function(error) {
-        console.error("Error capturing screenshot:", error);
-        // Restore original styles in case of error
-        devisElement.attr('style', originalStyles);
-    });
-}
-
-    
-    // Display the invoice as HTML in a new tab
+    // Function to display the invoice in full width
     function displayInvoiceAsHTML() {
-        const invoiceContent = $('#invoice').html(); // Get the HTML content of the invoice
+        const invoiceContent = $('#invoice').html();
 
         if (!invoiceContent) {
             console.error("No content found in #invoice");
             return;
         }
 
-        // Open the invoice content in a new tab
         const newWindow = window.open('', '_blank');
         if (newWindow) {
-            // Copy the head of the current page to include the existing styles
-            const headContent = $('head').clone(); // Clone the head to reuse styles
+            const headContent = $('head').clone();
 
-            // Open a new document and write the HTML content, including styles
             newWindow.document.write(`
                 <!DOCTYPE html>
                 <html lang="en">
                 <head>
-                    ${headContent.html()} <!-- Include existing styles from the head -->
+                    ${headContent.html()}
                     <style>
-                        body { font-family: Arial, sans-serif; margin: 20px; }
-                        #invoicewrapper { font-size: 10px; }
+                        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+                        #invoicewrapper {
+                            font-size: 10px;
+                            width: 100%; /* Full width */
+                            margin: 0 auto; /* Center align */
+                        }
+                        @media print {
+                            body { margin: 0; }
+                        }
                     </style>
                 </head>
                 <body>
@@ -83,7 +81,7 @@ jQuery(document).ready(function($){
                 </body>
                 </html>
             `);
-            newWindow.document.close(); // Close the document to finish rendering
+            newWindow.document.close();
         } else {
             alert("Please allow pop-ups to view the invoice.");
         }
@@ -91,12 +89,17 @@ jQuery(document).ready(function($){
 
     // Wait for the document to be ready
     $(document).ready(function() {
-        toggleButtons(); // Initial check to set button visibility
-        $(window).resize(toggleButtons); // Detect window resize and switch buttons
+        toggleButtons();
+        $(window).resize(toggleButtons);
 
         // Handle the "Print Invoice" button click
         $('#printInvoice').click(function() {
+            if (isPrinting) return; // Prevent re-triggering the print dialog
+            isPrinting = true;      // Set the printing flag
             window.print();
+            setTimeout(() => {
+                isPrinting = false; // Reset the flag after a delay
+            }, 1000); // Delay to ensure the print process finishes
         });
 
         // Handle the "View Invoice" button click
