@@ -66,8 +66,15 @@ jQuery(document).ready(function($){
                         body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
                         #invoice {
                             font-size: 10px;
-                            width: 1200px; 
+                            width: 1200px;  /* Fixed width for desktop view */
+                            max-width: 100%;  /* Allow it to adjust on small screens */
                             margin: 0 auto; 
+                        }
+                        @media (max-width: 768px) {
+                            #invoice {
+                                width: 100%;  /* Ensure it takes full width on small screens */
+                                font-size: 12px;  /* Adjust font size if necessary */
+                            }
                         }
                         @media print {
                             body { margin: 0; }
@@ -115,6 +122,7 @@ jQuery(document).ready(function($){
         });
     });
 })();
+
 
 
 
