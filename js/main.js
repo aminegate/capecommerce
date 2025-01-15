@@ -1,9 +1,122 @@
 jQuery(document).ready(function($){
     
+(function() {
+    // Function to toggle between print and view buttons
+    function toggleButtons() {
+        if ($(window).width() <= 768) {  // Detect small screen
+            $('#viewInvoice').show();    // Show "View Invoice" button
+            $('#printInvoice').hide();  // Hide "Print Invoice" button
+            $('#invoice').hide();       // Hide the invoice element
+            captureScreenshot();        // Capture screenshot of the devis
+        } else {
+            $('#viewInvoice').hide();   // Hide "View Invoice" button
+            $('#printInvoice').show(); // Show "Print Invoice" button
+            $('#invoice').show();       // Show the invoice element
+        }
+    }
 
     
+    function captureScreenshot() {
+    const devisElement = $('#invoice');
 
-(function($) {
+    if (devisElement.length === 0) {
+        console.error("Invoice element not found.");
+        return;
+    }
+
+    // Save original styles to restore later
+    const originalStyles = devisElement.attr('style') || '';
+
+    // Apply styles to mimic a large screen
+    devisElement.css({
+        'width': '1024px',    // Set width to match a typical large screen
+        'font-size': '16px',  // Adjust font size for large screen appearance
+        'display': 'block',   // Ensure it's visible
+        'position': 'static', // Avoid positioning issues
+    });
+
+    html2canvas(devisElement[0]).then(function(canvas) {
+        // Restore the original styles
+        devisElement.attr('style', originalStyles);
+
+        // Convert the canvas to a data URL and insert it into the screenshot element
+        const screenshotURL = canvas.toDataURL("image/png");
+        $('.deviscapture .screenshot').attr('src', screenshotURL);
+    }).catch(function(error) {
+        console.error("Error capturing screenshot:", error);
+        // Restore original styles in case of error
+        devisElement.attr('style', originalStyles);
+    });
+}
+
+    
+    // Display the invoice as HTML in a new tab
+    function displayInvoiceAsHTML() {
+        const invoiceContent = $('#invoice').html(); // Get the HTML content of the invoice
+
+        if (!invoiceContent) {
+            console.error("No content found in #invoice");
+            return;
+        }
+
+        // Open the invoice content in a new tab
+        const newWindow = window.open('', '_blank');
+        if (newWindow) {
+            // Copy the head of the current page to include the existing styles
+            const headContent = $('head').clone(); // Clone the head to reuse styles
+
+            // Open a new document and write the HTML content, including styles
+            newWindow.document.write(`
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    ${headContent.html()} <!-- Include existing styles from the head -->
+                    <style>
+                        body { font-family: Arial, sans-serif; margin: 20px; }
+                        #invoicewrapper { font-size: 10px; }
+                    </style>
+                </head>
+                <body>
+                    <div id="invoicewrapper">
+                        ${invoiceContent}
+                    </div>
+                </body>
+                </html>
+            `);
+            newWindow.document.close(); // Close the document to finish rendering
+        } else {
+            alert("Please allow pop-ups to view the invoice.");
+        }
+    }
+
+    // Wait for the document to be ready
+    $(document).ready(function() {
+        toggleButtons(); // Initial check to set button visibility
+        $(window).resize(toggleButtons); // Detect window resize and switch buttons
+
+        // Handle the "Print Invoice" button click
+        $('#printInvoice').click(function() {
+            window.print();
+        });
+
+        // Handle the "View Invoice" button click
+        $('#viewInvoice').click(function() {
+            displayInvoiceAsHTML();
+        });
+    });
+})();
+
+
+
+
+    
+(function () {
+            $('#printInvoice').on('click', function () {
+                window.print();
+            });
+        })();  
+
+(function () {
     // Add the modal HTML dynamically
     $('body').append(`
         <div id="wishlistConfirmationModal" class="custom-modal" style="display: none;">
@@ -75,7 +188,7 @@ jQuery(document).ready(function($){
         $('#wishlistConfirmationModal').fadeOut(); // Hide the modal
         console.log('User canceled the action.');
     });
-})(jQuery);
+})();
 
 
     

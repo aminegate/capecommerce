@@ -1,8 +1,30 @@
+.floaty {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    bottom: -9%;
+    right: 0%;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    z-index: 100;
+}
+
+.relative-wrap {
+    position: relative;
+}
+
+.my-float {
+    margin-top: 14px;
+    width: 23px !important;
+}
 
 
-
-
-
+p.max-width {
+    width: 85%;
+}
 
 /*
 
@@ -1450,7 +1472,10 @@ input#bordereauInput{
     color: white;
 }
 
-.validerBtnWrapper input[type="submit"] {
+.validerBtnWrapper input[type="submit"],
+button#printInvoice,
+button#downloadPDF,
+button#viewInvoice{
     background: #f7943d;
     color: white;
     padding: 10px 35px;
@@ -1463,6 +1488,7 @@ input#bordereauInput{
     margin-top: 60px;
     cursor: pointer;
 }
+
 
 #clientNameInput,
 #transportNameInput,
@@ -2443,17 +2469,16 @@ button.setting-link a {
 }
 
 span.settingsName {
+    display: block;
     color: #3b3b3b;
+    font-weight: 600;
+    height: 35px;
+    width: 95px;
+    padding: 11px 0px;
+    float: right;
     cursor: pointer;
 }
 
-span.settingsName i {
-    font-size: 20px;
-    padding: 4px 8px;
-    border-radius: 10%;
-    margin-top: 5px;
-    color: black;
-}
 
 ul.user-sub-menu {
     display: none;
