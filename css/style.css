@@ -4559,9 +4559,7 @@ span.search-term {
 
 @media (min-width: 576px) and (max-width: 768px) {
     
-    #invoice {
-  display: none;
-}
+
     td.cart-table__column.cart-table__column--image .image--type--product {
     border-radius: 5px 5px 0px 0px !important;
 }
@@ -4817,9 +4815,7 @@ input#monthInput {
 
 @media (min-width:480px) and (max-width: 576px) {
     
-    #invoice {
-  display: none;
-}
+
     
     .floaty {
         display: none;
@@ -5111,9 +5107,7 @@ input#monthInput {
 
 @media (min-width:320px) and (max-width: 480px) {
     
-    #invoice {
-  display: none;
-}
+
     
         p.max-width {
     width: 100%;
