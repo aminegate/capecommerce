@@ -1,6 +1,11 @@
+
+
+
+
 jQuery(document).ready(function($){
     
-
+    
+    
 /*............................................................................
 ................................. Front-End ..................................
 ............................................................................*/
@@ -463,7 +468,7 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
         }).trigger('resize'); // Trigger the function on load
 })();
     
-/*======================== Paramètre Button ==========================*/
+/*======================== Paramètre + notification Button ==========================*/
     
 (function () {
     // Show the user-sub-menu when hovering over the span
@@ -490,8 +495,85 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
     $(".user-sub-menu").on("mouseleave", function () {
         $(this).stop(true, true).slideUp(250); // Slide up when mouse leaves the sub-menu
     });
+
+    // Show notifications on hover over the notification bell
+    $(".notification a").on("mouseenter", function () {
+        $(".notif_position").stop(true, true).slideDown(200); // Slide down the notification panel
+    });
+
+    // Hide notifications when mouse leaves the notification bell or panel
+    $(".notification a, .notif_position").on("mouseleave", function () {
+        setTimeout(function () {
+            if (!$(".notif_position").is(":hover")) {
+                $(".notif_position").stop(true, true).slideUp(200); // Slide up when mouse leaves
+            }
+        }, 100); // Adjust the delay as necessary
+    });
+
+    // Target <p> elements and color specific words individually
+    $("p").each(function () {
+        var text = $(this).html();
+
+        // Replace words with colored span
+        text = text.replace(/\b(nouveau)\b/gi, '<span style="color: #F7943D; font-weight: 600; text-transform: capitalize;">$1</span>')
+            .replace(/\b(promotion)\b/gi, '<span style="color: #F7943D; font-weight: 600; text-transform: capitalize;">$1</span>')
+            .replace(/\b(référence\s*non\s*gérée)\b/gi, '<span style="color: #F7943D; font-weight: 600; text-transform: capitalize;">$1</span>')
+            .replace(/\b(aroma)\b/gi, '<span style="color: #F7943D; font-weight: 600; text-transform: capitalize;">$1</span>');
+
+        // Update the <p> content with the highlighted words
+        $(this).html(text);
+    });
+
+    // Apply styles directly to all elements with class catego_notif
+    $(".catego_notif").css({
+        color: "#F7943D",
+        "font-weight": "600",
+        "text-transform": "capitalize"
+    });
+
+    (function () {
+        // Function to update the notification counter for a specific version (header or mobile)
+        function updateNotificationCounter(version) {
+            var count = $(`.notification-item .notread-${version}`).length; // Count unread notifications
+            if (count > 0) {
+                $(`.notification__counter__${version}`).text(count); // Update and show the counter
+            } else {
+                $(`.notification__counter__${version}`).fadeOut(200, function () {
+                    $(this).text(""); // Clear the counter when no unread notifications are left
+                });
+            }
+        }
+
+        // Function to handle the "mark-read" button for a specific version (header or mobile)
+        function handleMarkRead(version) {
+            $(`.mark-read-${version}`).on("click", function () {
+                // Smoothly fade out and remove .notread elements for the specific version
+                $(`.notread-${version}`).fadeOut(200, function () {
+                    $(this).remove();
+                    updateNotificationCounter(version); // Update the counter after removal
+                });
+            });
+        }
+
+        // Function to handle the click on .notification-item and remove .notread
+        function handleNotificationItemClick(version) {
+            $(".notification-item").on("click", function () {
+                $(this).find(`.notread-${version}`).fadeOut(200, function () {
+                    $(this).remove(); // Remove .notread class
+                    updateNotificationCounter(version); // Update the counter after removal
+                });
+            });
+        }
+
+        // Initial update of the notification counter for both header and mobile
+    ["header", "mobile"].forEach(function (version) {
+            updateNotificationCounter(version);
+            handleMarkRead(version);
+            handleNotificationItemClick(version); // Add click handler for notification-item
+        });
+    })();
 })();
- 
+
 /*=================== Copyright year in the footer ===================*/
     
 (function () {
