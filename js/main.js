@@ -2081,8 +2081,12 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
         font-family: Arial, sans-serif; 
         margin: 20px; 
     }
-    #invoicewrapper { 
-        font-size: 10px; 
+    #invoicewrapper {  
+        width: 1024px; 
+    }
+
+#invoice { 
+        font-size: 12px; 
         width: 1024px; 
     }
 </style>
