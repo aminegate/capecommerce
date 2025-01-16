@@ -798,5 +798,9 @@ video {
         border: none;
         border-radius: 0px;
     }  
+    
+    @page {
+    margin: 0;
+  }
 
 }
