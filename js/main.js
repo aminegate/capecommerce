@@ -2077,9 +2077,16 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
                 <head>
                     ${headContent.html()} <!-- Include existing styles from the head -->
                     <style>
-                        body { font-family: Arial, sans-serif; margin: 20px; }
-                        #invoicewrapper { font-size: 10px; }
-                    </style>
+    body { 
+        font-family: Arial, sans-serif; 
+        margin: 20px; 
+    }
+    #invoicewrapper { 
+        font-size: 10px; 
+        width: 1024px; 
+    }
+</style>
+
                 </head>
                 <body>
                     <div id="invoicewrapper">
