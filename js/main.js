@@ -2003,25 +2003,22 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
 
 
 /*============================ devis =============================*/    
-    
-(function () {
-    if (window.location.pathname.indexOf('paiement.html') === -1) {
-        return; // Exit the function if not on paiment.html
-    }
 
-    let isPrintDialogOpened = false; // Flag to track if the print dialog is opened
+(function($) {
+    // Ensure the code runs only on the paiement.html page
+    if (window.location.pathname.indexOf('paiement.html') === -1) {
+        return; // Exit the function if not on paiement.html
+    }
 
     // Function to toggle between print and view buttons
     function toggleButtons() {
         if ($(window).width() <= 768) { 
             $('#viewInvoice').show();   
             $('#printInvoice').hide();  
-                  
-            captureScreenshot();        
+            captureScreenshot();
         } else {
             $('#viewInvoice').hide();   
             $('#printInvoice').show(); 
-       
         }
     }
 
@@ -2038,12 +2035,12 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
 
         // Temporarily apply styles to make the invoice element ready for capturing
         devisElement.css({
-            'position': 'absolute',   // Position it off-screen (hidden)
-            'left': '-9999px',        // Move it far off-screen
-            'width': '1024px',        // Ensure the width for the capture
-            'font-size': '16px',      // Adjust font size
-            'display': 'block',       // Ensure it's rendered (but off-screen)
-            'visibility': 'visible'  // Make it visible for the capture
+            'position': 'absolute',
+            'left': '-9999px',
+            'width': '1024px',
+            'font-size': '16px',
+            'display': 'block',
+            'visibility': 'visible'
         });
 
         // Allow the browser to render the element before capturing the screenshot
@@ -2068,19 +2065,20 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
             return;
         }
 
+        // Open the invoice content in a new tab
         const newWindow = window.open('', '_blank');
         if (newWindow) {
-            const headContent = $('head').clone();
+            const headContent = $('head').clone(); // Clone the head to reuse styles
 
+            // Write HTML content to the new window, including styles
             newWindow.document.write(`
                 <!DOCTYPE html>
                 <html lang="en">
                 <head>
-                    ${headContent.html()}
+                    ${headContent.html()} <!-- Include existing styles from the head -->
                     <style>
-                        div#invoicewrapper {
-                            width: 1200px;
-                        }
+                        body { font-family: Arial, sans-serif; margin: 20px; }
+                        #invoicewrapper { font-size: 10px; }
                     </style>
                 </head>
                 <body>
@@ -2090,41 +2088,35 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
                 </body>
                 </html>
             `);
-            newWindow.document.close();
+            newWindow.document.close(); // Close the document to finish rendering
         } else {
             alert("Please allow pop-ups to view the invoice.");
         }
     }
 
-    // Wait for the document to be ready
+    // Document ready function
     $(document).ready(function() {
-        toggleButtons();  // Initial check to set button visibility
-        $(window).resize(toggleButtons);  // Detect window resize and switch buttons
-
-        // Handle the "Print Invoice" button click
-        $('#printInvoice').click(function() {
-            if (isPrintDialogOpened) return; // Prevent re-triggering the print dialog
-
-            isPrintDialogOpened = true;  // Mark print dialog as opened
-            $('#printInvoice').hide();   // Hide the print button temporarily
-
-            // Open the print dialog
-            window.print();
-
-            // After the print dialog closes, show the print button again
-            setTimeout(function() {
-                $('#printInvoice').show(); // Show the print button
-                isPrintDialogOpened = false; // Reset the print dialog status
-            }, 1000);  // Adjust delay as needed
+        // Add click event for print button
+        $('#printInvoice').on('click', function() {
+            window.print(); // Open the print dialog
         });
 
+        // Initialize button toggling on page load
+        toggleButtons();
+
+        // Handle window resize to adjust buttons dynamically
+        $(window).on('resize', function() {
+            toggleButtons();
+        });
+        
         // Handle the "View Invoice" button click
         $('#viewInvoice').click(function() {
             displayInvoiceAsHTML();
         });
     });
-})();
-
+})(jQuery);
+    
+    
 /*========= delete confirmation modal (wishlist + panier) ========*/
     
 (function () {

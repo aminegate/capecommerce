@@ -10,19 +10,6 @@ button#viewInvoice {
     width: 100%;
 }
 
-@media (min-width: 768px) {
-    .border-around {
-        border: 3px solid #000000;
-        border-radius: 5px;
-    }
-      
-}
-
-@media (max-width: 768px) {
-    div#invoice {
-       display: none;
-    }   
-}
 
 
 div#invoice td {
@@ -810,6 +797,6 @@ video {
     .border-around {
         border: none;
         border-radius: 0px;
-    }
+    }  
 
 }

@@ -3992,7 +3992,7 @@ span.search-term {
 
 /****************************** product grid list *******************************/
 
-@media (min-width: 1200px) {
+@media (min-width: 1200px)  {
     .products-list__item {
         flex: 0 0 calc(20% - 16px);
         /* 5 items per row with margins accounted */
@@ -4043,7 +4043,16 @@ span.search-term {
 
 /********************************** main media query ***********************/
 
+
 @media (min-width: 1200px) and (max-width: 1400px) {
+    
+    
+    
+     .border-around {
+        border: 3px solid #000000;
+        border-radius: 5px;
+    }
+      
     
     span#calendar-icon-reg {
     right: 2% !important;
@@ -4181,6 +4190,11 @@ span.search-term {
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
+     .border-around {
+        border: 3px solid #000000;
+        border-radius: 5px;
+    }
+      
     
         span#calendar-icon-reg {
     right: 3% !important;
@@ -4334,6 +4348,12 @@ span.search-term {
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
+    
+     .border-around {
+        border: 3px solid #000000;
+        border-radius: 5px;
+    }
+      
     
     td.cart-table__column.cart-table__column--image .image--type--product {
     border-radius: 5px 5px 0px 0px !important;
@@ -4538,6 +4558,10 @@ span.search-term {
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
+    
+    #invoice {
+  display: none;
+}
     td.cart-table__column.cart-table__column--image .image--type--product {
     border-radius: 5px 5px 0px 0px !important;
 }
@@ -4792,6 +4816,10 @@ input#monthInput {
 }
 
 @media (min-width:480px) and (max-width: 576px) {
+    
+    #invoice {
+  display: none;
+}
     
     .floaty {
         display: none;
@@ -5082,6 +5110,10 @@ input#monthInput {
 }
 
 @media (min-width:320px) and (max-width: 480px) {
+    
+    #invoice {
+  display: none;
+}
     
         p.max-width {
     width: 100%;
