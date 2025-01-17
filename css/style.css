@@ -1,15 +1,3 @@
-.remove_padding_here {
-    padding: 0px !important;
-}
-
-.mobile-menu__panel-title.mobile_notif_title {
-    margin: auto 11% auto 24%;
-}
-
-
-.mark-read-mobile {
-    padding: 4px 20px !important;
-}
 /*
 
 - General css
@@ -643,6 +631,18 @@ span.mobile-menu__indicator-icon svg {
 /*------------------------------------
 --------- notification css -----------
 ------------------------------------*/
+.remove_padding_here {
+    padding: 0px !important;
+}
+
+.mobile-menu__panel-title.mobile_notif_title {
+    margin: auto 11% auto 24%;
+}
+
+
+.mark-read-mobile {
+    padding: 4px 20px !important;
+}
 
 span.notification__counter {
     color: #ffffff;
@@ -738,7 +738,7 @@ span.notification__counter.fix_notif_position {
 }
 
 .notification-panel {
-  background-color: #ffffff;
+  background-color: whitesmoke;
   border-radius: 5px 0px 0px 5px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
   overflow: hidden;

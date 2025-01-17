@@ -1,10 +1,7 @@
-
-
-
-
 jQuery(document).ready(function($){
     
-    
+
+
     
 /*............................................................................
 ................................. Front-End ..................................
@@ -531,47 +528,71 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
         "text-transform": "capitalize"
     });
 
-    (function () {
-        // Function to update the notification counter for a specific version (header or mobile)
-        function updateNotificationCounter(version) {
-            var count = $(`.notification-item .notread-${version}`).length; // Count unread notifications
-            if (count > 0) {
-                $(`.notification__counter__${version}`).text(count); // Update and show the counter
-            } else {
-                $(`.notification__counter__${version}`).fadeOut(200, function () {
-                    $(this).text(""); // Clear the counter when no unread notifications are left
+(function () {
+    // Function to update the notification counter for a specific version (header or mobile)
+    function updateNotificationCounter(version) {
+        var count = $(`.notification-item .notread-${version}`).length; // Count unread notifications
+        if (count > 0) {
+            $(`.notification__counter__${version}`).text(count); // Update and show the counter
+        } else {
+            $(`.notification__counter__${version}`).fadeOut(200, function () {
+                $(this).text(""); // Clear the counter when no unread notifications are left
+            });
+        }
+    }
+
+    // Function to handle the "mark-read" button for a specific version (header or mobile)
+    function handleMarkRead(version) {
+        $(`.mark-read-${version}`).on("click", function () {
+            // Smoothly fade out and remove .notread elements for the specific version
+            $(`.notread-${version}`).fadeOut(200, function () {
+                $(this).remove();
+                updateNotificationCounter(version); // Update the counter after removal
+            });
+        });
+    }
+
+    // Function to handle the click on .notification-item and remove .notread
+    function handleNotificationItemClick(version) {
+        $(".notification-item").on("click", function () {
+            $(this).find(`.notread-${version}`).fadeOut(200, function () {
+                $(this).remove(); // Remove .notread class
+                updateNotificationCounter(version); // Update the counter after removal
+            });
+        });
+    }
+
+    // Function to clear old notifications and limit to 10
+    function clearOldNotifications(version) {
+        const now = Date.now();
+        $(`.notification-item`).each(function () {
+            const timestamp = $(this).data("timestamp"); // Assuming a timestamp is stored in data attribute
+            if (timestamp && now - timestamp > 7 * 24 * 60 * 60 * 1000) {
+                $(this).fadeOut(200, function () {
+                    $(this).remove(); // Remove notifications older than 7 days
+                    updateNotificationCounter(version);
                 });
             }
-        }
-
-        // Function to handle the "mark-read" button for a specific version (header or mobile)
-        function handleMarkRead(version) {
-            $(`.mark-read-${version}`).on("click", function () {
-                // Smoothly fade out and remove .notread elements for the specific version
-                $(`.notread-${version}`).fadeOut(200, function () {
-                    $(this).remove();
-                    updateNotificationCounter(version); // Update the counter after removal
-                });
-            });
-        }
-
-        // Function to handle the click on .notification-item and remove .notread
-        function handleNotificationItemClick(version) {
-            $(".notification-item").on("click", function () {
-                $(this).find(`.notread-${version}`).fadeOut(200, function () {
-                    $(this).remove(); // Remove .notread class
-                    updateNotificationCounter(version); // Update the counter after removal
-                });
-            });
-        }
-
-        // Initial update of the notification counter for both header and mobile
-    ["header", "mobile"].forEach(function (version) {
-            updateNotificationCounter(version);
-            handleMarkRead(version);
-            handleNotificationItemClick(version); // Add click handler for notification-item
         });
-    })();
+
+        // Keep only the first 10 notifications
+        const items = $(`.notification-item`);
+        if (items.length > 10) {
+            items.slice(10).fadeOut(200, function () {
+                $(this).remove();
+                updateNotificationCounter(version);
+            });
+        }
+    }
+
+    // Initial update of the notification counter and setup for both header and mobile
+    ["header", "mobile"].forEach(function (version) {
+        updateNotificationCounter(version);
+        handleMarkRead(version);
+        handleNotificationItemClick(version);
+        clearOldNotifications(version); // Clear old notifications and limit count
+    });
+})();
 })();
 
 /*=================== Copyright year in the footer ===================*/
@@ -2083,10 +2104,9 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
     });
 })();
 
-
 /*============================ devis =============================*/    
 
-(function($) {
+(function () {
     // Ensure the code runs only on the paiement.html page
     if (window.location.pathname.indexOf('paiement.html') === -1) {
         return; // Exit the function if not on paiement.html
@@ -2207,9 +2227,8 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
             displayInvoiceAsHTML();
         });
     });
-})(jQuery);
-    
-    
+})();
+      
 /*========= delete confirmation modal (wishlist + panier) ========*/
     
 (function () {
