@@ -13,7 +13,51 @@ jQuery(document).ready(function($){
 .
 .
 */
+ 
     
+/*====================== loading GIF  ===================*/     
+
+(function($) {
+    $(document).ready(function() {
+        // Check if we are on index.html
+        if (window.location.pathname.includes('index.html')) {
+            // Dynamically add the loader HTML and CSS to the page
+            $('body').prepend(`
+                <div id="loader" class="loader-container">
+                    <img src="images/loader.gif" alt="Loading..." class="loader-image">
+                </div>
+            `);
+
+            $('head').append(`
+                <style>
+                    .loader-container {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: white;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        z-index: 9999;
+                    }
+
+                    .loader-image {
+                        width: 13%;
+                    }
+                </style>
+            `);
+
+            // Hide loader and show login form after 3 seconds
+            setTimeout(function() {
+                $('#loader').fadeOut();
+                $('.login-page').fadeIn();
+            }, 3000);
+        }
+    });
+})(jQuery);
+
 /*====================== Wishlist Icon change Based on Product Count  ===================*/ 
 (function () {
     var indicatorValue = parseInt($('.indicator__value').text()); // Get the indicator value
@@ -1911,94 +1955,68 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
     
 /*=========================== Login Page =============================*/    
 
-(function () {
-    // Enable/Disable Submit Button Based on Input Field Validation
+(function() {
     function checkInputs() {
         const isUsernameFilled = $('#fname').val() !== '';
         const isPasswordFilled = $('#pwd').val() !== '';
-        const submitButton = $('.loginSubmit'); // Assuming the button is the submit input
+        const submitButton = $('.loginSubmit');
 
-        // Add or remove the class and enable/disable the button based on input values
         if (isUsernameFilled && isPasswordFilled) {
-            submitButton.addClass('btnGradient') // Add gradient class
-                .removeAttr('disabled') // Enable button
-                .css('cursor', 'pointer'); // Change cursor to pointer
+            submitButton.addClass('btnGradient').removeAttr('disabled').css('cursor', 'pointer');
         } else {
-            submitButton.removeClass('btnGradient') // Remove gradient class
-                .attr('disabled', 'disabled') // Disable button
-                .css('cursor', 'default'); // Change cursor back to default
+            submitButton.removeClass('btnGradient').attr('disabled', 'disabled').css('cursor', 'default');
         }
     }
 
-    // Handle input events for username
-    $('#fname').on('focus input', function () {
-        const placeholderText = 'Nom d\'utilisateur';
-        $(this).attr('placeholder', ''); // Hide placeholder on focus
-        checkInputs(); // Check inputs while typing
+    $('#fname, #pwd').on('focus input', function() {
+        $(this).attr('placeholder', '');
+        checkInputs();
     });
 
-    // Handle input events for password
-    $('#pwd').on('focus input', function () {
-        const placeholderText = 'Mot de pass';
-        $(this).attr('placeholder', ''); // Hide placeholder on focus
-        checkInputs(); // Check inputs while typing
-    });
-
-    // Restore placeholder on blur (when clicking away) if input is empty
-    $('.loginWrapper input[type="text"], .loginWrapper input[type="password"]').on('blur', function () {
-        const placeholderText = $(this).is('#fname') ? 'Nom d\'utilisateur' : 'Mot de pass'; // Determine placeholder text
+    $('.loginWrapper input[type="text"], .loginWrapper input[type="password"]').on('blur', function() {
+        const placeholderText = $(this).is('#fname') ? 'Nom d\'utilisateur' : 'Mot de pass';
         if ($(this).val() === '') {
-            $(this).attr('placeholder', placeholderText); // Restore placeholder if input is empty
+            $(this).attr('placeholder', placeholderText);
         }
     });
 
-    // Toggle visibility for both username and password placeholders
-    $('.fa-eye').on('click', function () {
+    $('.fa-eye').on('click', function() {
         const input = $(this).siblings('input');
-        const isInputEmpty = input.val() === '';
-        const placeholderText = input.is('#fname') ? 'Nom d\'utilisateur' : 'Mot de pass'; // Check input type
-
-        // Toggle placeholder visibility
-        if (isInputEmpty) {
-            input.attr('placeholder', placeholderText); // Show placeholder if input is empty
+        if (input.val() === '') {
+            const placeholderText = input.is('#fname') ? 'Nom d\'utilisateur' : 'Mot de pass';
+            input.attr('placeholder', placeholderText);
         } else {
-            input.attr('placeholder', ''); // Hide placeholder if input is filled
+            input.attr('placeholder', '');
         }
-
-        checkInputs(); // Check inputs when toggling visibility
+        checkInputs();
     });
 
-    // Check inputs initially to set the button state correctly
     checkInputs();
 
-    // Username + Password Information : to delete
     function handleLogin(event) {
-        event.preventDefault(); // Prevent form submission
+        event.preventDefault(); // Prevent default submission
 
         var enteredUsername = $('#fname').val();
         var enteredPassword = $('#pwd').val();
-
-        // Fake credentials for demonstration
         var correctUsername = 'admin';
         var correctPassword = 'admin';
 
         if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
+            $('#loader').fadeIn(); // Show loader before redirecting
 
-            // Redirect to the main page
-            window.location.href = 'accueil.html';
+            setTimeout(function() {
+                window.location.href = 'accueil.html';
+            }, 3000);
         } else {
-            // Show error message if credentials are incorrect
             $('.msgWarning').show();
         }
     }
 
-    // Auto-fill the username and password if they are stored
     if (localStorage.getItem('fname') && localStorage.getItem('pwd')) {
         $('#fname').val(localStorage.getItem('fname'));
         $('#pwd').val(localStorage.getItem('pwd'));
     }
 
-    // Attach the function to the form's submit event
     $('.login-form').on('submit', handleLogin);
 })();
 

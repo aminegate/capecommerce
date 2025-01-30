@@ -3113,10 +3113,6 @@ button.wishlist-button .fa-heart {
     color: #eeeeee;
 }
 
-.image.image--type--product img {
-    padding: 10px;
-}
-
 .block-products-carousel .product-card__price {
     color: black;
 }
@@ -21993,6 +21989,7 @@ button.btn.btn-secondary.btn-sm.btn-actualiser i {
 .product-card .product-card__image {
     display: block;
     position: relative;
+    padding: 10px;
 }
 
 .product-card .product-card__rating {
