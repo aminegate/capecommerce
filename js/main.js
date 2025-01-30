@@ -19,9 +19,11 @@ jQuery(document).ready(function($){
 
 (function($) {
     $(document).ready(function() {
-        // Check if we are on index.html
-        if (window.location.pathname.includes('index.html')) {
-            // Dynamically add the loader HTML and CSS to the page
+        // Check if we're on the home page (supports any hosting provider)
+        let isIndexPage = window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
+
+        if (isIndexPage) {
+            // Dynamically add the loader HTML and CSS
             $('body').prepend(`
                 <div id="loader" class="loader-container">
                     <img src="images/loader.gif" alt="Loading..." class="loader-image">
@@ -57,6 +59,7 @@ jQuery(document).ready(function($){
         }
     });
 })(jQuery);
+
 
 /*====================== Wishlist Icon change Based on Product Count  ===================*/ 
 (function () {
