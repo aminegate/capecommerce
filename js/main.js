@@ -16,56 +16,18 @@ jQuery(document).ready(function($){
  
     
 /*====================== loading GIF  ===================*/     
-
 (function($) {
-    $(document).ready(function() {
-        // Check if we're on the home page (supports any hosting provider)
-        let isIndexPage = window.location.pathname === '/' || 
-                          window.location.pathname.endsWith('index.html') || 
-                          window.location.pathname.endsWith('/');
+            $(document).ready(function() {
+                // Hide loader and show content after 1 second
+                setTimeout(function() {
+                    $('#loader').fadeOut(function() {
+                        $('.mobile-menu, .site').fadeIn();
+                    });
+                }, 600);
+            });
+        })(jQuery);
 
-        if (isIndexPage) {
-            // Dynamically add the loader HTML and CSS
-            $('body').prepend(`
-                <div id="loader" class="loader-container">
-                    <img src="images/loader.gif" alt="Loading..." class="loader-image">
-                </div>
-            `);
 
-            $('head').append(`
-                <style>
-                    .loader-container {
-                        position: fixed;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background-color: white;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        z-index: 9999;
-                    }
-
-                    .loader-image {
-                        width: 13%;
-                    }
-
-                    .login-page {
-                        display: none; /* Hide login form initially */
-                    }
-                </style>
-            `);
-
-            // Hide loader and show login form after 3 seconds
-            setTimeout(function() {
-                $('#loader').fadeOut(function() {
-                    $('.login-page').fadeIn();
-                });
-            }, 3000);
-        }
-    });
-})(jQuery);
 
 /*====================== Wishlist Icon change Based on Product Count  ===================*/ 
 (function () {
@@ -2014,17 +1976,16 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
         var correctUsername = 'admin';
         var correctPassword = 'admin';
 
-        if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
-            $('#loader').fadeIn(); // Show loader before redirecting
+             if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
 
-            setTimeout(function() {
-                window.location.href = 'accueil.html';
-            }, 3000);
+            // Redirect to the main page
+            window.location.href = 'accueil.html';
         } else {
+            // Show error message if credentials are incorrect
             $('.msgWarning').show();
         }
     }
-
+    
     if (localStorage.getItem('fname') && localStorage.getItem('pwd')) {
         $('#fname').val(localStorage.getItem('fname'));
         $('#pwd').val(localStorage.getItem('pwd'));
