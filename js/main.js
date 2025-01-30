@@ -19,8 +19,9 @@ jQuery(document).ready(function($){
 
 (function($) {
     $(document).ready(function() {
-        // Check if we're on the home page (supports any hosting provider)
-        let isIndexPage = window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
+        // Universal check for the home page
+        let path = window.location.pathname.split('/').filter(Boolean).pop();
+        let isIndexPage = !path || path === 'index.html';
 
         if (isIndexPage) {
             // Dynamically add the loader HTML and CSS
