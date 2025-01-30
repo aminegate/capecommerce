@@ -67,7 +67,6 @@ jQuery(document).ready(function($){
     });
 })(jQuery);
 
-
 /*====================== Wishlist Icon change Based on Product Count  ===================*/ 
 (function () {
     var indicatorValue = parseInt($('.indicator__value').text()); // Get the indicator value
@@ -1175,7 +1174,11 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
         function handleNewImages(wrapper) {
             const img = wrapper.find('img');
             img.hide(); // Hide the uploaded image
-            wrapper.find('a').css('display', 'flex'); // Ensure icon + name remain visible
+            wrapper.find('a').css({
+                'display': 'flex',
+                'align-items': 'center',
+                'gap': '4px'
+            });
         }
 
         // Observe changes to imgFileWrapper for dynamically added images
