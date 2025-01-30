@@ -19,10 +19,10 @@ jQuery(document).ready(function($){
 
 (function($) {
     $(document).ready(function() {
-        // Detect if we are on the index page universally
-        let repoName = window.location.pathname.split('/')[1]; // Get repo name dynamically
-        let isIndexPage = path === '/' || path.endsWith('/index.html') || path === `/${repoName}/` || path === `/${repoName}/index.html`;
-
+        // Check if we're on the home page (supports any hosting provider)
+        let isIndexPage = window.location.pathname === '/' || 
+                          window.location.pathname.endsWith('index.html') || 
+                          window.location.pathname.endsWith('/');
 
         if (isIndexPage) {
             // Dynamically add the loader HTML and CSS
@@ -50,18 +50,22 @@ jQuery(document).ready(function($){
                     .loader-image {
                         width: 13%;
                     }
+
+                    .login-page {
+                        display: none; /* Hide login form initially */
+                    }
                 </style>
             `);
 
             // Hide loader and show login form after 3 seconds
             setTimeout(function() {
-                $('#loader').fadeOut();
-                $('.login-page').fadeIn();
+                $('#loader').fadeOut(function() {
+                    $('.login-page').fadeIn();
+                });
             }, 3000);
         }
     });
 })(jQuery);
-
 
 
 /*====================== Wishlist Icon change Based on Product Count  ===================*/ 
