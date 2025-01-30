@@ -19,9 +19,10 @@ jQuery(document).ready(function($){
 
 (function($) {
     $(document).ready(function() {
-        // Universal check for the home page
-        let path = window.location.pathname.split('/').filter(Boolean).pop();
-        let isIndexPage = !path || path === 'index.html';
+        // Detect if we are on the index page universally
+        let repoName = window.location.pathname.split('/')[1]; // Get repo name dynamically
+        let isIndexPage = path === '/' || path.endsWith('/index.html') || path === `/${repoName}/` || path === `/${repoName}/index.html`;
+
 
         if (isIndexPage) {
             // Dynamically add the loader HTML and CSS
@@ -60,6 +61,7 @@ jQuery(document).ready(function($){
         }
     });
 })(jQuery);
+
 
 
 /*====================== Wishlist Icon change Based on Product Count  ===================*/ 
