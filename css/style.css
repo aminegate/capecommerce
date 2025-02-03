@@ -67,9 +67,33 @@
         }
 
         /* Hide content by default */
-        .mobile-menu, .site {
+        .site {
             display: none;
         }
+
+@media (min-width: 991px) and (max-width: 1200px) {
+    .loader-image {
+            width: 20%;
+        }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .loader-image {
+            width: 20%;
+        }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .loader-image {
+            width: 25%;
+        }
+}
+
+@media (min-width: 360px) and (max-width: 480px) {
+    .loader-image {
+            width: 35%;
+        }
+}
 
 /*****************************************************************************
 ******************************* General css **********************************

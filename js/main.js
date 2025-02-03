@@ -21,7 +21,7 @@ jQuery(document).ready(function($){
                 // Hide loader and show content after 1 second
                 setTimeout(function() {
                     $('#loader').fadeOut(function() {
-                        $('.mobile-menu, .site').fadeIn();
+                        $('.site').fadeIn();
                     });
                 }, 600);
             });
