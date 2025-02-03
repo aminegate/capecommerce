@@ -7897,6 +7897,11 @@ select.form-control::-ms-expand {
     padding: 0px !important;
 }
 
+.wishlist__column--image .image--type--product .image__tag,
+.cart-table__column .image--type--product .image__tag{
+    padding: 10px !important;
+}
+
 .image--type--product .image__body {
     padding-bottom: 100%;
 }
