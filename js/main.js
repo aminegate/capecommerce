@@ -654,6 +654,7 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
         $(".logoPathTarget .logo__image img").attr('src', '../images/logo.png');
         $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo.png');
         $(".carrosserie-img img").attr('src', 'images/carrosserie-white.jpg');
+        $(".loader-image").attr('src', 'images/white-gif.gif');
         $(".nightMode").prop('disabled', true); // Disable night mode CSS
         $(".darkModeCheck").last().append('<i class="fa-solid fa-check"></i>'); // Add check icon to "Désactivé"
     } else {
@@ -661,7 +662,8 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
         $(".site-footer__payments img").attr('src', 'images/logo_white.png');
         $(".logoPathTarget .logo__image img").attr('src', '../images/logo_white.png');
         $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo_white.png');
-        $(".carrosserie-img img").attr('src', 'images/carrosserie.jpg');
+        $(".loader-image").attr('src', 'images/black-gif.gif');
+        $(".carrosserie-img img").attr('src', 'images/carrosserie.png');
         $(".nightMode").prop('disabled', false); // Enable night mode CSS
         $(".darkModeCheck").first().append('<i class="fa-solid fa-check"></i>'); // Add check icon to "Activé"
     }
@@ -678,6 +680,7 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
             $(".logoPathTarget .logo__image img").attr('src', '../images/logo.png');
             $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo.png');
             $(".carrosserie-img img").attr('src', 'images/carrosserie-white.jpg');
+            $(".loader-image").attr('src', 'images/white-gif.gif');
             $(".nightMode").prop('disabled', true);
             localStorage.setItem('mode', 'light');
             $(".darkModeCheck i").remove(); // Remove all check icons
@@ -687,7 +690,8 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
             $(".site-footer__payments img").attr('src', 'images/logo_white.png');
             $(".logoPathTarget .logo__image img").attr('src', '../images/logo_white.png');
             $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo_white.png');
-            $(".carrosserie-img img").attr('src', 'images/carrosserie.jpg');
+            $(".loader-image").attr('src', 'images/black-gif.gif');
+            $(".carrosserie-img img").attr('src', 'images/carrosserie.png');
             $(".nightMode").prop('disabled', false);
             localStorage.setItem('mode', 'dark');
             $(".darkModeCheck i").remove(); // Remove all check icons
@@ -706,7 +710,8 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
             $(".site-footer__payments img").attr('src', 'images/logo_white.png');
             $(".logoPathTarget .logo__image img").attr('src', '../images/logo_white.png');
             $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo_white.png');
-            $(".carrosserie-img img").attr('src', 'images/carrosserie.jpg');
+            $(".loader-image").attr('src', 'images/white-gif.gif');
+            $(".carrosserie-img img").attr('src', 'images/carrosserie.png');
             $(".nightMode").prop('disabled', false);
             localStorage.setItem('mode', 'dark');
             $(".darkModeCheck i").remove(); // Remove all check icons
@@ -719,6 +724,7 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
             $(".site-footer__payments img").attr('src', 'images/logo.png');
             $(".logoPathTarget .logo__image img").attr('src', '../images/logo.png');
             $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo.png');
+            $(".loader-image").attr('src', 'images/black-gif.gif');
             $(".carrosserie-img img").attr('src', 'images/carrosserie-white.jpg');
             $(".nightMode").prop('disabled', true);
             localStorage.setItem('mode', 'light');
@@ -727,7 +733,7 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
         }
     });
 })();
-     
+   
 /*======================== Chrono Animation ==========================*/
 
 (function () {
