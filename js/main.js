@@ -710,7 +710,7 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
             $(".site-footer__payments img").attr('src', 'images/logo_white.png');
             $(".logoPathTarget .logo__image img").attr('src', '../images/logo_white.png');
             $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo_white.png');
-            $(".loader-image").attr('src', 'images/white-gif.gif');
+            $(".loader-image").attr('src', 'images/black-gif.gif');
             $(".carrosserie-img img").attr('src', 'images/carrosserie.png');
             $(".nightMode").prop('disabled', false);
             localStorage.setItem('mode', 'dark');
@@ -724,7 +724,7 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
             $(".site-footer__payments img").attr('src', 'images/logo.png');
             $(".logoPathTarget .logo__image img").attr('src', '../images/logo.png');
             $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo.png');
-            $(".loader-image").attr('src', 'images/black-gif.gif');
+            $(".loader-image").attr('src', 'images/white-gif.gif');
             $(".carrosserie-img img").attr('src', 'images/carrosserie-white.jpg');
             $(".nightMode").prop('disabled', true);
             localStorage.setItem('mode', 'light');
