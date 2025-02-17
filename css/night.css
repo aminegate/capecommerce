@@ -1,6 +1,10 @@
 
 /****************************** Background Only ******************************/
 
+        .loader-container {
+            background-color: white;
+        }
+
 .product-card__footer,
 .widget-filters__list,
 .search-wrapper:after,
