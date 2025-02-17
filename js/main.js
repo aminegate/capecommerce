@@ -23,7 +23,7 @@ jQuery(document).ready(function($){
                     $('#loader').fadeOut(function() {
                         $('.site').fadeIn();
                     });
-                }, 60000);
+                }, 600);
             });
         })(jQuery);
 
