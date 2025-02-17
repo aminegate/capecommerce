@@ -3,6 +3,7 @@
 
         .loader-container {
             background-color: black !important;
+            width: 100%;
         }
 
 .product-card__footer,
