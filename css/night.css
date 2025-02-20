@@ -1,6 +1,5 @@
-h1.offrePageTitle{
-
-    color: white!important;
+h1.offrePageTitle {
+    color: white !important;
 }
 
 .changeBtnBg {
@@ -13,9 +12,13 @@ button.btn.changeBtnBg.active.btn-secondary {
 }
 
 .grid-item img {
-
     border: 1px solid #4c4c4c;
+}
 
+.st0 {
+    fill: white;
+    stroke-width: 10px;
+    stroke: white;
 }
 /****************************** Background Only ******************************/
 
