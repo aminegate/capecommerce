@@ -6,8 +6,6 @@ h1.offrePageTitle{
 .changeBtnBg {
     background: black !important;
     color: white !important;
-    padding: 15px 25px !important;
-    border-radius: 10px !important;
 }
 
 button.btn.changeBtnBg.active.btn-secondary {
@@ -15,10 +13,9 @@ button.btn.changeBtnBg.active.btn-secondary {
 }
 
 .grid-item img {
-    width: 100%;
-    height: auto;
+
     border: 1px solid #4c4c4c;
-    border-radius: 10px;
+
 }
 /****************************** Background Only ******************************/
 
