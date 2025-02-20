@@ -1019,6 +1019,8 @@
 
 .header__logo {
   min-width: 170px;
+  align-items: center;
+    display: flex;
 }
 
 .header__logo img {
