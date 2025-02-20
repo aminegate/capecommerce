@@ -2,39 +2,39 @@
 <html lang="fr" dir="ltr">
 <head>
     <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="format-detection" content="telephone=no">
-    <title>Capram - Moteur</title>
-    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <title>Capram - Adresses</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <!-- fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i">
-    <!-- css -->
-    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../vendor/owl-carousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="../vendor/select2/css/select2.min.css">
-    <link rel="stylesheet" href="../css/style.css" class="dayMode">
-    <link rel="stylesheet" href="../css/night.css" class="nightMode">
-    <link rel="stylesheet" href="../css/style.header-classic-variant-one.css" media="(min-width: 1200px)">
-    <link rel="stylesheet" href="../css/style.mobile-header-variant-one.css" media="(max-width: 1199px)">
-    <!-- font - fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- css -->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="vendor/owl-carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendor/select2/css/select2.min.css">
+    <link rel="stylesheet" href="css/style.css" class="dayMode">
+    <link rel="stylesheet" href="css/night.css" class="nightMode" >
+    <link rel="stylesheet" href="css/style.header-classic-variant-one.css" media="(min-width: 1200px)">
+    <link rel="stylesheet" href="css/style.mobile-header-variant-one.css" media="(max-width: 1199px)">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css"> 
 </head>
-<body class="logoPathTarget">
-    <!--=============================================
+<body>
+   
+        <!--=============================================
         ================= loader / Start ================
         ==============================================-->
-       
-<div id="loader" class="loader-container">
+        <div id="loader" class="loader-container">
             <dotlottie-player src="https://lottie.host/47695d8b-81c4-4c8f-875d-5af22fefa1a9/4TXHFsqrLT.lottie" background="transparent" speed="2" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
         </div>
-
         <!--=============================================
         ================== loader / end =================
         ==============================================-->
         <!--=============================================
         ============= main content / Start ==============
         ==============================================-->
-    <div class="site">
+        <div class="site">
         <!-- ===========================================
         ========= Header in Responsive / Start =========
         =============================================-->
@@ -42,7 +42,7 @@
             <div class="mobile-header">
                 <div class="container">
                     <div class="mobile-header__body">
-                        <!-- logo / Start -->
+                       <!-- logo / Start -->
                         <a class="mobile-header__logo" href="accueil.html">
                             <div class="logo__image">
                                 <img src="images/logo_white.png" alt="">
@@ -70,7 +70,7 @@
                                 <div class="mobile-search__field"></div>
                             </form>
                         </div>
-                        <!--======= Header Search Bar / End =======-->
+                         <!--======= Header Search Bar / End =======-->
                         <!--======= Responsive header icons / Start =======-->
                         <div class="mobile-header__indicators">
                             <div class="mobile-indicator mobile-indicator--search d-md-none">
@@ -352,109 +352,109 @@
                 </div>
             </div>
         </header>
-        
-<!-- ============================================
+        <!-- ============================================
         ========= Header in Large Screen / End ==========
         ==============================================-->
         <!-- ============================================
         ============= Main Content / Start ==============
         ==============================================-->
-       <div class="site__body moteur">
-        <div class="carrosserieWrapper">
-         <div class="block-header__body">
-                        <h1 class="block-header__title">Moteur</h1>
-                    </div>
-        <div class="container">
-            <div class="row">
-            <div class="subcategory">
-                <div class="row">
-                    <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                        <a href="../boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img class="capramCartesImg" src="../images/categories/sub-category/000079.png" alt="autotec">
+        <div class="site__body account-addresses">
+            <div class="block-space block-space--layout--after-header"></div>
+            <div class="block">
+                <div class="container container--max--xl">
+                    <div class="row">
+                        <div class="col-12 col-lg-3 d-flex">
+                            <div class="account-nav flex-grow-1">
+                                <h4 class="account-nav__title">Navigation</h4>
+                                <ul class="account-nav__list">
+                                    <li class="account-nav__item ">
+                                        <a href="account-dashboard.html">Tableau de bord</a>
+                                    </li>
+
+                                    <li class="account-nav__item ">
+                                        <a href="account-profile.html">Modifier le profil</a>
+                                    </li>
+                                    <li class="account-nav__item ">
+                                        <a href="account-orders.html">Historique des commandes</a>
+                                    </li>
+
+                                    <li class="account-nav__item  account-nav__item--active ">
+                                        <a href="account-addresses.html">Adresses</a>
+                                    </li>
+                                    <li class="account-nav__item ">
+                                        <a href="account-edit-address.html">Modifier l'adresse</a>
+                                    </li>
+                                    <li class="account-nav__item ">
+                                        <a href="account-password.html">Mot de passe</a>
+                                    </li>
+                                </ul>
+
                             </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                        <a href="../boutique.html" class="subcategory-item dolzBg">
-                            <div class="subcategoryImg">
-                                <img class="capramCartesImg dolz" src="../images/categories/sub-category/000011.png" alt="dolz">
+                        </div>
+                        <div class="col-12 col-lg-9 mt-4 mt-lg-0">
+                            <div class="addresses-list">
+                                <a href="" class="addresses-list__item addresses-list__item--new">
+                                    <div class="addresses-list__plus"></div>
+                                    <div class="btn btn-secondary btn-sm">Ajouter Nouveau</div>
+                                </a>
+                                <div class="addresses-list__divider"></div>
+                                <div class="addresses-list__item card address-card">
+                                    <div class="address-card__badge tag-badge tag-badge--theme">Par Défaut</div>
+                                    <div class="address-card__body">
+                                        <div class="address-card__name">Mohammed El Fassi</div>
+                                        <div class="address-card__row">
+                                            Maroc<br>
+                                            10000, Rabat<br>
+                                            Av. Mohammed V, Immeuble 12, Apt 3
+                                        </div>
+                                        <div class="address-card__row">
+                                            <div class="address-card__row-title">Numéro de Téléphone</div>
+                                            <div class="address-card__row-content">+212 612-345678</div>
+                                        </div>
+                                        <div class="address-card__row">
+                                            <div class="address-card__row-title">Adresse Email</div>
+                                            <div class="address-card__row-content">mohammed@example.com</div>
+                                        </div>
+                                        <div class="address-card__footer">
+                                            <a href="">Modifier</a>&nbsp;&nbsp;
+                                            <a href="">Supprimer</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="addresses-list__divider"></div>
+                                <div class="addresses-list__item card address-card">
+                                    <div class="address-card__body">
+                                        <div class="address-card__name">Fatima Zahra Bennani</div>
+                                        <div class="address-card__row">
+                                            Maroc<br>
+                                            40000, Marrakech<br>
+                                            Quartier Gueliz, Rue des Palmiers, Villa 8
+                                        </div>
+                                        <div class="address-card__row">
+                                            <div class="address-card__row-title">Numéro de Téléphone</div>
+                                            <div class="address-card__row-content">+212 657-891234</div>
+                                        </div>
+                                        <div class="address-card__row">
+                                            <div class="address-card__row-title">Adresse Email</div>
+                                            <div class="address-card__row-content">fatima@example.com</div>
+                                        </div>
+                                        <div class="address-card__footer">
+                                            <a href="">Modifier</a>&nbsp;&nbsp;
+                                            <a href="">Supprimer</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="addresses-list__divider"></div>
                             </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                        <a href="../boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img class="capramCartesImg" src="../images/categories/sub-category/002000.png" alt="fare">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                        <a href="../boutique.html" class="subcategory-item diversFS">
-                            <div class="subcategoryImg">
-                                <img class="capramCartesImg" src="../images/categories/sub-category/001000.png" alt="divers fournisseur">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                        <a href="../boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img class="capramCartesImg" src="../images/categories/sub-category/004800.png" alt="dana">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                        <a href="../boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img class="capramCartesImg" src="../images/categories/sub-category/000140.png" alt="quinton pads">
-                            </div>
-                        </a>
-                    </div>
-                     <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                        <a href="../boutique.html" class="subcategory-item normalBg">
-                            <div class="subcategoryImg">
-                                <img class="capramCartesImg" src="../images/categories/sub-category/002700.png" alt="r&g gahbin">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                        <a href="../boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img class="capramCartesImg" src="../images/categories/sub-category/000046.png" alt="soikon">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                        <a href="../boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img class="capramCartesImg" src="../images/categories/sub-category/000139.png" alt="scan">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                        <a href="../boutique.html" class="subcategory-item diversFS">
-                            <div class="subcategoryImg">
-                                <img class="capramCartesImg" src="../images/categories/sub-category/000068.png" alt="suspenssion diver">
-                            </div>
-                        </a>
-                    </div>
-                     <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                        <a href="../boutique.html" class="subcategory-item">
-                            <div class="subcategoryImg">
-                                <img class="capramCartesImg" src="../images/categories/sub-category/000049.png" alt="wrakynson">
-                            </div>
-                        </a>
-                    </div>
+                        </div> </div>
                 </div>
             </div>
-                </div>
-                 </div>
-            </div>
-         </div>
+            <div class="block-space block-space--layout--before-footer"></div>
+        </div>
         <!--=============================================
         ============== Main Content / End ===============
         ==============================================-->
-        <!--=============================================
+         <!--=============================================
         ================ Footer / Start =================
         ==============================================-->
         <footer class="site__footer">
@@ -501,10 +501,10 @@
                                 <div class="site-footer__widget footer-links">
                                     <h5 class="footer-links__title">Information</h5>
                                     <ul class="footer-links__list">
-                                        <li class="footer-links__item"><a href="../accueil.html" class="footer-links__link">Accueil</a></li>
-                                        <li class="footer-links__item"><a href="../categorie.html" class="footer-links__link">CATÉGORIES</a></li>
-                                        <li class="footer-links__item"><a href="../contact.html" class="footer-links__link">Contactez-nous</a></li>
-                                        <li class="footer-links__item"><a href="../chrono.html" class="footer-links__link">Chrono</a></li>
+                                        <li class="footer-links__item"><a href="accueil.html" class="footer-links__link">Accueil</a></li>
+                                        <li class="footer-links__item"><a href="categorie.html" class="footer-links__link">CATÉGORIES</a></li>
+                                        <li class="footer-links__item"><a href="contact.html" class="footer-links__link">Contactez-nous</a></li>
+                                        <li class="footer-links__item"><a href="chrono.html" class="footer-links__link">Chrono</a></li>
                                         <li class="footer-links__item"><a href="https://capram.ma/" class="footer-links__link" target="_blank">Capram.ma</a></li>
                                         <li class="footer-links__item"><a href="https://turbo-accessories.com/" class="footer-links__link" target="_blank">Turbo ecommerce</a></li>
                                     </ul>
@@ -514,11 +514,11 @@
                                 <div class="site-footer__widget footer-links">
                                     <h5 class="footer-links__title">Mon Compte</h5>
                                     <ul class="footer-links__list">
-                                        <li class="footer-links__item"><a href="../wishlist.html" class="footer-links__link">Wishlist</a></li>
-                                        <li class="footer-links__item"><a href="../panier.html" class="footer-links__link">Panier</a></li>
-                                        <li class="footer-links__item"><a href="../compte.html" class="footer-links__link">Détails du compte</a></li>
-                                        <li class="footer-links__item"><a href="../promotion.html" class="footer-links__link">Promotions</a></li>
-                                        <li class="footer-links__item"><a href="../nouveaute.html" class="footer-links__link">NOUVEAUTÉS</a></li>
+                                        <li class="footer-links__item"><a href="wishlist.html" class="footer-links__link">Favoris</a></li>
+                                        <li class="footer-links__item"><a href="panier.html" class="footer-links__link">Panier</a></li>
+                                        <li class="footer-links__item"><a href="compte.html" class="footer-links__link">Détails du compte</a></li>
+                                        <li class="footer-links__item"><a href="promotion.html" class="footer-links__link">Promotions</a></li>
+                                        <li class="footer-links__item"><a href="nouveaute.html" class="footer-links__link">NOUVEAUTÉS</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -554,10 +554,10 @@
                         <div class="site-footer__bottom-row">
                             <div class="site-footer__copyright">
                                 <!-- copyright -->
-                                <p class="copyright-area-text">Copyright © <span id="copyright-year">2024</span> <a class="copyright-link" href="../accueil.html">Capram</a></p>
+                                <p class="copyright-area-text">Copyright © <span id="copyright-year">2024</span> <a class="copyright-link" href="accueil.html">Capram</a></p>
                                 <!-- copyright / end -->
                             </div>
-                            <div class="site-footer__payments"><a href="../accueil.html"><img src="images/logo_white.png" alt=""></a>
+                            <div class="site-footer__payments"> <img src="images/logo_white.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -574,9 +574,7 @@
         <div class="mobile-menu">
         <div class="mobile-menu__backdrop"></div>
         <div class="mobile-menu__body">
-            <!-- Menu Close Button -->
-            <button class="mobile-menu__close" type="button">
-                <svg width="12" height="12">
+            <button class="mobile-menu__close" type="button"><svg width="12" height="12">
                     <path d="M10.8,10.8L10.8,10.8c-0.4,0.4-1,0.4-1.4,0L6,7.4l-3.4,3.4c-0.4,0.4-1,0.4-1.4,0l0,0c-0.4-0.4-0.4-1,0-1.4L4.6,6L1.2,2.6
 	c-0.4-0.4-0.4-1,0-1.4l0,0c0.4-0.4,1-0.4,1.4,0L6,4.6l3.4-3.4c0.4-0.4,1-0.4,1.4,0l0,0c0.4,0.4,0.4,1,0,1.4L7.4,6l3.4,3.4
 	C11.2,9.8,11.2,10.4,10.8,10.8z" />
@@ -589,15 +587,13 @@
                 <div class="mobile-menu__panel-body">
                     <div class="mobile-menu__settings-list">
                         <div class="mobile-menu__setting" data-mobile-menu-item>
-                            <!-- night / day switch button -->
-                            <button class="mobile-menu__setting-button" data-mobile-menu-trigger>
+                            <button class="mobile-menu__setting-button" title="Language" data-mobile-menu-trigger>
                                 <span class="mobile-menu__setting-title">Mode Sombre</span>
                                 <span class="mobile-menu__setting-arrow"><svg width="6px" height="9px">
                                         <path d="M0.3,7.4l3-2.9l-3-2.9c-0.4-0.3-0.4-0.9,0-1.3l0,0c0.4-0.3,0.9-0.4,1.3,0L6,4.5L1.6,8.7c-0.4,0.4-0.9,0.4-1.3,0l0,0C-0.1,8.4-0.1,7.8,0.3,7.4z" />
                                     </svg>
                                 </span>
                             </button>
-                            <!-- night / day switch panel -->
                             <div class="mobile-menu__setting-panel" data-mobile-menu-panel>
                                 <div class="mobile-menu__panel mobile-menu__panel--hidden">
                                     <div class="mobile-menu__panel-header">
@@ -626,15 +622,13 @@
                             </div>
                         </div>
                         <div class="mobile-menu__setting" data-mobile-menu-item>
-                            <!-- Paramètres button -->
-                            <button class="mobile-menu__setting-button" data-mobile-menu-trigger>
+                            <button class="mobile-menu__setting-button" title="Currency" data-mobile-menu-trigger>
                                 <span class="mobile-menu__setting-title">Paramètres</span>
                                 <span class="mobile-menu__setting-arrow"><svg width="6px" height="9px">
                                         <path d="M0.3,7.4l3-2.9l-3-2.9c-0.4-0.3-0.4-0.9,0-1.3l0,0c0.4-0.3,0.9-0.4,1.3,0L6,4.5L1.6,8.7c-0.4,0.4-0.9,0.4-1.3,0l0,0C-0.1,8.4-0.1,7.8,0.3,7.4z" />
                                     </svg>
                                 </span>
                             </button>
-                            <!-- Paramètres Panel -->
                             <div class="mobile-menu__setting-panel" data-mobile-menu-panel>
                                 <div class="mobile-menu__panel mobile-menu__panel--hidden">
                                     <div class="mobile-menu__panel-header">
@@ -649,27 +643,27 @@
                                         <ul class="mobile-menu__links">
                                             <li data-mobile-menu-item>
                                                 <button type="button" class="setting-link" data-mobile-menu-trigger>
-                                                    <a href="../compte.html">Mon Compte</a>
+                                                    <a href="compte.html">Mon Compte</a>
                                                 </button>
                                             </li>
                                             <li data-mobile-menu-item>
                                                 <button type="button" class="setting-link" data-mobile-menu-trigger>
-                                                    <a href="../reglement.html">Règlement</a>
+                                                    <a href="reglement.html">Règlement</a>
                                                 </button>
                                             </li>
                                             <li data-mobile-menu-item>
                                                 <button type="button" class="setting-link" data-mobile-menu-trigger>
-                                                    <a href="../panier.html">Panier</a>
+                                                    <a href="panier.html">Panier</a>
                                                 </button>
                                             </li>
                                             <li data-mobile-menu-item>
                                                 <button type="button" class="setting-link" data-mobile-menu-trigger>
-                                                    <a href="../wishlist.html">Wishlist</a>
+                                                    <a href="wishlist.html">Favoris</a>
                                                 </button>
                                             </li>
                                             <li data-mobile-menu-item>
                                                 <button type="button" class="setting-link" data-mobile-menu-trigger>
-                                                    <a href="../contact.html">Contact</a>
+                                                    <a href="contact.html">Contact</a>
                                                 </button>
                                             </li>
                                             <li data-mobile-menu-item>
@@ -696,7 +690,7 @@
                             <span class="mobile-menu__indicator-title">Favoris</span>
                         </a>
                         <a class="mobile-menu__indicator" href="compte.html">
-                          
+                           
                             <span class="mobile-menu__indicator-icon">
                                 <svg width="20" height="20">
                                     <path d="M20,20h-2c0-4.4-3.6-8-8-8s-8,3.6-8,8H0c0-4.2,2.6-7.8,6.3-9.3C4.9,9.6,4,7.9,4,6c0-3.3,2.7-6,6-6s6,2.7,6,6
@@ -706,7 +700,7 @@
                             <span class="mobile-menu__indicator-title">Compte</span>
                         </a>
                         <a class="mobile-menu__indicator" href="panier.html">
-                            <span class="notification__counter">3</span>
+                           <span class="notification__counter">3</span>
                             <span class="mobile-menu__indicator-icon">
                                 <svg width="20" height="20">
                                     <circle cx="7" cy="17" r="2" />
@@ -776,53 +770,52 @@
                                 </div>
                             </div>
                         </div>
-  
+                    
                     </div>
                     <div class="mobile-menu__divider"></div>
-                    <!-- menu -->
                     <ul class="mobile-menu__links">
                         <li data-mobile-menu-item>
-                            <a href="../accueil.html" class="mobile-nav-link" data-mobile-menu-trigger>
+                            <a href="accueil.html" class="mobile-nav-link" data-mobile-menu-trigger>
                                 <i class="fa-solid fa-house"></i>&nbsp;&nbsp;ACCUEIL
                             </a>
                         </li>
                         <li data-mobile-menu-item>
-                            <a href="../categorie.html" class="mobile-nav-link" data-mobile-menu-trigger>
+                            <a href="categorie.html" class="mobile-nav-link" data-mobile-menu-trigger>
                                 <i class="fa-solid fa-list"></i>&nbsp;&nbsp;CATÉGORIES
                             </a>
                         </li>
                         <li data-mobile-menu-item>
-                            <a href="../nouveaute.html" class="mobile-nav-link" data-mobile-menu-trigger>
+                            <a href="nouveaute.html" class="mobile-nav-link" data-mobile-menu-trigger>
                                 <i class="fa-solid fa-star"></i>&nbsp;&nbsp;NOUVEAUTÉS
                             </a>
                         </li>
                         <li data-mobile-menu-item>
-                            <a href="../promotion.html" class="mobile-nav-link" data-mobile-menu-trigger>
+                            <a href="promotion.html" class="mobile-nav-link" data-mobile-menu-trigger>
                                 <i class="fa-solid fa-fire"></i>&nbsp;&nbsp;PROMOTIONS
                             </a>
                         </li>
                         <li data-mobile-menu-item>
-                            <a href="../categorie/filtration.html" class="mobile-nav-link" data-mobile-menu-trigger>
+                            <a href="categorie/filtration.html" class="mobile-nav-link" data-mobile-menu-trigger>
                                 <i class="fa-solid fa-filter"></i>&nbsp;&nbsp;FILTRATION
                             </a>
                         </li>
                         <li data-mobile-menu-item>
-                            <a href="../capservice.html" class="mobile-nav-link" data-mobile-menu-trigger>
+                            <a href="capservice.html" class="mobile-nav-link" data-mobile-menu-trigger>
                                 <i class="fa-solid fa-oil-can"></i>&nbsp;&nbsp;CAPSERVICE
                             </a>
                         </li>
                         <li data-mobile-menu-item>
-                            <a href="../capcarrosserie.html" class="mobile-nav-link" data-mobile-menu-trigger>
+                            <a href="capcarrosserie.html" class="mobile-nav-link" data-mobile-menu-trigger>
                                 <i class="fa-solid fa-car-side"></i>&nbsp;&nbsp;CAPCARROSSERIE
                             </a>
                         </li>
                         <li data-mobile-menu-item>
-                            <a href="../aroma.html" class="mobile-nav-link" data-mobile-menu-trigger>
+                            <a href="aroma.html" class="mobile-nav-link" data-mobile-menu-trigger>
                                 <i class="fa-solid fa-spray-can-sparkles"></i>&nbsp;&nbsp;AROMA
                             </a>
                         </li>
                         <li data-mobile-menu-item>
-                            <a href="../chrono.html" class="mobile-nav-link" data-mobile-menu-trigger>
+                            <a href="chrono.html" class="mobile-nav-link" data-mobile-menu-trigger>
                                 <i class="fa-solid fa-clock"></i>&nbsp;&nbsp;CHRONO
                             </a>
                         </li>
@@ -840,13 +833,18 @@
         =========== Menu In Responsive / End ============
         ==============================================-->
     <!-- scripts -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../vendor/owl-carousel/owl.carousel.min.js"></script>
-    <script src="../vendor/select2/js/select2.min.js"></script>
-    <script src="../js/number.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.colVis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/owl-carousel/owl.carousel.min.js"></script>
+    <script src="vendor/select2/js/select2.min.js"></script>
+    <script src="js/number.js"></script>
+    <script src="js/main.js"></script>
     
 </body>
 </html>
