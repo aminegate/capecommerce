@@ -2,6 +2,17 @@ h1.offrePageTitle{
 
     color: white!important;
 }
+
+.changeBtnBg {
+    background: black !important;
+    color: white !important;
+    padding: 15px 25px !important;
+    border-radius: 10px;
+}
+
+button.btn.changeBtnBg.active.btn-secondary {
+    background: #363636 !important;
+}
 /****************************** Background Only ******************************/
 
         .loader-container {

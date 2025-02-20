@@ -68,14 +68,14 @@ h1.offrePageTitle {
 }
 
 .changeBtnBg {
-    background: black !important;
-    color: white !important;
+    background: #d3d3d3 !important;
+    color: black !important;
     padding: 15px 25px !important;
     border-radius: 10px;
 }
 
 button.btn.changeBtnBg.active.btn-secondary {
-    background: #363636 !important;
+    background: #b1aeae !important;
 }
 
 
@@ -107,7 +107,7 @@ button.btn.changeBtnBg.active.btn-secondary {
 .grid-item img {
     width: 100%;
     height: auto;
-    border: 1px solid #4c4c4c;
+    border: 1px solid lightgrey;
     border-radius: 10px;
 }
 
