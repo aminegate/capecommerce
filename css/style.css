@@ -48,10 +48,15 @@
 
 */
 
+.offreWrapper {
+    margin-bottom: 100px;
+}
+
 
 h1.offrePageTitle {
     text-align: center;
     margin: 40px auto;
+    color: black;
 }
 
 .changeBtnBg {
