@@ -810,7 +810,7 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
         $("body").addClass('light');
         $(".moon").addClass('sun');
         $(".tdnn").addClass('day');
-        $(".logo__image img").attr('src', 'images/logo.png');
+        $(".header__logo .logo img").attr('src', 'images/logo.png');
         $(".site-footer__payments img").attr('src', 'images/logo.png');
         $(".logoPathTarget .header__logo .logo img").attr('src', '../images/logo.png');
         $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo.png');
@@ -819,7 +819,7 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
         $(".nightMode").prop('disabled', true); // Disable night mode CSS
         $(".darkModeCheck").last().append('<i class="fa-solid fa-check"></i>'); // Add check icon to "Désactivé"
     } else {
-        $(".logo__image img").attr('src', 'images/logo_white.png');
+        $(".header__logo .logo img").attr('src', 'images/logo_white.png');
         $(".site-footer__payments img").attr('src', 'images/logo_white.png');
         $(".logoPathTarget .header__logo .logo img").attr('src', '../images/logo_white.png');
         $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo_white.png');
@@ -836,7 +836,7 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
         $(".tdnn").toggleClass('day');
 
         if ($("body").hasClass('light')) {
-            $(".logo__image img").attr('src', 'images/logo.png');
+            $(".header__logo .logo img").attr('src', 'images/logo.png');
             $(".site-footer__payments img").attr('src', 'images/logo.png');
             $(".logoPathTarget .header__logo .logo img").attr('src', '../images/logo.png');
             $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo.png');
@@ -847,7 +847,7 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
             $(".darkModeCheck i").remove(); // Remove all check icons
             $(".darkModeCheck").last().append('<i class="fa-solid fa-check"></i>'); // Add check icon to "Désactivé"
         } else {
-            $(".logo__image img").attr('src', 'images/logo_white.png');
+            $(".header__logo .logo img").attr('src', 'images/logo_white.png');
             $(".site-footer__payments img").attr('src', 'images/logo_white.png');
             $(".logoPathTarget .header__logo .logo img").attr('src', '../images/logo_white.png');
             $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo_white.png');
@@ -867,7 +867,7 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
             $("body").removeClass('light');
             $(".moon").removeClass('sun');
             $(".tdnn").removeClass('day');
-            $(".logo__image img").attr('src', 'images/logo_white.png');
+            $(".header__logo .logo img").attr('src', 'images/logo_white.png');
             $(".site-footer__payments img").attr('src', 'images/logo_white.png');
             $(".logoPathTarget .header__logo .logo img").attr('src', '../images/logo_white.png');
             $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo_white.png');
@@ -881,7 +881,7 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
             $("body").addClass('light');
             $(".moon").addClass('sun');
             $(".tdnn").addClass('day');
-            $(".logo__image img").attr('src', 'images/logo.png');
+            $(".header__logo .logo img").attr('src', 'images/logo.png');
             $(".site-footer__payments img").attr('src', 'images/logo.png');
             $(".logoPathTarget .header__logo .logo img").attr('src', '../images/logo.png');
             $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo.png');
