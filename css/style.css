@@ -88,7 +88,7 @@ h1.offrePageTitle {
 }
 
 button.btn.changeBtnBg.active.btn-secondary {
-    background: #b1aeae !important;
+    background: #F7943D !important;
 }
 
 
@@ -122,6 +122,7 @@ button.btn.changeBtnBg.active.btn-secondary {
     height: auto;
     border: 1px solid lightgrey;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 

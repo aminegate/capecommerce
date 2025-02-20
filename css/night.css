@@ -7,9 +7,6 @@ h1.offrePageTitle {
     color: white !important;
 }
 
-button.btn.changeBtnBg.active.btn-secondary {
-    background: #363636 !important;
-}
 
 .grid-item img {
     border: 1px solid #4c4c4c;
