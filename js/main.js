@@ -812,7 +812,7 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
         $(".tdnn").addClass('day');
         $(".logo__image img").attr('src', 'images/logo.png');
         $(".site-footer__payments img").attr('src', 'images/logo.png');
-        $(".logoPathTarget .logo img").attr('src', '../images/logo.png');
+        $(".logoPathTarget .header__logo .logo img").attr('src', '../images/logo.png');
         $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo.png');
         $(".carrosserie-img img").attr('src', 'images/carrosserie-white.jpg');
         $(".loader-image").attr('src', 'images/white-gif.gif');
@@ -821,7 +821,7 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
     } else {
         $(".logo__image img").attr('src', 'images/logo_white.png');
         $(".site-footer__payments img").attr('src', 'images/logo_white.png');
-        $(".logoPathTarget .logo img").attr('src', '../images/logo_white.png');
+        $(".logoPathTarget .header__logo .logo img").attr('src', '../images/logo_white.png');
         $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo_white.png');
         $(".loader-image").attr('src', 'images/black-gif.gif');
         $(".carrosserie-img img").attr('src', 'images/carrosserie.png');
@@ -838,7 +838,7 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
         if ($("body").hasClass('light')) {
             $(".logo__image img").attr('src', 'images/logo.png');
             $(".site-footer__payments img").attr('src', 'images/logo.png');
-            $(".logoPathTarget .logo img").attr('src', '../images/logo.png');
+            $(".logoPathTarget .header__logo .logo img").attr('src', '../images/logo.png');
             $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo.png');
             $(".carrosserie-img img").attr('src', 'images/carrosserie-white.jpg');
             $(".loader-image").attr('src', 'images/white-gif.gif');
@@ -849,7 +849,7 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
         } else {
             $(".logo__image img").attr('src', 'images/logo_white.png');
             $(".site-footer__payments img").attr('src', 'images/logo_white.png');
-            $(".logoPathTarget .logo img").attr('src', '../images/logo_white.png');
+            $(".logoPathTarget .header__logo .logo img").attr('src', '../images/logo_white.png');
             $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo_white.png');
             $(".loader-image").attr('src', 'images/black-gif.gif');
             $(".carrosserie-img img").attr('src', 'images/carrosserie.png');
@@ -869,7 +869,7 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
             $(".tdnn").removeClass('day');
             $(".logo__image img").attr('src', 'images/logo_white.png');
             $(".site-footer__payments img").attr('src', 'images/logo_white.png');
-            $(".logoPathTarget .logo img").attr('src', '../images/logo_white.png');
+            $(".logoPathTarget .header__logo .logo img").attr('src', '../images/logo_white.png');
             $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo_white.png');
             $(".loader-image").attr('src', 'images/black-gif.gif');
             $(".carrosserie-img img").attr('src', 'images/carrosserie.png');
@@ -883,7 +883,7 @@ $("select:not('#view-option-sort'), textarea, input:not([type='submit']):not([ty
             $(".tdnn").addClass('day');
             $(".logo__image img").attr('src', 'images/logo.png');
             $(".site-footer__payments img").attr('src', 'images/logo.png');
-            $(".logoPathTarget .logo img").attr('src', '../images/logo.png');
+            $(".logoPathTarget .header__logo .logo img").attr('src', '../images/logo.png');
             $(".logoPathTarget .site-footer__payments img").attr('src', '../images/logo.png');
             $(".loader-image").attr('src', 'images/white-gif.gif');
             $(".carrosserie-img img").attr('src', 'images/carrosserie-white.jpg');
