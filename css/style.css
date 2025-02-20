@@ -49,8 +49,10 @@
 */
 
 
-.st0:hover {
+.indicator:hover .st0 {
     fill: black;
+    stroke-width: 4px;
+    stroke: black;
 }
 
 
