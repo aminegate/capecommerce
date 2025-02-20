@@ -48,6 +48,11 @@
 
 */
 
+.st0 {
+    fill: black;
+    stroke-width: 4px;
+    stroke: black;
+}
 
 .indicator:hover .st0 {
     fill: black;
