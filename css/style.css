@@ -84,7 +84,7 @@ h1.offrePageTitle {
     background: #d3d3d3 !important;
     color: black !important;
     padding: 15px 25px !important;
-    border-radius: 10px !important;
+    border-radius: 10px;
 }
 
 button.btn.changeBtnBg.active.btn-secondary {
