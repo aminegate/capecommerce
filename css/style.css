@@ -4854,11 +4854,6 @@ span.search-term {
     width: 21% !important;
 }
 
-    .search__body {
-        width: 420px !important;
-        margin-left: 7% !important;
-    }
-
     li.main-menu__item:nth-child(2) {
         margin-left: 13px !important;
     }
