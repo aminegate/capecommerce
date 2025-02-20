@@ -20,6 +20,30 @@ button.btn.changeBtnBg.active.btn-secondary {
     stroke-width: 10px;
     stroke: white;
 }
+
+
+.questionParagraph {
+    color: white;
+}
+
+.questionnaire {
+    background: #1E1E1E;
+}
+
+h1.table-title {
+    color: white;
+}
+
+.questionnaire table th, .questionnaire table td {
+    background: #252525;
+    color: white;
+    border: 1px solid #313131;
+}
+
+textarea.questionInput {
+    background: #2f2f2f;
+    border: 1px solid #3f3f3f !important;
+}
 /****************************** Background Only ******************************/
 
         .loader-container {

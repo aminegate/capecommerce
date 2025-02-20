@@ -318,8 +318,8 @@ input.questionSubmit {
 textarea.questionInput {
     display: flex;
     width: 40%;
-    background: #2f2f2f;
-    border: 1px solid #3f3f3f !important;
+    background: white;
+    border: 1px solid lightgrey !important;
     border-radius: 5px;
     color: white;
     padding: 15px;
@@ -327,8 +327,8 @@ textarea.questionInput {
 
 .questionnaire table th,
 .questionnaire table td {
-    background: #252525;
-    color: white;
+    background: whitesmoke;
+    color: black;
 }
 
 .questionnaire table th:first-child {
@@ -358,7 +358,7 @@ textarea.questionInput {
 
 .questionnaire {
     padding: 30px;
-    background: #1E1E1E;
+    background: whitesmoke;
     border-radius: 10px;
 }
 
@@ -369,14 +369,14 @@ p.questionArabic {
 }
 
 .questionParagraph {
-    color: white;
+    color: black;
     font-size: 20px;
     margin-bottom: 10%;
     line-height: 40px;
 }
 
 h1.table-title {
-    color: white;
+    color: black;
     text-align: center;
     margin-bottom: 6%;
     font-size: 30px;
@@ -412,7 +412,8 @@ textarea.questionInput {
 .questionnaire table td {
     padding: .625em;
     text-align: center;
-    border: 1px solid #313131;
+
+    border: 1px solid lightgrey;
 }
 
 .questionnaire table th {
@@ -461,7 +462,7 @@ textarea.questionInput {
         text-transform: uppercase;
         margin-right: 9%;
     }
-    
+
     textarea.questionInput {
         display: flex;
         width: 100% !important;
@@ -470,7 +471,6 @@ textarea.questionInput {
         text-align: left !important;
     }
 }
-
 
 
 
