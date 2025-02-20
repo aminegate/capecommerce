@@ -48,6 +48,12 @@
 
 */
 
+
+.st0:hover {
+    fill: black;
+}
+
+
 .offreWrapper {
     margin-bottom: 100px;
 }
