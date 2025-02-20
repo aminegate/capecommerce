@@ -57,9 +57,9 @@
 }
 
 .st0 {
-    fill: black;
-    stroke-width: 4px;
-    stroke: black;
+    fill: black !important;
+    stroke-width: 4px !important;
+    stroke: black !important;
 }
 
 .indicator:hover .st0 {
