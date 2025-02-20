@@ -13,6 +13,167 @@ jQuery(document).ready(function($){
 .
 .
 */
+    
+(function() {
+  // Function to initialize Isotope
+  function initializeIsotope() {
+    var $grid = $('#grid').isotope({
+      itemSelector: '.grid-item',
+      getSortData: {
+        date: '.date',
+        colors: '.colors',
+        facing: '.facing'
+      }
+    });
+
+    // FILTER
+    $('.btn-group-filter button').click(function() {
+      // Clear other buttons' active states
+      $('.btn-group-filter button').removeClass('active');
+      // Set this button active
+      $(this).addClass('active');
+      // Set filter to button's data-filter value
+      var filter = $(this).attr('data-filter');
+      $grid.isotope({ filter: filter });
+    });
+
+    // SORT
+    $('.btn-group-sort button').click(function() {
+      // Clear other buttons' active states
+      $('.btn-group-sort button').removeClass('active');
+      // Set this button active
+      $(this).addClass('active');
+      // Set sort to button's data-sort value
+      var sort = $(this).attr('data-sort');
+      $grid.isotope({ sortBy: sort });
+    });
+
+    // SHUFFLE
+    $('#shuffle').click(function() {
+      $grid.isotope('shuffle');
+    });
+  }
+
+  // Check if Isotope is loaded
+  if (typeof $.fn.isotope === 'function') {
+    // Check if imagesLoaded is loaded
+    if (typeof $.fn.imagesLoaded === 'function') {
+      // Initialize Isotope after all images have loaded
+      $('#grid').imagesLoaded(function() {
+        initializeIsotope();
+      });
+    } else {
+      // Initialize Isotope immediately
+      initializeIsotope();
+    }
+  } else {
+    console.error('Isotope library is not loaded.');
+  }
+})();
+
+    
+(function ($) {
+    // Check if Swiper is loaded
+    if (typeof Swiper !== "undefined") {
+        const progressCircleHTML = `
+            <div class="autoplay-progress">
+                <svg viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="20"></circle>
+                </svg>
+                <span></span>
+            </div>
+        `;
+
+        // Insert the autoplay progress div into each slide
+        $('.swiper-slide').each(function () {
+            $(this).append(progressCircleHTML);
+        });
+
+        var swiper = new Swiper('.swiper', {
+            loop: true, // Enable looping
+            speed: 1300,
+            effect: 'cube',
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            on: {
+                autoplayTimeLeft(s, time, progress) {
+                    const progressCircle = s.slides[s.activeIndex].querySelector(".autoplay-progress svg");
+                    const progressContent = s.slides[s.activeIndex].querySelector(".autoplay-progress span");
+
+                    progressCircle.style.setProperty("--progress", 1 - progress);
+                    progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+                }
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 4000, // Auto-slide every 4 seconds
+                disableOnInteraction: false,
+            },
+        });
+    } else {
+        console.warn("Swiper is not loaded on this page.");
+    }
+})(jQuery);
+
+
+
+    
+ /*******************************************************/   
+    
+(function ($) {
+
+        $(".row-checkbox").on("change", function () {
+            const $row = $(this).closest("tr");
+            $row.find(".row-checkbox").not(this).prop("checked", false);
+        });
+
+})(jQuery);
+   
+    
+    
+/*******************************************************/
+    
+(function($) {
+ 
+        $('.calculNet').on('click', function(e) {
+            e.preventDefault();
+
+            // Get the parent .product-card__price element
+            var $priceContainer = $(this).closest('.product-card__price');
+            
+            // Toggle visibility of BRUT and NET elements
+            $priceContainer.find('.brut, .brut-label').toggle();
+            $priceContainer.find('.net, .net-label').toggle();
+            
+            // Update the link text
+            var linkText = $(this).html().includes('NET ?') 
+                ? '(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; BRUT ?&nbsp;)' 
+                : '(&nbsp;<i class="fa-solid fa-calculator"></i>&nbsp; NET ?&nbsp;)';
+            
+            $(this).html(linkText);
+        });
+
+})(jQuery);
+ 
+    
+/*====================== loading GIF  ===================*/     
+(function($) {
+          
+                // Hide loader and show content after 1 second
+                setTimeout(function() {
+                    $('#loader').fadeOut(function() {
+                        $('.site').fadeIn();
+                    });
+                }, 600);
+         
+        })(jQuery);
+
+
  
     
 /*====================== loading GIF  ===================*/     
