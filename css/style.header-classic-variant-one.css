@@ -1027,10 +1027,6 @@
     width: 80%;
 }
 
-[dir=ltr] .header__logo {
-  margin-right: 24px;
-}
-
 [dir=rtl] .header__logo {
   margin-left: 24px;
 }
