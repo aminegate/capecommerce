@@ -48,6 +48,10 @@
 
 */
 
+span.famille-shop-banner img {
+    width: 100%;
+}
+
 .btn-group-filter > .changeBtnBg:first-child {
     border-radius: 10px;
 }
