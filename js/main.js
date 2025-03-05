@@ -13,6 +13,21 @@ jQuery(document).ready(function($){
 .
 .
 */
+  $(".input-radio__input").on("change", function() {
+        // Find the image inside the selected radio label
+        let imgSrc = $(this).closest(".filter-list__item").find("img").attr("src");
+
+        // Extract the file name using regex (remove the path and file extension)
+        let fileName = imgSrc.split("/").pop().split(".")[0];  // This will give us just the "000039"
+
+        // Construct the new image path for the banner
+        let newImage = "images/banners/" + fileName + ".jpg"; // Assuming the format for the banner image is jpg
+
+        // Update the banner image source inside the .famille-shop-banner
+        $(".famille-shop-banner img").attr("src", newImage);
+
+        console.log("Banner image updated to:", newImage); // Debugging log
+    });
     
 (function() {
   // Function to initialize Isotope

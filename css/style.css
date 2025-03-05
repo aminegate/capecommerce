@@ -50,6 +50,7 @@
 
 span.famille-shop-banner img {
     width: 100%;
+    border-radius: 10px;
 }
 
 .btn-group-filter > .changeBtnBg:first-child {
