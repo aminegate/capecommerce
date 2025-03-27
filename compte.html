@@ -443,14 +443,14 @@
                                                         <button class="scroll-btn left" id="scrollLeftBtn"><i class="fa-solid fa-chevron-left"></i></button>
                                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                                                             <li class="nav-item">
-                                                                <a class="nav-link active" id="mesCommandesEcommerce" data-toggle="tab" href="#commandesEcommerceTab" role="tab" aria-controls="commandes-Ecommerce" aria-selected="true"><i class="fa-solid fa-cart-shopping"></i>&nbsp;&nbsp;<span>Mes Commandes Ecommerce</span></a>
+                                                                <a class="nav-link active" id="mesCommandesEcommerce" data-toggle="tab" href="#commandesEcommerceTab" role="tab" aria-controls="commandes-Ecommerce" aria-selected="true"><i class="fa-solid fa-cart-shopping"></i>&nbsp;&nbsp;<span>Mes Commandes</span></a>
                                                             </li>
                                                             <li class="nav-item">
                                                                 <a class="nav-link" id="ficheDeRetour" data-toggle="tab" href="#ficheDeRetourTab" role="tab" aria-controls="fiche-De-Retour" aria-selected="false"><span><i class="fa-solid fa-file"></i>&nbsp;&nbsp;Mes Fiche de retour</span></a>
                                                             </li>
-                                                            <li class="nav-item">
+                                                          <!--  <li class="nav-item">
                                                                 <a class="nav-link" id="gestionFicheDeRetour" data-toggle="tab" href="#gestionFicheDeRetourTab" role="tab" aria-controls="gestion-Fiche-De-Retour" aria-selected="false"><i class="fa-solid fa-list-check"></i>&nbsp;&nbsp;<span>Gestion Fiche de retour</span></a>
-                                                            </li>
+                                                            </li>-->
                                                             <li class="nav-item">
                                                                 <a class="nav-link" id="mesClients" data-toggle="tab" href="#mesClientsTab" role="tab" aria-controls="mes-Clients" aria-selected="false"><i class="fa-solid fa-users"></i>&nbsp;&nbsp;<span>Mes Clients</span></a>
                                                             </li>
@@ -478,6 +478,538 @@
                                                         <div class="tab-pane fade show active" id="commandesEcommerceTab" role="tabpanel" aria-labelledby="mesCommandesEcommerce">
                                                             <div class="my-account-dashboard">
                                                                 <div class="inner">
+                                                                   <span class="tableTitleTab tableTitleTab-margin">Mes Commandes Ecommerce</span>
+                                                                    <table id="table__one" class="display responsive nowrap" style="width:100%">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>N°Piece</th>
+                                                                                <th>Date</th>
+                                                                                <th class="th-width">Client</th>
+                                                                                <th>Mode de paiement</th>
+                                                                                <th>Mode de transport</th>
+                                                                                <th>Saisie par</th>
+                                                                                <th>Total TTC</th>
+                                                                                <th>Agence</th>
+                                                                                <th>Operation</th>
+                                                                                <th>Statut</th>  
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td data-th="N-Piece">
+                                                                                    EC24061203
+                                                                                </td>
+                                                                                <td data-th="Date">
+                                                                                    2024-11-29 09:40:23
+                                                                                </td>
+                                                                                <td data-th="Client" class="td-width">
+                                                                                    030807-PIECE auto
+                                                                                </td>
+                                                                                <td data-th="Mode de paiement">
+                                                                                    C/EFFET
+                                                                                </td>
+                                                                                <td data-th="Mode de transport">
+                                                                                    NOS SOINS
+                                                                                </td>
+                                                                                <td data-th="Saisie par">
+                                                                                    REPRESENTANT
+                                                                                </td>
+                                                                                <td data-th="Total TTC">
+                                                                                    11,682.61
+                                                                                </td>
+                                                                                <td data-th="Agence">
+                                                                                    <div class="agenceWrapper"><span>AGENCE BIADA</span></div>
+                                                                                </td>
+                                                                                <td data-th="Operation">
+                                                                                    <button class="operationDelete"><i class="fa-regular fa-trash-can"></i></button>
+                                                                                 </td>
+                                                                                <td data-th="Statut">
+                                                                                    <div class="statutGreen"><i class="fa-solid fa-check-double"></i></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-th="N-Piece">
+                                                                                    EC24061204
+                                                                                </td>
+                                                                                <td data-th="Date">
+                                                                                    2024-11-29 09:40:23
+                                                                                </td>
+                                                                                <td data-th="Client" class="td-width">
+                                                                                    030256-MONTREAL P.A
+                                                                                </td>
+                                                                                <td data-th="Mode de paiement">
+                                                                                    CHQ/REP
+                                                                                </td>
+                                                                                <td data-th="Mode de transport">
+                                                                                    LUI MEME
+                                                                                </td>
+                                                                                <td data-th="Saisie par">
+                                                                                    CLIENT
+                                                                                </td>
+                                                                                <td data-th="Total TTC">
+                                                                                    11,682.61
+                                                                                </td>
+                                                                                <td data-th="Agence">
+                                                                                    <div class="agenceWrapper otherAgence"><span>AGENCE BIADA</span></div>
+                                                                                </td>
+                                                                                <td data-th="Operation">
+                                                                                    <button class="operationDelete"><i class="fa-regular fa-trash-can"></i></button>
+                                                                                </td>
+                                                                                <td data-th="Statut">
+                                                                                    <div class="statuRed"><i class="fa-solid fa-circle-xmark"></i></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-th="N-Piece">
+                                                                                    EC24061205
+                                                                                </td>
+                                                                                <td data-th="Date">
+                                                                                    2024-11-29 09:40:23
+                                                                                </td>
+                                                                                <td data-th="Client" class="td-width">
+                                                                                    028216-COPIC
+                                                                                </td>
+                                                                                <td data-th="Mode de paiement">
+                                                                                    E/C
+                                                                                </td>
+                                                                                <td data-th="Mode de transport">
+                                                                                    NOS SOINS
+                                                                                </td>
+                                                                                <td data-th="Saisie par">
+                                                                                    REPRESENTANT
+                                                                                </td>
+                                                                                <td data-th="Total TTC">
+                                                                                    11,682.61
+                                                                                </td>
+                                                                                <td data-th="Agence">
+                                                                                    <div class="agenceWrapper"><span>AGENCE BIADA</span></div>
+                                                                                </td>
+                                                                                <td data-th="Operation">
+                                                                                    <button class="operationDelete"><i class="fa-regular fa-trash-can"></i></button>
+                                                                                </td>
+                                                                                <td data-th="Statut">
+                                                                                    <div class="statutGreen"><i class="fa-solid fa-check-double"></i></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-th="N-Piece">
+                                                                                    EC24061206
+                                                                                </td>
+                                                                                <td data-th="Date">
+                                                                                    2024-11-29 09:40:23
+                                                                                </td>
+                                                                                <td data-th="Client" class="td-width">
+                                                                                    027972-ARIHA AL FADL PIECES AUTOS
+                                                                                </td>
+                                                                                <td data-th="Mode de paiement">
+                                                                                    C/EFFET
+                                                                                </td>
+                                                                                <td data-th="Mode de transport">
+                                                                                    LUI MEME
+                                                                                </td>
+                                                                                <td data-th="Saisie par">
+                                                                                    CLIENT
+                                                                                </td>
+                                                                                <td data-th="Total TTC">
+                                                                                    11,682.61
+                                                                                </td>
+                                                                                <td data-th="Agence">
+                                                                                    <div class="agenceWrapper otherAgence"><span>AGENCE BIADA</span></div>
+                                                                                </td>
+                                                                                <td data-th="Operation">
+                                                                                    <button class="operationDelete"><i class="fa-regular fa-trash-can"></i></button>
+                                                                                </td>
+                                                                                <td data-th="Statut">
+                                                                                    <div class="statuRed"><i class="fa-solid fa-circle-xmark"></i></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-th="N-Piece">
+                                                                                    EC24061207
+                                                                                </td>
+                                                                                <td data-th="Date">
+                                                                                    2024-11-29 09:40:23
+                                                                                </td>
+                                                                                <td data-th="Client" class="td-width">
+                                                                                    030618-OMAD "S.A.R.L"
+                                                                                </td>
+                                                                                <td data-th="Mode de paiement">
+                                                                                    C/EFFET
+                                                                                </td>
+                                                                                <td data-th="Mode de transport">
+                                                                                    NOS SOINS
+                                                                                </td>
+                                                                                <td data-th="Saisie par">
+                                                                                    REPRESENTANT
+                                                                                </td>
+                                                                                <td data-th="Total TTC">
+                                                                                    11,682.61
+                                                                                </td>
+                                                                                <td data-th="Agence">
+                                                                                    <div class="agenceWrapper"><span>AGENCE BIADA</span></div>
+                                                                                </td>
+                                                                                <td data-th="Operation">
+                                                                                    <button class="operationDelete"><i class="fa-regular fa-trash-can"></i></button>
+                                                                                </td>
+                                                                                <td data-th="Statut">
+                                                                                    <div class="statutGreen"><i class="fa-solid fa-check-double"></i></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-th="N-Piece">
+                                                                                    EC24061208
+                                                                                </td>
+                                                                                <td data-th="Date">
+                                                                                    2024-11-29 09:40:23
+                                                                                </td>
+                                                                                <td data-th="Client" class="td-width">
+                                                                                    030807-PIECE auto
+                                                                                </td>
+                                                                                <td data-th="Mode de paiement">
+                                                                                    C/EFFET
+                                                                                </td>
+                                                                                <td data-th="Mode de transport">
+                                                                                    LUI MEME
+                                                                                </td>
+                                                                                <td data-th="Saisie par">
+                                                                                    CLIENT
+                                                                                </td>
+                                                                                <td data-th="Total TTC">
+                                                                                    11,682.61
+                                                                                </td>
+                                                                                <td data-th="Agence">
+                                                                                    <div class="agenceWrapper otherAgence"><span>AGENCE BIADA</span></div>
+                                                                                </td>
+                                                                                <td data-th="Operation">
+                                                                                    <button class="operationDelete"><i class="fa-regular fa-trash-can"></i></button>
+                                                                                </td>
+                                                                                <td data-th="Statut">
+                                                                                    <div class="statuRed"><i class="fa-solid fa-circle-xmark"></i></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-th="N-Piece">
+                                                                                    EC24061209
+                                                                                </td>
+                                                                                <td data-th="Date">
+                                                                                    2024-11-29 09:40:23
+                                                                                </td>
+                                                                                <td data-th="Client" class="td-width">
+                                                                                    030807-PIECE auto
+                                                                                </td>
+                                                                                <td data-th="Mode de paiement">
+                                                                                    C/EFFET
+                                                                                </td>
+                                                                                <td data-th="Mode de transport">
+                                                                                    NOS SOINS
+                                                                                </td>
+                                                                                <td data-th="Saisie par">
+                                                                                    REPRESENTANT
+                                                                                </td>
+                                                                                <td data-th="Total TTC">
+                                                                                    11,682.61
+                                                                                </td>
+                                                                                <td data-th="Agence">
+                                                                                    <div class="agenceWrapper"><span>AGENCE BIADA</span></div>
+                                                                                </td>
+                                                                                <td data-th="Operation">
+                                                                                    <button class="operationDelete"><i class="fa-regular fa-trash-can"></i></button>
+                                                                                </td>
+                                                                                <td data-th="Statut">
+                                                                                    <div class="statutGreen"><i class="fa-solid fa-check-double"></i></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-th="N-Piece">
+                                                                                    EC24061203
+                                                                                </td>
+                                                                                <td data-th="Date">
+                                                                                    2024-11-29 09:40:23
+                                                                                </td>
+                                                                                <td data-th="Client" class="td-width">
+                                                                                    030807-PIECE auto
+                                                                                </td>
+                                                                                <td data-th="Mode de paiement">
+                                                                                    C/EFFET
+                                                                                </td>
+                                                                                <td data-th="Mode de transport">
+                                                                                    NOS SOINS
+                                                                                </td>
+                                                                                <td data-th="Saisie par">
+                                                                                    REPRESENTANT
+                                                                                </td>
+                                                                                <td data-th="Total TTC">
+                                                                                    11,682.61
+                                                                                </td>
+                                                                                <td data-th="Agence">
+                                                                                    <div class="agenceWrapper otherAgence"><span>AGENCE BIADA</span></div>
+                                                                                </td>
+                                                                                <td data-th="Operation">
+                                                                                    <button class="operationDelete"><i class="fa-regular fa-trash-can"></i></button>
+                                                                                </td>
+                                                                                <td data-th="Statut">
+                                                                                    <div class="statuRed"><i class="fa-solid fa-circle-xmark"></i></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                              <tr>
+                                                                                <td data-th="N-Piece">
+                                                                                    EC24061203
+                                                                                </td>
+                                                                                <td data-th="Date">
+                                                                                    2024-11-29 09:40:23
+                                                                                </td>
+                                                                                <td data-th="Client" class="td-width">
+                                                                                    030807-PIECE auto
+                                                                                </td>
+                                                                                <td data-th="Mode de paiement">
+                                                                                    C/EFFET
+                                                                                </td>
+                                                                                <td data-th="Mode de transport">
+                                                                                    NOS SOINS
+                                                                                </td>
+                                                                                <td data-th="Saisie par">
+                                                                                    REPRESENTANT
+                                                                                </td>
+                                                                                <td data-th="Total TTC">
+                                                                                    11,682.61
+                                                                                </td>
+                                                                                <td data-th="Agence">
+                                                                                    <div class="agenceWrapper"><span>AGENCE BIADA</span></div>
+                                                                                </td>
+                                                                                <td data-th="Operation">
+                                                                                    <button class="operationDelete"><i class="fa-regular fa-trash-can"></i></button>
+                                                                                 </td>
+                                                                                <td data-th="Statut">
+                                                                                    <div class="statutGreen"><i class="fa-solid fa-check-double"></i></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-th="N-Piece">
+                                                                                    EC24061204
+                                                                                </td>
+                                                                                <td data-th="Date">
+                                                                                    2024-11-29 09:40:23
+                                                                                </td>
+                                                                                <td data-th="Client" class="td-width">
+                                                                                    030256-MONTREAL P.A
+                                                                                </td>
+                                                                                <td data-th="Mode de paiement">
+                                                                                    CHQ/REP
+                                                                                </td>
+                                                                                <td data-th="Mode de transport">
+                                                                                    LUI MEME
+                                                                                </td>
+                                                                                <td data-th="Saisie par">
+                                                                                    CLIENT
+                                                                                </td>
+                                                                                <td data-th="Total TTC">
+                                                                                    11,682.61
+                                                                                </td>
+                                                                                <td data-th="Agence">
+                                                                                    <div class="agenceWrapper otherAgence"><span>AGENCE BIADA</span></div>
+                                                                                </td>
+                                                                                <td data-th="Operation">
+                                                                                    <button class="operationDelete"><i class="fa-regular fa-trash-can"></i></button>
+                                                                                </td>
+                                                                                <td data-th="Statut">
+                                                                                    <div class="statuRed"><i class="fa-solid fa-circle-xmark"></i></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-th="N-Piece">
+                                                                                    EC24061205
+                                                                                </td>
+                                                                                <td data-th="Date">
+                                                                                    2024-11-29 09:40:23
+                                                                                </td>
+                                                                                <td data-th="Client" class="td-width">
+                                                                                    028216-COPIC
+                                                                                </td>
+                                                                                <td data-th="Mode de paiement">
+                                                                                    E/C
+                                                                                </td>
+                                                                                <td data-th="Mode de transport">
+                                                                                    NOS SOINS
+                                                                                </td>
+                                                                                <td data-th="Saisie par">
+                                                                                    REPRESENTANT
+                                                                                </td>
+                                                                                <td data-th="Total TTC">
+                                                                                    11,682.61
+                                                                                </td>
+                                                                                <td data-th="Agence">
+                                                                                    <div class="agenceWrapper"><span>AGENCE BIADA</span></div>
+                                                                                </td>
+                                                                                <td data-th="Operation">
+                                                                                    <button class="operationDelete"><i class="fa-regular fa-trash-can"></i></button>
+                                                                                </td>
+                                                                                <td data-th="Statut">
+                                                                                    <div class="statutGreen"><i class="fa-solid fa-check-double"></i></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-th="N-Piece">
+                                                                                    EC24061206
+                                                                                </td>
+                                                                                <td data-th="Date">
+                                                                                    2024-11-29 09:40:23
+                                                                                </td>
+                                                                                <td data-th="Client" class="td-width">
+                                                                                    027972-ARIHA AL FADL PIECES AUTOS
+                                                                                </td>
+                                                                                <td data-th="Mode de paiement">
+                                                                                    C/EFFET
+                                                                                </td>
+                                                                                <td data-th="Mode de transport">
+                                                                                    LUI MEME
+                                                                                </td>
+                                                                                <td data-th="Saisie par">
+                                                                                    CLIENT
+                                                                                </td>
+                                                                                <td data-th="Total TTC">
+                                                                                    11,682.61
+                                                                                </td>
+                                                                                <td data-th="Agence">
+                                                                                    <div class="agenceWrapper otherAgence"><span>AGENCE BIADA</span></div>
+                                                                                </td>
+                                                                                <td data-th="Operation">
+                                                                                    <button class="operationDelete"><i class="fa-regular fa-trash-can"></i></button>
+                                                                                </td>
+                                                                                <td data-th="Statut">
+                                                                                    <div class="statuRed"><i class="fa-solid fa-circle-xmark"></i></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-th="N-Piece">
+                                                                                    EC24061207
+                                                                                </td>
+                                                                                <td data-th="Date">
+                                                                                    2024-11-29 09:40:23
+                                                                                </td>
+                                                                                <td data-th="Client" class="td-width">
+                                                                                    030618-OMAD "S.A.R.L"
+                                                                                </td>
+                                                                                <td data-th="Mode de paiement">
+                                                                                    C/EFFET
+                                                                                </td>
+                                                                                <td data-th="Mode de transport">
+                                                                                    NOS SOINS
+                                                                                </td>
+                                                                                <td data-th="Saisie par">
+                                                                                    REPRESENTANT
+                                                                                </td>
+                                                                                <td data-th="Total TTC">
+                                                                                    11,682.61
+                                                                                </td>
+                                                                                <td data-th="Agence">
+                                                                                    <div class="agenceWrapper"><span>AGENCE BIADA</span></div>
+                                                                                </td>
+                                                                                <td data-th="Operation">
+                                                                                    <button class="operationDelete"><i class="fa-regular fa-trash-can"></i></button>
+                                                                                </td>
+                                                                                <td data-th="Statut">
+                                                                                    <div class="statutGreen"><i class="fa-solid fa-check-double"></i></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-th="N-Piece">
+                                                                                    EC24061208
+                                                                                </td>
+                                                                                <td data-th="Date">
+                                                                                    2024-11-29 09:40:23
+                                                                                </td>
+                                                                                <td data-th="Client" class="td-width">
+                                                                                    030807-PIECE auto
+                                                                                </td>
+                                                                                <td data-th="Mode de paiement">
+                                                                                    C/EFFET
+                                                                                </td>
+                                                                                <td data-th="Mode de transport">
+                                                                                    LUI MEME
+                                                                                </td>
+                                                                                <td data-th="Saisie par">
+                                                                                    CLIENT
+                                                                                </td>
+                                                                                <td data-th="Total TTC">
+                                                                                    11,682.61
+                                                                                </td>
+                                                                                <td data-th="Agence">
+                                                                                    <div class="agenceWrapper otherAgence"><span>AGENCE BIADA</span></div>
+                                                                                </td>
+                                                                                <td data-th="Operation">
+                                                                                    <button class="operationDelete"><i class="fa-regular fa-trash-can"></i></button>
+                                                                                </td>
+                                                                                <td data-th="Statut">
+                                                                                    <div class="statuRed"><i class="fa-solid fa-circle-xmark"></i></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-th="N-Piece">
+                                                                                    EC24061209
+                                                                                </td>
+                                                                                <td data-th="Date">
+                                                                                    2024-11-29 09:40:23
+                                                                                </td>
+                                                                                <td data-th="Client" class="td-width">
+                                                                                    030807-PIECE auto
+                                                                                </td>
+                                                                                <td data-th="Mode de paiement">
+                                                                                    C/EFFET
+                                                                                </td>
+                                                                                <td data-th="Mode de transport">
+                                                                                    NOS SOINS
+                                                                                </td>
+                                                                                <td data-th="Saisie par">
+                                                                                    REPRESENTANT
+                                                                                </td>
+                                                                                <td data-th="Total TTC">
+                                                                                    11,682.61
+                                                                                </td>
+                                                                                <td data-th="Agence">
+                                                                                    <div class="agenceWrapper"><span>AGENCE BIADA</span></div>
+                                                                                </td>
+                                                                                <td data-th="Operation">
+                                                                                    <button class="operationDelete"><i class="fa-regular fa-trash-can"></i></button>
+                                                                                </td>
+                                                                                <td data-th="Statut">
+                                                                                    <div class="statutGreen"><i class="fa-solid fa-check-double"></i></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td data-th="N-Piece">
+                                                                                    EC24061203
+                                                                                </td>
+                                                                                <td data-th="Date">
+                                                                                    2024-11-29 09:40:23
+                                                                                </td>
+                                                                                <td data-th="Client" class="td-width">
+                                                                                    030807-PIECE auto
+                                                                                </td>
+                                                                                <td data-th="Mode de paiement">
+                                                                                    C/EFFET
+                                                                                </td>
+                                                                                <td data-th="Mode de transport">
+                                                                                    NOS SOINS
+                                                                                </td>
+                                                                                <td data-th="Saisie par">
+                                                                                    REPRESENTANT
+                                                                                </td>
+                                                                                <td data-th="Total TTC">
+                                                                                    11,682.61
+                                                                                </td>
+                                                                                <td data-th="Agence">
+                                                                                    <div class="agenceWrapper otherAgence"><span>AGENCE BIADA</span></div>
+                                                                                </td>
+                                                                                <td data-th="Operation">
+                                                                                    <button class="operationDelete"><i class="fa-regular fa-trash-can"></i></button>
+                                                                                </td>
+                                                                                <td data-th="Statut">
+                                                                                    <div class="statuRed"><i class="fa-solid fa-circle-xmark"></i></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                   
+                                                                    </table>
+                                                                    <span class="tableTitleTab">Mes Commandes Clients</span>
                                                                     <table id="table__one" class="display responsive nowrap" style="width:100%">
                                                                         <thead>
                                                                             <tr>
@@ -751,68 +1283,94 @@
                                                                                 </td>
                                                                             </tr>
                                                                     </table>
+                                                               
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <!-- Mes Commandes / End -->
                                                         <!-- Ficher de retour / start -->
                                                         <div class="tab-pane fade" id="ficheDeRetourTab" role="tabpanel" aria-labelledby="ficheDeRetour">
-                                                            <div class="my-account-dashboard">
-                                                                <div class="inner">
-                                                                    <table id="table__two" class="display responsive nowrap" style="width:100%">
+                                                            <!-- Modal Popup start-->
+                                                          
+                                                            <div class="modalInTab" id="popupModal-fichierDeRetour">
+                                                               <span class="close-modal-content">&times;</span>
+                                                                <div class="modal-content-wrapper">
+                                                                    
+                                                                    <form id="popupForm-fichierDeRetour">
+                                                                        <span class="popupForm-title">Détails du fichier de retour</span>
+
+                                                                        <div class="form-group-wrapper">
+                                                                            
+                                                                        
+                                                                        <div class="form-group-modal-content">
+                                                                            <label for="textInput1">Text:</label>
+                                                                            <input type="text" id="textInput1" name="textInput1" required>
+                                                                        </div>
+                                                                        <div class="form-group-modal-content">
+                                                                            <label for="dataListInput1">Text:</label>
+                                                                            <input list="dataList1" id="dataListInput1" name="dataListInput1" required>
+                                                                            <datalist id="dataList1">
+                                                                                <option value="Option 1">
+                                                                                <option value="Option 2">
+                                                                                <option value="Option 3">
+                                                                            </datalist>
+                                                                        </div>
+                                                                        </div>
+
+                                                                         <div class="form-group-wrapper">
+                                                                        <div class="form-group-modal-content">
+                                                                            <label for="textInput2">Text:</label>
+                                                                            <input type="text" id="textInput2" name="textInput2" required>
+                                                                        </div>
+                                                                        <div class="form-group-modal-content">
+                                                                            <label for="dataListInput2">Text:</label>
+                                                                            <input list="dataList2" id="dataListInput2" name="dataListInput2" required>
+                                                                            <datalist id="dataList2">
+                                                                                <option value="Option A">
+                                                                                <option value="Option B">
+                                                                                <option value="Option C">
+                                                                            </datalist>
+                                                                        </div>
+                                                                        </div>
+
+                                                                        <!-- Submit Button -->
+                                                                        <button type="submit">Submit</button>
+                                                                    </form>
+                                                                    <table id="table__one" class="display responsive nowrap" style="width:100%">
                                                                         <thead>
                                                                             <tr>
-                                                                                
-                                                                                <th>N°Piece</th>
-                                                                                <th>Date</th>
-                                                                                <th class="td-width">Client</th>
-                                                                                <th>Saisie par</th>
-                                                                                <th>Date Récéption</th>
-                                                                                <th>Agence</th>
-                                                                                <th>Operation</th>
-                                                                                <th>Statut</th>
+                                                                               
+                                                                               
+                                                                                <th>Référence</th>
+                                                                                <th>N° Document</th>
+                                                                                <th>Qté</th>
+                                                                                <th>Text</th>  
                                                                             </tr>
                                                                         </thead>
                                                                         <tbody>
                                                                             <tr>
-                                                                                
-                                                                                <td data-th="N-Piece">
-                                                                                    EC24061203
+                                                                                 <td>
+                                                                                    text
                                                                                 </td>
-                                                                                <td data-th="Date">
-                                                                                    2024-11-29 09:40:23
+                                                                                <td>
+                                                                                   text
                                                                                 </td>
-                                                                                <td data-th="Client" class="td-width">
-                                                                                    030807-PIECE SOUSS
+                                                                                <td>
+                                                                                    text
                                                                                 </td>
-                                                                                <td data-th="Saisie par">
-                                                                                    REPRESENTANT
-                                                                                </td>
-                                                                                <td data-th="Date Récéption">
-                                                                                    2024-12-03 15:10:47
-                                                                                </td>
-                                                                                <td data-th="Agence">
-                                                                                    <div class="agenceWrapper"><span>AGENCE BIADA</span></div>
-                                                                                </td>
-                                                                                
-                                                                                <td data-th="Operation">
-                                                                                    <button class="operationDelete"><i class="fa-regular fa-trash-can"></i></button>
-                                                                                </td>
-                                                                                <td data-th="Statut">
-                                                                                    <div class="statutGreen"><i class="fa-solid fa-check-double"></i></div>
+                                                                                <td>
+                                                                                    text
                                                                                 </td>
                                                                             </tr>
-                                                                        </tbody>
+                                                                          
                                                                     </table>
+                                                               
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <!-- Ficher de retour / End -->
-                                                        <!-- gestion Fiche De Retour / start -->
-                                                        <div class="tab-pane fade" id="gestionFicheDeRetourTab" role="tabpanel" aria-labelledby="gestionFicheDeRetour">
-                                                            <div class="inner">
-                                                                <div class="row">
-                                                                    <div class="form-section-two">
+                                                            <!-- Modal Popup End -->
+                                                            <div class="my-account-dashboard">
+                                                                <div class="inner">
+                                                                   <div class="form-section-two">
                                                                         <form action="#">
                                                                             <div class="row">
                                                                                <!-- Client/ start -->
@@ -885,17 +1443,69 @@
                                                                             </div>
                                                                         </form>
                                                                     </div>
+                                                                
+                                                                    <table id="table__two" class="display responsive nowrap" style="width:100%">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                
+                                                                                <th>N°Piece</th>
+                                                                                <th>Date</th>
+                                                                                <th class="td-width">Client</th>
+                                                                                <th>Saisie par</th>
+                                                                                <th>Date Récéption</th>
+                                                                                <th>Agence</th>
+                                                                                <th>Operation</th>
+                                                                                <th>Statut</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                
+                                                                                <td data-th="N-Piece">
+                                                                                    EC24061203
+                                                                                </td>
+                                                                                <td data-th="Date">
+                                                                                    2024-11-29 09:40:23
+                                                                                </td>
+                                                                                <td data-th="Client" class="td-width">
+                                                                                    030807-PIECE SOUSS
+                                                                                </td>
+                                                                                <td data-th="Saisie par">
+                                                                                    REPRESENTANT
+                                                                                </td>
+                                                                                <td data-th="Date Récéption">
+                                                                                    2024-12-03 15:10:47
+                                                                                </td>
+                                                                                <td data-th="Agence">
+                                                                                    <div class="agenceWrapper"><span>AGENCE BIADA</span></div>
+                                                                                </td>
+                                                                                
+                                                                                <td data-th="Operation">
+                                                                                   <div class="operationButtons">
+                                                                                   <button class="operationPopUp"><i class="fa-solid fa-eye"></i></button>
+                                                                                    <button class="operationDelete"><i class="fa-regular fa-trash-can"></i></button>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td data-th="Statut">
+                                                                                    <div class="statutGreen"><i class="fa-solid fa-check-double"></i></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <!-- gestion Fiche De Retour / End -->
+                                                        <!-- Ficher de retour / End -->
                                                         <!-- mes Clients / start -->
                                                         <div class="tab-pane fade" id="mesClientsTab" role="tabpanel" aria-labelledby="mesClients">
                                                             <div class="my-account-dashboard">
                                                                 <div class="inner">
+                                                                   
                                                                     <table id="table__three" class="display responsive nowrap" style="width:100%">
                                                                         <thead>
                                                                             <tr>
+                                                                               <th>Statut</th>
+                                                                               <th>Motif</th>
                                                                                 <th >Client</th>
                                                                                 <th>Ville</th>
                                                                                 <th>Chiffre d'affaire client</th>
@@ -905,6 +1515,26 @@
                                                                         </thead>
                                                                         <tbody>
                                                                             <tr>
+                                                                               <td class="activeClient"><span>Client Active</span></td>
+                                                                               <td>text</td>
+                                                                                <td data-th="Client" class="td-width">
+                                                                                    027802-ABDOU PIECES AUTOS
+                                                                                </td>
+                                                                                <td data-th="Ville">
+                                                                                    CASABLANCA
+                                                                                </td>
+                                                                                <td data-th="Chiffre d'affaire client">
+                                                                                    895.02
+                                                                                </td>
+                                                                                <td data-th="Chiffre d'affaire représentant">
+                                                                                    0.00
+                                                                                </td>
+                                                                                <td data-th="total">
+                                                                                    895.02
+                                                                                </td>
+                                                                            </tr>
+                                                                             <td class="blockedClient"><span>Client Bloqué</span></td>
+                                                                               <td>text</td>
                                                                                 <td data-th="Client" class="td-width">
                                                                                     027802-ABDOU PIECES AUTOS
                                                                                 </td>

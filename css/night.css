@@ -321,9 +321,10 @@ table.dataTable thead {
     background: black;
 }
 
+
 div.dt-buttons>.dt-button {
-    background: white !important;
-    color: black !important;
+    background: #1e1e1e !important;
+    color: white !important;
 }
 
 /************************* Border + Background + box-shadow *******************/
@@ -367,7 +368,7 @@ select#modeDeReg,
 #points,
 #agenceInput,
 #montantInput{
-    color: #6c757d;
+    color: white;
     background: #353535;
 }
 
@@ -480,10 +481,7 @@ input.flatpickr-input.flatpickr-mobile,
     border: 1px solid #353535;
 }
 
-div.dt-container .dt-search input {
-    background: white;
-    border: 1px solid lightgrey !important;
-}
+
 
 a.allCartes {
     background: white;

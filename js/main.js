@@ -13,6 +13,62 @@ jQuery(document).ready(function($){
 .
 .
 */
+    
+    
+    (function($) {
+
+    // Show the modal when the popup button is clicked
+    $('.operationPopUp').click(function() {
+      $('#popupModal-fichierDeRetour').fadeIn();
+      $('body').css('overflow', 'hidden');  // Disable body scroll
+    });
+
+    // Close the modal when the close button (x) is clicked
+    $('.close-modal-content').click(function() {
+      $('#popupModal-fichierDeRetour').fadeOut();
+      $('body').css('overflow', 'auto');  // Re-enable body scroll
+    });
+
+    // Close the modal when clicking outside the modal content
+    $(window).click(function(event) {
+      if ($(event.target).is('.modalInTab')) {
+        $('#popupModal-fichierDeRetour').fadeOut();
+        $('body').css('overflow', 'auto');  // Re-enable body scroll
+      }
+    });
+
+    // Form submission (you can add your own logic here)
+    $('#popupForm-fichierDeRetour').submit(function(event) {
+      event.preventDefault();
+      
+      // Handle form submission (you can add more logic here if needed)
+      $('#popupModal-fichierDeRetour').fadeOut();
+      $('body').css('overflow', 'auto');  // Re-enable body scroll
+    });
+
+})(jQuery);
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   $(".input-radio__input").on("change", function() {
         // Find the image inside the selected radio label
         let imgSrc = $(this).closest(".filter-list__item").find("img").attr("src");
